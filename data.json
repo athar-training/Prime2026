@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "published": "2026-05-16T10:10:29.485Z",
+  "published": "2026-05-23T02:03:32.000Z",
   "brand": "مركز أثر المطور للتدريب",
   "project": "معسكر المصمم المحترف Prime 2026",
   "data": {
@@ -1031,7 +1031,7 @@
       "actuals": {
         "applicants": 0,
         "accepted": 1,
-        "reserve": 0,
+        "reserve": 10,
         "completionRate": 0,
         "satisfactionScore": 0,
         "portfolioProjects": 0,
@@ -1238,18 +1238,180 @@
       ],
       "waitlist": [
         {
-          "id": "tr_1778790409480",
-          "name": "أثير",
-          "universityId": "",
-          "major": "",
-          "phone": "",
+          "id": "tr_1779501812221",
+          "name": "نورة العتيبي",
+          "universityId": "44012345",
+          "major": "تصميم جرافيك",
+          "phone": "0551234001",
           "email": "",
           "scores": {
-            "motivation": 0,
-            "commitment": 0,
-            "level": 0,
-            "seriousness": 0,
-            "technical": 0
+            "motivation": 28,
+            "commitment": 22,
+            "level": 13,
+            "seriousness": 9,
+            "technical": 7
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1779501812222",
+          "name": "ريم القحطاني",
+          "universityId": "44012346",
+          "major": "وسائط متعددة",
+          "phone": "0551234002",
+          "email": "",
+          "scores": {
+            "motivation": 25,
+            "commitment": 20,
+            "level": 12,
+            "seriousness": 8,
+            "technical": 6
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1779501812223",
+          "name": "سارة الشهري",
+          "universityId": "44012347",
+          "major": "تصميم تفاعلي",
+          "phone": "0551234003",
+          "email": "",
+          "scores": {
+            "motivation": 27,
+            "commitment": 24,
+            "level": 14,
+            "seriousness": 9,
+            "technical": 7
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1779501812224",
+          "name": "لينا الغامدي",
+          "universityId": "44012348",
+          "major": "تصميم جرافيك",
+          "phone": "0551234004",
+          "email": "",
+          "scores": {
+            "motivation": 24,
+            "commitment": 19,
+            "level": 11,
+            "seriousness": 8,
+            "technical": 6
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1779501812225",
+          "name": "دانة المالكي",
+          "universityId": "44012349",
+          "major": "إعلام رقمي",
+          "phone": "0551234005",
+          "email": "",
+          "scores": {
+            "motivation": 26,
+            "commitment": 21,
+            "level": 13,
+            "seriousness": 8,
+            "technical": 6
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1779501812226",
+          "name": "جود الأحمدي",
+          "universityId": "44012350",
+          "major": "تصميم منتجات",
+          "phone": "0551234006",
+          "email": "",
+          "scores": {
+            "motivation": 23,
+            "commitment": 20,
+            "level": 12,
+            "seriousness": 7,
+            "technical": 5
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1779501812227",
+          "name": "هيا العمري",
+          "universityId": "44012351",
+          "major": "فنون بصرية",
+          "phone": "0551234007",
+          "email": "",
+          "scores": {
+            "motivation": 28,
+            "commitment": 23,
+            "level": 13,
+            "seriousness": 9,
+            "technical": 7
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1779501812228",
+          "name": "رهف الدوسري",
+          "universityId": "44012352",
+          "major": "تصميم جرافيك",
+          "phone": "0551234008",
+          "email": "",
+          "scores": {
+            "motivation": 25,
+            "commitment": 21,
+            "level": 12,
+            "seriousness": 8,
+            "technical": 6
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1779501812229",
+          "name": "مها الحربي",
+          "universityId": "44012353",
+          "major": "وسائط متعددة",
+          "phone": "0551234009",
+          "email": "",
+          "scores": {
+            "motivation": 26,
+            "commitment": 22,
+            "level": 13,
+            "seriousness": 8,
+            "technical": 7
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1779501812230",
+          "name": "شهد البقمي",
+          "universityId": "44012354",
+          "major": "تصميم تفاعلي",
+          "phone": "0551234010",
+          "email": "",
+          "scores": {
+            "motivation": 24,
+            "commitment": 19,
+            "level": 11,
+            "seriousness": 7,
+            "technical": 5
           },
           "confirmed": false,
           "withdrawn": false,
