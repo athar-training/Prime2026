@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "published": "2026-05-24T11:51:55.000Z",
+  "published": "2026-05-24T12:55:25.304Z",
   "brand": "مركز أثر المطور للتدريب",
   "project": "معسكر المصمم المحترف Prime 2026",
   "data": {
@@ -49,58 +49,58 @@
         {
           "id": "social_ig",
           "name": "قوالب انستقرام (Post, Story, Reel)",
-          "status": "done",
+          "status": "review",
           "file": "",
           "notes": "",
-          "updated": "2026-05-14T20:25:38.697Z"
+          "updated": "2026-05-24T12:52:31.877Z"
         },
         {
           "id": "social_tt",
           "name": "قوالب تيك توك",
-          "status": "done",
+          "status": "pending",
           "file": "",
           "notes": "",
-          "updated": "2026-05-14T20:25:08.281Z"
+          "updated": "2026-05-18T06:02:21.238Z"
         },
         {
           "id": "social_x",
           "name": "قوالب X/تويتر",
-          "status": "done",
+          "status": "pending",
           "file": "",
           "notes": "",
-          "updated": "2026-05-14T20:25:17.097Z"
+          "updated": "2026-05-18T06:02:29.054Z"
         },
         {
           "id": "social_li",
           "name": "قوالب لينكدان",
-          "status": "done",
+          "status": "pending",
           "file": "",
           "notes": "",
-          "updated": "2026-05-14T20:25:12.830Z"
+          "updated": "2026-05-18T06:02:34.287Z"
         },
         {
           "id": "certificate",
           "name": "تصميم الشهادة",
-          "status": "done",
+          "status": "pending",
           "file": "",
           "notes": "",
-          "updated": "2026-05-14T14:37:10.290Z"
+          "updated": "2026-05-18T06:02:38.805Z"
         },
         {
           "id": "presentation",
           "name": "قالب العروض التقديمية للمدربين",
-          "status": "done",
+          "status": "pending",
           "file": "",
           "notes": "",
-          "updated": "2026-05-14T20:25:31.130Z"
+          "updated": "2026-05-18T06:02:43.654Z"
         },
         {
           "id": "mockups",
           "name": "مكتبة Mockups (لابتوب، جوال، شاشة)",
-          "status": "done",
+          "status": "pending",
           "file": "",
           "notes": "",
-          "updated": "2026-05-14T20:25:23.647Z"
+          "updated": "2026-05-18T06:02:49.104Z"
         }
       ]
     },
@@ -273,10 +273,10 @@
         }
       ],
       "settings": {
-        "tested": true,
-        "analyticsLinked": true,
-        "autoEmailEnabled": true,
-        "thankYouPage": true
+        "tested": false,
+        "analyticsLinked": false,
+        "autoEmailEnabled": false,
+        "thankYouPage": false
       },
       "notes": ""
     },
@@ -307,7 +307,7 @@
             "[الفرز] مراجعة معايير الفرز قبل البدء",
             "[الفرز] اعتماد قوالب رسائل القبول والاعتذار قبل الإرسال"
           ],
-          "notes": "تحمل 3 أدوار محورية في وقت واحد: إدارة المشروع + قائد فريق التدريب + الفرز والتقييم. توصية بتخصيص يومين أسبوعياً للفرز فقط (الأحد والخميس) لتجنب تشتت الانتباه.",
+          "notes": "",
           "updated": "2026-05-15T20:24:58.352Z",
           "whatsappLink": "https://wa.me/966500004496",
           "emailLink": "mailto:atheer@athar-dev.edu.sa"
@@ -336,7 +336,7 @@
             "[الحفل الختامي] إرسال 50 دعوة وتنسيق المقاعد والبروتوكول",
             "[الحفل الختامي] إدارة توقيت الفقرات والباجات للضيوف"
           ],
-          "notes": "تحمل دورين: التنسيق مع الجامعة + اللوجستيات والهاكاثون. عبء عمل عالٍ في فترة الذروة (آخر أسبوعين والهاكاثون والحفل). توصية بخطة طوارئ بمتطوع من الجامعة للأيام الـ 4 الميدانية.",
+          "notes": "",
           "updated": "2026-05-15T20:24:58.352Z",
           "whatsappLink": "",
           "emailLink": ""
@@ -359,7 +359,7 @@
             "تنسيق التغطية الإعلامية للهاكاثون والحفل الختامي",
             "تنسيق المحتوى البصري مع سارة (التصميم) وسنا (الكتابة)"
           ],
-          "notes": "متفرغة للحملة التسويقية بالكامل. حصول 500+ متقدم على عاتقها كلياً، وأداؤها يحدد نجاح مرحلة الاستقطاب.",
+          "notes": "",
           "updated": "2026-05-15T20:24:58.352Z",
           "whatsappLink": "",
           "emailLink": ""
@@ -385,7 +385,7 @@
             "[إنتاج المحتوى] كتابة محتوى دليل المعسكر للمتدربين",
             "[إنتاج المحتوى] تنسيق النصوص مع شروق وسارة"
           ],
-          "notes": "تحمل دورين: الفرز والتقييم + إنتاج المحتوى. محايدة عن التسويق مما يضمن موضوعية الفرز. شخصيتها الكتابية تخدم إنتاج المحتوى التحريري.",
+          "notes": "",
           "updated": "2026-05-15T20:24:58.352Z",
           "whatsappLink": "",
           "emailLink": ""
@@ -460,7 +460,7 @@
             "[إنتاج المحتوى] إنتاج فيديوهات تغطية الهاكاثون والحفل الختامي",
             "[إنتاج المحتوى] تنسيق المحتوى البصري مع شروق"
           ],
-          "notes": "تحمل دورين: التصميم والهوية + إنتاج المحتوى. عبء عمل مضاعف. توصية بمصور خارجي للهاكاثون والحفل الختامي.",
+          "notes": "",
           "updated": "2026-05-15T20:24:58.352Z",
           "whatsappLink": "",
           "emailLink": ""
@@ -488,7 +488,7 @@
             "[الفرز] المشاركة في اجتماع لجنة الفرز الأسبوعي",
             "[الفرز] الفرز المتبادل (Cross-check) مع سنا وأثير"
           ],
-          "notes": "تحمل دورين: مساعد إدارة المشروع + الفرز والتقييم. قريبة من قائدة المشروع مما يضمن الموضوعية والأمانة. تنبيه: دور 'project_assistant' دور جديد يحتاج إضافة في TEAM_ROLES بالكود.",
+          "notes": "",
           "updated": "2026-05-15T20:24:58.352Z",
           "whatsappLink": "",
           "emailLink": ""
@@ -532,8 +532,8 @@
           "cvReady": true,
           "photoReady": true,
           "briefingDone": true,
-          "notes": "المدربة الرئيسية: أثير محمد الزهراني. مساعد المدرب: في العوفي. الاحتياط في حال الطوارئ: سارة الشهري. عقد مساعد المدرب لم يُوقَّع بعد.",
-          "assistant_trainer": "في العوفي"
+          "notes": "المدربة الرئيسية: أثير محمد الزهراني. مساعد المدرب: أمجاد آل طحلان. الاحتياط في حال الطوارئ: سارة الشهري. عقد مساعد المدرب لم يُوقَّع بعد.",
+          "assistant_trainer": "أمجاد آل طحلان"
         },
         {
           "id": "c2",
@@ -602,8 +602,8 @@
           "cvReady": true,
           "photoReady": true,
           "briefingDone": true,
-          "notes": "المدربة الرئيسية: أثير محمد الزهراني. مساعد المدرب: عبير آل واكد. الاحتياط في حال الطوارئ: سارة الشهري. عقد مساعد المدرب لم يُوقَّع بعد.",
-          "assistant_trainer": "عبير آل واكد"
+          "notes": "المدربة الرئيسية: أثير محمد الزهراني. مساعد المدرب: سارة الشهري. عقد مساعد المدرب لم يُوقَّع بعد.",
+          "assistant_trainer": "سارة الشهري"
         },
         {
           "id": "c7",
@@ -630,36 +630,36 @@
           "cvReady": true,
           "photoReady": true,
           "briefingDone": true,
-          "notes": "المدربة الرئيسية: أثير محمد الزهراني. مساعد المدرب: عبير آل واكد. الاحتياط في حال الطوارئ: سنا شكري. عقد مساعد المدرب لم يُوقَّع بعد.",
-          "assistant_trainer": "عبير آل واكد"
+          "notes": "المدربة الرئيسية: أثير محمد الزهراني. مساعد المدرب: سارة الشهري. الاحتياط في حال الطوارئ: سنا شكري. عقد مساعد المدرب لم يُوقَّع بعد.",
+          "assistant_trainer": "سارة الشهري"
         },
         {
           "id": "c9",
           "course": "كتابة المحتوى الإبداعي",
           "days": 2,
           "hours": 10,
-          "trainer": "أثير محمد الزهراني",
+          "trainer": "فيصل القحطاني",
           "contacted": true,
           "contractSigned": false,
           "cvReady": true,
           "photoReady": true,
           "briefingDone": true,
-          "notes": "المدربة الرئيسية: أثير محمد الزهراني. مساعد المدرب: عبير آل واكد. الاحتياط في حال الطوارئ: سنا شكري. عقد مساعد المدرب لم يُوقَّع بعد.",
-          "assistant_trainer": "عبير آل واكد"
+          "notes": "المدرب الرئيسي: فيصل القحطاني مساعد المدرب: رغد علي. الاحتياط في حال الطوارئ: شروق الشهزاني عقد مساعد المدرب لم يُوقَّع بعد.",
+          "assistant_trainer": "رغد علي"
         },
         {
           "id": "c10",
           "course": "التسويق الإلكتروني وصناعة المحتوى",
           "days": 3,
           "hours": 15,
-          "trainer": "أثير محمد الزهراني",
+          "trainer": "شروق الشهراني",
           "contacted": true,
           "contractSigned": false,
           "cvReady": true,
           "photoReady": true,
           "briefingDone": true,
-          "notes": "المدربة الرئيسية: أثير محمد الزهراني. مساعد المدرب: في العوفي. الاحتياط في حال الطوارئ: سنا شكري. عقد مساعد المدرب لم يُوقَّع بعد.",
-          "assistant_trainer": "في العوفي"
+          "notes": "المدربة الرئيسية:شروق الشهراني. مساعد المدرب:أثير الزهراني. الاحتياط في حال الطوارئ: نادين حدري. عقد مساعد المدرب لم يُوقَّع بعد.",
+          "assistant_trainer": "أثير الزهراني"
         }
       ]
     },
@@ -672,38 +672,25 @@
           "axes": "- التعرف على واجهة البرنامج والأدوات الأساسية\n- التعامل مع الطبقات (Layers) والأقنعة (Masks)\n- أساسيات تعديل الصور والتلوين والإضاءة\n- تصميم بوستات السوشال ميديا الاحترافية\n- تركيب الصور (Photo Manipulation) والتأثيرات الإبداعية\n- التصدير الاحترافي للويب والطباعة\n- دمج الذكاء الاصطناعي: Generative Fill, Generative Expand, Remove Tool, Neural Filters",
           "outputs": "- إتقان واجهة الفوتوشوب وأدواته الأساسية بشكل عملي\n- تصميم 3 بوستات سوشال ميديا احترافية\n- تركيب صورة إعلانية واحدة باستخدام Generative Fill\n- معالجة وتنقيح صورة شخصية احترافية\n- إنتاج بوستر دعائي جاهز للطباعة",
           "requiredApps": "- Adobe Photoshop 2024 (أحدث إصدار)\n- اشتراك Adobe Creative Cloud لتفعيل ميزات الذكاء الاصطناعي\n- حساب Adobe Firefly",
-          "sourceLink": "",
+          "sourceLink": "https://drive.google.com/drive/folders/1nmqF_1F_WByXDZ9_jLy8rFuoM5OXLaFd?usp=drive_link",
           "practiceImages": [
             {
               "day": 1,
               "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-03.jpg"
+                "https://drive.google.com/uc?export=view&id=1jPVoJoIC9QRnQ4wKYtOizbV2v2tQQhtq"
               ]
             },
             {
               "day": 2,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-04.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-05.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-06.jpg"
-              ]
+              "images": []
             },
             {
               "day": 3,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-07.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-08.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-09.jpg"
-              ]
+              "images": []
             },
             {
               "day": 4,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-10.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-11.jpg"
-              ]
+              "images": []
             }
           ]
         },
@@ -713,32 +700,20 @@
           "days": 4,
           "axes": "- التعرف على واجهة البرنامج والفرق بين الفكتور والراستر\n- أدوات الرسم الأساسية (Pen Tool, Shape Tool, Brush)\n- التعامل مع الألوان والتدرجات والباترن\n- تصميم الشعارات والأيقونات والرسوم التوضيحية\n- تصميم الهويات البصرية الأساسية\n- التصدير الاحترافي للمطبوعات والويب\n- دمج الذكاء الاصطناعي: Generative Recolor, Text to Vector Graphic, Mockup, Retype",
           "outputs": "- إتقان رسم وتصميم الفكتور بشكل عملي\n- تصميم شعار احترافي بالكامل (Logo)\n- تصميم مجموعة أيقونات (4 أيقونات بستايل موحد)\n- تصميم رسمة توضيحية (Illustration) باستخدام الذكاء الاصطناعي\n- إنتاج مينيو متكامل لمطعم تطبيقياً",
-          "requiredApps": "- Adobe Illustrator 2024 (أحدث إصدار)\n- اشتراك Adobe Creative Cloud\n- حساب Adobe Firefly",
+          "requiredApps": "",
           "sourceLink": "",
           "practiceImages": [
             {
               "day": 1,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-03.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-04.jpg"
-              ]
+              "images": []
             },
             {
               "day": 2,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-03.jpg"
-              ]
+              "images": []
             },
             {
               "day": 3,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-02.jpg"
-              ]
+              "images": []
             },
             {
               "day": 4,
@@ -751,23 +726,17 @@
           "name": "إنديزاين",
           "days": 3,
           "axes": "- التعرف على واجهة البرنامج وفلسفته في تصميم المطبوعات\n- إعداد الصفحات الرئيسية (Master Pages) والشبكات\n- التحكم في النصوص (Paragraph & Character Styles)\n- التعامل مع الصور والـ Anchors والـ Text Wrap\n- تصميم الكتيبات والمجلات والتقارير\n- تصدير ملفات PDF الاحترافية للطباعة والإلكتروني\n- دمج الذكاء الاصطناعي: Generative Expand, Adobe Sensei لاقتراحات التنسيق",
-          "outputs": "- إتقان إعداد المطبوعات متعددة الصفحات\n- تصميم تقرير سنوي احترافي (12 صفحة على الأقل)\n- تصميم بروشور مطوي (3 طيات)\n- تصميم نموذج كتاب إلكتروني (E-Book) كامل\n- ملف PDF تفاعلي مع روابط داخلية",
-          "requiredApps": "- Adobe InDesign 2024\n- اشتراك Adobe Creative Cloud\n- خطوط عربية وإنجليزية احترافية",
+          "outputs": "",
+          "requiredApps": "",
           "sourceLink": "",
           "practiceImages": [
             {
               "day": 1,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d1-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d1-02.jpg"
-              ]
+              "images": []
             },
             {
               "day": 2,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d2-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d2-02.jpg"
-              ]
+              "images": []
             },
             {
               "day": 3,
@@ -779,52 +748,21 @@
           "id": "c4",
           "name": "موشن جرافيك (Premiere + After Effects)",
           "days": 8,
-          "axes": "- مقدمة في الموشن جرافيك وأهميته في صناعة المحتوى\n- Premiere Pro: واجهة البرنامج وأدوات المونتاج الأساسية\n- Premiere Pro: التحكم في الصوت والانتقالات والتأثيرات\n- Premiere Pro: تصدير الفيديو لمنصات مختلفة (يوتيوب، تيك توك، إنستقرام)\n- After Effects: واجهة البرنامج ومفهوم الـ Composition والـ Layers\n- After Effects: تحريك العناصر والنصوص (Keyframes & Animation)\n- After Effects: التأثيرات والـ Masks والـ Shape Layers\n- After Effects: إنتاج Lower Thirds وإعلانات قصيرة وانترو\n- دمج الذكاء الاصطناعي: Generative Extend, Enhance Speech, Auto Reframe, Text-Based Editing",
-          "outputs": "- مونتاج فيديو احترافي لإعلان مدته 30 ثانية\n- إنتاج Intro متحرك لقناة يوتيوب\n- تصميم Lower Thirds احترافية للفيديوهات\n- إنتاج إعلان موشن جرافيك لمنتج (15 ثانية)\n- مونتاج فيديو ريلز كامل مع موشن للسوشال ميديا",
-          "requiredApps": "- Adobe Premiere Pro 2024\n- Adobe After Effects 2024\n- اشتراك Adobe Creative Cloud\n- مكتبة موسيقى من Adobe Stock أو Epidemic Sound",
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
           "sourceLink": "",
           "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            },
-            {
-              "day": 3,
-              "images": []
-            },
-            {
-              "day": 4,
-              "images": []
-            },
-            {
-              "day": 5,
-              "images": []
-            },
-            {
-              "day": 6,
-              "images": []
-            },
-            {
-              "day": 7,
-              "images": []
-            },
-            {
-              "day": 8,
-              "images": []
-            }
+            "https://drive.google.com/uc?export=view&id=1ax9zC5mGcQ4gi-McWfuAfVoJGbkJ2F79"
           ]
         },
         {
           "id": "c5",
           "name": "التصميم بالجوال",
           "days": 3,
-          "axes": "- مقدمة في التصميم بالجوال وأهميته للمصمم العصري\n- التعرف على أفضل التطبيقات: Canva, Adobe Express, Pixelmator\n- تصميم بوستات السوشال ميديا الاحترافية بالجوال\n- تصميم القصص والريلز والتصاميم المتحركة\n- إدارة الملفات والخطوط والصور على الجوال\n- التصدير المباشر للنشر على المنصات\n- دمج الذكاء الاصطناعي: Adobe Express AI, Canva Magic Design, إزالة الخلفيات بالـ AI",
-          "outputs": "- إتقان تصميم بوست احترافي بالجوال خلال 5 دقائق\n- تصميم مجموعة 5 قصص إنستقرام بهوية موحدة\n- تصميم تيمبليت ريلز قابل لإعادة الاستخدام\n- تصميم بوست متحرك (Animated Post) للسوشال ميديا\n- بناء مكتبة قوالب شخصية على Adobe Express",
-          "requiredApps": "- Adobe Express (تطبيق الجوال)\n- Canva Pro (تطبيق الجوال)\n- جوال بنظام iOS أو Android حديث",
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
           "sourceLink": "",
           "practiceImages": [
             {
@@ -845,9 +783,9 @@
           "id": "c6",
           "name": "تصميم الفيديو بالجوال",
           "days": 3,
-          "axes": "- مقدمة في صناعة الفيديو بالجوال\n- التعرف على أفضل التطبيقات: CapCut, InShot, VN Editor\n- أساسيات التصوير الاحترافي بالجوال (الإضاءة، الزوايا، الثبات)\n- المونتاج الأساسي والقص والإضافات النصية\n- إضافة التأثيرات والترانزيشن والصوت\n- تصميم ريلز وتيك توك احترافية للمنصات\n- دمج الذكاء الاصطناعي: CapCut AI Tools, AutoCut, AI Voice, إزالة الخلفية تلقائياً",
-          "outputs": "- تصوير ومونتاج ريل احترافي (15 ثانية) للسوشال ميديا\n- إنتاج فيديو تيك توك (Tutorial) قصير\n- تصميم فيديو ترويجي لمنتج (30 ثانية)\n- إنتاج فيديو بأسلوب الـ Vlogging قصير\n- بناء بروفايل احترافي على CapCut للحفظ",
-          "requiredApps": "- CapCut (تطبيق الجوال)\n- InShot أو VN Editor\n- جوال حديث بكاميرا جيدة",
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
           "sourceLink": "",
           "practiceImages": [
             {
@@ -868,9 +806,9 @@
           "id": "c7",
           "name": "واجهات المواقع والتطبيقات (UI/UX)",
           "days": 12,
-          "axes": "- مقدمة في UI/UX والفرق بينهما وأهمية كل واحد\n- أساسيات الـ User Research وفهم احتياجات المستخدم\n- Information Architecture و User Flows\n- Wireframing وبناء النماذج الأولية\n- التعرف على Figma كأداة احترافية للتصميم التشاركي\n- بناء Design System كامل (الألوان، الخطوط، المكونات)\n- تصميم واجهات تطبيقات الجوال (Mobile UI)\n- تصميم واجهات المواقع (Web UI)\n- مبادئ التفاعل والـ Micro-interactions\n- بناء Prototype تفاعلي للعرض على العميل\n- Handoff للمطورين باستخدام Dev Mode\n- دمج الذكاء الاصطناعي: Figma AI, Galileo AI, Uizard, ChatGPT لاقتراح UX",
-          "outputs": "- إتقان Figma من الصفر للاحتراف\n- تصميم Design System متكامل\n- تصميم تطبيق جوال كامل (5 شاشات على الأقل) — مشروع 1\n- تصميم موقع ويب كامل (Landing Page + Dashboard) — مشروع 2\n- إنتاج Prototype تفاعلي قابل للعرض\n- بناء Portfolio يحتوي على المشروعين بأسلوب احترافي",
-          "requiredApps": "- Figma (الإصدار المجاني يكفي)\n- حساب على Behance أو Dribbble للنشر\n- ChatGPT (الإصدار المجاني يكفي)",
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
           "sourceLink": "",
           "practiceImages": [
             {
@@ -927,9 +865,9 @@
           "id": "c8",
           "name": "الذكاء الاصطناعي للمصممين",
           "days": 2,
-          "axes": "- مقدمة في الذكاء الاصطناعي وأثره على صناعة التصميم\n- استراتيجية المصمم في عصر الـ AI: متى تستخدمه ومتى لا\n- إتقان كتابة الـ Prompts الاحترافية للتصميم (Prompt Engineering)\n- توليد الصور: Midjourney, Adobe Firefly, DALL-E\n- توليد الفيديو: Runway, Pika, Sora\n- توليد الـ Mockups والـ Branding بالـ AI\n- أدوات تسريع العمل اليومي للمصمم بالـ AI\n- بناء سير عمل (Workflow) يدمج الـ AI مع الأدوات التقليدية",
-          "outputs": "- إتقان كتابة Prompts احترافية بصيغة 11 عنصر (Framework متكامل)\n- توليد 5 صور Premium-grade لاستخدام تجاري\n- توليد فيديو إعلاني قصير بالـ AI\n- توليد هوية بصرية كاملة بمساعدة الـ AI\n- بناء قائمة شخصية بأفضل 10 أدوات AI للمصمم",
-          "requiredApps": "- حساب Midjourney\n- حساب Adobe Firefly\n- حساب ChatGPT (الإصدار الأحدث)\n- حساب Runway (الإصدار المجاني يكفي)",
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
           "sourceLink": "",
           "practiceImages": [
             {
@@ -946,9 +884,9 @@
           "id": "c9",
           "name": "كتابة المحتوى الإبداعي",
           "days": 2,
-          "axes": "- مقدمة في كتابة المحتوى الإبداعي وأهميته للمصمم\n- الفرق بين الكتابة التسويقية والإبداعية والصحفية\n- كتابة الكابشن الجذاب للسوشال ميديا\n- كتابة الإعلانات (Copywriting): الـ Hook, Body, CTA\n- كتابة السكربتات للفيديوهات القصيرة (ريلز، تيك توك)\n- بناء صوت العلامة التجارية (Brand Voice)\n- كتابة محتوى البودكاست والسطور التحريرية للمدونات\n- دمج الذكاء الاصطناعي: ChatGPT, Claude, Jasper لتسريع الكتابة بدون فقد الإبداع",
-          "outputs": "- كتابة 10 كابشن احترافية لمنصات مختلفة\n- كتابة إعلان تسويقي كامل (Ad Copy) مع 3 خيارات\n- كتابة سكربت ريل لمدة 30 ثانية\n- بناء Brand Voice Guide لعلامة تجارية وهمية\n- كتابة مقال تدويني (Blog Post) بمساعدة الـ AI",
-          "requiredApps": "- حساب ChatGPT\n- Notion أو Google Docs للكتابة\n- أداة Grammarly (اختياري)",
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
           "sourceLink": "",
           "practiceImages": [
             {
@@ -965,9 +903,9 @@
           "id": "c10",
           "name": "التسويق الإلكتروني وصناعة المحتوى",
           "days": 3,
-          "axes": "- مقدمة في التسويق الإلكتروني وأنواعه\n- التسويق على منصات السوشال ميديا (Meta, TikTok, X, LinkedIn)\n- بناء استراتيجية محتوى متكاملة (Content Strategy)\n- إعداد Content Calendar شهري\n- مقدمة في الإعلانات الممولة (Meta Ads, TikTok Ads)\n- تحليل الأداء وقراءة الـ Insights والـ Analytics\n- بناء العلامة الشخصية للمصمم (Personal Branding)\n- صناعة محتوى يبني سلطة الخبير\n- دمج الذكاء الاصطناعي: ChatGPT للأفكار, Buffer AI للجدولة, Predis AI لتوليد المحتوى",
-          "outputs": "- بناء استراتيجية محتوى متكاملة لعلامة تجارية\n- إعداد Content Calendar شهري (30 يوم)\n- إطلاق حملة إعلانية ممولة بسيطة (محاكاة)\n- بناء Personal Brand Profile كامل\n- تحليل أداء حساب على إنستقرام ورفع تقرير",
-          "requiredApps": "- حساب Meta Business Suite\n- حساب TikTok Business\n- ChatGPT\n- Canva أو Adobe Express لإنشاء المحتوى",
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
           "sourceLink": "",
           "practiceImages": [
             {
@@ -1027,23 +965,160 @@
         "notes": ""
       },
       "followup": "اجتماع بعد نهاية كل دورة تدريبية",
-      "backupPlan": "الدورات التدريبية جميعها مسجلة لذا...",
+      "backupPlan": "يلتزم المركز بتجهيز حسابات جاهزة ومفعّلة على المنصات التالية كبدائل فورية، ويتم اختبارها أسبوعيًا قبل انطلاق الجلسات:\nالبديل الأول: Google Meet (لسرعة الإطلاق وسهولة الوصول للمتدربين).\nالبديل الثاني: Microsoft Teams (للجلسات التي تتطلب تسجيل مؤسسي وميزات متقدمة).\nالبديل الثالث: بث مباشر عبر قناة المعهد الخاصة على YouTube (في حال تعذّر التفاعل الفوري، مع فتح قناة أسئلة عبر واتساب)",
       "testingDone": true,
       "notes": ""
     },
+    "shiftcore": {
+      "description": "ست ورش عمل تطبيقية مكثفة (يومان لكل ورشة) — جزء أساسي من معسكر المصمم المحترف Prime 2026",
+      "workshops": [
+        {
+          "id": "w1",
+          "name": "إعادة بناء التصاميم",
+          "days": 2,
+          "trainer": "أثير محمد الزهراني",
+          "ready": false,
+          "axes": "- مراجعة تصاميم موجودة وتحديد نقاط الضعف\n- مبادئ إعادة التصميم (Redesign Principles)\n- تطبيق التحسينات على مستوى التكوين والألوان والخطوط\n- استخدام الذكاء الاصطناعي لتسريع عملية إعادة البناء\n- مقارنة \"قبل وبعد\" بأسلوب احترافي",
+          "outputs": "- إعادة تصميم 3 نماذج (بوست، شعار، بطاقة عمل)\n- ملف Before & After احترافي للعرض في Portfolio",
+          "requiredApps": "- Adobe Photoshop + Illustrator\n- Adobe Firefly",
+          "sourceLink": "",
+          "assistant_trainer": "عبير آل واكد",
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
+        },
+        {
+          "id": "w2",
+          "name": "تصميم الهويات البصرية",
+          "days": 2,
+          "trainer": "",
+          "ready": false,
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "- Adobe Illustrator + InDesign\n- Adobe Firefly + Midjourney",
+          "sourceLink": "",
+          "assistant_trainer": "",
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
+        },
+        {
+          "id": "w3",
+          "name": "المطبوعات والتغليف",
+          "days": 2,
+          "trainer": "",
+          "ready": false,
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
+          "sourceLink": "",
+          "assistant_trainer": "",
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
+        },
+        {
+          "id": "w4",
+          "name": "إعداد التقارير الاحترافية",
+          "days": 2,
+          "trainer": "",
+          "ready": false,
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
+          "sourceLink": "",
+          "assistant_trainer": "",
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
+        },
+        {
+          "id": "w5",
+          "name": "إدارة حسابات السوشال ميديا",
+          "days": 2,
+          "trainer": "",
+          "ready": false,
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
+          "sourceLink": "",
+          "assistant_trainer": "",
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
+        },
+        {
+          "id": "w6",
+          "name": "تطوير ملف الأعمال",
+          "days": 2,
+          "trainer": "",
+          "ready": false,
+          "axes": "",
+          "outputs": "",
+          "requiredApps": "",
+          "sourceLink": "",
+          "assistant_trainer": "",
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
+        }
+      ]
+    },
     "hackathon": {
-      "location": "",
-      "capacity": 0,
+      "location": "القاعة الرئيسية بجامعة الملك خالد",
+      "capacity": 300,
       "equipment": [
         {
           "name": "شاشات عرض",
-          "count": 0,
+          "count": 2,
           "ready": false
         },
         {
           "name": "أجهزة لابتوب احتياطية",
-          "count": 0,
-          "ready": false
+          "count": 10,
+          "ready": true
         },
         {
           "name": "كاميرات تصوير",
@@ -1088,8 +1163,8 @@
       "guests": [],
       "coverage": {
         "photographer": true,
-        "videographer": true,
-        "mediaInvited": true,
+        "videographer": false,
+        "mediaInvited": false,
         "livestream": false
       },
       "notes": "الموقع والسعة الاستيعابية تُحدد بالتنسيق مع نوف القحطاني وجامعة الملك خالد. أعداد التجهيزات تُحدد بعد اعتماد القاعة. عقود مساعدي المدرب (في وعبير) لم تُوقَّع بعد. تنبيه: عدم وجود بث مباشر يتطلب نشر صور وفيديوهات الحفل على الحسابات الرسمية خلال 24 ساعة. المسؤولة عن إنتاج الفيديو: سارة الشهري. المسؤولة عن اللوجستيات الميدانية: نوف القحطاني."
@@ -1155,17 +1230,17 @@
             {
               "name": "انستقرام",
               "planned": 8,
-              "done": 0
+              "done": 8
             },
             {
               "name": "تيك توك",
               "planned": 6,
-              "done": 0
+              "done": 2
             },
             {
               "name": "X (تويتر)",
               "planned": 9,
-              "done": 0
+              "done": 5
             },
             {
               "name": "لينكدإن",
@@ -1173,7 +1248,7 @@
               "done": 0
             }
           ],
-          "status": "pending",
+          "status": "active",
           "notes": "المرحلة الأولى مكتملة بـ 27 محتوى أصلي"
         },
         {
@@ -1183,26 +1258,26 @@
           "platforms": [
             {
               "name": "انستقرام",
-              "planned": 0,
+              "planned": 5,
               "done": 0
             },
             {
               "name": "تيك توك",
-              "planned": 0,
+              "planned": 3,
               "done": 0
             },
             {
               "name": "X (تويتر)",
-              "planned": 0,
+              "planned": 6,
               "done": 0
             },
             {
               "name": "لينكدإن",
-              "planned": 0,
+              "planned": 11,
               "done": 0
             }
           ],
-          "status": "pending",
+          "status": "planning",
           "notes": ""
         },
         {
@@ -1248,13 +1323,16 @@
         "socialReach": 100000
       },
       "actuals": {
-        "applicants": 165,
-        "accepted": 50,
-        "reserve": 15,
+        "applicants": 0,
+        "accepted": 49,
+        "reserve": 0,
         "completionRate": 0,
         "satisfactionScore": 0,
         "portfolioProjects": 0,
-        "socialReach": 0
+        "socialReach": 0,
+        "applications": 78,
+        "waitlist": 15,
+        "rejected": 13
       }
     },
     "risks": {
@@ -1265,16 +1343,16 @@
           "impact": "high",
           "probability": "medium",
           "mitigation": "",
-          "owner": "أثير الزهراني",
-          "status": "monitoring"
+          "owner": "أثير محمد الزهراني",
+          "status": "analyzing"
         },
         {
           "id": "r2",
           "risk": "انسحاب مدرب رئيسي قبل المعسكر",
           "impact": "high",
           "probability": "low",
-          "mitigation": "",
-          "owner": "",
+          "mitigation": "يحتفظ المعهد بقائمة مدربين احتياطيين معتمدين لكل تخصص مع اتفاقية استعداد مسبقة تضمن جاهزيتهم خلال ٤٨ ساعة، ويتم تسليم البديل ملف المحتوى التدريبي الجاهز فور التفعيل. في حال وقع الانسحاب خلال البرنامج، يُكلَّف مدرب مساعد من فريق المعهد بإدارة الجلسة الحالية لحين استئناف الجدول مع البديل. ويلتزم المعهد بإشعار المتدربين خلال أقل من ١٢ ساعة، وتقديم تعويض مناسب عند تأثر جودة المحتوى، مع توثيق الحادثة في سجل المخاطر التشغيلية.",
+          "owner": "نجود الشهراني",
           "status": "identified"
         },
         {
@@ -1347,13 +1425,13 @@
         {
           "id": "pr1",
           "name": "لابتوب بمواصفات مناسبة (i5 فأعلى، 8GB RAM فأعلى)",
-          "tutorial": "",
+          "tutorial": "https://youtu.be/zTmi-JygYJ0?si=Eoe3FhhFgn9Bcocz",
           "ready": true
         },
         {
           "id": "pr2",
           "name": "تثبيت Adobe Photoshop",
-          "tutorial": "",
+          "tutorial": "https://youtu.be/zTmi-JygYJ0?si=Eoe3FhhFgn9Bcocz",
           "ready": true
         },
         {
@@ -1432,16 +1510,27 @@
       ]
     },
     "library": {
-      "items": []
+      "items": [
+        {
+          "id": "lib_1779085759300",
+          "name": "تطبيق اليوم الأول : التعديل على الألوان",
+          "courseId": "c1",
+          "type": "template",
+          "link": "https://drive.google.com/file/d/1V2NR-oDYg0BIPHSJZO9-tzWtt_j8221W/view?usp=sharing",
+          "owner": "سارة الشهري",
+          "status": "progress",
+          "notes": ""
+        }
+      ]
     },
     "trainees": {
       "list": [
         {
-          "id": "tr_1778770204965",
+          "id": "tr_1778955504087_acc_001",
           "name": "أثير الزهراني",
-          "universityId": "12345678",
-          "major": "تصميم",
-          "phone": "0500004496",
+          "universityId": "44000048",
+          "major": "تصميم جرافيكي",
+          "phone": "0592832764",
           "email": "",
           "scores": {
             "motivation": 30,
@@ -1455,484 +1544,322 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000000",
-          "name": "لارا القحطاني",
-          "universityId": "44020000",
-          "major": "تسويق رقمي",
-          "phone": "0561000000",
+          "id": "tr_1778955504087_acc_003",
+          "name": "بندر بدر الحربي",
+          "universityId": "44000053",
+          "major": "تقنية معلومات",
+          "phone": "0523884969",
           "email": "",
           "scores": {
             "motivation": 26,
-            "commitment": 21,
-            "level": 13,
-            "seriousness": 10,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000001",
-          "name": "بسمة الجعيد",
-          "universityId": "44020001",
-          "major": "إخراج فني",
-          "phone": "0581000001",
-          "email": "",
-          "scores": {
-            "motivation": 25,
-            "commitment": 20,
-            "level": 13,
+            "commitment": 23,
+            "level": 11,
             "seriousness": 8,
-            "technical": 7
+            "technical": 9
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000002",
-          "name": "هيا البقمي",
-          "universityId": "44020002",
-          "major": "تصميم أزياء",
-          "phone": "0551000002",
-          "email": "",
-          "scores": {
-            "motivation": 30,
-            "commitment": 25,
-            "level": 15,
-            "seriousness": 10,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000003",
-          "name": "سعاد الجعيد",
-          "universityId": "44020003",
-          "major": "رسوم متحركة",
-          "phone": "0561000003",
-          "email": "",
-          "scores": {
-            "motivation": 25,
-            "commitment": 21,
-            "level": 15,
-            "seriousness": 9,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000004",
-          "name": "بيان المطيري",
-          "universityId": "44020004",
-          "major": "هندسة بصرية",
-          "phone": "0571000004",
-          "email": "",
-          "scores": {
-            "motivation": 25,
-            "commitment": 20,
-            "level": 14,
-            "seriousness": 8,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000005",
-          "name": "شوق الشهري",
-          "universityId": "44020005",
-          "major": "هندسة بصرية",
-          "phone": "0591000005",
-          "email": "",
-          "scores": {
-            "motivation": 29,
-            "commitment": 20,
-            "level": 14,
-            "seriousness": 8,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000006",
-          "name": "وحيدة العنزي",
-          "universityId": "44020006",
-          "major": "تصميم أزياء",
-          "phone": "0531000006",
-          "email": "",
-          "scores": {
-            "motivation": 25,
-            "commitment": 25,
-            "level": 13,
-            "seriousness": 9,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000007",
-          "name": "منيرة الصبحي",
-          "universityId": "44020007",
-          "major": "هندسة بصرية",
-          "phone": "0561000007",
-          "email": "",
-          "scores": {
-            "motivation": 28,
-            "commitment": 25,
-            "level": 14,
-            "seriousness": 8,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000008",
-          "name": "وجد السحيمي",
-          "universityId": "44020008",
-          "major": "تسويق رقمي",
-          "phone": "0561000008",
-          "email": "",
-          "scores": {
-            "motivation": 30,
-            "commitment": 25,
-            "level": 15,
-            "seriousness": 8,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000009",
-          "name": "رفيف الزهراني",
-          "universityId": "44020009",
-          "major": "تصميم تطبيقات",
-          "phone": "0591000009",
+          "id": "tr_1778955504087_acc_004",
+          "name": "ندى عبدالرحمن العسيري",
+          "universityId": "44000009",
+          "major": "تسويق",
+          "phone": "0526916697",
           "email": "",
           "scores": {
             "motivation": 28,
             "commitment": 22,
-            "level": 15,
-            "seriousness": 10,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000010",
-          "name": "ميرا السبيعي",
-          "universityId": "44020010",
-          "major": "تصميم تطبيقات",
-          "phone": "0501000010",
-          "email": "",
-          "scores": {
-            "motivation": 27,
-            "commitment": 23,
             "level": 14,
-            "seriousness": 8,
-            "technical": 7
+            "seriousness": 7,
+            "technical": 10
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000011",
-          "name": "وفاء الزبيدي",
-          "universityId": "44020011",
-          "major": "تصميم منتجات",
-          "phone": "0591000011",
+          "id": "tr_1778955504087_acc_005",
+          "name": "زياد نواف الفهيد",
+          "universityId": "44000052",
+          "major": "وسائط متعددة",
+          "phone": "0545146270",
           "email": "",
           "scores": {
-            "motivation": 28,
-            "commitment": 25,
-            "level": 14,
-            "seriousness": 8,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000012",
-          "name": "رهام الغبيشي",
-          "universityId": "44020012",
-          "major": "هندسة بصرية",
-          "phone": "0561000012",
-          "email": "",
-          "scores": {
-            "motivation": 30,
-            "commitment": 24,
-            "level": 14,
-            "seriousness": 10,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000013",
-          "name": "أروى الحربي",
-          "universityId": "44020013",
-          "major": "تصميم طباعي",
-          "phone": "0591000013",
-          "email": "",
-          "scores": {
-            "motivation": 25,
+            "motivation": 24,
             "commitment": 20,
-            "level": 13,
-            "seriousness": 8,
-            "technical": 7
+            "level": 14,
+            "seriousness": 7,
+            "technical": 10
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000014",
-          "name": "لمى الصبحي",
-          "universityId": "44020014",
-          "major": "إعلام رقمي",
-          "phone": "0581000014",
+          "id": "tr_1778955504087_acc_006",
+          "name": "شهد تركي العنزي",
+          "universityId": "44000069",
+          "major": "تسويق",
+          "phone": "0552880957",
           "email": "",
           "scores": {
-            "motivation": 29,
-            "commitment": 23,
-            "level": 15,
+            "motivation": 20,
+            "commitment": 19,
+            "level": 12,
             "seriousness": 9,
-            "technical": 7
+            "technical": 6
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000015",
-          "name": "صالحة الفايدي",
-          "universityId": "44020015",
+          "id": "tr_1778955504087_acc_007",
+          "name": "فجر عبدالله المالكي",
+          "universityId": "44000034",
+          "major": "تصوير",
+          "phone": "0571822782",
+          "email": "",
+          "scores": {
+            "motivation": 24,
+            "commitment": 24,
+            "level": 11,
+            "seriousness": 8,
+            "technical": 10
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504087_acc_008",
+          "name": "وعد بدر الرفاعي",
+          "universityId": "44000016",
           "major": "فنون بصرية",
-          "phone": "0561000015",
+          "phone": "0513315098",
+          "email": "",
+          "scores": {
+            "motivation": 23,
+            "commitment": 21,
+            "level": 10,
+            "seriousness": 7,
+            "technical": 10
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504087_acc_009",
+          "name": "دانة عبدالله العتيبي",
+          "universityId": "44000062",
+          "major": "صحافة",
+          "phone": "0551834738",
+          "email": "",
+          "scores": {
+            "motivation": 22,
+            "commitment": 25,
+            "level": 11,
+            "seriousness": 10,
+            "technical": 8
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504087_acc_010",
+          "name": "غيداء سلطان الصاعدي",
+          "universityId": "44000054",
+          "major": "هندسة برمجيات",
+          "phone": "0566701065",
+          "email": "",
+          "scores": {
+            "motivation": 21,
+            "commitment": 21,
+            "level": 11,
+            "seriousness": 8,
+            "technical": 9
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504087_acc_011",
+          "name": "تهاني أحمد البقمي",
+          "universityId": "44000068",
+          "major": "فنون بصرية",
+          "phone": "0531781080",
+          "email": "",
+          "scores": {
+            "motivation": 21,
+            "commitment": 21,
+            "level": 11,
+            "seriousness": 10,
+            "technical": 8
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504087_acc_012",
+          "name": "أسماء نواف الشهري",
+          "universityId": "44000051",
+          "major": "تسويق",
+          "phone": "0560647468",
           "email": "",
           "scores": {
             "motivation": 30,
-            "commitment": 22,
-            "level": 13,
+            "commitment": 25,
+            "level": 11,
+            "seriousness": 8,
+            "technical": 7
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504087_acc_013",
+          "name": "ندى تركي الفهيد",
+          "universityId": "44000041",
+          "major": "تصميم جرافيكي",
+          "phone": "0550097882",
+          "email": "",
+          "scores": {
+            "motivation": 20,
+            "commitment": 19,
+            "level": 11,
+            "seriousness": 7,
+            "technical": 9
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504087_acc_014",
+          "name": "رهف ناصر العسيري",
+          "universityId": "44000075",
+          "major": "علوم حاسب",
+          "phone": "0593990916",
+          "email": "",
+          "scores": {
+            "motivation": 30,
+            "commitment": 23,
+            "level": 12,
+            "seriousness": 8,
+            "technical": 10
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504087_acc_015",
+          "name": "بدر فيصل السلمي",
+          "universityId": "44000057",
+          "major": "تسويق",
+          "phone": "0547510799",
+          "email": "",
+          "scores": {
+            "motivation": 21,
+            "commitment": 19,
+            "level": 14,
+            "seriousness": 8,
+            "technical": 9
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504087_acc_016",
+          "name": "هيفاء نواف القحطاني",
+          "universityId": "44000024",
+          "major": "علوم حاسب",
+          "phone": "0535427849",
+          "email": "",
+          "scores": {
+            "motivation": 30,
+            "commitment": 18,
+            "level": 15,
             "seriousness": 9,
-            "technical": 8
+            "technical": 10
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000016",
-          "name": "صفاء العتيبي",
-          "universityId": "44020016",
-          "major": "إخراج فني",
-          "phone": "0561000016",
+          "id": "tr_1778955504087_acc_017",
+          "name": "لمى فيصل العسيري",
+          "universityId": "44000026",
+          "major": "علوم حاسب",
+          "phone": "0518244935",
           "email": "",
           "scores": {
-            "motivation": 29,
-            "commitment": 21,
-            "level": 15,
-            "seriousness": 8,
-            "technical": 8
+            "motivation": 23,
+            "commitment": 22,
+            "level": 14,
+            "seriousness": 10,
+            "technical": 7
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000017",
-          "name": "مرام البقمي",
-          "universityId": "44020017",
-          "major": "تصميم ألعاب",
-          "phone": "0571000017",
-          "email": "",
-          "scores": {
-            "motivation": 26,
-            "commitment": 24,
-            "level": 15,
-            "seriousness": 8,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000018",
-          "name": "دانة الدوسري",
-          "universityId": "44020018",
-          "major": "وسائط متعددة",
-          "phone": "0571000018",
+          "id": "tr_1778955504087_acc_018",
+          "name": "طلال محمد المالكي",
+          "universityId": "44000008",
+          "major": "إعلان",
+          "phone": "0564005242",
           "email": "",
           "scores": {
             "motivation": 27,
-            "commitment": 21,
-            "level": 13,
-            "seriousness": 8,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000019",
-          "name": "وفية المالكي",
-          "universityId": "44020019",
-          "major": "رسوم متحركة",
-          "phone": "0541000019",
-          "email": "",
-          "scores": {
-            "motivation": 26,
-            "commitment": 25,
-            "level": 14,
-            "seriousness": 10,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000020",
-          "name": "سلوى الحجيلي",
-          "universityId": "44020020",
-          "major": "تصميم ويب",
-          "phone": "0581000020",
-          "email": "",
-          "scores": {
-            "motivation": 26,
-            "commitment": 24,
-            "level": 15,
-            "seriousness": 10,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000021",
-          "name": "أبرار السحيمي",
-          "universityId": "44020021",
-          "major": "تصميم أزياء",
-          "phone": "0571000021",
-          "email": "",
-          "scores": {
-            "motivation": 28,
             "commitment": 24,
             "level": 14,
-            "seriousness": 8,
-            "technical": 7
+            "seriousness": 7,
+            "technical": 5
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000022",
-          "name": "لمى الخالدي",
-          "universityId": "44020022",
-          "major": "تصميم جرافيك",
-          "phone": "0501000022",
-          "email": "",
-          "scores": {
-            "motivation": 29,
-            "commitment": 24,
-            "level": 13,
-            "seriousness": 10,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000023",
-          "name": "ندى الضويحي",
-          "universityId": "44020023",
-          "major": "إخراج فني",
-          "phone": "0501000023",
-          "email": "",
-          "scores": {
-            "motivation": 26,
-            "commitment": 20,
-            "level": 13,
-            "seriousness": 9,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000024",
-          "name": "جمانة السهلي",
-          "universityId": "44020024",
-          "major": "تصميم أزياء",
-          "phone": "0591000024",
-          "email": "",
-          "scores": {
-            "motivation": 26,
-            "commitment": 24,
-            "level": 13,
-            "seriousness": 10,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000025",
-          "name": "مزنة العتيبي",
-          "universityId": "44020025",
-          "major": "تصميم طباعي",
-          "phone": "0551000025",
+          "id": "tr_1778955504087_acc_019",
+          "name": "جواهر ماجد العتيبي",
+          "universityId": "44000061",
+          "major": "صحافة",
+          "phone": "0559826204",
           "email": "",
           "scores": {
             "motivation": 25,
-            "commitment": 20,
-            "level": 15,
-            "seriousness": 9,
-            "technical": 8
+            "commitment": 18,
+            "level": 12,
+            "seriousness": 8,
+            "technical": 10
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000026",
-          "name": "بلقيس الكناني",
-          "universityId": "44020026",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0501000026",
+          "id": "tr_1778955504087_acc_020",
+          "name": "غيداء سعد السديري",
+          "universityId": "44000058",
+          "major": "علوم حاسب",
+          "phone": "0569232260",
           "email": "",
           "scores": {
-            "motivation": 30,
-            "commitment": 25,
-            "level": 15,
+            "motivation": 22,
+            "commitment": 23,
+            "level": 13,
             "seriousness": 8,
             "technical": 7
           },
@@ -1941,16 +1868,16 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000027",
-          "name": "تغريد العمري",
-          "universityId": "44020027",
-          "major": "تصميم طباعي",
-          "phone": "0551000027",
+          "id": "tr_1778955504087_acc_021",
+          "name": "غيداء ناصر العتيبي",
+          "universityId": "44000037",
+          "major": "صحافة",
+          "phone": "0573375433",
           "email": "",
           "scores": {
-            "motivation": 26,
+            "motivation": 20,
             "commitment": 21,
-            "level": 15,
+            "level": 13,
             "seriousness": 9,
             "technical": 7
           },
@@ -1959,53 +1886,71 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000028",
-          "name": "صبا السهلي",
-          "universityId": "44020028",
-          "major": "تصميم تفاعلي",
-          "phone": "0591000028",
+          "id": "tr_1778955504088_acc_022",
+          "name": "مشاري فيصل الخالدي",
+          "universityId": "44000019",
+          "major": "إعلان",
+          "phone": "0586850142",
           "email": "",
           "scores": {
-            "motivation": 26,
-            "commitment": 20,
-            "level": 14,
-            "seriousness": 10,
-            "technical": 7
+            "motivation": 29,
+            "commitment": 22,
+            "level": 10,
+            "seriousness": 7,
+            "technical": 9
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000029",
-          "name": "طيف العتيبي",
-          "universityId": "44020029",
+          "id": "tr_1778955504088_acc_023",
+          "name": "مها ناصر الحازمي",
+          "universityId": "44000066",
           "major": "تصميم داخلي",
-          "phone": "0531000029",
+          "phone": "0516934060",
           "email": "",
           "scores": {
-            "motivation": 26,
+            "motivation": 28,
             "commitment": 21,
-            "level": 14,
-            "seriousness": 9,
-            "technical": 8
+            "level": 12,
+            "seriousness": 10,
+            "technical": 5
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000030",
-          "name": "أبرار الغامدي",
-          "universityId": "44020030",
-          "major": "تصميم ويب",
-          "phone": "0541000030",
+          "id": "tr_1778955504088_acc_024",
+          "name": "عثمان سعد الناصري",
+          "universityId": "44000020",
+          "major": "هندسة برمجيات",
+          "phone": "0514846564",
           "email": "",
           "scores": {
             "motivation": 28,
             "commitment": 20,
-            "level": 14,
-            "seriousness": 9,
+            "level": 11,
+            "seriousness": 10,
+            "technical": 10
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_025",
+          "name": "زياد فهد الرشيدي",
+          "universityId": "44000021",
+          "major": "تصميم أزياء",
+          "phone": "0594680443",
+          "email": "",
+          "scores": {
+            "motivation": 26,
+            "commitment": 23,
+            "level": 13,
+            "seriousness": 10,
             "technical": 8
           },
           "confirmed": true,
@@ -2013,16 +1958,106 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000031",
-          "name": "جوهرة الصعيدي",
-          "universityId": "44020031",
-          "major": "تسويق رقمي",
-          "phone": "0591000031",
+          "id": "tr_1778955504088_acc_026",
+          "name": "وليد بدر المطيري",
+          "universityId": "44000043",
+          "major": "إعلان",
+          "phone": "0514895134",
+          "email": "",
+          "scores": {
+            "motivation": 23,
+            "commitment": 21,
+            "level": 11,
+            "seriousness": 7,
+            "technical": 5
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_027",
+          "name": "رفيف تركي القحطاني",
+          "universityId": "44000031",
+          "major": "فنون بصرية",
+          "phone": "0569367632",
+          "email": "",
+          "scores": {
+            "motivation": 30,
+            "commitment": 18,
+            "level": 10,
+            "seriousness": 10,
+            "technical": 6
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_028",
+          "name": "صفية بدر الشهري",
+          "universityId": "44000063",
+          "major": "تصميم داخلي",
+          "phone": "0531727889",
+          "email": "",
+          "scores": {
+            "motivation": 25,
+            "commitment": 25,
+            "level": 14,
+            "seriousness": 10,
+            "technical": 9
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_029",
+          "name": "العنود فهد الصبحي",
+          "universityId": "44000059",
+          "major": "فنون بصرية",
+          "phone": "0543487347",
+          "email": "",
+          "scores": {
+            "motivation": 21,
+            "commitment": 22,
+            "level": 11,
+            "seriousness": 9,
+            "technical": 7
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_030",
+          "name": "عبير عبدالله البلوي",
+          "universityId": "44000067",
+          "major": "تسويق",
+          "phone": "0536231665",
+          "email": "",
+          "scores": {
+            "motivation": 28,
+            "commitment": 25,
+            "level": 13,
+            "seriousness": 7,
+            "technical": 6
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_031",
+          "name": "عبدالعزيز نواف العقيلي",
+          "universityId": "44000044",
+          "major": "تصوير",
+          "phone": "0509670546",
           "email": "",
           "scores": {
             "motivation": 26,
             "commitment": 21,
-            "level": 14,
+            "level": 13,
             "seriousness": 8,
             "technical": 7
           },
@@ -2031,70 +2066,70 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000032",
-          "name": "جنى الغبيشي",
-          "universityId": "44020032",
-          "major": "تصميم تفاعلي",
-          "phone": "0571000032",
-          "email": "",
-          "scores": {
-            "motivation": 25,
-            "commitment": 20,
-            "level": 15,
-            "seriousness": 9,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000033",
-          "name": "ثريا الأحمدي",
-          "universityId": "44020033",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0541000033",
-          "email": "",
-          "scores": {
-            "motivation": 25,
-            "commitment": 24,
-            "level": 13,
-            "seriousness": 10,
-            "technical": 7
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000034",
-          "name": "عبير الثقفي",
-          "universityId": "44020034",
-          "major": "تصميم طباعي",
-          "phone": "0551000034",
+          "id": "tr_1778955504088_acc_032",
+          "name": "ريم ناصر العمري",
+          "universityId": "44000064",
+          "major": "إعلان",
+          "phone": "0562729806",
           "email": "",
           "scores": {
             "motivation": 29,
-            "commitment": 24,
-            "level": 13,
+            "commitment": 18,
+            "level": 10,
             "seriousness": 10,
-            "technical": 7
+            "technical": 6
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000035",
-          "name": "أحلام الثقفي",
-          "universityId": "44020035",
-          "major": "تصميم أزياء",
-          "phone": "0571000035",
+          "id": "tr_1778955504088_acc_033",
+          "name": "سعد محمد الشمري",
+          "universityId": "44000003",
+          "major": "إدارة أعمال",
+          "phone": "0553755646",
           "email": "",
           "scores": {
-            "motivation": 27,
-            "commitment": 21,
+            "motivation": 24,
+            "commitment": 19,
+            "level": 13,
+            "seriousness": 7,
+            "technical": 10
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_034",
+          "name": "هيفاء خالد القحطاني",
+          "universityId": "44000017",
+          "major": "وسائط متعددة",
+          "phone": "0500330923",
+          "email": "",
+          "scores": {
+            "motivation": 22,
+            "commitment": 25,
             "level": 15,
+            "seriousness": 7,
+            "technical": 9
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_035",
+          "name": "نواف فهد الشمري",
+          "universityId": "44000060",
+          "major": "وسائط متعددة",
+          "phone": "0552991241",
+          "email": "",
+          "scores": {
+            "motivation": 29,
+            "commitment": 18,
+            "level": 12,
             "seriousness": 10,
             "technical": 8
           },
@@ -2103,17 +2138,53 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000036",
-          "name": "شوق الطلحي",
-          "universityId": "44020036",
-          "major": "وسائط متعددة",
-          "phone": "0541000036",
+          "id": "tr_1778955504088_acc_036",
+          "name": "ناصر عبدالله العقيلي",
+          "universityId": "44000023",
+          "major": "تصوير",
+          "phone": "0531491905",
+          "email": "",
+          "scores": {
+            "motivation": 28,
+            "commitment": 24,
+            "level": 15,
+            "seriousness": 9,
+            "technical": 5
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_037",
+          "name": "نوف محمد المحمدي",
+          "universityId": "44000040",
+          "major": "صحافة",
+          "phone": "0571657262",
+          "email": "",
+          "scores": {
+            "motivation": 28,
+            "commitment": 22,
+            "level": 14,
+            "seriousness": 10,
+            "technical": 8
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_038",
+          "name": "كوثر فيصل الزايدي",
+          "universityId": "44000025",
+          "major": "صحافة",
+          "phone": "0531473799",
           "email": "",
           "scores": {
             "motivation": 30,
-            "commitment": 25,
-            "level": 14,
-            "seriousness": 9,
+            "commitment": 24,
+            "level": 12,
+            "seriousness": 7,
             "technical": 8
           },
           "confirmed": true,
@@ -2121,16 +2192,16 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000037",
-          "name": "سارة الكناني",
-          "universityId": "44020037",
-          "major": "تصميم منتجات",
-          "phone": "0531000037",
+          "id": "tr_1778955504088_acc_039",
+          "name": "سعد بدر السبيعي",
+          "universityId": "44000006",
+          "major": "هندسة برمجيات",
+          "phone": "0545494808",
           "email": "",
           "scores": {
-            "motivation": 25,
-            "commitment": 24,
-            "level": 13,
+            "motivation": 23,
+            "commitment": 19,
+            "level": 11,
             "seriousness": 10,
             "technical": 8
           },
@@ -2139,15 +2210,15 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000038",
-          "name": "حلا المالكي",
-          "universityId": "44020038",
-          "major": "إخراج فني",
-          "phone": "0551000038",
+          "id": "tr_1778955504088_acc_040",
+          "name": "رهف فهد الصبحي",
+          "universityId": "44000007",
+          "major": "إعلان",
+          "phone": "0577014363",
           "email": "",
           "scores": {
-            "motivation": 27,
-            "commitment": 22,
+            "motivation": 24,
+            "commitment": 23,
             "level": 13,
             "seriousness": 9,
             "technical": 8
@@ -2157,34 +2228,70 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000039",
-          "name": "سارة السحيمي",
-          "universityId": "44020039",
+          "id": "tr_1778955504088_acc_041",
+          "name": "هشام سعد الخالدي",
+          "universityId": "44000047",
+          "major": "تصوير",
+          "phone": "0574443135",
+          "email": "",
+          "scores": {
+            "motivation": 21,
+            "commitment": 20,
+            "level": 11,
+            "seriousness": 8,
+            "technical": 10
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_042",
+          "name": "كوثر عبدالعزيز الرفاعي",
+          "universityId": "44000072",
+          "major": "تصميم أزياء",
+          "phone": "0541343524",
+          "email": "",
+          "scores": {
+            "motivation": 20,
+            "commitment": 20,
+            "level": 12,
+            "seriousness": 7,
+            "technical": 5
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_043",
+          "name": "لمى سلطان الزبيدي",
+          "universityId": "44000010",
           "major": "إعلام رقمي",
-          "phone": "0561000039",
+          "phone": "0509477752",
           "email": "",
           "scores": {
-            "motivation": 30,
-            "commitment": 20,
+            "motivation": 20,
+            "commitment": 22,
             "level": 13,
-            "seriousness": 9,
-            "technical": 7
+            "seriousness": 7,
+            "technical": 5
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000040",
-          "name": "قوت البقمي",
-          "universityId": "44020040",
-          "major": "تصميم داخلي",
-          "phone": "0561000040",
+          "id": "tr_1778955504088_acc_044",
+          "name": "هند تركي الشهري",
+          "universityId": "44000050",
+          "major": "تسويق",
+          "phone": "0529413186",
           "email": "",
           "scores": {
-            "motivation": 27,
-            "commitment": 24,
-            "level": 13,
+            "motivation": 29,
+            "commitment": 21,
+            "level": 14,
             "seriousness": 10,
             "technical": 8
           },
@@ -2193,17 +2300,35 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000041",
-          "name": "شوق النفيعي",
-          "universityId": "44020041",
-          "major": "رسوم متحركة",
-          "phone": "0591000041",
+          "id": "tr_1778955504088_acc_045",
+          "name": "تركي عبدالرحمن العقيلي",
+          "universityId": "44000022",
+          "major": "إدارة أعمال",
+          "phone": "0549909133",
           "email": "",
           "scores": {
-            "motivation": 27,
-            "commitment": 20,
-            "level": 13,
-            "seriousness": 10,
+            "motivation": 24,
+            "commitment": 19,
+            "level": 11,
+            "seriousness": 8,
+            "technical": 6
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_046",
+          "name": "العنود محمد المحمدي",
+          "universityId": "44000065",
+          "major": "فنون بصرية",
+          "phone": "0597403447",
+          "email": "",
+          "scores": {
+            "motivation": 21,
+            "commitment": 21,
+            "level": 12,
+            "seriousness": 8,
             "technical": 8
           },
           "confirmed": true,
@@ -2211,125 +2336,71 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600000042",
-          "name": "غلا العتيبي",
-          "universityId": "44020042",
-          "major": "تسويق رقمي",
-          "phone": "0571000042",
+          "id": "tr_1778955504088_acc_047",
+          "name": "دانة سلطان الحربي",
+          "universityId": "44000056",
+          "major": "علوم حاسب",
+          "phone": "0542102499",
           "email": "",
           "scores": {
-            "motivation": 26,
+            "motivation": 24,
             "commitment": 25,
-            "level": 14,
-            "seriousness": 8,
-            "technical": 8
+            "level": 10,
+            "seriousness": 10,
+            "technical": 10
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000043",
-          "name": "حياة البقمي",
-          "universityId": "44020043",
-          "major": "هندسة بصرية",
-          "phone": "0501000043",
+          "id": "tr_1778955504088_acc_048",
+          "name": "أسماء فيصل الصاعدي",
+          "universityId": "44000011",
+          "major": "تصميم داخلي",
+          "phone": "0577190659",
           "email": "",
           "scores": {
-            "motivation": 25,
-            "commitment": 20,
+            "motivation": 24,
+            "commitment": 18,
+            "level": 10,
+            "seriousness": 8,
+            "technical": 10
+          },
+          "confirmed": true,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_acc_049",
+          "name": "ياسر تركي الغامدي",
+          "universityId": "44000001",
+          "major": "وسائط متعددة",
+          "phone": "0549027874",
+          "email": "",
+          "scores": {
+            "motivation": 22,
+            "commitment": 24,
             "level": 15,
-            "seriousness": 8,
-            "technical": 7
+            "seriousness": 10,
+            "technical": 5
           },
           "confirmed": true,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600000044",
-          "name": "أحلام البقمي",
-          "universityId": "44020044",
-          "major": "تصميم تفاعلي",
-          "phone": "0541000044",
+          "id": "tr_1778955504088_acc_050",
+          "name": "بدور سعد الزايدي",
+          "universityId": "44000073",
+          "major": "إعلان",
+          "phone": "0512567468",
           "email": "",
           "scores": {
-            "motivation": 28,
-            "commitment": 21,
-            "level": 13,
+            "motivation": 20,
+            "commitment": 25,
+            "level": 10,
             "seriousness": 9,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000045",
-          "name": "رقية المطيري",
-          "universityId": "44020045",
-          "major": "تصميم منتجات",
-          "phone": "0551000045",
-          "email": "",
-          "scores": {
-            "motivation": 30,
-            "commitment": 20,
-            "level": 14,
-            "seriousness": 10,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000046",
-          "name": "جمانة الزهراني",
-          "universityId": "44020046",
-          "major": "تصميم طباعي",
-          "phone": "0541000046",
-          "email": "",
-          "scores": {
-            "motivation": 28,
-            "commitment": 20,
-            "level": 13,
-            "seriousness": 10,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000047",
-          "name": "رهام السهلي",
-          "universityId": "44020047",
-          "major": "تصميم أزياء",
-          "phone": "0541000047",
-          "email": "",
-          "scores": {
-            "motivation": 30,
-            "commitment": 20,
-            "level": 14,
-            "seriousness": 8,
-            "technical": 8
-          },
-          "confirmed": true,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600000048",
-          "name": "ميس الكناني",
-          "universityId": "44020048",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0571000048",
-          "email": "",
-          "scores": {
-            "motivation": 27,
-            "commitment": 21,
-            "level": 13,
-            "seriousness": 8,
             "technical": 7
           },
           "confirmed": true,
@@ -2339,215 +2410,53 @@
       ],
       "waitlist": [
         {
-          "id": "tr_1779600001000",
-          "name": "إسراء القحطاني",
-          "universityId": "44021000",
-          "major": "إعلام رقمي",
-          "phone": "0531001000",
-          "email": "",
-          "scores": {
-            "motivation": 24,
-            "commitment": 18,
-            "level": 14,
-            "seriousness": 8,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001001",
-          "name": "دلال السلمي",
-          "universityId": "44021001",
-          "major": "تصميم داخلي",
-          "phone": "0571001001",
-          "email": "",
-          "scores": {
-            "motivation": 26,
-            "commitment": 21,
-            "level": 14,
-            "seriousness": 6,
-            "technical": 6
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001002",
-          "name": "زينب الشهري",
-          "universityId": "44021002",
-          "major": "تصميم طباعي",
-          "phone": "0581001002",
-          "email": "",
-          "scores": {
-            "motivation": 20,
-            "commitment": 21,
-            "level": 14,
-            "seriousness": 7,
-            "technical": 6
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001003",
-          "name": "رغد السحيمي",
-          "universityId": "44021003",
-          "major": "تصميم ويب",
-          "phone": "0571001003",
-          "email": "",
-          "scores": {
-            "motivation": 25,
-            "commitment": 22,
-            "level": 10,
-            "seriousness": 8,
-            "technical": 7
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001004",
-          "name": "بدرية الحازمي",
-          "universityId": "44021004",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0581001004",
-          "email": "",
-          "scores": {
-            "motivation": 24,
-            "commitment": 21,
-            "level": 11,
-            "seriousness": 7,
-            "technical": 6
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001005",
-          "name": "سما الخميس",
-          "universityId": "44021005",
-          "major": "تصميم داخلي",
-          "phone": "0561001005",
-          "email": "",
-          "scores": {
-            "motivation": 26,
-            "commitment": 21,
-            "level": 10,
-            "seriousness": 8,
-            "technical": 6
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001006",
-          "name": "خلود الجعيد",
-          "universityId": "44021006",
-          "major": "تصميم ألعاب",
-          "phone": "0571001006",
-          "email": "",
-          "scores": {
-            "motivation": 27,
-            "commitment": 20,
-            "level": 13,
-            "seriousness": 7,
-            "technical": 7
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001007",
-          "name": "زهور السحيمي",
-          "universityId": "44021007",
-          "major": "تصميم أزياء",
-          "phone": "0531001007",
-          "email": "",
-          "scores": {
-            "motivation": 24,
-            "commitment": 21,
-            "level": 14,
-            "seriousness": 8,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001008",
-          "name": "نوال السبيعي",
-          "universityId": "44021008",
-          "major": "وسائط متعددة",
-          "phone": "0551001008",
+          "id": "tr_1778955504088_wait_001",
+          "name": "أسماء عبدالرحمن الصاعدي",
+          "universityId": "44000038",
+          "major": "صحافة",
+          "phone": "0508760385",
           "email": "",
           "scores": {
             "motivation": 22,
-            "commitment": 17,
-            "level": 10,
-            "seriousness": 7,
-            "technical": 6
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001010",
-          "name": "رنا القاسم",
-          "universityId": "44021010",
-          "major": "تسويق رقمي",
-          "phone": "0581001010",
-          "email": "",
-          "scores": {
-            "motivation": 23,
-            "commitment": 18,
-            "level": 14,
-            "seriousness": 9,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001011",
-          "name": "رهام الدوسري",
-          "universityId": "44021011",
-          "major": "إخراج فني",
-          "phone": "0591001011",
-          "email": "",
-          "scores": {
-            "motivation": 22,
-            "commitment": 23,
-            "level": 13,
-            "seriousness": 8,
-            "technical": 6
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600001013",
-          "name": "غصون القاسم",
-          "universityId": "44021013",
-          "major": "تصميم ويب",
-          "phone": "0591001013",
-          "email": "",
-          "scores": {
-            "motivation": 23,
             "commitment": 19,
-            "level": 13,
+            "level": 8,
             "seriousness": 6,
+            "technical": 5
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_002",
+          "name": "فاطمة بدر الزبيدي",
+          "universityId": "44000074",
+          "major": "إعلام رقمي",
+          "phone": "0509324808",
+          "email": "",
+          "scores": {
+            "motivation": 21,
+            "commitment": 13,
+            "level": 9,
+            "seriousness": 5,
+            "technical": 6
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_003",
+          "name": "بندر عبدالرحمن الحربي",
+          "universityId": "44000078",
+          "major": "فنون بصرية",
+          "phone": "0548467737",
+          "email": "",
+          "scores": {
+            "motivation": 17,
+            "commitment": 18,
+            "level": 9,
+            "seriousness": 9,
             "technical": 7
           },
           "confirmed": false,
@@ -2555,16 +2464,16 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600001015",
-          "name": "لجين الصعيدي",
-          "universityId": "44021015",
-          "major": "تسويق رقمي",
-          "phone": "0541001015",
+          "id": "tr_1778955504088_wait_004",
+          "name": "فيصل عبدالرحمن القحطاني",
+          "universityId": "44000027",
+          "major": "تقنية معلومات",
+          "phone": "0565840449",
           "email": "",
           "scores": {
-            "motivation": 23,
-            "commitment": 17,
-            "level": 13,
+            "motivation": 22,
+            "commitment": 14,
+            "level": 11,
             "seriousness": 9,
             "technical": 6
           },
@@ -2573,36 +2482,198 @@
           "notes": ""
         },
         {
-          "id": "tr_1779600001016",
-          "name": "فايزة العتيبي",
-          "universityId": "44021016",
-          "major": "تصميم جرافيك",
-          "phone": "0501001016",
+          "id": "tr_1778955504088_wait_005",
+          "name": "غاية عبدالعزيز الفهيد",
+          "universityId": "44000035",
+          "major": "إدارة أعمال",
+          "phone": "0575339636",
           "email": "",
           "scores": {
-            "motivation": 23,
-            "commitment": 23,
+            "motivation": 15,
+            "commitment": 17,
             "level": 13,
-            "seriousness": 9,
-            "technical": 7
+            "seriousness": 8,
+            "technical": 8
           },
           "confirmed": false,
           "withdrawn": false,
           "notes": ""
         },
         {
-          "id": "tr_1779600001017",
-          "name": "وحيدة الصبحي",
-          "universityId": "44021017",
-          "major": "تسويق رقمي",
-          "phone": "0591001017",
+          "id": "tr_1778955504088_wait_006",
+          "name": "عبدالعزيز ناصر الحربي",
+          "universityId": "44000045",
+          "major": "فنون بصرية",
+          "phone": "0502895171",
+          "email": "",
+          "scores": {
+            "motivation": 22,
+            "commitment": 12,
+            "level": 13,
+            "seriousness": 6,
+            "technical": 6
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_007",
+          "name": "فيصل عبدالله الصبحي",
+          "universityId": "44000042",
+          "major": "وسائط متعددة",
+          "phone": "0545961586",
           "email": "",
           "scores": {
             "motivation": 20,
             "commitment": 19,
             "level": 12,
-            "seriousness": 9,
+            "seriousness": 5,
+            "technical": 7
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_008",
+          "name": "فاطمة خالد المالكي",
+          "universityId": "44000046",
+          "major": "إدارة أعمال",
+          "phone": "0511724005",
+          "email": "",
+          "scores": {
+            "motivation": 15,
+            "commitment": 16,
+            "level": 10,
+            "seriousness": 7,
             "technical": 6
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_009",
+          "name": "صفية ناصر الفايز",
+          "universityId": "44000013",
+          "major": "إعلان",
+          "phone": "0522219693",
+          "email": "",
+          "scores": {
+            "motivation": 22,
+            "commitment": 14,
+            "level": 9,
+            "seriousness": 8,
+            "technical": 8
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_010",
+          "name": "شوق سلطان الزهراني",
+          "universityId": "44000076",
+          "major": "علوم حاسب",
+          "phone": "0574821759",
+          "email": "",
+          "scores": {
+            "motivation": 19,
+            "commitment": 18,
+            "level": 13,
+            "seriousness": 7,
+            "technical": 6
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_011",
+          "name": "ناصر ناصر الصبحي",
+          "universityId": "44000002",
+          "major": "إعلام رقمي",
+          "phone": "0536959440",
+          "email": "",
+          "scores": {
+            "motivation": 21,
+            "commitment": 16,
+            "level": 8,
+            "seriousness": 9,
+            "technical": 8
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_012",
+          "name": "عبدالله نواف الحازمي",
+          "universityId": "44000039",
+          "major": "تصوير",
+          "phone": "0574395339",
+          "email": "",
+          "scores": {
+            "motivation": 19,
+            "commitment": 14,
+            "level": 13,
+            "seriousness": 5,
+            "technical": 8
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_013",
+          "name": "ليان عبدالعزيز الثبيتي",
+          "universityId": "44000033",
+          "major": "تصميم جرافيكي",
+          "phone": "0595214562",
+          "email": "",
+          "scores": {
+            "motivation": 18,
+            "commitment": 14,
+            "level": 12,
+            "seriousness": 7,
+            "technical": 7
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_014",
+          "name": "غادة عبدالرحمن المطيري",
+          "universityId": "44000030",
+          "major": "تقنية معلومات",
+          "phone": "0574517123",
+          "email": "",
+          "scores": {
+            "motivation": 21,
+            "commitment": 20,
+            "level": 10,
+            "seriousness": 5,
+            "technical": 6
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": ""
+        },
+        {
+          "id": "tr_1778955504088_wait_015",
+          "name": "عبير عبدالله اللحياني",
+          "universityId": "44000028",
+          "major": "هندسة برمجيات",
+          "phone": "0549651370",
+          "email": "",
+          "scores": {
+            "motivation": 20,
+            "commitment": 15,
+            "level": 13,
+            "seriousness": 5,
+            "technical": 8
           },
           "confirmed": false,
           "withdrawn": false,
@@ -2611,1804 +2682,251 @@
       ],
       "rejected": [
         {
-          "id": "tr_1779600002000",
-          "name": "عفاف الحجيلي",
-          "universityId": "44022000",
-          "major": "تصميم جرافيك",
-          "phone": "0551002000",
+          "id": "tr_1778955504088_rej_001",
+          "name": "عثمان فهد الفيفي",
+          "universityId": "44000071",
+          "major": "إعلان",
+          "phone": "0561200471",
           "email": "",
           "scores": {
-            "motivation": 15,
-            "commitment": 8,
-            "level": 7,
-            "seriousness": 5,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002001",
-          "name": "هدى الخالدي",
-          "universityId": "44022001",
-          "major": "تسويق رقمي",
-          "phone": "0581002001",
-          "email": "",
-          "scores": {
-            "motivation": 19,
-            "commitment": 7,
-            "level": 10,
-            "seriousness": 3,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002002",
-          "name": "هيا الطلحي",
-          "universityId": "44022002",
-          "major": "فنون بصرية",
-          "phone": "0501002002",
-          "email": "",
-          "scores": {
-            "motivation": 9,
-            "commitment": 15,
-            "level": 9,
-            "seriousness": 3,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002003",
-          "name": "روان الرشيدي",
-          "universityId": "44022003",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0581002003",
-          "email": "",
-          "scores": {
-            "motivation": 13,
-            "commitment": 8,
-            "level": 10,
-            "seriousness": 4,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002004",
-          "name": "فجر الفايدي",
-          "universityId": "44022004",
-          "major": "تسويق رقمي",
-          "phone": "0581002004",
-          "email": "",
-          "scores": {
-            "motivation": 12,
-            "commitment": 18,
-            "level": 4,
-            "seriousness": 5,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002005",
-          "name": "تالا السلمي",
-          "universityId": "44022005",
-          "major": "تصميم داخلي",
-          "phone": "0551002005",
-          "email": "",
-          "scores": {
-            "motivation": 18,
+            "motivation": 6,
             "commitment": 6,
-            "level": 3,
+            "level": 6,
             "seriousness": 2,
+            "technical": 4
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": "",
+          "rejectionReason": "تخصص غير ذي صلة بالمعسكر"
+        },
+        {
+          "id": "tr_1778955504088_rej_002",
+          "name": "عبير ناصر العقيلي",
+          "universityId": "44000077",
+          "major": "تصوير",
+          "phone": "0526179640",
+          "email": "",
+          "scores": {
+            "motivation": 10,
+            "commitment": 6,
+            "level": 5,
+            "seriousness": 4,
             "technical": 2
           },
           "confirmed": false,
           "withdrawn": false,
-          "notes": ""
+          "notes": "",
+          "rejectionReason": "تعذّر التواصل لإكمال الفرز"
         },
         {
-          "id": "tr_1779600002006",
-          "name": "جود الخميس",
-          "universityId": "44022006",
-          "major": "تصميم داخلي",
-          "phone": "0541002006",
+          "id": "tr_1778955504088_rej_003",
+          "name": "وعد ماجد الخالدي",
+          "universityId": "44000005",
+          "major": "تصميم جرافيكي",
+          "phone": "0564317139",
+          "email": "",
+          "scores": {
+            "motivation": 5,
+            "commitment": 3,
+            "level": 8,
+            "seriousness": 3,
+            "technical": 2
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": "",
+          "rejectionReason": "غير مستوفٍ لشروط المعسكر الأساسية"
+        },
+        {
+          "id": "tr_1778955504088_rej_004",
+          "name": "ناصر عبدالله السديري",
+          "universityId": "44000055",
+          "major": "علاقات عامة",
+          "phone": "0593352904",
+          "email": "",
+          "scores": {
+            "motivation": 7,
+            "commitment": 5,
+            "level": 6,
+            "seriousness": 3,
+            "technical": 2
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": "",
+          "rejectionReason": "عدم اكتمال البيانات في طلب التسجيل"
+        },
+        {
+          "id": "tr_1778955504088_rej_005",
+          "name": "محمد أحمد الزهراني",
+          "universityId": "44000012",
+          "major": "هندسة برمجيات",
+          "phone": "0539502402",
           "email": "",
           "scores": {
             "motivation": 11,
-            "commitment": 7,
-            "level": 10,
-            "seriousness": 7,
-            "technical": 1
+            "commitment": 11,
+            "level": 2,
+            "seriousness": 1,
+            "technical": 4
           },
           "confirmed": false,
           "withdrawn": false,
-          "notes": ""
+          "notes": "",
+          "rejectionReason": "تخصص غير ذي صلة بالمعسكر"
         },
         {
-          "id": "tr_1779600002007",
-          "name": "فايزة الصعيدي",
-          "universityId": "44022007",
-          "major": "إعلام رقمي",
-          "phone": "0561002007",
+          "id": "tr_1778955504088_rej_006",
+          "name": "وليد تركي الدوسري",
+          "universityId": "44000070",
+          "major": "فنون بصرية",
+          "phone": "0583908470",
           "email": "",
           "scores": {
-            "motivation": 20,
+            "motivation": 5,
             "commitment": 10,
-            "level": 5,
-            "seriousness": 6,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002008",
-          "name": "ديم الجهني",
-          "universityId": "44022008",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0531002008",
-          "email": "",
-          "scores": {
-            "motivation": 17,
-            "commitment": 5,
-            "level": 7,
-            "seriousness": 6,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002009",
-          "name": "مرام المالكي",
-          "universityId": "44022009",
-          "major": "إعلام رقمي",
-          "phone": "0551002009",
-          "email": "",
-          "scores": {
-            "motivation": 9,
-            "commitment": 16,
-            "level": 7,
-            "seriousness": 7,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002010",
-          "name": "مريم الشهري",
-          "universityId": "44022010",
-          "major": "تصميم تطبيقات",
-          "phone": "0571002010",
-          "email": "",
-          "scores": {
-            "motivation": 16,
-            "commitment": 11,
             "level": 8,
-            "seriousness": 2,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002011",
-          "name": "لينا العتيبي",
-          "universityId": "44022011",
-          "major": "تصميم منتجات",
-          "phone": "0591002011",
-          "email": "",
-          "scores": {
-            "motivation": 9,
-            "commitment": 11,
-            "level": 8,
-            "seriousness": 7,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002012",
-          "name": "دلال الشمري",
-          "universityId": "44022012",
-          "major": "تصميم طباعي",
-          "phone": "0561002012",
-          "email": "",
-          "scores": {
-            "motivation": 17,
-            "commitment": 17,
-            "level": 11,
-            "seriousness": 5,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002013",
-          "name": "صفية الحازمي",
-          "universityId": "44022013",
-          "major": "أنيميشن ثلاثي",
-          "phone": "0551002013",
-          "email": "",
-          "scores": {
-            "motivation": 21,
-            "commitment": 6,
-            "level": 7,
-            "seriousness": 5,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002014",
-          "name": "نادية الخميس",
-          "universityId": "44022014",
-          "major": "تصميم ألعاب",
-          "phone": "0581002014",
-          "email": "",
-          "scores": {
-            "motivation": 13,
-            "commitment": 5,
-            "level": 10,
             "seriousness": 4,
-            "technical": 2
+            "technical": 4
           },
           "confirmed": false,
           "withdrawn": false,
-          "notes": ""
+          "notes": "",
+          "rejectionReason": "عدم اجتياز الحد الأدنى لمعايير التقييم"
         },
         {
-          "id": "tr_1779600002015",
-          "name": "وفاء السلمي",
-          "universityId": "44022015",
-          "major": "إخراج فني",
-          "phone": "0561002015",
+          "id": "tr_1778955504088_rej_007",
+          "name": "حصة عبدالله المالكي",
+          "universityId": "44000014",
+          "major": "هندسة برمجيات",
+          "phone": "0592124998",
           "email": "",
           "scores": {
-            "motivation": 13,
-            "commitment": 9,
-            "level": 7,
-            "seriousness": 6,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002016",
-          "name": "غدير الأحمدي",
-          "universityId": "44022016",
-          "major": "تصميم ألعاب",
-          "phone": "0551002016",
-          "email": "",
-          "scores": {
-            "motivation": 19,
-            "commitment": 11,
-            "level": 10,
-            "seriousness": 6,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002017",
-          "name": "أثير القرني",
-          "universityId": "44022017",
-          "major": "تصميم ويب",
-          "phone": "0501002017",
-          "email": "",
-          "scores": {
-            "motivation": 9,
+            "motivation": 10,
             "commitment": 9,
             "level": 6,
             "seriousness": 5,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002018",
-          "name": "ابتسام الصاعدي",
-          "universityId": "44022018",
-          "major": "تصميم تطبيقات",
-          "phone": "0591002018",
-          "email": "",
-          "scores": {
-            "motivation": 16,
-            "commitment": 13,
-            "level": 8,
-            "seriousness": 5,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002019",
-          "name": "حنان الصعيدي",
-          "universityId": "44022019",
-          "major": "تصميم داخلي",
-          "phone": "0591002019",
-          "email": "",
-          "scores": {
-            "motivation": 12,
-            "commitment": 9,
-            "level": 7,
-            "seriousness": 3,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002020",
-          "name": "هاجر الدوسري",
-          "universityId": "44022020",
-          "major": "إخراج فني",
-          "phone": "0541002020",
-          "email": "",
-          "scores": {
-            "motivation": 11,
-            "commitment": 8,
-            "level": 10,
-            "seriousness": 4,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002021",
-          "name": "قمر العمري",
-          "universityId": "44022021",
-          "major": "تصميم جرافيك",
-          "phone": "0551002021",
-          "email": "",
-          "scores": {
-            "motivation": 12,
-            "commitment": 8,
-            "level": 8,
-            "seriousness": 3,
             "technical": 3
           },
           "confirmed": false,
           "withdrawn": false,
-          "notes": ""
+          "notes": "",
+          "rejectionReason": "تخصص غير ذي صلة بالمعسكر"
         },
         {
-          "id": "tr_1779600002022",
-          "name": "شريفة الحربي",
-          "universityId": "44022022",
-          "major": "تصميم ألعاب",
-          "phone": "0561002022",
+          "id": "tr_1778955504088_rej_008",
+          "name": "تهاني عبدالله العسيري",
+          "universityId": "44000018",
+          "major": "صحافة",
+          "phone": "0583673657",
+          "email": "",
+          "scores": {
+            "motivation": 11,
+            "commitment": 9,
+            "level": 7,
+            "seriousness": 1,
+            "technical": 3
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": "",
+          "rejectionReason": "تخصص غير ذي صلة بالمعسكر"
+        },
+        {
+          "id": "tr_1778955504088_rej_009",
+          "name": "شوق سعد الحربي",
+          "universityId": "44000029",
+          "major": "إعلان",
+          "phone": "0571111615",
+          "email": "",
+          "scores": {
+            "motivation": 7,
+            "commitment": 11,
+            "level": 2,
+            "seriousness": 5,
+            "technical": 3
+          },
+          "confirmed": false,
+          "withdrawn": false,
+          "notes": "",
+          "rejectionReason": "عدم اجتياز الحد الأدنى لمعايير التقييم"
+        },
+        {
+          "id": "tr_1778955504088_rej_010",
+          "name": "هيفاء عبدالرحمن الصاعدي",
+          "universityId": "44000032",
+          "major": "صحافة",
+          "phone": "0504945198",
           "email": "",
           "scores": {
             "motivation": 8,
             "commitment": 5,
-            "level": 11,
+            "level": 7,
             "seriousness": 4,
             "technical": 2
           },
           "confirmed": false,
           "withdrawn": false,
-          "notes": ""
+          "notes": "",
+          "rejectionReason": "تعذّر التواصل لإكمال الفرز"
         },
         {
-          "id": "tr_1779600002023",
-          "name": "سلمى العتيبي",
-          "universityId": "44022023",
-          "major": "تصميم تفاعلي",
-          "phone": "0561002023",
+          "id": "tr_1778955504089_rej_011",
+          "name": "غاية سعد العسيري",
+          "universityId": "44000036",
+          "major": "وسائط متعددة",
+          "phone": "0549368998",
           "email": "",
           "scores": {
-            "motivation": 15,
-            "commitment": 12,
-            "level": 10,
-            "seriousness": 4,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002024",
-          "name": "ريما اللحياني",
-          "universityId": "44022024",
-          "major": "تصميم تفاعلي",
-          "phone": "0531002024",
-          "email": "",
-          "scores": {
-            "motivation": 21,
-            "commitment": 6,
-            "level": 9,
-            "seriousness": 5,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002025",
-          "name": "بشرى البقمي",
-          "universityId": "44022025",
-          "major": "تصميم أزياء",
-          "phone": "0561002025",
-          "email": "",
-          "scores": {
-            "motivation": 9,
-            "commitment": 8,
-            "level": 4,
-            "seriousness": 6,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002026",
-          "name": "خولة الصبحي",
-          "universityId": "44022026",
-          "major": "تصميم ويب",
-          "phone": "0591002026",
-          "email": "",
-          "scores": {
-            "motivation": 22,
+            "motivation": 5,
             "commitment": 12,
             "level": 7,
-            "seriousness": 6,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002028",
-          "name": "أمل الزهراني",
-          "universityId": "44022028",
-          "major": "تصميم طباعي",
-          "phone": "0551002028",
-          "email": "",
-          "scores": {
-            "motivation": 10,
-            "commitment": 13,
-            "level": 4,
             "seriousness": 3,
             "technical": 1
           },
           "confirmed": false,
           "withdrawn": false,
-          "notes": ""
+          "notes": "",
+          "rejectionReason": "غير مستوفٍ لشروط المعسكر الأساسية"
         },
         {
-          "id": "tr_1779600002029",
-          "name": "شمس الصعيدي",
-          "universityId": "44022029",
-          "major": "أنيميشن ثلاثي",
-          "phone": "0591002029",
+          "id": "tr_1778955504089_rej_012",
+          "name": "ليان نواف العمري",
+          "universityId": "44000004",
+          "major": "هندسة برمجيات",
+          "phone": "0502296120",
           "email": "",
           "scores": {
-            "motivation": 12,
-            "commitment": 5,
-            "level": 6,
+            "motivation": 6,
+            "commitment": 11,
+            "level": 3,
             "seriousness": 4,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002030",
-          "name": "ندى الشريف",
-          "universityId": "44022030",
-          "major": "تسويق رقمي",
-          "phone": "0551002030",
-          "email": "",
-          "scores": {
-            "motivation": 22,
-            "commitment": 9,
-            "level": 6,
-            "seriousness": 5,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002031",
-          "name": "إيلاف الزبيدي",
-          "universityId": "44022031",
-          "major": "فنون بصرية",
-          "phone": "0541002031",
-          "email": "",
-          "scores": {
-            "motivation": 22,
-            "commitment": 9,
-            "level": 5,
-            "seriousness": 2,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002032",
-          "name": "نجلاء الحجيلي",
-          "universityId": "44022032",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0561002032",
-          "email": "",
-          "scores": {
-            "motivation": 15,
-            "commitment": 6,
-            "level": 10,
-            "seriousness": 7,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002033",
-          "name": "عذاري النفيعي",
-          "universityId": "44022033",
-          "major": "رسوم متحركة",
-          "phone": "0591002033",
-          "email": "",
-          "scores": {
-            "motivation": 15,
-            "commitment": 6,
-            "level": 3,
-            "seriousness": 5,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002034",
-          "name": "هيا الأحمدي",
-          "universityId": "44022034",
-          "major": "تصميم تفاعلي",
-          "phone": "0551002034",
-          "email": "",
-          "scores": {
-            "motivation": 18,
-            "commitment": 18,
-            "level": 3,
-            "seriousness": 7,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002035",
-          "name": "سما اللحياني",
-          "universityId": "44022035",
-          "major": "تصميم ألعاب",
-          "phone": "0591002035",
-          "email": "",
-          "scores": {
-            "motivation": 22,
-            "commitment": 9,
-            "level": 5,
-            "seriousness": 6,
             "technical": 4
           },
           "confirmed": false,
           "withdrawn": false,
-          "notes": ""
+          "notes": "",
+          "rejectionReason": "تخصص غير ذي صلة بالمعسكر"
         },
         {
-          "id": "tr_1779600002036",
-          "name": "إيمان اللحياني",
-          "universityId": "44022036",
-          "major": "فنون بصرية",
-          "phone": "0571002036",
-          "email": "",
-          "scores": {
-            "motivation": 14,
-            "commitment": 10,
-            "level": 8,
-            "seriousness": 7,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002037",
-          "name": "إسراء العتيبي",
-          "universityId": "44022037",
-          "major": "أنيميشن ثلاثي",
-          "phone": "0591002037",
-          "email": "",
-          "scores": {
-            "motivation": 12,
-            "commitment": 15,
-            "level": 9,
-            "seriousness": 6,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002038",
-          "name": "بسمة الحازمي",
-          "universityId": "44022038",
-          "major": "تسويق رقمي",
-          "phone": "0561002038",
-          "email": "",
-          "scores": {
-            "motivation": 13,
-            "commitment": 6,
-            "level": 9,
-            "seriousness": 6,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002039",
-          "name": "غادة العتيبي",
-          "universityId": "44022039",
-          "major": "أنيميشن ثلاثي",
-          "phone": "0501002039",
-          "email": "",
-          "scores": {
-            "motivation": 11,
-            "commitment": 13,
-            "level": 8,
-            "seriousness": 6,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002040",
-          "name": "تالا المطيري",
-          "universityId": "44022040",
-          "major": "إعلام رقمي",
-          "phone": "0561002040",
-          "email": "",
-          "scores": {
-            "motivation": 16,
-            "commitment": 7,
-            "level": 7,
-            "seriousness": 5,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002041",
-          "name": "رهف الرحيلي",
-          "universityId": "44022041",
-          "major": "تسويق رقمي",
-          "phone": "0551002041",
-          "email": "",
-          "scores": {
-            "motivation": 19,
-            "commitment": 7,
-            "level": 7,
-            "seriousness": 6,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002042",
-          "name": "بدرية الأحمدي",
-          "universityId": "44022042",
-          "major": "تصميم ألعاب",
-          "phone": "0551002042",
-          "email": "",
-          "scores": {
-            "motivation": 21,
-            "commitment": 6,
-            "level": 10,
-            "seriousness": 2,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002043",
-          "name": "لؤلؤة النفيعي",
-          "universityId": "44022043",
-          "major": "أنيميشن ثلاثي",
-          "phone": "0561002043",
-          "email": "",
-          "scores": {
-            "motivation": 14,
-            "commitment": 18,
-            "level": 10,
-            "seriousness": 5,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002046",
-          "name": "لمياء الجعيد",
-          "universityId": "44022046",
-          "major": "هندسة بصرية",
-          "phone": "0591002046",
-          "email": "",
-          "scores": {
-            "motivation": 21,
-            "commitment": 7,
-            "level": 10,
-            "seriousness": 6,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002047",
-          "name": "بدور البقمي",
-          "universityId": "44022047",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0581002047",
-          "email": "",
-          "scores": {
-            "motivation": 15,
-            "commitment": 10,
-            "level": 6,
-            "seriousness": 7,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002048",
-          "name": "تسنيم القاسم",
-          "universityId": "44022048",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0581002048",
-          "email": "",
-          "scores": {
-            "motivation": 8,
-            "commitment": 10,
-            "level": 10,
-            "seriousness": 7,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002049",
-          "name": "بشرى المحمدي",
-          "universityId": "44022049",
-          "major": "إعلام رقمي",
-          "phone": "0501002049",
-          "email": "",
-          "scores": {
-            "motivation": 10,
-            "commitment": 13,
-            "level": 8,
-            "seriousness": 2,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002050",
-          "name": "رؤى الكناني",
-          "universityId": "44022050",
+          "id": "tr_1778955504089_rej_013",
+          "name": "وعد فيصل الزايدي",
+          "universityId": "44000015",
           "major": "وسائط متعددة",
-          "phone": "0501002050",
+          "phone": "0599102290",
           "email": "",
           "scores": {
-            "motivation": 19,
+            "motivation": 6,
             "commitment": 7,
-            "level": 9,
-            "seriousness": 7,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002051",
-          "name": "كفى الرشيدي",
-          "universityId": "44022051",
-          "major": "تصميم تطبيقات",
-          "phone": "0571002051",
-          "email": "",
-          "scores": {
-            "motivation": 17,
-            "commitment": 16,
-            "level": 9,
-            "seriousness": 7,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002052",
-          "name": "شريفة الصبحي",
-          "universityId": "44022052",
-          "major": "وسائط متعددة",
-          "phone": "0571002052",
-          "email": "",
-          "scores": {
-            "motivation": 18,
-            "commitment": 16,
-            "level": 10,
-            "seriousness": 6,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002053",
-          "name": "جمانة الرحيلي",
-          "universityId": "44022053",
-          "major": "إعلام رقمي",
-          "phone": "0561002053",
-          "email": "",
-          "scores": {
-            "motivation": 11,
-            "commitment": 16,
-            "level": 4,
-            "seriousness": 5,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002054",
-          "name": "زهرة الزهراني",
-          "universityId": "44022054",
-          "major": "تصميم ويب",
-          "phone": "0561002054",
-          "email": "",
-          "scores": {
-            "motivation": 22,
-            "commitment": 5,
-            "level": 3,
-            "seriousness": 4,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002055",
-          "name": "رقية الصاعدي",
-          "universityId": "44022055",
-          "major": "فنون بصرية",
-          "phone": "0581002055",
-          "email": "",
-          "scores": {
-            "motivation": 10,
-            "commitment": 8,
-            "level": 11,
-            "seriousness": 5,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002056",
-          "name": "زهور الشمري",
-          "universityId": "44022056",
-          "major": "تصميم ألعاب",
-          "phone": "0531002056",
-          "email": "",
-          "scores": {
-            "motivation": 17,
-            "commitment": 18,
-            "level": 9,
-            "seriousness": 6,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002058",
-          "name": "فايزة البلوي",
-          "universityId": "44022058",
-          "major": "تصميم طباعي",
-          "phone": "0541002058",
-          "email": "",
-          "scores": {
-            "motivation": 9,
-            "commitment": 12,
-            "level": 8,
-            "seriousness": 6,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002059",
-          "name": "ريما الكناني",
-          "universityId": "44022059",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0561002059",
-          "email": "",
-          "scores": {
-            "motivation": 11,
-            "commitment": 11,
-            "level": 10,
-            "seriousness": 2,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002060",
-          "name": "هيلة السلمي",
-          "universityId": "44022060",
-          "major": "رسوم متحركة",
-          "phone": "0561002060",
-          "email": "",
-          "scores": {
-            "motivation": 19,
-            "commitment": 9,
-            "level": 3,
-            "seriousness": 7,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002061",
-          "name": "سارة الثقفي",
-          "universityId": "44022061",
-          "major": "هندسة بصرية",
-          "phone": "0501002061",
-          "email": "",
-          "scores": {
-            "motivation": 22,
-            "commitment": 14,
-            "level": 10,
-            "seriousness": 4,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002062",
-          "name": "أروى الرحيلي",
-          "universityId": "44022062",
-          "major": "تصميم تفاعلي",
-          "phone": "0551002062",
-          "email": "",
-          "scores": {
-            "motivation": 17,
-            "commitment": 9,
-            "level": 5,
-            "seriousness": 7,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002063",
-          "name": "نوال القرني",
-          "universityId": "44022063",
-          "major": "تصميم تطبيقات",
-          "phone": "0501002063",
-          "email": "",
-          "scores": {
-            "motivation": 17,
-            "commitment": 10,
-            "level": 5,
-            "seriousness": 2,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002064",
-          "name": "تماضر الشمري",
-          "universityId": "44022064",
-          "major": "إخراج فني",
-          "phone": "0551002064",
-          "email": "",
-          "scores": {
-            "motivation": 10,
-            "commitment": 17,
-            "level": 11,
-            "seriousness": 4,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002065",
-          "name": "عذاري الزهراني",
-          "universityId": "44022065",
-          "major": "إعلام رقمي",
-          "phone": "0561002065",
-          "email": "",
-          "scores": {
-            "motivation": 22,
-            "commitment": 18,
-            "level": 10,
-            "seriousness": 4,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002066",
-          "name": "فايزة المالكي",
-          "universityId": "44022066",
-          "major": "وسائط متعددة",
-          "phone": "0541002066",
-          "email": "",
-          "scores": {
-            "motivation": 20,
-            "commitment": 8,
-            "level": 9,
-            "seriousness": 6,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002067",
-          "name": "وداد العتيبي",
-          "universityId": "44022067",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0561002067",
-          "email": "",
-          "scores": {
-            "motivation": 16,
-            "commitment": 6,
-            "level": 10,
-            "seriousness": 4,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002068",
-          "name": "فاطمة العمري",
-          "universityId": "44022068",
-          "major": "تصميم أزياء",
-          "phone": "0551002068",
-          "email": "",
-          "scores": {
-            "motivation": 15,
-            "commitment": 5,
-            "level": 11,
-            "seriousness": 4,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002069",
-          "name": "لمى الرحيلي",
-          "universityId": "44022069",
-          "major": "إعلام رقمي",
-          "phone": "0591002069",
-          "email": "",
-          "scores": {
-            "motivation": 22,
-            "commitment": 16,
-            "level": 7,
-            "seriousness": 7,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002070",
-          "name": "رزان الشهري",
-          "universityId": "44022070",
-          "major": "تسويق رقمي",
-          "phone": "0501002070",
-          "email": "",
-          "scores": {
-            "motivation": 12,
-            "commitment": 12,
-            "level": 4,
-            "seriousness": 2,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002071",
-          "name": "مريم الصبحي",
-          "universityId": "44022071",
-          "major": "تصميم منتجات",
-          "phone": "0591002071",
-          "email": "",
-          "scores": {
-            "motivation": 13,
-            "commitment": 15,
-            "level": 11,
-            "seriousness": 5,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002072",
-          "name": "تماضر الزبيدي",
-          "universityId": "44022072",
-          "major": "هندسة بصرية",
-          "phone": "0531002072",
-          "email": "",
-          "scores": {
-            "motivation": 21,
-            "commitment": 12,
-            "level": 9,
-            "seriousness": 4,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002073",
-          "name": "آلاء القرني",
-          "universityId": "44022073",
-          "major": "تسويق رقمي",
-          "phone": "0591002073",
-          "email": "",
-          "scores": {
-            "motivation": 11,
-            "commitment": 18,
-            "level": 8,
-            "seriousness": 2,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002074",
-          "name": "رقية الغامدي",
-          "universityId": "44022074",
-          "major": "تصميم داخلي",
-          "phone": "0581002074",
-          "email": "",
-          "scores": {
-            "motivation": 12,
-            "commitment": 8,
-            "level": 4,
-            "seriousness": 5,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002075",
-          "name": "جود الغامدي",
-          "universityId": "44022075",
-          "major": "تصميم داخلي",
-          "phone": "0571002075",
-          "email": "",
-          "scores": {
-            "motivation": 11,
-            "commitment": 7,
-            "level": 6,
-            "seriousness": 2,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002076",
-          "name": "آلاء السبيعي",
-          "universityId": "44022076",
-          "major": "تصميم منتجات",
-          "phone": "0571002076",
-          "email": "",
-          "scores": {
-            "motivation": 20,
-            "commitment": 7,
-            "level": 3,
-            "seriousness": 4,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002077",
-          "name": "طيف الرشيدي",
-          "universityId": "44022077",
-          "major": "هندسة بصرية",
-          "phone": "0541002077",
-          "email": "",
-          "scores": {
-            "motivation": 9,
-            "commitment": 15,
-            "level": 3,
-            "seriousness": 3,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002078",
-          "name": "جمانة الجعيد",
-          "universityId": "44022078",
-          "major": "تصميم طباعي",
-          "phone": "0571002078",
-          "email": "",
-          "scores": {
-            "motivation": 8,
-            "commitment": 7,
-            "level": 7,
-            "seriousness": 2,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002079",
-          "name": "رؤى الدوسري",
-          "universityId": "44022079",
-          "major": "إعلام رقمي",
-          "phone": "0531002079",
-          "email": "",
-          "scores": {
-            "motivation": 15,
-            "commitment": 12,
-            "level": 8,
-            "seriousness": 6,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002080",
-          "name": "شمس النفيعي",
-          "universityId": "44022080",
-          "major": "تصميم جرافيك",
-          "phone": "0551002080",
-          "email": "",
-          "scores": {
-            "motivation": 17,
-            "commitment": 5,
-            "level": 11,
-            "seriousness": 4,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002081",
-          "name": "جنى اللحياني",
-          "universityId": "44022081",
-          "major": "وسائط متعددة",
-          "phone": "0581002081",
-          "email": "",
-          "scores": {
-            "motivation": 14,
-            "commitment": 15,
-            "level": 4,
-            "seriousness": 5,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002082",
-          "name": "أمل الحازمي",
-          "universityId": "44022082",
-          "major": "تسويق رقمي",
-          "phone": "0541002082",
-          "email": "",
-          "scores": {
-            "motivation": 9,
-            "commitment": 7,
-            "level": 7,
-            "seriousness": 6,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002083",
-          "name": "يارا الصبحي",
-          "universityId": "44022083",
-          "major": "تسويق رقمي",
-          "phone": "0561002083",
-          "email": "",
-          "scores": {
-            "motivation": 15,
-            "commitment": 13,
-            "level": 9,
-            "seriousness": 2,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002084",
-          "name": "آلاء الفهيد",
-          "universityId": "44022084",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0591002084",
-          "email": "",
-          "scores": {
-            "motivation": 22,
-            "commitment": 8,
-            "level": 9,
-            "seriousness": 4,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002085",
-          "name": "تماضر العسبلي",
-          "universityId": "44022085",
-          "major": "هندسة بصرية",
-          "phone": "0531002085",
-          "email": "",
-          "scores": {
-            "motivation": 13,
-            "commitment": 11,
-            "level": 8,
-            "seriousness": 7,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002086",
-          "name": "بيان الشريف",
-          "universityId": "44022086",
-          "major": "إعلام رقمي",
-          "phone": "0591002086",
-          "email": "",
-          "scores": {
-            "motivation": 9,
-            "commitment": 6,
-            "level": 4,
-            "seriousness": 2,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002087",
-          "name": "فاطمة الحربي",
-          "universityId": "44022087",
-          "major": "تصميم طباعي",
-          "phone": "0501002087",
-          "email": "",
-          "scores": {
-            "motivation": 17,
-            "commitment": 13,
-            "level": 11,
-            "seriousness": 4,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002088",
-          "name": "حنان السحيمي",
-          "universityId": "44022088",
-          "major": "تصميم ويب",
-          "phone": "0581002088",
-          "email": "",
-          "scores": {
-            "motivation": 21,
-            "commitment": 16,
-            "level": 3,
-            "seriousness": 4,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002089",
-          "name": "حنان العمري",
-          "universityId": "44022089",
-          "major": "هندسة بصرية",
-          "phone": "0551002089",
-          "email": "",
-          "scores": {
-            "motivation": 10,
-            "commitment": 15,
-            "level": 10,
-            "seriousness": 3,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002090",
-          "name": "كاميليا الصاعدي",
-          "universityId": "44022090",
-          "major": "تسويق رقمي",
-          "phone": "0531002090",
-          "email": "",
-          "scores": {
-            "motivation": 20,
-            "commitment": 9,
-            "level": 6,
-            "seriousness": 5,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002091",
-          "name": "هيا الحجيلي",
-          "universityId": "44022091",
-          "major": "تصميم تطبيقات",
-          "phone": "0561002091",
-          "email": "",
-          "scores": {
-            "motivation": 8,
-            "commitment": 7,
-            "level": 7,
-            "seriousness": 7,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002092",
-          "name": "حلا العتيبي",
-          "universityId": "44022092",
-          "major": "تصميم جرافيك",
-          "phone": "0541002092",
-          "email": "",
-          "scores": {
-            "motivation": 21,
-            "commitment": 7,
-            "level": 9,
-            "seriousness": 2,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002093",
-          "name": "إيمان الغبيشي",
-          "universityId": "44022093",
-          "major": "هندسة بصرية",
-          "phone": "0551002093",
-          "email": "",
-          "scores": {
-            "motivation": 14,
-            "commitment": 11,
-            "level": 10,
-            "seriousness": 4,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002094",
-          "name": "نوال العسبلي",
-          "universityId": "44022094",
-          "major": "فنون بصرية",
-          "phone": "0571002094",
-          "email": "",
-          "scores": {
-            "motivation": 20,
-            "commitment": 14,
-            "level": 4,
-            "seriousness": 2,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002095",
-          "name": "روان الشريف",
-          "universityId": "44022095",
-          "major": "أنيميشن ثلاثي",
-          "phone": "0531002095",
-          "email": "",
-          "scores": {
-            "motivation": 12,
-            "commitment": 12,
-            "level": 9,
-            "seriousness": 5,
-            "technical": 5
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002096",
-          "name": "تماضر السهلي",
-          "universityId": "44022096",
-          "major": "إعلام رقمي",
-          "phone": "0551002096",
-          "email": "",
-          "scores": {
-            "motivation": 20,
-            "commitment": 13,
-            "level": 4,
-            "seriousness": 4,
-            "technical": 4
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002097",
-          "name": "قمر الشريف",
-          "universityId": "44022097",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0591002097",
-          "email": "",
-          "scores": {
-            "motivation": 16,
-            "commitment": 15,
-            "level": 7,
-            "seriousness": 2,
-            "technical": 2
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002098",
-          "name": "ميرا العتيبي",
-          "universityId": "44022098",
-          "major": "تصميم تطبيقات",
-          "phone": "0551002098",
-          "email": "",
-          "scores": {
-            "motivation": 12,
-            "commitment": 8,
             "level": 5,
             "seriousness": 4,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002099",
-          "name": "عبير العتيبي",
-          "universityId": "44022099",
-          "major": "تسويق رقمي",
-          "phone": "0591002099",
-          "email": "",
-          "scores": {
-            "motivation": 19,
-            "commitment": 11,
-            "level": 5,
-            "seriousness": 3,
             "technical": 4
           },
           "confirmed": false,
           "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002100",
-          "name": "بثينة النفيعي",
-          "universityId": "44022100",
-          "major": "أنيميشن ثلاثي",
-          "phone": "0571002100",
-          "email": "",
-          "scores": {
-            "motivation": 9,
-            "commitment": 11,
-            "level": 3,
-            "seriousness": 5,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002101",
-          "name": "ولاء الحازمي",
-          "universityId": "44022101",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0581002101",
-          "email": "",
-          "scores": {
-            "motivation": 17,
-            "commitment": 11,
-            "level": 9,
-            "seriousness": 4,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002102",
-          "name": "جود الحازمي",
-          "universityId": "44022102",
-          "major": "وسائط متعددة",
-          "phone": "0541002102",
-          "email": "",
-          "scores": {
-            "motivation": 20,
-            "commitment": 14,
-            "level": 10,
-            "seriousness": 7,
-            "technical": 3
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
-        },
-        {
-          "id": "tr_1779600002103",
-          "name": "دلال العمري",
-          "universityId": "44022103",
-          "major": "تصوير فوتوغرافي",
-          "phone": "0551002103",
-          "email": "",
-          "scores": {
-            "motivation": 14,
-            "commitment": 14,
-            "level": 9,
-            "seriousness": 6,
-            "technical": 1
-          },
-          "confirmed": false,
-          "withdrawn": false,
-          "notes": ""
+          "notes": "",
+          "rejectionReason": "تكرار التسجيل بأكثر من حساب"
         }
       ]
     },
@@ -4621,601 +3139,6 @@
     "daily": {
       "activeDay": 0,
       "logs": []
-    },
-    "shiftcore": {
-      "description": "ست ورش عمل تطبيقية مكثفة (يومان لكل ورشة) — جزء أساسي من معسكر المصمم المحترف Prime 2026",
-      "workshops": [
-        {
-          "id": "w1",
-          "name": "إعادة بناء التصاميم",
-          "days": 2,
-          "trainer": "أثير محمد الزهراني",
-          "ready": false,
-          "axes": "- مراجعة تصاميم موجودة وتحديد نقاط الضعف\n- مبادئ إعادة التصميم (Redesign Principles)\n- تطبيق التحسينات على مستوى التكوين والألوان والخطوط\n- استخدام الذكاء الاصطناعي لتسريع عملية إعادة البناء\n- مقارنة \"قبل وبعد\" بأسلوب احترافي",
-          "outputs": "- إعادة تصميم 3 نماذج (بوست، شعار، بطاقة عمل)\n- ملف Before & After احترافي للعرض في Portfolio",
-          "requiredApps": "- Adobe Photoshop + Illustrator\n- Adobe Firefly",
-          "sourceLink": "",
-          "assistant_trainer": "عبير آل واكد",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ]
-        },
-        {
-          "id": "w2",
-          "name": "تصميم الهويات البصرية",
-          "days": 2,
-          "trainer": "أثير محمد الزهراني",
-          "ready": false,
-          "axes": "- أساسيات بناء الهوية البصرية الكاملة\n- استراتيجية اختيار الألوان والخطوط للعلامة التجارية\n- تصميم Logo + Sub-logos + Color Palette + Typography\n- إعداد دليل الاستخدام البصري (Brand Guidelines)\n- توليد المفاهيم الأولية بالذكاء الاصطناعي",
-          "outputs": "- هوية بصرية كاملة لعلامة تجارية وهمية\n- دليل Brand Guidelines احترافي (PDF)",
-          "requiredApps": "- Adobe Illustrator + InDesign\n- Adobe Firefly + Midjourney",
-          "sourceLink": "",
-          "assistant_trainer": "في العوفي",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ]
-        },
-        {
-          "id": "w3",
-          "name": "المطبوعات والتغليف",
-          "days": 2,
-          "trainer": "أثير محمد الزهراني",
-          "ready": false,
-          "axes": "- مبادئ تصميم المطبوعات التجارية\n- تصميم العبوات (Packaging) والتغليف\n- التعامل مع الأبعاد والـ Bleed والـ Die-cut\n- تصميم Mockups احترافية للعرض\n- استخدام الذكاء الاصطناعي لتوليد المنتجات والـ Mockups",
-          "outputs": "- تصميم عبوة منتج (Packaging) كاملة\n- تصميم 3 مطبوعات تجارية (فلاير، بروشور، ملصق)\n- Mockups احترافية للعرض",
-          "requiredApps": "- Adobe Illustrator + Photoshop + Dimension\n- Adobe Firefly",
-          "sourceLink": "",
-          "assistant_trainer": "عبير آل واكد",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ]
-        },
-        {
-          "id": "w4",
-          "name": "إعداد التقارير الاحترافية",
-          "days": 2,
-          "trainer": "أثير محمد الزهراني",
-          "ready": false,
-          "axes": "- مبادئ تصميم التقارير الاحترافية\n- إعداد Master Pages وأنظمة الشبكات (Grids)\n- تصميم الـ Infographics لعرض البيانات\n- إنتاج تقرير سنوي / تقرير أداء / كتاب إلكتروني\n- استخدام الذكاء الاصطناعي لتسريع التنسيق",
-          "outputs": "- تقرير احترافي كامل (15 صفحة على الأقل)\n- ملف PDF تفاعلي جاهز للنشر",
-          "requiredApps": "- Adobe InDesign + Illustrator\n- ChatGPT لتلخيص المحتوى",
-          "sourceLink": "",
-          "assistant_trainer": "في العوفي",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-03.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-04.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-05.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-06.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-07.jpg"
-              ]
-            },
-            {
-              "day": 2,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-03.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-04.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-05.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-06.jpg"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "w5",
-          "name": "إدارة حسابات السوشال ميديا",
-          "days": 2,
-          "trainer": "أثير محمد الزهراني",
-          "ready": false,
-          "axes": "- إعداد استراتيجية محتوى متكاملة\n- بناء Content Calendar شهري\n- تصميم Templates موحدة للحساب\n- جدولة المحتوى وقياس الأداء\n- استخدام الذكاء الاصطناعي لتوليد الأفكار والكابشن",
-          "outputs": "- استراتيجية محتوى لمدة 30 يوم\n- Content Calendar جاهز للتنفيذ\n- 10 تصاميم Templates قابلة لإعادة الاستخدام",
-          "requiredApps": "- Adobe Express أو Canva\n- Buffer أو Meta Business Suite\n- ChatGPT",
-          "sourceLink": "",
-          "assistant_trainer": "عبير آل واكد",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ]
-        },
-        {
-          "id": "w6",
-          "name": "تطوير ملف الأعمال",
-          "days": 2,
-          "trainer": "أثير محمد الزهراني",
-          "ready": false,
-          "axes": "- مبادئ بناء Portfolio احترافي\n- اختيار الأعمال الأفضل وعرضها\n- كتابة Case Studies احترافية للمشاريع\n- التصدير للنشر على Behance / Dribbble / Personal Website\n- استخدام الذكاء الاصطناعي لكتابة الـ Descriptions",
-          "outputs": "- Portfolio كامل يحتوي على 5 مشاريع على الأقل\n- حساب نشط على Behance أو Dribbble\n- ملف PDF Portfolio للإرسال مع طلبات التوظيف",
-          "requiredApps": "- Adobe Portfolio أو Behance\n- Adobe InDesign لتصميم PDF Portfolio\n- ChatGPT",
-          "sourceLink": "",
-          "assistant_trainer": "في العوفي",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ]
-        }
-      ]
     }
-  },
-  "communications": {
-    "channels": [
-      {
-        "name": "البريد الإلكتروني الرسمي",
-        "value": "",
-        "directLink": "",
-        "active": false
-      },
-      {
-        "name": "رقم الواتساب الرسمي",
-        "value": "",
-        "directLink": "",
-        "active": false
-      },
-      {
-        "name": "حساب انستقرام",
-        "value": "",
-        "directLink": "",
-        "active": false
-      },
-      {
-        "name": "حساب X/تويتر",
-        "value": "",
-        "directLink": "",
-        "active": false
-      }
-    ],
-    "responsibleTeam": "",
-    "avgResponseTime": 0,
-    "templates": [
-      {
-        "id": "t1",
-        "name": "رد على استفسار التسجيل",
-        "body": "",
-        "ready": false
-      },
-      {
-        "id": "t2",
-        "name": "تأكيد استلام الطلب",
-        "body": "",
-        "ready": false
-      },
-      {
-        "id": "t3",
-        "name": "إشعار القبول",
-        "body": "",
-        "ready": false
-      },
-      {
-        "id": "t4",
-        "name": "إشعار قائمة الانتظار",
-        "body": "",
-        "ready": false
-      },
-      {
-        "id": "t5",
-        "name": "إشعار الاعتذار",
-        "body": "",
-        "ready": false
-      },
-      {
-        "id": "t6",
-        "name": "تذكير بتأكيد الحضور",
-        "body": "",
-        "ready": false
-      },
-      {
-        "id": "t7",
-        "name": "تذكير بموعد المعسكر",
-        "body": "",
-        "ready": false
-      }
-    ],
-    "faqs": []
-  },
-  "curriculum": {
-    "courses": [
-      {
-        "id": "c1",
-        "name": "فوتوشوب",
-        "days": 4,
-        "axes": "",
-        "outputs": "",
-        "requiredApps": "",
-        "sourceLink": "",
-        "practiceImages": [
-          {
-            "day": 1,
-            "images": [
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-01.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-02.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-03.jpg"
-            ]
-          },
-          {
-            "day": 2,
-            "images": [
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-04.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-05.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-06.jpg"
-            ]
-          },
-          {
-            "day": 3,
-            "images": [
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-07.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-08.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-09.jpg"
-            ]
-          },
-          {
-            "day": 4,
-            "images": [
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-10.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-11.jpg"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "c2",
-        "name": "إليستريتور",
-        "days": 4,
-        "axes": "",
-        "outputs": "",
-        "requiredApps": "",
-        "sourceLink": "",
-        "practiceImages": [
-          {
-            "day": 1,
-            "images": [
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-01.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-02.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-03.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-04.jpg"
-            ]
-          },
-          {
-            "day": 2,
-            "images": [
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-01.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-02.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-03.jpg"
-            ]
-          },
-          {
-            "day": 3,
-            "images": [
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-01.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-02.jpg"
-            ]
-          },
-          {
-            "day": 4,
-            "images": []
-          }
-        ]
-      },
-      {
-        "id": "c3",
-        "name": "إنديزاين",
-        "days": 3,
-        "axes": "",
-        "outputs": "",
-        "requiredApps": "",
-        "sourceLink": "",
-        "practiceImages": [
-          {
-            "day": 1,
-            "images": [
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d1-01.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d1-02.jpg"
-            ]
-          },
-          {
-            "day": 2,
-            "images": [
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d2-01.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d2-02.jpg"
-            ]
-          },
-          {
-            "day": 3,
-            "images": []
-          }
-        ]
-      },
-      {
-        "id": "c4",
-        "name": "موشن جرافيك",
-        "days": 8,
-        "axes": "",
-        "outputs": "",
-        "requiredApps": "",
-        "sourceLink": "",
-        "practiceImages": [
-          {
-            "day": 1,
-            "images": []
-          },
-          {
-            "day": 2,
-            "images": []
-          },
-          {
-            "day": 3,
-            "images": []
-          },
-          {
-            "day": 4,
-            "images": []
-          },
-          {
-            "day": 5,
-            "images": []
-          },
-          {
-            "day": 6,
-            "images": []
-          },
-          {
-            "day": 7,
-            "images": []
-          },
-          {
-            "day": 8,
-            "images": []
-          }
-        ]
-      },
-      {
-        "id": "c5",
-        "name": "التصميم بالجوال",
-        "days": 3,
-        "axes": "",
-        "outputs": "",
-        "requiredApps": "",
-        "sourceLink": "",
-        "practiceImages": [
-          {
-            "day": 1,
-            "images": []
-          },
-          {
-            "day": 2,
-            "images": []
-          },
-          {
-            "day": 3,
-            "images": []
-          }
-        ]
-      },
-      {
-        "id": "c6",
-        "name": "تصميم الفيديو بالجوال",
-        "days": 3,
-        "axes": "",
-        "outputs": "",
-        "requiredApps": "",
-        "sourceLink": "",
-        "practiceImages": [
-          {
-            "day": 1,
-            "images": []
-          },
-          {
-            "day": 2,
-            "images": []
-          },
-          {
-            "day": 3,
-            "images": []
-          }
-        ]
-      },
-      {
-        "id": "c7",
-        "name": "واجهات المواقع والتطبيقات",
-        "days": 12,
-        "axes": "",
-        "outputs": "",
-        "requiredApps": "",
-        "sourceLink": "",
-        "practiceImages": [
-          {
-            "day": 1,
-            "images": []
-          },
-          {
-            "day": 2,
-            "images": []
-          },
-          {
-            "day": 3,
-            "images": []
-          },
-          {
-            "day": 4,
-            "images": []
-          },
-          {
-            "day": 5,
-            "images": []
-          },
-          {
-            "day": 6,
-            "images": []
-          },
-          {
-            "day": 7,
-            "images": []
-          },
-          {
-            "day": 8,
-            "images": []
-          },
-          {
-            "day": 9,
-            "images": []
-          },
-          {
-            "day": 10,
-            "images": []
-          },
-          {
-            "day": 11,
-            "images": []
-          },
-          {
-            "day": 12,
-            "images": []
-          }
-        ]
-      },
-      {
-        "id": "c8",
-        "name": "الذكاء الاصطناعي للمصممين",
-        "days": 2,
-        "axes": "",
-        "outputs": "",
-        "requiredApps": "",
-        "sourceLink": "",
-        "practiceImages": [
-          {
-            "day": 1,
-            "images": []
-          },
-          {
-            "day": 2,
-            "images": []
-          }
-        ]
-      },
-      {
-        "id": "c9",
-        "name": "كتابة المحتوى الإبداعي",
-        "days": 2,
-        "axes": "",
-        "outputs": "",
-        "requiredApps": "",
-        "sourceLink": "",
-        "practiceImages": [
-          {
-            "day": 1,
-            "images": []
-          },
-          {
-            "day": 2,
-            "images": []
-          }
-        ]
-      },
-      {
-        "id": "c10",
-        "name": "التسويق الإلكتروني وصناعة المحتوى",
-        "days": 3,
-        "axes": "",
-        "outputs": "",
-        "requiredApps": "",
-        "sourceLink": "",
-        "practiceImages": [
-          {
-            "day": 1,
-            "images": []
-          },
-          {
-            "day": 2,
-            "images": []
-          },
-          {
-            "day": 3,
-            "images": []
-          }
-        ]
-      }
-    ]
-  },
-  "platform": {
-    "streaming": {
-      "type": "",
-      "displayName": "",
-      "directLink": "",
-      "username": "",
-      "password": "",
-      "accessCode": "",
-      "notes": ""
-    },
-    "streamingOther": "",
-    "communication": {
-      "type": "",
-      "displayName": "",
-      "directLink": "",
-      "username": "",
-      "password": "",
-      "accessCode": "",
-      "notes": ""
-    },
-    "communicationOther": "",
-    "delivery": {
-      "type": "",
-      "displayName": "",
-      "directLink": "",
-      "username": "",
-      "password": "",
-      "accessCode": "",
-      "notes": ""
-    },
-    "deliveryOther": "",
-    "attendance": {
-      "type": "",
-      "displayName": "",
-      "directLink": "",
-      "username": "",
-      "password": "",
-      "accessCode": "",
-      "notes": ""
-    },
-    "followup": "",
-    "backupPlan": "",
-    "testingDone": false,
-    "notes": ""
   }
 }
