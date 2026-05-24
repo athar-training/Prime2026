@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "published": "2026-05-24T11:27:00.000Z",
+  "published": "2026-05-24T11:51:55.000Z",
   "brand": "مركز أثر المطور للتدريب",
   "project": "معسكر المصمم المحترف Prime 2026",
   "data": {
@@ -4705,11 +4705,26 @@
           "practiceImages": [
             {
               "day": 1,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-03.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-04.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-05.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-06.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d1-07.jpg"
+              ]
             },
             {
               "day": 2,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-03.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-04.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-05.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d2-06.jpg"
+              ]
             }
           ]
         },
