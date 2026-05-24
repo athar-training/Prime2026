@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "published": "2026-05-24T13:07:16.535Z",
+  "published": "2026-05-24T15:31:29.000Z",
   "brand": "مركز أثر المطور للتدريب",
   "project": "معسكر المصمم المحترف Prime 2026",
   "data": {
@@ -677,20 +677,39 @@
             {
               "day": 1,
               "images": [
-                "https://drive.google.com/uc?export=view&id=1jPVoJoIC9QRnQ4wKYtOizbV2v2tQQhtq"
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d1-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d1-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d1-03.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d1-04.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d1-05.jpg"
               ]
             },
             {
               "day": 2,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d2-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d2-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d2-03.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d2-04.jpg"
+              ]
             },
             {
               "day": 3,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d3-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d3-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d3-03.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d3-04.jpg"
+              ]
             },
             {
               "day": 4,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d4-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d4-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d4-03.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-d4-04.jpg"
+              ]
             }
           ]
         },
@@ -705,19 +724,36 @@
           "practiceImages": [
             {
               "day": 1,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-03.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-04.jpg"
+              ]
             },
             {
               "day": 2,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-03.jpg"
+              ]
             },
             {
               "day": 3,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-03.jpg"
+              ]
             },
             {
               "day": 4,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d4-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d4-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d4-03.jpg"
+              ]
             }
           ]
         },
@@ -732,15 +768,22 @@
           "practiceImages": [
             {
               "day": 1,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d1-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d1-02.jpg"
+              ]
             },
             {
               "day": 2,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d2-01.jpg"
+              ]
             },
             {
               "day": 3,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d3-01.jpg"
+              ]
             }
           ]
         },
@@ -767,15 +810,25 @@
           "practiceImages": [
             {
               "day": 1,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/mobile-design/md-d1-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/mobile-design/md-d1-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/mobile-design/md-d1-03.jpg"
+              ]
             },
             {
               "day": 2,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/mobile-design/md-d2-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/mobile-design/md-d2-02.jpg"
+              ]
             },
             {
               "day": 3,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/mobile-design/md-d3-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/mobile-design/md-d3-02.jpg"
+              ]
             }
           ]
         },
@@ -1008,7 +1061,11 @@
           "practiceImages": [
             {
               "day": 1,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/branding/br-d1-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/branding/br-d1-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/branding/br-d1-03.jpg"
+              ]
             },
             {
               "day": 2,
@@ -1057,6 +1114,13 @@
             {
               "day": 2,
               "images": []
+            },
+            {
+              "day": 3,
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d3-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/reports/rep-d3-02.jpg"
+              ]
             }
           ]
         },
