@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "published": "2026-05-24T02:39:45.000Z",
+  "published": "2026-05-24T11:27:00.000Z",
   "brand": "مركز أثر المطور للتدريب",
   "project": "معسكر المصمم المحترف Prime 2026",
   "data": {
@@ -757,11 +757,17 @@
           "practiceImages": [
             {
               "day": 1,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d1-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d1-02.jpg"
+              ]
             },
             {
               "day": 2,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d2-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d2-02.jpg"
+              ]
             },
             {
               "day": 3,
@@ -4923,11 +4929,17 @@
         "practiceImages": [
           {
             "day": 1,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d1-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d1-02.jpg"
+            ]
           },
           {
             "day": 2,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d2-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/indesign/id-d2-02.jpg"
+            ]
           },
           {
             "day": 3,
