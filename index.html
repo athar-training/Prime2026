@@ -1229,9 +1229,15 @@ const DEFAULT_DATA = {
     ]
   },
 
-  // 15. المكتبة - المحتوى التدريبي
+  // 04. مكتبة المحتوى - بنية جديدة بأربعة أقسام
   library: {
-    items: []
+    practiceImages: {
+      c1:[],c2:[],c3:[],c4:[],c5:[],c6:[],c7:[],c8:[],c9:[],c10:[],
+      w1:[],w2:[],w3:[],w4:[],w5:[],w6:[]
+    },
+    studentWorks: [],
+    resources: [],
+    mediaContent: []
   },
 
   // 16. قاعدة بيانات المتدربين (تُملأ بعد الفرز)
@@ -1289,7 +1295,7 @@ const DEFAULT_DATA = {
 
   // 20. الأرشيف
   archive: {
-    meetings:[]
+    decisions:[]
   },
 
   // 21. لوحة اليوم
@@ -1460,9 +1466,22 @@ function calcSectionProgress(sectionKey){
     case 'prerequisites':
       return calcProgress(STATE.prerequisites.items, i => i.ready);
     
-    case 'library':
-      if(STATE.library.items.length === 0) return 0;
-      return calcProgress(STATE.library.items, i => i.status === 'ready');
+    case 'library': {
+      // حساب جاهزية بناء على وجود محتوى في الأقسام الأربعة
+      const lib = STATE.library || {};
+      const piCount = lib.practiceImages ? Object.values(lib.practiceImages).reduce((s,arr) => s + (Array.isArray(arr) ? arr.length : 0), 0) : 0;
+      const swCount = (lib.studentWorks || []).length;
+      const rsCount = (lib.resources || []).length;
+      const mcCount = (lib.mediaContent || []).length;
+      const total = piCount + swCount + rsCount + mcCount;
+      // كل قسم له هدف تقريبي يساوي مرحلة جاهزية
+      let pct = 0;
+      if(piCount > 0) pct += 25;
+      if(swCount > 0) pct += 25;
+      if(rsCount > 0) pct += 25;
+      if(mcCount > 0) pct += 25;
+      return pct;
+    }
     
     case 'trainees':
       if(STATE.trainees.list.length === 0) return 0;
@@ -1782,26 +1801,26 @@ function formatNumber(num){
 
 const SECTIONS = [
   {key:'overview', num:'00', name:'نظرة عامة', icon:'home'},
-  {key:'identity', num:'01', name:'الهوية البصرية', icon:'palette'},
+  {key:'daily', num:'01', name:'لوحة اليوم', icon:'clock'},
   {key:'timeline', num:'02', name:'الإطار الزمني', icon:'calendar'},
-  {key:'registration', num:'03', name:'منصة التسجيل', icon:'form'},
-  {key:'team', num:'04', name:'فريق العمل', icon:'users'},
-  {key:'trainers', num:'05', name:'المدربون', icon:'teacher'},
-  {key:'curriculum', num:'06', name:'المنهج التفصيلي', icon:'book'},
-  {key:'platform', num:'07', name:'المنصة التقنية', icon:'monitor'},
-  {key:'hackathon', num:'08', name:'الهاكاثون والختام', icon:'trophy'},
-  {key:'certificates', num:'09', name:'الشهادات', icon:'award'},
-  {key:'marketing', num:'10', name:'الخطة التسويقية', icon:'megaphone'},
-  {key:'kpis', num:'11', name:'مؤشرات النجاح', icon:'chart'},
-  {key:'risks', num:'12', name:'إدارة المخاطر', icon:'shield'},
-  {key:'prerequisites', num:'13', name:'متطلبات المتدربين', icon:'check'},
-  {key:'library', num:'14', name:'مكتبة المحتوى', icon:'archive'},
-  {key:'trainees', num:'15', name:'قاعدة المتدربين', icon:'database'},
-  {key:'communications', num:'16', name:'التواصل', icon:'chat'},
-  {key:'legal', num:'17', name:'التوثيق القانوني', icon:'document'},
-  {key:'evaluation', num:'18', name:'التقييم', icon:'star'},
-  {key:'archive', num:'19', name:'أرشيف القرارات', icon:'folder'},
-  {key:'daily', num:'20', name:'لوحة اليوم', icon:'clock'}
+  {key:'curriculum', num:'03', name:'المنهج التفصيلي', icon:'book'},
+  {key:'library', num:'04', name:'مكتبة المحتوى', icon:'archive'},
+  {key:'marketing', num:'05', name:'الخطة التسويقية', icon:'megaphone'},
+  {key:'registration', num:'06', name:'منصة التسجيل', icon:'form'},
+  {key:'trainers', num:'07', name:'المدربون', icon:'teacher'},
+  {key:'team', num:'08', name:'فريق العمل', icon:'users'},
+  {key:'identity', num:'09', name:'الهوية البصرية', icon:'palette'},
+  {key:'platform', num:'10', name:'المنصة التقنية', icon:'monitor'},
+  {key:'prerequisites', num:'11', name:'متطلبات المتدربين', icon:'check'},
+  {key:'hackathon', num:'12', name:'الهاكاثون والختام', icon:'trophy'},
+  {key:'certificates', num:'13', name:'الشهادات', icon:'award'},
+  {key:'kpis', num:'14', name:'مؤشرات النجاح', icon:'chart'},
+  {key:'risks', num:'15', name:'إدارة المخاطر', icon:'shield'},
+  {key:'trainees', num:'16', name:'قاعدة المتدربين', icon:'database'},
+  {key:'communications', num:'17', name:'التواصل', icon:'chat'},
+  {key:'legal', num:'18', name:'التوثيق القانوني', icon:'document'},
+  {key:'evaluation', num:'19', name:'التقييم', icon:'star'},
+  {key:'archive', num:'20', name:'أرشيف القرارات', icon:'folder'}
 ];
 
 let CURRENT_SECTION = 'overview';
@@ -5675,95 +5694,418 @@ function editPrerequisite(id){
 // ============================================================
 
 function renderLibrary(){
-  const items = STATE.library.items;
-  const progress = calcSectionProgress('library');
-  const ready = items.filter(i => i.status === 'ready').length;
+  // ضمان وجود البنية الجديدة
+  if(!STATE.library || !STATE.library.practiceImages){
+    STATE.library = {
+      practiceImages: {},
+      studentWorks: [],
+      resources: [],
+      mediaContent: []
+    };
+  }
   
+  const lib = STATE.library;
+  const activeTab = window._libraryTab || 'practiceImages';
+  
+  // عدّ المحتوى
+  const piCount = Object.values(lib.practiceImages || {}).reduce((s,arr) => s + (Array.isArray(arr) ? arr.length : 0), 0);
+  const swCount = (lib.studentWorks || []).length;
+  const rsCount = (lib.resources || []).length;
+  const mcCount = (lib.mediaContent || []).length;
+  const totalCount = piCount + swCount + rsCount + mcCount;
+  
+  const tabs = [
+    {key:'practiceImages', name:'التطبيقات المنفذة', count:piCount, 
+     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>'},
+    {key:'studentWorks', name:'أعمال المتدربين', count:swCount,
+     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>'},
+    {key:'resources', name:'مصادر المساعدة', count:rsCount,
+     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>'},
+    {key:'mediaContent', name:'المحتوى الإعلامي', count:mcCount,
+     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>'}
+  ];
+  
+  // Header مميز
   let html = `
-    <div class="sec-header">
-      <div class="sec-eyebrow">القسم 15</div>
-      <div class="sec-title">مكتبة المحتوى التدريبي</div>
-      <div class="sec-desc">كل ملفات الدورات: PSD/AI للتمارين، Figma، After Effects، الصور المرخصة، القوالب، أمثلة الأعمال، الفيديوهات التوضيحية. كل ملف مرتبط بدورته في قسم المنهج.</div>
-    </div>
-    
-    <div class="progress-card">
-      <div class="progress-info">
-        <div class="progress-label">${ready} من ${items.length} ملف جاهز</div>
-        <div class="progress-bar-wrap"><div class="progress-bar" style="width:${progress}%"></div></div>
+    <div style="background:linear-gradient(135deg,var(--PD) 0%,var(--PM) 50%,var(--TC) 100%);
+         border-radius:20px;padding:28px 30px;margin-bottom:24px;color:#fff;
+         box-shadow:0 8px 24px rgba(61,26,110,0.25);position:relative;overflow:hidden">
+      <div style="position:absolute;top:-30px;left:-30px;width:120px;height:120px;
+           background:rgba(255,255,255,0.08);border-radius:50%"></div>
+      <div style="position:absolute;bottom:-40px;right:-40px;width:160px;height:160px;
+           background:rgba(255,255,255,0.06);border-radius:50%"></div>
+      <div style="position:relative;z-index:1">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--TC);
+             background:rgba(255,255,255,0.15);padding:5px 12px;border-radius:20px;
+             display:inline-block;margin-bottom:12px">القسم 04</div>
+        <div style="font-size:28px;font-weight:900;margin-bottom:6px;letter-spacing:-0.5px">مكتبة المحتوى</div>
+        <div style="font-size:14px;opacity:0.92;line-height:1.7">المرجع البصري الشامل للمعسكر — تطبيقات الشرح، أعمال المتدربين، مصادر التعلم، والمحتوى الإعلامي</div>
+        <div style="display:flex;gap:18px;margin-top:18px;flex-wrap:wrap">
+          <div style="background:rgba(255,255,255,0.15);padding:8px 14px;border-radius:12px;font-size:13px">
+            <strong style="font-size:18px">${totalCount}</strong> <span style="opacity:0.85">عنصر إجمالي</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.15);padding:8px 14px;border-radius:12px;font-size:13px">
+            <strong style="font-size:18px">4</strong> <span style="opacity:0.85">أقسام رئيسية</span>
+          </div>
+        </div>
       </div>
-      <div class="progress-value">${progress}%</div>
     </div>
     
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
-      <div style="font-size:13px;color:var(--TX2)">إجمالي الملفات: <strong>${items.length}</strong></div>
-      <button class="btn teal" onclick="addLibraryItem()">
-        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        إضافة ملف
-      </button>
+    <div style="display:grid;grid-template-columns:240px 1fr;gap:20px;align-items:start">
+      <!-- Sidebar -->
+      <div style="background:#fff;border-radius:16px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);position:sticky;top:20px">
+        ${tabs.map(t => `
+          <button onclick="switchLibraryTab('${t.key}')" style="
+            width:100%;display:flex;align-items:center;gap:12px;padding:14px 14px;
+            background:${activeTab===t.key?'linear-gradient(135deg,var(--PD),var(--PM))':'transparent'};
+            color:${activeTab===t.key?'#fff':'var(--TX2)'};
+            border:none;border-radius:12px;margin-bottom:4px;cursor:pointer;
+            font-size:13px;font-weight:700;text-align:right;
+            transition:all 0.2s;font-family:inherit">
+            <div style="width:24px;height:24px;flex-shrink:0;color:${activeTab===t.key?'#fff':'var(--PM)'}">${t.icon}</div>
+            <div style="flex:1;text-align:right">${t.name}</div>
+            <div style="background:${activeTab===t.key?'rgba(255,255,255,0.25)':'var(--PL)'};
+                 color:${activeTab===t.key?'#fff':'var(--PD)'};
+                 padding:2px 10px;border-radius:10px;font-size:11px;font-weight:800;min-width:24px;text-align:center">
+              ${t.count}
+            </div>
+          </button>
+        `).join('')}
+      </div>
+      
+      <!-- Content -->
+      <div style="min-width:0">
+  `;
+  
+  if(activeTab === 'practiceImages'){
+    html += renderPracticeImagesSection(lib.practiceImages);
+  } else if(activeTab === 'studentWorks'){
+    html += renderStudentWorksSection(lib.studentWorks);
+  } else if(activeTab === 'resources'){
+    html += renderResourcesSection(lib.resources);
+  } else if(activeTab === 'mediaContent'){
+    html += renderMediaContentSection(lib.mediaContent);
+  }
+  
+  html += `
+      </div>
     </div>
   `;
   
-  if(items.length === 0){
-    html += `
-      <div class="empty">
-        <div class="empty-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 8v13H3V8"/><path d="M1 3h22v5H1z"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+  return html;
+}
+
+function switchLibraryTab(tab){
+  window._libraryTab = tab;
+  renderMainContent();
+}
+
+// قسم 1: التطبيقات المنفذة (في الإندكس - عرض فقط)
+function renderPracticeImagesSection(practiceImages){
+  const courses = STATE.curriculum.courses || [];
+  const workshops = (STATE.shiftcore && STATE.shiftcore.workshops) || [];
+  
+  let html = `
+    <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.04)">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+        <div>
+          <div style="font-size:20px;font-weight:900;color:var(--PD);margin-bottom:4px">التطبيقات المنفذة أثناء الشرح</div>
+          <div style="font-size:13px;color:var(--TX2)">صور التمارين والتطبيقات لكل دورة وورشة</div>
         </div>
-        <div class="empty-title">المكتبة فارغة</div>
-        <div class="empty-desc">ابدأ بإضافة ملفات المحتوى التدريبي لكل دورة. كل دورة تحتاج ملفات تمارين، أمثلة، وقوالب جاهزة.</div>
-        <button class="btn teal" onclick="addLibraryItem()">إضافة أول ملف</button>
+      </div>
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
+  `;
+  
+  const allItems = [
+    ...courses.map(c => ({...c, type:'course', count:(practiceImages[c.id] || []).length})),
+    ...workshops.map(w => ({...w, type:'workshop', count:(practiceImages[w.id] || []).length}))
+  ];
+  
+  allItems.forEach(item => {
+    const isCourse = item.type === 'course';
+    const trainer = isCourse ? STATE.trainers.list.find(t => t.id === item.id) : null;
+    const days = item.days || 2;
+    const hours = isCourse ? (trainer ? trainer.hours : '—') : (item.hours || 10);
+    const hasContent = item.count > 0;
+    
+    const cardBg = isCourse 
+      ? 'linear-gradient(135deg,var(--PL) 0%,#fff 100%)'
+      : 'linear-gradient(135deg,var(--TL) 0%,#fff 100%)';
+    const accent = isCourse ? 'var(--PD)' : 'var(--TC)';
+    const tagBg = isCourse ? 'var(--PD)' : 'var(--TC)';
+    
+    html += `
+      <div onclick="viewPracticeImages('${item.id}','${item.name.replace(/'/g,"\\'")}','${item.type}')" 
+           style="background:${cardBg};border:1.5px solid ${hasContent?accent:'var(--GL)'};
+           border-radius:14px;padding:16px;cursor:pointer;transition:all 0.2s;
+           position:relative;overflow:hidden">
+        <div style="position:absolute;top:8px;left:8px;background:${tagBg};color:#fff;
+             font-size:9px;font-weight:800;padding:3px 8px;border-radius:8px;letter-spacing:0.5px">
+          ${isCourse?'دورة':'ورشة'}
+        </div>
+        <div style="font-size:15px;font-weight:900;color:${accent};margin-top:14px;margin-bottom:6px;line-height:1.4">
+          ${item.name}
+        </div>
+        <div style="font-size:11px;color:var(--TX3);margin-bottom:12px">
+          ${days} أيام · ${hours} ساعة
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px dashed var(--GL)">
+          <div style="font-size:11px;color:var(--TX2)">
+            <strong style="font-size:18px;color:${accent}">${item.count}</strong>
+            <span> تطبيق</span>
+          </div>
+          <div style="font-size:11px;color:${accent};font-weight:700">
+            ${hasContent ? 'عرض الصور ←' : 'فارغ'}
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  
+  html += '</div></div>';
+  return html;
+}
+
+function viewPracticeImages(itemId, itemName, type){
+  const images = (STATE.library.practiceImages && STATE.library.practiceImages[itemId]) || [];
+  
+  if(images.length === 0){
+    showToast('لا توجد صور لهذه الدورة/الورشة بعد', 'info');
+    return;
+  }
+  
+  const body = `
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px">
+      ${images.map((url, idx) => `
+        <a href="${url}" target="_blank" rel="noopener noreferrer" 
+           style="display:block;border:1px solid var(--GL);border-radius:10px;overflow:hidden;text-decoration:none;background:var(--BG)">
+          <img src="${url}" alt="تطبيق ${idx+1}" 
+               style="width:100%;height:140px;object-fit:cover;display:block"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div style="display:none;height:140px;align-items:center;justify-content:center;color:var(--TX3);font-size:11px;flex-direction:column;gap:6px">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>افتح الرابط</span>
+          </div>
+        </a>
+      `).join('')}
+    </div>
+  `;
+  
+  openModal(`${type==='course'?'دورة':'ورشة'}: ${itemName}`, body);
+}
+
+// قسم 2: أعمال المتدربين المتميزين
+function renderStudentWorksSection(works){
+  const courses = STATE.curriculum.courses || [];
+  
+  let html = `
+    <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.04)">
+      <div style="margin-bottom:20px">
+        <div style="font-size:20px;font-weight:900;color:var(--PD);margin-bottom:4px">أعمال المتدربين المتميزين</div>
+        <div style="font-size:13px;color:var(--TX2)">أفضل المشاريع التي أنجزها المتدربون خلال المعسكر</div>
+      </div>
+  `;
+  
+  if(works.length === 0){
+    html += `
+      <div style="text-align:center;padding:50px 20px;color:var(--TX3)">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="margin-bottom:14px;color:var(--PM);opacity:0.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <div style="font-size:15px;font-weight:700;color:var(--TX2);margin-bottom:6px">لا توجد أعمال مضافة بعد</div>
+        <div style="font-size:12px">سيتم عرض أفضل أعمال المتدربين هنا أثناء وبعد المعسكر</div>
       </div>
     `;
   } else {
-    html += `
-      <div class="table-wrap">
-        <div class="table-head"><div class="table-title">الملفات</div></div>
-        <div class="table-scroll">
-          <table>
-            <thead>
-              <tr>
-                <th>الملف</th>
-                <th>الدورة</th>
-                <th>النوع</th>
-                <th>الحالة</th>
-                <th>المسؤول</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-    `;
-    items.forEach(item => {
-      const course = STATE.curriculum.courses.find(c => c.id === item.courseId);
-      const statusTxt = {
-        'pending':'لم يبدأ',
-        'progress':'قيد الإعداد',
-        'review':'قيد المراجعة',
-        'ready':'جاهز'
-      }[item.status] || 'لم يبدأ';
-      const statusClass = {
-        'pending':'pending',
-        'progress':'progress',
-        'review':'progress',
-        'ready':'done'
-      }[item.status] || 'pending';
+    // تجميع حسب الدورة
+    const byCourse = {};
+    works.forEach(w => {
+      const cid = w.courseId || 'other';
+      if(!byCourse[cid]) byCourse[cid] = [];
+      byCourse[cid].push(w);
+    });
+    
+    Object.keys(byCourse).forEach(cid => {
+      const course = courses.find(c => c.id === cid);
+      const courseName = course ? course.name : 'أخرى';
       
       html += `
-        <tr>
-          <td><strong>${item.name}</strong>${item.link ? `<br><a href="${item.link}" target="_blank" style="font-size:10px;color:var(--TC)">عرض</a>` : ''}</td>
-          <td style="font-size:11px">${course ? course.name : '—'}</td>
-          <td>${item.type || '—'}</td>
-          <td><span class="t-status ${statusClass}">${statusTxt}</span></td>
-          <td style="font-size:11px">${item.owner || '—'}</td>
-          <td>
-            <button class="t-action" onclick="editLibraryItem('${item.id}')">تعديل</button>
-            <button class="t-action danger" onclick="deleteLibraryItem('${item.id}')">حذف</button>
-          </td>
-        </tr>
+        <div style="margin-bottom:24px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <div style="width:4px;height:24px;background:var(--PD);border-radius:2px"></div>
+            <div style="font-size:16px;font-weight:800;color:var(--PD)">${courseName}</div>
+            <div style="background:var(--PL);color:var(--PD);padding:2px 10px;border-radius:10px;font-size:11px;font-weight:800">${byCourse[cid].length}</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px">
       `;
+      
+      byCourse[cid].forEach(w => {
+        html += `
+          <div style="background:#fff;border:1px solid var(--GL);border-radius:14px;overflow:hidden;transition:all 0.2s">
+            ${w.imageUrl ? `
+              <div style="height:180px;background:#f5f5f5;overflow:hidden">
+                <img src="${w.imageUrl}" alt="${w.title || ''}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+              </div>
+            ` : `
+              <div style="height:180px;background:linear-gradient(135deg,var(--PL),var(--TL));display:flex;align-items:center;justify-content:center">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--PM)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+            `}
+            <div style="padding:14px">
+              <div style="font-size:14px;font-weight:800;color:var(--PD);margin-bottom:4px;line-height:1.4">${w.title || 'بدون عنوان'}</div>
+              <div style="font-size:11px;color:var(--TC);margin-bottom:8px"><strong>${w.studentName || ''}</strong></div>
+              ${w.description ? `<div style="font-size:11px;color:var(--TX2);line-height:1.6;margin-bottom:10px">${w.description}</div>` : ''}
+              ${w.behanceLink ? `<a href="${w.behanceLink}" target="_blank" rel="noopener noreferrer" style="display:inline-block;font-size:11px;color:var(--TC);font-weight:700;text-decoration:none">عرض على Behance ←</a>` : ''}
+            </div>
+          </div>
+        `;
+      });
+      
+      html += '</div></div>';
     });
-    html += '</tbody></table></div></div>';
   }
   
+  html += '</div>';
+  return html;
+}
+
+// قسم 3: مصادر المساعدة
+function renderResourcesSection(resources){
+  const courses = STATE.curriculum.courses || [];
+  
+  let html = `
+    <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.04)">
+      <div style="margin-bottom:20px">
+        <div style="font-size:20px;font-weight:900;color:var(--PD);margin-bottom:4px">مصادر مساعدة للطلاب</div>
+        <div style="font-size:13px;color:var(--TX2)">كتب، فيديوهات، مواقع، وأدوات تساعد المتدربين على التعلم</div>
+      </div>
+  `;
+  
+  if(resources.length === 0){
+    html += `
+      <div style="text-align:center;padding:50px 20px;color:var(--TX3)">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="margin-bottom:14px;color:var(--PM);opacity:0.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <div style="font-size:15px;font-weight:700;color:var(--TX2);margin-bottom:6px">لا توجد مصادر مضافة بعد</div>
+        <div style="font-size:12px">سيتم عرض المصادر المساعدة لكل دورة هنا</div>
+      </div>
+    `;
+  } else {
+    // تجميع حسب الدورة
+    const byCourse = {};
+    resources.forEach(r => {
+      const cid = r.courseId || 'other';
+      if(!byCourse[cid]) byCourse[cid] = [];
+      byCourse[cid].push(r);
+    });
+    
+    const typeIcons = {
+      'book': '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+      'video': '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>',
+      'website': '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>',
+      'tool': '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
+    };
+    const typeNames = {'book':'كتاب','video':'فيديو','website':'موقع','tool':'أداة'};
+    
+    Object.keys(byCourse).forEach(cid => {
+      const course = courses.find(c => c.id === cid);
+      const courseName = course ? course.name : 'مصادر عامة';
+      
+      html += `
+        <div style="margin-bottom:20px;background:linear-gradient(135deg,var(--PL) 0%,#fff 100%);border-radius:12px;padding:16px;border:1px solid var(--GL)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <div style="width:4px;height:20px;background:var(--PD);border-radius:2px"></div>
+            <div style="font-size:15px;font-weight:800;color:var(--PD)">${courseName}</div>
+            <div style="background:#fff;color:var(--PD);padding:2px 10px;border-radius:10px;font-size:11px;font-weight:800">${byCourse[cid].length}</div>
+          </div>
+          <div style="display:grid;gap:8px">
+      `;
+      
+      byCourse[cid].forEach(r => {
+        const icon = typeIcons[r.type] || typeIcons['website'];
+        const typeName = typeNames[r.type] || 'مصدر';
+        html += `
+          <div style="background:#fff;border:1px solid var(--GL);border-radius:10px;padding:12px;display:flex;gap:12px;align-items:center">
+            <div style="background:var(--TL);color:var(--TC);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              ${icon}
+            </div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:13px;font-weight:700;color:var(--PD);margin-bottom:2px">${r.title || ''}</div>
+              <div style="font-size:11px;color:var(--TX3)">${typeName}${r.description ? ' · '+r.description : ''}</div>
+            </div>
+            ${r.url ? `<a href="${r.url}" target="_blank" rel="noopener noreferrer" style="background:var(--TC);color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-size:11px;font-weight:700;flex-shrink:0">فتح</a>` : ''}
+          </div>
+        `;
+      });
+      
+      html += '</div></div>';
+    });
+  }
+  
+  html += '</div>';
+  return html;
+}
+
+// قسم 4: المحتوى الإعلامي
+function renderMediaContentSection(content){
+  let html = `
+    <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.04)">
+      <div style="margin-bottom:20px">
+        <div style="font-size:20px;font-weight:900;color:var(--PD);margin-bottom:4px">المحتوى الإعلامي</div>
+        <div style="font-size:13px;color:var(--TX2)">منشورات السوشل ميديا وكل التغطية الإعلامية للمعسكر</div>
+      </div>
+  `;
+  
+  if(content.length === 0){
+    html += `
+      <div style="text-align:center;padding:50px 20px;color:var(--TX3)">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="margin-bottom:14px;color:var(--PM);opacity:0.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        <div style="font-size:15px;font-weight:700;color:var(--TX2);margin-bottom:6px">لا يوجد محتوى إعلامي بعد</div>
+        <div style="font-size:12px">سيتم عرض منشورات السوشل ميديا والتغطيات هنا</div>
+      </div>
+    `;
+  } else {
+    const platformColors = {
+      'instagram':'#E1306C', 'tiktok':'#000', 'twitter':'#1DA1F2',
+      'linkedin':'#0077B5', 'snapchat':'#FFFC00', 'youtube':'#FF0000', 'other':'var(--PM)'
+    };
+    const platformNames = {
+      'instagram':'انستقرام','tiktok':'تيك توك','twitter':'إكس',
+      'linkedin':'لينكدإن','snapchat':'سناب شات','youtube':'يوتيوب','other':'أخرى'
+    };
+    
+    html += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px">`;
+    
+    content.forEach(m => {
+      const color = platformColors[m.platform] || platformColors['other'];
+      const name = platformNames[m.platform] || 'منصة';
+      
+      html += `
+        <div style="background:#fff;border:1px solid var(--GL);border-radius:14px;overflow:hidden;transition:all 0.2s">
+          ${m.thumbnail ? `
+            <div style="height:160px;background:#f5f5f5;overflow:hidden;position:relative">
+              <img src="${m.thumbnail}" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+            </div>
+          ` : `
+            <div style="height:160px;background:linear-gradient(135deg,${color}22,${color}44);display:flex;align-items:center;justify-content:center;color:${color}">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+          `}
+          <div style="padding:14px">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
+              <div style="width:8px;height:8px;background:${color};border-radius:50%"></div>
+              <div style="font-size:11px;font-weight:800;color:${color};letter-spacing:0.3px">${name}</div>
+              ${m.date ? `<div style="font-size:10px;color:var(--TX3);margin-right:auto">${m.date}</div>` : ''}
+            </div>
+            ${m.title ? `<div style="font-size:13px;font-weight:700;color:var(--PD);line-height:1.5;margin-bottom:10px">${m.title}</div>` : ''}
+            ${m.url ? `<a href="${m.url}" target="_blank" rel="noopener noreferrer" style="display:inline-block;font-size:11px;color:var(--TC);font-weight:700;text-decoration:none">فتح المنشور ←</a>` : ''}
+          </div>
+        </div>
+      `;
+    });
+    
+    html += '</div>';
+  }
+  
+  html += '</div>';
   return html;
 }
 
@@ -6583,55 +6925,91 @@ function editSurvey(id){
 // ============================================================
 
 function renderArchive(){
-  const meetings = STATE.archive.meetings;
+  const decisions = (STATE.archive && STATE.archive.decisions) || [];
+  
+  const categoryColors = {
+    'strategic':'var(--PD)',
+    'operational':'var(--PM)',
+    'financial':'var(--TC)',
+    'technical':'#0077B5',
+    'marketing':'#E1306C',
+    'team':'#FF9800'
+  };
+  const categoryNames = {
+    'strategic':'استراتيجي',
+    'operational':'تشغيلي',
+    'financial':'مالي',
+    'technical':'تقني',
+    'marketing':'تسويقي',
+    'team':'فريق'
+  };
+  const impactColors = {'high':'#D32F2F','medium':'#F57C00','low':'#388E3C'};
+  const impactNames = {'high':'تأثير عالي','medium':'تأثير متوسط','low':'تأثير منخفض'};
+  const statusNames = {'implemented':'مُنفّذ','approved':'معتمد','pending':'قيد المراجعة'};
   
   let html = `
     <div class="sec-header">
       <div class="sec-eyebrow">القسم 20</div>
-      <div class="sec-title">أرشيف القرارات والاجتماعات</div>
-      <div class="sec-desc">سجل كامل لكل اجتماع: التاريخ، المشاركون، القرارات، المهام. هذا الأرشيف يمنع ضياع المعلومات في مشروع كبير ويوفر مرجعاً للنسخة القادمة من المعسكر.</div>
+      <div class="sec-title">أرشيف القرارات</div>
+      <div class="sec-desc">سجل كامل بالقرارات الاستراتيجية والتشغيلية المعتمدة في المعسكر. هذا الأرشيف يحفظ السياق التاريخي ويمنع تكرار النقاشات.</div>
     </div>
     
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
-      <div style="font-size:13px;color:var(--TX2)">إجمالي الاجتماعات الموثقة: <strong>${meetings.length}</strong></div>
-      <button class="btn teal" onclick="addMeeting()">
-        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        إضافة اجتماع
-      </button>
+    <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px">
+      <div class="kpi">
+        <div class="kpi-label">إجمالي القرارات</div>
+        <div class="kpi-value">${decisions.length}</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">منفذة</div>
+        <div class="kpi-value">${decisions.filter(d => d.status==='implemented').length}</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">تأثير عالي</div>
+        <div class="kpi-value">${decisions.filter(d => d.impact==='high').length}</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">استراتيجية</div>
+        <div class="kpi-value">${decisions.filter(d => d.category==='strategic').length}</div>
+      </div>
     </div>
   `;
   
-  if(meetings.length === 0){
+  if(decisions.length === 0){
     html += `
       <div class="empty">
-        <div class="empty-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <div class="empty-title">لا توجد اجتماعات موثقة</div>
-        <div class="empty-desc">ابدأ بتوثيق اجتماعاتك من أول جلسة. كل قرار مكتوب يوفر وقت لاحقاً.</div>
+        <div class="empty-icon"><svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="empty-title">لا توجد قرارات موثقة بعد</div>
       </div>
     `;
   } else {
     html += '<div style="display:flex;flex-direction:column;gap:14px">';
-    meetings.slice().reverse().forEach(m => {
+    decisions.slice().reverse().forEach(d => {
+      const catColor = categoryColors[d.category] || 'var(--PM)';
+      const catName = categoryNames[d.category] || d.category;
+      const impColor = impactColors[d.impact] || 'var(--TX3)';
+      const impName = impactNames[d.impact] || '';
+      const statusName = statusNames[d.status] || d.status;
+      
       html += `
-        <div class="card">
-          <div class="card-top purple"></div>
-          <div class="card-body">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
-              <div>
-                <div class="card-title">${m.title}</div>
-                <div style="font-size:11px;color:var(--TX3);margin-top:3px">${formatDate(m.date)} — ${m.participants}</div>
+        <div style="background:#fff;border:1px solid var(--GL);border-radius:14px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+            <div style="flex:1;min-width:200px">
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap">
+                <div style="background:${catColor};color:#fff;font-size:10px;font-weight:800;padding:3px 10px;border-radius:10px;letter-spacing:0.3px">${catName}</div>
+                <div style="background:${impColor}22;color:${impColor};font-size:10px;font-weight:700;padding:3px 8px;border-radius:8px">${impName}</div>
+                <div style="background:var(--PL);color:var(--PD);font-size:10px;font-weight:700;padding:3px 8px;border-radius:8px">${statusName}</div>
               </div>
-              <button class="btn sm danger" onclick="deleteMeeting('${m.id}')">حذف</button>
+              <div style="font-size:15px;font-weight:800;color:var(--PD);line-height:1.5">${d.title}</div>
+              <div style="font-size:11px;color:var(--TX3);margin-top:4px">${d.date} · ${d.decisionMaker}</div>
             </div>
-            ${m.decisions ? `<div style="margin-top:10px;padding:10px;background:var(--PL);border-radius:8px;font-size:11px;line-height:1.7">
-              <strong style="color:var(--PD)">القرارات:</strong><br>${m.decisions.replace(/\n/g, '<br>')}
-            </div>` : ''}
-            ${m.tasks ? `<div style="margin-top:8px;padding:10px;background:var(--TL);border-radius:8px;font-size:11px;line-height:1.7">
-              <strong style="color:#005050">المهام:</strong><br>${m.tasks.replace(/\n/g, '<br>')}
-            </div>` : ''}
           </div>
+          <div style="font-size:13px;color:var(--TX2);line-height:1.8;margin-top:12px">${d.description}</div>
+          ${d.rationale ? `
+            <div style="margin-top:12px;padding:12px;background:var(--TL);border-radius:10px;border-right:3px solid var(--TC)">
+              <div style="font-size:11px;font-weight:800;color:#005050;margin-bottom:4px">المبرر</div>
+              <div style="font-size:12px;color:var(--TX2);line-height:1.7">${d.rationale}</div>
+            </div>
+          ` : ''}
         </div>
       `;
     });
