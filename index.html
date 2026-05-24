@@ -5878,9 +5878,9 @@ function renderPracticeImagesSection(practiceImages){
     
     const cardBg = isCourse 
       ? 'linear-gradient(135deg,var(--PL) 0%,#fff 100%)'
-      : 'linear-gradient(135deg,var(--TL) 0%,#fff 100%)';
-    const accent = isCourse ? 'var(--PD)' : 'var(--TC)';
-    const tagBg = isCourse ? 'var(--PD)' : 'var(--TC)';
+      : 'linear-gradient(135deg,#F3EFFB 0%,#fff 100%)';
+    const accent = isCourse ? 'var(--PD)' : 'var(--PM)';
+    const tagBg = isCourse ? 'var(--PD)' : 'var(--PM)';
     
     html += `
       <div onclick="viewPracticeImages('${item.id}','${item.name.replace(/'/g,"\\'")}','${item.type}')" 
