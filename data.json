@@ -107,91 +107,107 @@
     "timeline": {
       "events": [
         {
+          "id": "teaser_start",
+          "name": "بدء حملة التشويق للمعسكر",
+          "proposed": "2026-05-31",
+          "approved": "2026-05-31",
+          "status": "approved",
+          "notes": "انطلاق المحتوى التشويقي على كل المنصات قبل أسبوع من فتح التسجيل"
+        },
+        {
+          "id": "teaser_end",
+          "name": "نهاية حملة التشويق",
+          "proposed": "2026-06-06",
+          "approved": "2026-06-06",
+          "status": "approved",
+          "notes": "آخر يوم تشويق قبل فتح التسجيل في اليوم التالي"
+        },
+        {
           "id": "reg_open",
           "name": "فتح التسجيل",
-          "proposed": "",
-          "approved": "",
-          "status": "review",
+          "proposed": "2026-06-07",
+          "approved": "2026-06-07",
+          "status": "approved",
           "notes": ""
         },
         {
           "id": "reg_close",
           "name": "إغلاق التسجيل",
-          "proposed": "",
-          "approved": "",
-          "status": "pending",
+          "proposed": "2026-06-20",
+          "approved": "2026-06-20",
+          "status": "approved",
           "notes": ""
         },
         {
           "id": "screening_start",
           "name": "بدء الفرز",
-          "proposed": "",
-          "approved": "",
-          "status": "pending",
+          "proposed": "2026-06-21",
+          "approved": "2026-06-21",
+          "status": "approved",
           "notes": ""
         },
         {
           "id": "screening_end",
           "name": "انتهاء الفرز",
-          "proposed": "",
-          "approved": "",
-          "status": "pending",
+          "proposed": "2026-06-27",
+          "approved": "2026-06-27",
+          "status": "approved",
           "notes": ""
         },
         {
           "id": "results_announce",
           "name": "إعلان المقبولين",
-          "proposed": "",
-          "approved": "",
-          "status": "pending",
+          "proposed": "2026-06-29",
+          "approved": "2026-06-29",
+          "status": "approved",
           "notes": ""
         },
         {
           "id": "confirm_deadline",
           "name": "موعد تأكيد الحضور",
-          "proposed": "",
-          "approved": "",
-          "status": "pending",
+          "proposed": "2026-07-02",
+          "approved": "2026-07-02",
+          "status": "approved",
           "notes": ""
         },
         {
           "id": "camp_start",
           "name": "انطلاق المعسكر",
-          "proposed": "",
-          "approved": "",
-          "status": "pending",
+          "proposed": "2026-07-05",
+          "approved": "2026-07-05",
+          "status": "approved",
           "notes": ""
         },
         {
           "id": "camp_end",
           "name": "انتهاء التدريب الأساسي",
-          "proposed": "",
-          "approved": "",
-          "status": "pending",
+          "proposed": "2026-09-13",
+          "approved": "2026-09-13",
+          "status": "approved",
           "notes": ""
         },
         {
           "id": "hackathon_start",
           "name": "بدء الهاكاثون",
-          "proposed": "",
-          "approved": "",
-          "status": "pending",
+          "proposed": "2026-09-20",
+          "approved": "2026-09-20",
+          "status": "approved",
           "notes": ""
         },
         {
           "id": "hackathon_end",
           "name": "انتهاء الهاكاثون",
-          "proposed": "",
-          "approved": "",
-          "status": "pending",
+          "proposed": "2026-09-22",
+          "approved": "2026-09-22",
+          "status": "approved",
           "notes": ""
         },
         {
           "id": "closing",
           "name": "حفل الختام",
-          "proposed": "",
-          "approved": "",
-          "status": "pending",
+          "proposed": "2026-09-27",
+          "approved": "2026-09-27",
+          "status": "approved",
           "notes": ""
         }
       ]
@@ -730,45 +746,7 @@
           "outputs": "- إتقان واجهة الفوتوشوب وأدواته الأساسية بشكل عملي\n- تصميم 3 بوستات سوشال ميديا احترافية\n- تركيب صورة إعلانية واحدة باستخدام Generative Fill\n- معالجة وتنقيح صورة شخصية احترافية\n- إنتاج بوستر دعائي جاهز للطباعة",
           "requiredApps": "- Adobe Photoshop 2024 (أحدث إصدار)\n- اشتراك Adobe Creative Cloud لتفعيل ميزات الذكاء الاصطناعي\n- حساب Adobe Firefly",
           "sourceLink": "https://drive.google.com/drive/folders/1nmqF_1F_WByXDZ9_jLy8rFuoM5OXLaFd?usp=drive_link",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d1-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d1-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d1-03.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d1-04.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d1-05.jpg"
-              ]
-            },
-            {
-              "day": 2,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d2-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d2-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d2-03.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d2-04.jpg"
-              ]
-            },
-            {
-              "day": 3,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d3-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d3-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d3-03.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d3-04.jpg"
-              ]
-            },
-            {
-              "day": 4,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d4-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d4-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d4-03.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/photoshop/ps-d4-04.jpg"
-              ]
-            }
-          ]
+          "description": "سيد التصميم بلا منازع. فوتوشوب البرنامج اللي ما يقدر مصمم محترف يستغني عنه، تتعلم تتحكم بالصور وتركب وتعدل وتطلع تصاميم تشد العين بمستوى احترافي."
         },
         {
           "id": "c2",
@@ -776,261 +754,89 @@
           "days": 4,
           "axes": "- التعرف على واجهة البرنامج والفرق بين الفكتور والراستر\n- أدوات الرسم الأساسية (Pen Tool, Shape Tool, Brush)\n- التعامل مع الألوان والتدرجات والباترن\n- تصميم الشعارات والأيقونات والرسوم التوضيحية\n- تصميم الهويات البصرية الأساسية\n- التصدير الاحترافي للمطبوعات والويب\n- دمج الذكاء الاصطناعي: Generative Recolor, Text to Vector Graphic, Mockup, Retype",
           "outputs": "- إتقان رسم وتصميم الفكتور بشكل عملي\n- تصميم شعار احترافي بالكامل (Logo)\n- تصميم مجموعة أيقونات (4 أيقونات بستايل موحد)\n- تصميم رسمة توضيحية (Illustration) باستخدام الذكاء الاصطناعي\n- إنتاج مينيو متكامل لمطعم تطبيقياً",
-          "requiredApps": "",
+          "requiredApps": "Adobe Illustrator 2024",
           "sourceLink": "",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d1-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d1-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d1-03.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d1-04.jpg"
-              ]
-            },
-            {
-              "day": 2,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d2-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d2-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d2-03.jpg"
-              ]
-            },
-            {
-              "day": 3,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d3-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d3-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d3-03.jpg"
-              ]
-            },
-            {
-              "day": 4,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d4-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d4-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/illustrator/ai-d4-03.jpg"
-              ]
-            }
-          ]
+          "description": "اللي يفهم الفيكتور يفهم الاحتراف. إليستريتور سر كل لوقو وأيقونة نظيفة، تتعلم ترسم فيكتور وتصمم هويات وتطلع شغل قابل للطباعة بأي حجم بدون ما يخسر جودته."
         },
         {
           "id": "c3",
           "name": "إنديزاين",
           "days": 3,
           "axes": "- التعرف على واجهة البرنامج وفلسفته في تصميم المطبوعات\n- إعداد الصفحات الرئيسية (Master Pages) والشبكات\n- التحكم في النصوص (Paragraph & Character Styles)\n- التعامل مع الصور والـ Anchors والـ Text Wrap\n- تصميم الكتيبات والمجلات والتقارير\n- تصدير ملفات PDF الاحترافية للطباعة والإلكتروني\n- دمج الذكاء الاصطناعي: Generative Expand, Adobe Sensei لاقتراحات التنسيق",
-          "outputs": "",
-          "requiredApps": "",
+          "outputs": "• تنسيق الكتب والمجلات\n• إعداد التقارير الاحترافية\n• تجهيز ملفات الطباعة بمواصفات المطابع\n• تصميم البروشورات والكتيبات\n• القوالب القابلة لإعادة الاستخدام",
+          "requiredApps": "Adobe InDesign 2024",
           "sourceLink": "",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/indesign/id-d1-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/indesign/id-d1-02.jpg"
-              ]
-            },
-            {
-              "day": 2,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/indesign/id-d2-01.jpg"
-              ]
-            },
-            {
-              "day": 3,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/indesign/id-d3-01.jpg"
-              ]
-            }
-          ]
+          "description": "برنامج اللي يبي ينشر شغله. إن ديزاين البرنامج الرسمي للنشر المكتبي، تجهز كتب ومجلات وتقارير وبروشورات بمستوى احترافي جاهز للطباعة، ينقل شغلك من عشوائي لاحترافي."
         },
         {
           "id": "c4",
           "name": "موشن جرافيك (Premiere + After Effects)",
           "days": 8,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• مدخل للحركة (Motion) ومبادئ التحريك الـ 12\n• Adobe Premiere Pro: المونتاج الاحترافي والتحرير المتقدم\n• الانتقالات (Transitions) والمؤثرات السينمائية\n• الصوت والـ Color Grading في Premiere\n• Adobe After Effects: التحريك المتقدم والـ Keyframing\n• Shape Layers و Text Animations\n• تحريك الشخصيات والـ Puppet Tool\n• Expressions وأتمتة الحركة\n• تصدير الفيديوهات لكل المنصات (يوتيوب، إنستقرام، تيك توك)\n• توظيف AI في الموشن (Auto Reframe, Speech to Text, Generative)",
+          "outputs": "• تحريك التصاميم والشعارات\n• إنتاج إعلانات الفيديو الاحترافية\n• تصميم موشن جرافيك 2D للمحتوى\n• فيديوهات الـ Reels والتيك توك بمستوى احترافي\n• الإنترو والـ Outro للقنوات",
+          "requiredApps": "Adobe Premiere Pro 2024 + Adobe After Effects 2024",
           "sourceLink": "",
-          "practiceImages": [
-            "https://drive.google.com/file/d/1myIWnZa0n1mkBlYyVSWmc9zXC7bbv3U3/preview"
-          ]
+          "description": "خل تصاميمك تتحرك وتحكي قصة. الموشن جرافيك مستقبل المحتوى البصري وأكثر شي السوق يطلبه، تتعلم تحرك التصاميم وتطلع إنترو وإعلانات متحركة باستخدام Premiere Pro و After Effects."
         },
         {
           "id": "c5",
           "name": "التصميم بالجوال",
           "days": 3,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• مدخل للتصميم على الجوال ومميزاته للمصمم المعاصر\n• تطبيقات أساسية (Canva, Adobe Express, Picsart)\n• Procreate للرسم الرقمي والإلستريشن\n• Adobe Fresco للرسم الاحترافي\n• تطبيقات الموشن (CapCut, VN, InShot) للتصميم المتحرك\n• إدارة الأصول والـ Cloud Sync بين الأجهزة\n• تصميم محتوى السوشل بشكل سريع واحترافي\n• الذكاء الاصطناعي في تطبيقات الجوال\n• سير عمل احترافي بين الجوال واللاب توب\n• تصدير ومشاركة الأعمال بأعلى جودة",
+          "outputs": "• إتقان التصميم بتطبيقات الجوال\n• سرعة إنتاج لا تضاهى للمحتوى اليومي\n• مرونة العمل من أي مكان\n• تصاميم احترافية بدون كمبيوتر\n• سير عمل متكامل للمحتوى",
+          "requiredApps": "iPad أو iPhone أو Android متوسط فأعلى + التطبيقات: Canva, Adobe Express, Procreate (للـ iPad), CapCut",
           "sourceLink": "",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/mobile-design/md-d1-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/mobile-design/md-d1-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/mobile-design/md-d1-03.jpg"
-              ]
-            },
-            {
-              "day": 2,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/mobile-design/md-d2-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/mobile-design/md-d2-02.jpg"
-              ]
-            },
-            {
-              "day": 3,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/mobile-design/md-d3-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/courses/mobile-design/md-d3-02.jpg"
-              ]
-            }
-          ]
+          "description": "استوديو تصميم كامل في جيبك. ما تحتاج لاب توب ولا برامج معقدة، تتعلم تصمم على جوالك مباشرة بأدوات احترافية تطلع شغل ينافس برامج الكمبيوتر. مثالية للمصممين المستقلين وصناع المحتوى."
         },
         {
           "id": "c6",
           "name": "تصميم الفيديو بالجوال",
           "days": 3,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• مدخل لتحرير الفيديو على الجوال ومميزاته\n• CapCut: الواجهة، الأدوات، أسرار المحترفين\n• المونتاج الأساسي (Cut, Trim, Split, Speed)\n• الانتقالات (Transitions) والمؤثرات البصرية\n• إضافة النصوص والـ Captions باحترافية\n• الصوت والموسيقى والـ Sound Effects\n• الـ Color Grading والفلاتر السينمائية\n• AI في CapCut (Auto Captions, Background Removal, AI Effects)\n• تطبيقات بديلة (VN, InShot, Premiere Rush)\n• تصدير الفيديوهات لكل منصات السوشل بأفضل جودة",
+          "outputs": "• مونتاج الفيديو الاحترافي على الجوال\n• المؤثرات والانتقالات السينمائية\n• فيديوهات السوشل ميديا (Reels, TikTok, Shorts)\n• محتوى الـ Storytelling البصري\n• الفيديوهات الترويجية للأعمال",
+          "requiredApps": "iPhone أو Android متوسط فأعلى + تطبيق CapCut",
           "sourceLink": "",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            },
-            {
-              "day": 3,
-              "images": []
-            }
-          ]
+          "description": "مونتاج احترافي من راحة جوالك. العالم كله صار فيديو والجوال صار أداة المونتاج الأكثر استخداماً، تتعلم تقص وتضيف مؤثرات وانتقالات وموسيقى وتطلع فيديوهات بمستوى احترافي للسوشل ميديا."
         },
         {
           "id": "c7",
           "name": "واجهات المواقع والتطبيقات (UI/UX)",
           "days": 12,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• مدخل لـ UI/UX والفرق بين التخصصين\n• User Research وفهم احتياجات المستخدم\n• User Personas و User Journey Maps\n• Information Architecture وهيكلة المحتوى\n• Wireframing و Low-fidelity Prototypes\n• مبادئ التصميم البصري (Typography, Color, Spacing)\n• Design Systems و Component Libraries\n• Figma الاحترافي (Auto Layout, Variants, Constraints)\n• High-fidelity Prototyping والـ Interactions\n• Usability Testing وتقييم التصاميم\n• الذكاء الاصطناعي في UI/UX (Galileo AI, Uizard, Figma AI)\n• تسليم التصاميم للمطورين (Handoff)",
+          "outputs": "• تصميم تطبيقات الجوال الاحترافية\n• تصميم المواقع وواجهات الويب\n• بناء تجربة المستخدم المتكاملة\n• النماذج التفاعلية القابلة للاختبار\n• Design System كامل قابل لإعادة الاستخدام",
+          "requiredApps": "Figma (مجاني) + Adobe XD (اختياري)",
           "sourceLink": "",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            },
-            {
-              "day": 3,
-              "images": []
-            },
-            {
-              "day": 4,
-              "images": []
-            },
-            {
-              "day": 5,
-              "images": []
-            },
-            {
-              "day": 6,
-              "images": []
-            },
-            {
-              "day": 7,
-              "images": []
-            },
-            {
-              "day": 8,
-              "images": []
-            },
-            {
-              "day": 9,
-              "images": []
-            },
-            {
-              "day": 10,
-              "images": []
-            },
-            {
-              "day": 11,
-              "images": []
-            },
-            {
-              "day": 12,
-              "images": []
-            }
-          ]
+          "description": "صمم تطبيقات الناس ما تقدر تتركها. UI/UX علم وفن، تتعلم كيف تصمم تطبيق أو موقع شكله حلو ومريح للمستخدم. من أعلى التخصصات أجوراً في السوق التقني المعاصر."
         },
         {
           "id": "c8",
           "name": "الذكاء الاصطناعي للمصممين",
           "days": 2,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• مدخل للذكاء الاصطناعي وأنواعه في عالم التصميم\n• Midjourney: توليد الصور بمستوى احترافي\n• DALL-E 3 و Stable Diffusion للصور المتقدمة\n• Prompt Engineering للمصممين (فن كتابة البرومبت)\n• Adobe Firefly والـ Generative Fill في فوتوشوب\n• AI في إليستريتور (Generative Recolor, Text to Vector)\n• Runway ML للفيديو والموشن AI\n• Suno و ElevenLabs للموسيقى والصوت\n• ChatGPT و Claude للنصوص والأفكار الإبداعية\n• بناء سير عمل ذكي يدمج عدة أدوات AI\n• الأخلاقيات وحقوق الملكية في AI",
+          "outputs": "• إتقان أدوات الذكاء الاصطناعي للتصميم\n• توليد صور وتصاميم بمستوى احترافي\n• رفع الإنتاجية أضعاف مضاعفة\n• توظيف AI في كل مرحلة من عملية التصميم\n• سير عمل ذكي يميزك في السوق",
+          "requiredApps": "حساب Midjourney + ChatGPT/Claude + Adobe Creative Cloud + Runway ML (اختياري)",
           "sourceLink": "",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ]
+          "description": "الذكاء الاصطناعي مو عدوك، هو شريكك. تتعلم تستخدم أقوى أدوات AI للمصممين عشان ترفع إنتاجيتك أضعاف وتطلع أفكار وتنفذها بسرعة لا تصدقها مع جودة عالمية."
         },
         {
           "id": "c9",
           "name": "كتابة المحتوى الإبداعي",
           "days": 2,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• مدخل للكتابة الإبداعية والكتابة الإعلانية (Copywriting)\n• فهم الجمهور المستهدف وبناء الشخصية الكتابية (Brand Voice)\n• كتابة الكابشن الجذاب لكل منصة سوشل\n• كتابة الإعلانات (Ad Copy) ومعادلات AIDA و PAS\n• كتابة محتوى المواقع وتجربة المستخدم النصية (UX Writing)\n• كتابة سيناريوهات الفيديو والـ Reels\n• Storytelling والقصة كأداة تسويقية\n• كتابة العناوين القاتلة (Headlines) التي تجذب\n• الـ SEO Writing والكتابة لمحركات البحث\n• توظيف AI (ChatGPT, Claude) في الكتابة الإبداعية مع الحفاظ على الأصالة",
+          "outputs": "• كتابة الكابشن الجذاب لكل منصة\n• كتابة النصوص الإعلانية المؤثرة\n• إنتاج محتوى تسويقي يحقق نتائج\n• سيناريوهات فيديو احترافية\n• محتوى موقع جذاب ومُحسَّن للبحث",
+          "requiredApps": "ChatGPT أو Claude + Notion (للتنظيم) + Grammarly (اختياري)",
           "sourceLink": "",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ]
+          "description": "الكلمة الصح تبيع. الكتابة الإبداعية السلاح اللي يحول أي محتوى من عادي لمؤثر، تتعلم تكتب كابشن وإعلان وسيناريو ومحتوى موقع يلفت الانتباه ويحقق هدفك التسويقي."
         },
         {
           "id": "c10",
           "name": "التسويق الإلكتروني وصناعة المحتوى",
           "days": 3,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• مدخل للتسويق الرقمي وأقسامه (Organic vs Paid)\n• تحليل الجمهور المستهدف وبناء الـ Buyer Persona\n• استراتيجية المحتوى (Content Strategy) لكل منصة\n• Content Calendar وتخطيط المحتوى الأسبوعي\n• إدارة حسابات السوشل الميديا الاحترافية\n• حملات Meta Ads (Facebook + Instagram) من الصفر\n• حملات TikTok Ads و Google Ads\n• Email Marketing والـ Newsletter\n• Analytics و KPIs (Google Analytics, Meta Insights)\n• AI في التسويق (تحليل، توليد محتوى، أتمتة)\n• قياس العائد على الاستثمار (ROI)",
+          "outputs": "• وضع استراتيجيات تسويق رقمي ناجحة\n• صناعة محتوى يجذب الجمهور\n• إدارة الحملات الإعلانية الممولة باحترافية\n• تحليل الأداء واتخاذ قرارات بناء على البيانات\n• بناء حضور رقمي قوي لأي بزنس",
+          "requiredApps": "Meta Business Manager + TikTok Ads Manager + Google Analytics + ChatGPT/Claude + Canva",
           "sourceLink": "",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            },
-            {
-              "day": 3,
-              "images": []
-            }
-          ]
+          "description": "الدورة اللي تخليك تربح من الإنترنت. سوق العمل الحين كله رقمي، تتعلم استراتيجيات التسويق وصناعة محتوى يجذب الجمهور وإدارة الحملات الإعلانية وقياس النتائج بمنهجية احترافية."
         }
       ]
     },
@@ -1093,23 +899,14 @@
           "requiredApps": "- Adobe Photoshop + Illustrator\n- Adobe Firefly",
           "sourceLink": "",
           "assistant_trainer": "عبير آل واكد",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ],
           "backup_trainer": "في العوفي",
           "hours": 10,
           "contacted": false,
           "contractSigned": false,
           "cvReady": false,
           "photoReady": false,
-          "briefingDone": false
+          "briefingDone": false,
+          "description": "ورشة تطبيقية مكثفة تعيد تشكيل عقلية المصمم من الصفر، بحيث يقدر يحلل أي تصميم موجود ويعيد بناءه بأسلوبه الخاص بمستوى احترافي عالي."
         },
         {
           "id": "w2",
@@ -1117,32 +914,19 @@
           "days": 2,
           "trainer": "أثير الزهراني",
           "ready": false,
-          "axes": "",
-          "outputs": "",
+          "axes": "• فهم البريف (Brief) والـ Discovery من العميل\n• Brand Strategy وتحديد الشخصية البصرية\n• مود بورد (Mood Board) وبناء الاتجاه البصري\n• تصميم اللوقو بمنهجية احترافية (Sketches → Concepts → Final)\n• نظام الألوان والخطوط (Color & Typography System)\n• تطبيقات الهوية على كل النقاط (Touchpoints)\n• توظيف AI في الاستكشاف البصري وتوليد البدائل\n• إعداد دليل الهوية البصرية (Brand Guidelines) الاحترافي",
+          "outputs": "• هوية بصرية كاملة من الصفر لمشروع وهمي أو حقيقي\n• دليل هوية بصرية احترافي (Brand Guidelines PDF)\n• ملف لوقو بكل الصيغ والاستخدامات\n• Mockups احترافية لعرض الهوية على العميل",
           "requiredApps": "- Adobe Illustrator + InDesign\n- Adobe Firefly + Midjourney",
           "sourceLink": "",
           "assistant_trainer": "في العوفي",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/workshops/branding/br-d1-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/workshops/branding/br-d1-02.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/workshops/branding/br-d1-03.jpg"
-              ]
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ],
           "backup_trainer": "عبير آل واكد",
           "hours": 10,
           "contacted": false,
           "contractSigned": false,
           "cvReady": false,
           "photoReady": false,
-          "briefingDone": false
+          "briefingDone": false,
+          "description": "ورشة عملية لبناء هويات بصرية احترافية من الصفر، تتعلم منهجية بناء هوية متكاملة تخلي العميل يفرق بزنسه عن المنافسين وتترك أثر بصري قوي."
         },
         {
           "id": "w3",
@@ -1150,28 +934,19 @@
           "days": 2,
           "trainer": "أثير الزهراني",
           "ready": false,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• فهم أنواع المطبوعات وخصائص كل نوع\n• إعداد الملفات بمواصفات الطباعة (CMYK, Bleed, Resolution)\n• تصميم التغليف (Packaging Design) ومبادئ Die-cut\n• Dielines وقوالب التغليف القياسية\n• اختيار الخامات والـ Finishes (Spot UV, Foil, Emboss)\n• تجهيز ملفات Print-Ready للمطابع\n• التعامل مع تحديات الطباعة الواقعية\n• AI في توليد تصاميم تغليف مبتكرة",
+          "outputs": "• تصاميم مطبوعات احترافية جاهزة للطباعة\n• تصميم Packaging كامل مع Dieline\n• Mockups واقعية للعرض على العميل\n• ملف نهائي بمواصفات المطابع العالمية",
+          "requiredApps": "Illustrator + InDesign + Photoshop + Dimension/Mockup Tools",
           "sourceLink": "",
           "assistant_trainer": "عبير آل واكد",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ],
           "backup_trainer": "سارة الشهري",
           "hours": 10,
           "contacted": false,
           "contractSigned": false,
           "cvReady": false,
           "photoReady": false,
-          "briefingDone": false
+          "briefingDone": false,
+          "description": "ورشة متخصصة في تصميم المطبوعات والتغليف الاحترافي، تتعلم تجهز تصاميم جاهزة للمطابع بمواصفات احترافية وتخلي منتج العميل ياخذ شكل يبيع نفسه على الرف."
         },
         {
           "id": "w4",
@@ -1179,35 +954,19 @@
           "days": 2,
           "trainer": "أثير الزهراني",
           "ready": false,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• مبادئ التقارير الاحترافية وفلسفة تنظيم المعلومة\n• هيكلة التقرير وتصميم الـ Grid System\n• Master Pages و Paragraph Styles في InDesign\n• تصميم الـ Infographics وتحويل البيانات لرسوم\n• الجداول الاحترافية والـ Charts بمستوى عالي\n• Data Visualization الفعالة\n• تجهيز التقارير للطباعة والـ Digital\n• توظيف AI في تحليل البيانات وتوليد الرسومات",
+          "outputs": "• تقرير احترافي كامل بقالب قابل لإعادة الاستخدام\n• مكتبة Infographics شخصية\n• مهارة تحويل البيانات لمحتوى بصري مؤثر\n• قوالب تقارير لأنواع مختلفة",
+          "requiredApps": "InDesign + Illustrator + Excel/Sheets + ChatGPT/Claude",
           "sourceLink": "",
           "assistant_trainer": "سارة الشهري",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            },
-            {
-              "day": 3,
-              "images": [
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/workshops/reports/rep-d3-01.jpg",
-                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/images/workshops/reports/rep-d3-02.jpg"
-              ]
-            }
-          ],
           "backup_trainer": "في العوفي",
           "hours": 10,
           "contacted": false,
           "contractSigned": false,
           "cvReady": false,
           "photoReady": false,
-          "briefingDone": false
+          "briefingDone": false,
+          "description": "ورشة عملية في تنسيق التقارير الاحترافية اللي تخلي بياناتك تنطق وتقنع. تتعلم تحول تقرير ممل لوثيقة احترافية تنبهر منها الإدارة وتأخذ قرار مبني على ما تشوفه."
         },
         {
           "id": "w5",
@@ -1215,28 +974,19 @@
           "days": 2,
           "trainer": "أثير الزهراني",
           "ready": false,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• استراتيجية السوشل ميديا الاحترافية\n• تحليل المنافسين والـ Benchmarking\n• Content Pillars وبناء محاور المحتوى\n• Content Calendar الأسبوعي والشهري\n• إدارة كل منصة بخصوصيتها (إنستقرام، تيك توك، إكس، لينكدإن)\n• كتابة كابشن جذاب لكل منصة\n• إدارة المجتمع (Community Management) والرد على التعليقات\n• تحليل الأداء و KPIs الحقيقية\n• توظيف AI في إنتاج المحتوى والجدولة\n• أدوات الجدولة الاحترافية (Meta Business Suite, Buffer)",
+          "outputs": "• استراتيجية سوشل ميديا كاملة لحساب\n• Content Calendar جاهز للتنفيذ\n• مكتبة قوالب لكل منصة\n• تقرير تحليلي احترافي للأداء\n• سير عمل يومي قابل للتطبيق",
+          "requiredApps": "Meta Business Suite + Buffer/Later + Canva + Notion + ChatGPT",
           "sourceLink": "",
           "assistant_trainer": "رغد علي",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ],
           "backup_trainer": "سنا شكري",
           "hours": 10,
           "contacted": false,
           "contractSigned": false,
           "cvReady": false,
           "photoReady": false,
-          "briefingDone": false
+          "briefingDone": false,
+          "description": "ورشة شاملة لإدارة حسابات السوشل ميديا باحترافية كاملة، من الاستراتيجية للتنفيذ للتحليل. تتعلم تدير حساب يبني جمهور حقيقي ويحقق أهداف تجارية واضحة."
         },
         {
           "id": "w6",
@@ -1244,28 +994,19 @@
           "days": 2,
           "trainer": "أثير الزهراني",
           "ready": false,
-          "axes": "",
-          "outputs": "",
-          "requiredApps": "",
+          "axes": "• فلسفة الـ Portfolio الناجح في 2026\n• اختيار الأعمال (Curation) والقاعدة الذهبية\n• Case Study Format واحترافية عرض المشروع\n• الـ Storytelling حول كل مشروع\n• Personal Branding والصورة المهنية\n• منصات العرض (Behance, Personal Website, PDF)\n• تصميم Portfolio Website بنفسك (Framer, Webflow)\n• كتابة الـ About Page و Bio الجذاب\n• الـ Pricing وكيف تعرض خدماتك\n• توظيف AI في تجهيز الأعمال وكتابة الـ Case Studies",
+          "outputs": "• Portfolio احترافي كامل جاهز للنشر\n• 3 Case Studies تفصيلية لمشاريع مختارة\n• حساب Behance محترف ومنسّق\n• Personal Website بسيط واحترافي\n• استراتيجية واضحة للنمو المهني",
+          "requiredApps": "Behance + Framer/Webflow + Notion + Photoshop + ChatGPT",
           "sourceLink": "",
           "assistant_trainer": "في العوفي",
-          "practiceImages": [
-            {
-              "day": 1,
-              "images": []
-            },
-            {
-              "day": 2,
-              "images": []
-            }
-          ],
           "backup_trainer": "عبير آل واكد",
           "hours": 10,
           "contacted": false,
           "contractSigned": false,
           "cvReady": false,
           "photoReady": false,
-          "briefingDone": false
+          "briefingDone": false,
+          "description": "ورشة استراتيجية لبناء ملف أعمال يفتح لك أبواب السوق، مو مجرد عرض شغل. تتعلم كيف تختار وتعرض أعمالك بطريقة تخلي العميل يختارك من أول نظرة."
         }
       ]
     },
@@ -1387,7 +1128,7 @@
       "phases": [
         {
           "id": "p1",
-          "name": "قبل التنفيذ",
+          "name": "قبل المعسكر",
           "description": "التشويق + الإعلان + التسجيل + الذروة",
           "platforms": [
             {
@@ -1445,7 +1186,7 @@
         },
         {
           "id": "p3",
-          "name": "بعد التنفيذ",
+          "name": "بعد المعسكر",
           "description": "عرض المخرجات + قصص نجاح المتدربين + بناء سمعة للنسخة القادمة",
           "platforms": [
             {
@@ -1588,7 +1329,6 @@
         {
           "id": "pr1",
           "name": "لابتوب بمواصفات مناسبة (i5 فأعلى، 8GB RAM فأعلى)",
-          "tutorial": "https://youtu.be/zTmi-JygYJ0?si=Eoe3FhhFgn9Bcocz",
           "ready": true
         },
         {

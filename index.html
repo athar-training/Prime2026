@@ -969,6 +969,8 @@ const DEFAULT_DATA = {
   // 2. الإطار الزمني مع الجامعة
   timeline: {
     events: [
+      {id:'teaser_start', name:'بدء حملة التشويق للمعسكر', proposed:'', approved:'', status:'pending', notes:''},
+      {id:'teaser_end', name:'نهاية حملة التشويق', proposed:'', approved:'', status:'pending', notes:''},
       {id:'reg_open', name:'فتح التسجيل', proposed:'', approved:'', status:'pending', notes:''},
       {id:'reg_close', name:'إغلاق التسجيل', proposed:'', approved:'', status:'pending', notes:''},
       {id:'screening_start', name:'بدء الفرز', proposed:'', approved:'', status:'pending', notes:''},
@@ -1033,16 +1035,16 @@ const DEFAULT_DATA = {
   // 6. المنهج التفصيلي
   curriculum: {
     courses: [
-      {id:'c1', name:'فوتوشوب', days:4, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
-      {id:'c2', name:'إليستريتور', days:4, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
-      {id:'c3', name:'إنديزاين', days:3, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
-      {id:'c4', name:'موشن جرافيك', days:8, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
-      {id:'c5', name:'التصميم بالجوال', days:3, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
-      {id:'c6', name:'تصميم الفيديو بالجوال', days:3, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
-      {id:'c7', name:'واجهات المواقع والتطبيقات', days:12, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
-      {id:'c8', name:'الذكاء الاصطناعي للمصممين', days:2, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
-      {id:'c9', name:'كتابة المحتوى الإبداعي', days:2, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
-      {id:'c10', name:'التسويق الإلكتروني وصناعة المحتوى', days:3, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]}
+      {id:'c1', name:'فوتوشوب', days:4, description:'', axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
+      {id:'c2', name:'إليستريتور', days:4, description:'', axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
+      {id:'c3', name:'إنديزاين', days:3, description:'', axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
+      {id:'c4', name:'موشن جرافيك', days:8, description:'', axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
+      {id:'c5', name:'التصميم بالجوال', days:3, description:'', axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
+      {id:'c6', name:'تصميم الفيديو بالجوال', days:3, description:'', axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
+      {id:'c7', name:'واجهات المواقع والتطبيقات', days:12, description:'', axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
+      {id:'c8', name:'الذكاء الاصطناعي للمصممين', days:2, description:'', axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
+      {id:'c9', name:'كتابة المحتوى الإبداعي', days:2, description:'', axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
+      {id:'c10', name:'التسويق الإلكتروني وصناعة المحتوى', days:3, description:'', axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]}
     ]
   },
 
@@ -1129,7 +1131,7 @@ const DEFAULT_DATA = {
     phases: [
       {
         id:'p1', 
-        name:'قبل التنفيذ', 
+        name:'قبل المعسكر', 
         description:'التشويق + الإعلان + التسجيل + الذروة',
         platforms:[
           {name:'انستقرام', planned:8, done:8},
@@ -1142,7 +1144,7 @@ const DEFAULT_DATA = {
       },
       {
         id:'p2', 
-        name:'خلال التنفيذ', 
+        name:'خلال المعسكر', 
         description:'التغطية اليومية للمعسكر وورش العمل والهاكاثون',
         platforms:[
           {name:'انستقرام', planned:0, done:0},
@@ -1155,7 +1157,7 @@ const DEFAULT_DATA = {
       },
       {
         id:'p3', 
-        name:'بعد التنفيذ', 
+        name:'بعد المعسكر', 
         description:'عرض المخرجات + قصص نجاح المتدربين + بناء سمعة للنسخة القادمة',
         platforms:[
           {name:'انستقرام', planned:0, done:0},
@@ -1376,10 +1378,23 @@ function calcSectionProgress(sectionKey){
       if(STATE.team.members.length === 0) return 0;
       return calcProgress(STATE.team.members, m => m.role && m.responsibilities && m.responsibilities.length > 0);
     
-    case 'trainers':
-      return calcProgress(STATE.trainers.list, t => 
-        t.trainer && t.contacted && t.contractSigned && t.cvReady && t.photoReady && t.briefingDone
-      );
+    case 'trainers': {
+      // معادلة 90/10: المدرب (40%) + التواصل (25%) + اجتماع التعريف (25%) + توقيع العقد (10%)
+      const calcItemReadiness = (t) => {
+        let pct = 0;
+        if(t.trainer && String(t.trainer).trim()) pct += 40;
+        if(t.contacted) pct += 25;
+        if(t.briefingDone) pct += 25;
+        if(t.contractSigned) pct += 10;
+        return pct;
+      };
+      const courses = STATE.trainers.list || [];
+      const workshops = (STATE.shiftcore && STATE.shiftcore.workshops) || [];
+      const all = [...courses, ...workshops];
+      if(all.length === 0) return 0;
+      const totalPct = all.reduce((s, t) => s + calcItemReadiness(t), 0);
+      return Math.round(totalPct / all.length);
+    }
     
     case 'curriculum':
       return calcProgress(STATE.curriculum.courses, c => 
@@ -1470,7 +1485,7 @@ function calcSectionProgress(sectionKey){
       return STATE.archive.meetings.length > 0 ? 100 : 0;
     
     case 'daily':
-      return 0; // يُحسب فقط أثناء التنفيذ
+      return 0; // يُحسب فقط أثناء المعسكر
     
     default:
       return 0;
@@ -1497,7 +1512,7 @@ function calcOverallProgress(){
     certificates: 9,
     marketing: 7,
     risks: 4
-    // الباقي ما يدخل في الحساب لأنه يكتمل أثناء التنفيذ
+    // الباقي ما يدخل في الحساب لأنه يكتمل أثناء المعسكر
   };
   
   // متطلبات المتدربين تدخل بوزن إضافي
@@ -1774,20 +1789,19 @@ const SECTIONS = [
   {key:'trainers', num:'05', name:'المدربون', icon:'teacher'},
   {key:'curriculum', num:'06', name:'المنهج التفصيلي', icon:'book'},
   {key:'platform', num:'07', name:'المنصة التقنية', icon:'monitor'},
-  {key:'shiftcore', num:'08', name:'SHIFT Core', icon:'trophy'},
-  {key:'hackathon', num:'09', name:'الهاكاثون والختام', icon:'trophy'},
-  {key:'certificates', num:'10', name:'الشهادات', icon:'award'},
-  {key:'marketing', num:'11', name:'الخطة التسويقية', icon:'megaphone'},
-  {key:'kpis', num:'12', name:'مؤشرات النجاح', icon:'chart'},
-  {key:'risks', num:'13', name:'إدارة المخاطر', icon:'shield'},
-  {key:'prerequisites', num:'14', name:'متطلبات المتدربين', icon:'check'},
-  {key:'library', num:'15', name:'مكتبة المحتوى', icon:'archive'},
-  {key:'trainees', num:'16', name:'قاعدة المتدربين', icon:'database'},
-  {key:'communications', num:'17', name:'التواصل', icon:'chat'},
-  {key:'legal', num:'18', name:'التوثيق القانوني', icon:'document'},
-  {key:'evaluation', num:'19', name:'التقييم', icon:'star'},
-  {key:'archive', num:'20', name:'أرشيف القرارات', icon:'folder'},
-  {key:'daily', num:'21', name:'لوحة اليوم', icon:'clock'}
+  {key:'hackathon', num:'08', name:'الهاكاثون والختام', icon:'trophy'},
+  {key:'certificates', num:'09', name:'الشهادات', icon:'award'},
+  {key:'marketing', num:'10', name:'الخطة التسويقية', icon:'megaphone'},
+  {key:'kpis', num:'11', name:'مؤشرات النجاح', icon:'chart'},
+  {key:'risks', num:'12', name:'إدارة المخاطر', icon:'shield'},
+  {key:'prerequisites', num:'13', name:'متطلبات المتدربين', icon:'check'},
+  {key:'library', num:'14', name:'مكتبة المحتوى', icon:'archive'},
+  {key:'trainees', num:'15', name:'قاعدة المتدربين', icon:'database'},
+  {key:'communications', num:'16', name:'التواصل', icon:'chat'},
+  {key:'legal', num:'17', name:'التوثيق القانوني', icon:'document'},
+  {key:'evaluation', num:'18', name:'التقييم', icon:'star'},
+  {key:'archive', num:'19', name:'أرشيف القرارات', icon:'folder'},
+  {key:'daily', num:'20', name:'لوحة اليوم', icon:'clock'}
 ];
 
 let CURRENT_SECTION = 'overview';
@@ -4046,62 +4060,265 @@ function editTrainer(id){
 
 function renderCurriculum(){
   const courses = STATE.curriculum.courses;
+  const workshops = (STATE.shiftcore && STATE.shiftcore.workshops) || [];
   const progress = calcSectionProgress('curriculum');
+  const activeTab = window._curriculumTab || 'courses';
+  
+  // إحصائيات
+  const totalCourseDays = courses.reduce((s,c) => s + (c.days||0), 0);
+  const totalCourseHours = STATE.trainers.list.reduce((s,t) => s + (t.hours||0), 0);
+  const totalWsDays = workshops.reduce((s,w) => s + (w.days || 2), 0);
+  const totalWsHours = workshops.reduce((s,w) => s + (w.hours || 10), 0);
+  const readyCourses = courses.filter(c => c.axes && c.outputs && c.requiredApps).length;
+  const readyWorkshops = workshops.filter(w => w.axes && w.outputs && w.requiredApps).length;
   
   let html = `
     <div class="sec-header">
       <div class="sec-eyebrow">القسم 06</div>
-      <div class="sec-title">المنهج التفصيلي للدورات</div>
-      <div class="sec-desc">Breakdown يومي لكل دورة من الدورات العشر. لكل يوم: أهداف، محتوى، تمارين، مشاريع، طريقة تقييم. هذا الجزء يضمن تجربة موحدة لكل المدربين.</div>
+      <div class="sec-title">المنهج التفصيلي</div>
+      <div class="sec-desc">محتوى الدورات التدريبية وورش SHIFT Core بالكامل. لكل دورة/ورشة: نبذة تعريفية، محاور، مخرجات، والبرامج المطلوبة.</div>
     </div>
     
     <div class="progress-card">
       <div class="progress-info">
-        <div class="progress-label">${calcReadyCourses()} من 10 دورة بمنهج مكتمل</div>
+        <div class="progress-label">${readyCourses + readyWorkshops} من ${courses.length + workshops.length} بمنهج مكتمل</div>
         <div class="progress-bar-wrap"><div class="progress-bar" style="width:${progress}%"></div></div>
       </div>
       <div class="progress-value">${progress}%</div>
     </div>
     
-    <div class="cards-grid">
+    <div style="display:flex;gap:10px;margin-bottom:20px;border-bottom:2px solid var(--GL);padding-bottom:0">
+      <button onclick="switchCurriculumTab('courses')" style="
+        padding:12px 20px;background:${activeTab==='courses'?'var(--PD)':'transparent'};
+        color:${activeTab==='courses'?'#fff':'var(--TX2)'};
+        border:none;border-bottom:3px solid ${activeTab==='courses'?'var(--PD)':'transparent'};
+        font-size:14px;font-weight:800;cursor:pointer;border-radius:10px 10px 0 0;
+        margin-bottom:-2px;transition:all .2s">
+        الدورات التدريبية (${courses.length})
+      </button>
+      <button onclick="switchCurriculumTab('workshops')" style="
+        padding:12px 20px;background:${activeTab==='workshops'?'var(--PD)':'transparent'};
+        color:${activeTab==='workshops'?'#fff':'var(--TX2)'};
+        border:none;border-bottom:3px solid ${activeTab==='workshops'?'var(--PD)':'transparent'};
+        font-size:14px;font-weight:800;cursor:pointer;border-radius:10px 10px 0 0;
+        margin-bottom:-2px;transition:all .2s">
+        ورش SHIFT Core (${workshops.length})
+      </button>
+    </div>
   `;
   
-  courses.forEach(c => {
-    const readiness = calcCourseReadiness(c.id);
-    const trainer = STATE.trainers.list.find(t => t.id === c.id);
-    const color = readiness >= 80 ? 'green' : readiness >= 50 ? 'purple' : readiness >= 20 ? 'orange' : 'red';
-    
-    // عدّ ما تم تعبئته
-    let filled = 0;
-    if(c.axes) filled++;
-    if(c.outputs) filled++;
-    if(c.requiredApps) filled++;
-    if(c.sourceLink) filled++;
-    
+  if(activeTab === 'courses'){
     html += `
-      <div class="card">
-        <div class="card-top ${color}"></div>
-        <div class="card-body">
-          <div class="card-num">${c.days} أيام</div>
-          <div class="card-title">${c.name}</div>
-          <div class="card-desc">المدرب: ${trainer && trainer.trainer ? trainer.trainer : 'لم يُحدد'}</div>
-          <div class="progress-bar-wrap" style="margin:10px 0 8px">
-            <div class="progress-bar" style="width:${(filled/4)*100}%"></div>
-          </div>
-          <div style="font-size:10px;color:var(--TX3);margin-bottom:12px">${filled} من 4 عناصر مكتملة</div>
-          <div class="card-status">
-            <span class="status-dot ${readiness >= 80 ? 'done' : readiness > 0 ? 'progress' : 'pending'}">
-              جاهزية ${readiness}%
-            </span>
-            <button class="btn sm" onclick="editCourseDays('${c.id}')">المحتوى</button>
-          </div>
+      <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:20px">
+        <div class="kpi">
+          <div class="kpi-label">عدد الدورات</div>
+          <div class="kpi-value">${courses.length}</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">إجمالي الأيام</div>
+          <div class="kpi-value">${totalCourseDays}</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">إجمالي الساعات</div>
+          <div class="kpi-value">${totalCourseHours}</div>
         </div>
       </div>
+      <div class="cards-grid">
     `;
-  });
+    
+    courses.forEach(c => {
+      const readiness = calcCourseReadiness(c.id);
+      const trainer = STATE.trainers.list.find(t => t.id === c.id);
+      const color = readiness >= 80 ? 'green' : readiness >= 50 ? 'purple' : readiness >= 20 ? 'orange' : 'red';
+      
+      let filled = 0;
+      if(c.description && c.description.trim()) filled++;
+      if(c.axes && c.axes.trim()) filled++;
+      if(c.outputs && c.outputs.trim()) filled++;
+      if(c.requiredApps && c.requiredApps.trim()) filled++;
+      
+      html += `
+        <div class="card">
+          <div class="card-top ${color}"></div>
+          <div class="card-body">
+            <div class="card-num">${c.days} أيام · ${trainer ? trainer.hours : '—'} ساعة</div>
+            <div class="card-title">${c.name}</div>
+            <div class="card-desc">المدرب: ${trainer && trainer.trainer ? trainer.trainer : 'لم يُحدد'}</div>
+            <div class="progress-bar-wrap" style="margin:10px 0 8px">
+              <div class="progress-bar" style="width:${(filled/4)*100}%"></div>
+            </div>
+            <div style="font-size:10px;color:var(--TX3);margin-bottom:12px">${filled} من 4 عناصر مكتملة</div>
+            <div class="card-status">
+              <span class="status-dot ${readiness >= 80 ? 'done' : readiness > 0 ? 'progress' : 'pending'}">
+                جاهزية ${readiness}%
+              </span>
+              <button class="btn sm" onclick="viewCourseContent('${c.id}')">عرض المحتوى</button>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    
+    html += '</div>';
+  } else {
+    // تاب ورش SHIFT Core
+    html += `
+      <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:20px">
+        <div class="kpi">
+          <div class="kpi-label">عدد الورش</div>
+          <div class="kpi-value">${workshops.length}</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">إجمالي الأيام</div>
+          <div class="kpi-value">${totalWsDays}</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">إجمالي الساعات</div>
+          <div class="kpi-value">${totalWsHours}</div>
+        </div>
+      </div>
+      <div class="cards-grid">
+    `;
+    
+    workshops.forEach(w => {
+      let filled = 0;
+      if(w.description && w.description.trim()) filled++;
+      if(w.axes && w.axes.trim()) filled++;
+      if(w.outputs && w.outputs.trim()) filled++;
+      if(w.requiredApps && w.requiredApps.trim()) filled++;
+      
+      const readiness = w.ready ? 100 : Math.round((filled/4)*100);
+      const color = readiness >= 80 ? 'green' : readiness >= 50 ? 'purple' : readiness >= 20 ? 'orange' : 'red';
+      
+      const assistantText = w.assistant_trainer ? `<div style="font-size:11px;color:var(--TX2);margin-top:3px">مساعد: <strong>${w.assistant_trainer}</strong></div>` : '';
+      const backupText = w.backup_trainer ? `<div style="font-size:11px;color:var(--PM);margin-top:3px">احتياط: <strong>${w.backup_trainer}</strong></div>` : '';
+      
+      html += `
+        <div class="card">
+          <div class="card-top ${color}"></div>
+          <div class="card-body">
+            <div class="card-num">${w.days || 2} أيام · ${w.hours || 10} ساعة</div>
+            <div class="card-title">${w.name}</div>
+            <div class="card-desc">المدرب: ${w.trainer || 'لم يُحدد'}</div>
+            ${assistantText}
+            ${backupText}
+            <div class="progress-bar-wrap" style="margin:10px 0 8px">
+              <div class="progress-bar" style="width:${(filled/4)*100}%"></div>
+            </div>
+            <div style="font-size:10px;color:var(--TX3);margin-bottom:12px">${filled} من 4 عناصر مكتملة</div>
+            <div class="card-status">
+              <span class="status-dot ${readiness >= 80 ? 'done' : readiness > 0 ? 'progress' : 'pending'}">
+                جاهزية ${readiness}%
+              </span>
+              <button class="btn sm" onclick="viewWorkshopContent('${w.id}')">عرض المحتوى</button>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    
+    html += '</div>';
+  }
   
-  html += '</div>';
   return html;
+}
+
+function switchCurriculumTab(tab){
+  window._curriculumTab = tab;
+  renderMainContent();
+}
+
+function viewCourseContent(courseId){
+  const course = STATE.curriculum.courses.find(c => c.id === courseId);
+  if(!course) return;
+  const trainer = STATE.trainers.list.find(t => t.id === course.id);
+  
+  const body = `
+    <div style="margin-bottom:14px">
+      <div style="font-size:12px;color:var(--TX3);margin-bottom:4px">المدرب الرئيسي</div>
+      <div style="font-size:14px;font-weight:800;color:var(--PD)">${trainer && trainer.trainer ? trainer.trainer : 'لم يُحدد'}</div>
+      <div style="font-size:12px;color:var(--TX2);margin-top:4px">${course.days} أيام · ${trainer ? trainer.hours : '—'} ساعة</div>
+    </div>
+    
+    ${course.description ? `
+    <div style="border:1.5px solid var(--GL);border-radius:12px;padding:14px;margin-bottom:14px">
+      <div style="font-size:13px;font-weight:800;color:var(--PD);margin-bottom:8px">نبذة تعريفية</div>
+      <div style="font-size:13px;line-height:1.9;color:var(--TX2);white-space:pre-line">${course.description}</div>
+    </div>` : ''}
+    
+    ${course.axes ? `
+    <div style="border:1.5px solid var(--GL);border-radius:12px;padding:14px;margin-bottom:14px">
+      <div style="font-size:13px;font-weight:800;color:var(--PD);margin-bottom:8px">المحاور</div>
+      <div style="font-size:13px;line-height:1.9;color:var(--TX2);white-space:pre-line">${course.axes}</div>
+    </div>` : ''}
+    
+    ${course.outputs ? `
+    <div style="border:1.5px solid var(--GL);border-radius:12px;padding:14px;margin-bottom:14px">
+      <div style="font-size:13px;font-weight:800;color:var(--PD);margin-bottom:8px">المخرجات</div>
+      <div style="font-size:13px;line-height:1.9;color:var(--TX2);white-space:pre-line">${course.outputs}</div>
+    </div>` : ''}
+    
+    ${course.requiredApps ? `
+    <div style="border:1.5px solid var(--GL);border-radius:12px;padding:14px;margin-bottom:14px;background:var(--PL)">
+      <div style="font-size:13px;font-weight:800;color:var(--PD);margin-bottom:8px">البرامج المطلوبة</div>
+      <div style="font-size:13px;line-height:1.9;color:var(--TX2);white-space:pre-line">${course.requiredApps}</div>
+    </div>` : ''}
+    
+    ${course.sourceLink ? `
+    <div style="border:1.5px solid var(--TC);border-radius:12px;padding:14px;background:var(--TL)">
+      <div style="font-size:13px;font-weight:800;color:#005050;margin-bottom:8px">رابط السورس والمخرجات</div>
+      <a href="${course.sourceLink}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:8px 14px;background:var(--TC);color:#fff;border-radius:8px;text-decoration:none;font-size:12px;font-weight:700">فتح الرابط</a>
+    </div>` : ''}
+  `;
+  
+  openModal(course.name, body);
+}
+
+function viewWorkshopContent(wId){
+  const w = STATE.shiftcore.workshops.find(x => x.id === wId);
+  if(!w) return;
+  
+  const body = `
+    <div style="margin-bottom:14px">
+      <div style="font-size:12px;color:var(--TX3);margin-bottom:4px">المدرب الرئيسي</div>
+      <div style="font-size:14px;font-weight:800;color:var(--PD)">${w.trainer || 'لم يُحدد'}</div>
+      ${w.assistant_trainer ? `<div style="font-size:12px;color:var(--TX2);margin-top:2px">مساعد المدرب: ${w.assistant_trainer}</div>` : ''}
+      ${w.backup_trainer ? `<div style="font-size:12px;color:var(--PM);margin-top:2px">المدرب الاحتياطي: ${w.backup_trainer}</div>` : ''}
+      <div style="font-size:12px;color:var(--TX2);margin-top:4px">${w.days || 2} أيام · ${w.hours || 10} ساعة</div>
+    </div>
+    
+    ${w.description ? `
+    <div style="border:1.5px solid var(--GL);border-radius:12px;padding:14px;margin-bottom:14px">
+      <div style="font-size:13px;font-weight:800;color:var(--PD);margin-bottom:8px">نبذة تعريفية</div>
+      <div style="font-size:13px;line-height:1.9;color:var(--TX2);white-space:pre-line">${w.description}</div>
+    </div>` : ''}
+    
+    ${w.axes ? `
+    <div style="border:1.5px solid var(--GL);border-radius:12px;padding:14px;margin-bottom:14px">
+      <div style="font-size:13px;font-weight:800;color:var(--PD);margin-bottom:8px">المحاور</div>
+      <div style="font-size:13px;line-height:1.9;color:var(--TX2);white-space:pre-line">${w.axes}</div>
+    </div>` : ''}
+    
+    ${w.outputs ? `
+    <div style="border:1.5px solid var(--GL);border-radius:12px;padding:14px;margin-bottom:14px">
+      <div style="font-size:13px;font-weight:800;color:var(--PD);margin-bottom:8px">المخرجات</div>
+      <div style="font-size:13px;line-height:1.9;color:var(--TX2);white-space:pre-line">${w.outputs}</div>
+    </div>` : ''}
+    
+    ${w.requiredApps ? `
+    <div style="border:1.5px solid var(--GL);border-radius:12px;padding:14px;margin-bottom:14px;background:var(--PL)">
+      <div style="font-size:13px;font-weight:800;color:var(--PD);margin-bottom:8px">البرامج المطلوبة</div>
+      <div style="font-size:13px;line-height:1.9;color:var(--TX2);white-space:pre-line">${w.requiredApps}</div>
+    </div>` : ''}
+    
+    ${w.sourceLink ? `
+    <div style="border:1.5px solid var(--TC);border-radius:12px;padding:14px;background:var(--TL)">
+      <div style="font-size:13px;font-weight:800;color:#005050;margin-bottom:8px">رابط السورس والمخرجات</div>
+      <a href="${w.sourceLink}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:8px 14px;background:var(--TC);color:#fff;border-radius:8px;text-decoration:none;font-size:12px;font-weight:700">فتح الرابط</a>
+    </div>` : ''}
+  `;
+  
+  openModal(w.name, body);
 }
 
 function editCourseDays(courseId){
@@ -4153,7 +4370,7 @@ function editCourseDays(courseId){
     
     <div style="border:1.5px solid var(--GL);border-radius:12px;padding:16px;margin-bottom:14px;background:var(--TL)">
       <div style="font-size:13px;font-weight:800;color:#005050;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--GL)">
-        🔗 رابط السورس والمخرجات
+        رابط السورس والمخرجات
       </div>
       <div class="field">
         <label class="field-label">رابط رفع المخرجات والملفات (Drive / Figma / ...)</label>
@@ -4926,7 +5143,7 @@ function renderMarketing(){
     <div class="sec-header">
       <div class="sec-eyebrow">القسم 11</div>
       <div class="sec-title">الخطة التسويقية</div>
-      <div class="sec-desc">3 مراحل تسويقية رئيسية: قبل التنفيذ، خلال التنفيذ، بعد التنفيذ. لكل مرحلة توزيع تفصيلي للمحتوى على 4 منصات.</div>
+      <div class="sec-desc">3 مراحل تسويقية رئيسية: قبل المعسكر، خلال المعسكر، بعد المعسكر. لكل مرحلة توزيع تفصيلي للمحتوى على 4 منصات.</div>
     </div>
     
     <div class="progress-card">
@@ -5040,7 +5257,7 @@ function renderMarketing(){
   html += `
     <div class="alert info" style="margin-top:18px">
       <div class="alert-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
-      <div class="alert-content">المرحلة الأولى (قبل التنفيذ) <strong>مكتملة</strong> بـ 27 محتوى موزع: انستقرام (8)، تيك توك (6)، X (9)، لينكدإن (4).</div>
+      <div class="alert-content">المرحلة الأولى (قبل المعسكر) <strong>مكتملة</strong> بـ 27 محتوى موزع: انستقرام (8)، تيك توك (6)، X (9)، لينكدإن (4).</div>
     </div>
   `;
   
