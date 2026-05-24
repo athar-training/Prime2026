@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "published": "2026-05-24T00:18:39.000Z",
+  "published": "2026-05-24T01:28:13.000Z",
   "brand": "مركز أثر المطور للتدريب",
   "project": "معسكر المصمم المحترف Prime 2026",
   "data": {
@@ -673,7 +673,19 @@
           "outputs": "- إتقان واجهة الفوتوشوب وأدواته الأساسية بشكل عملي\n- تصميم 3 بوستات سوشال ميديا احترافية\n- تركيب صورة إعلانية واحدة باستخدام Generative Fill\n- معالجة وتنقيح صورة شخصية احترافية\n- إنتاج بوستر دعائي جاهز للطباعة",
           "requiredApps": "- Adobe Photoshop 2024 (أحدث إصدار)\n- اشتراك Adobe Creative Cloud لتفعيل ميزات الذكاء الاصطناعي\n- حساب Adobe Firefly",
           "sourceLink": "",
-          "practiceImages": []
+          "practiceImages": [
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-01.jpg",
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-02.jpg",
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-03.jpg",
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-04.jpg",
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-05.jpg",
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-06.jpg",
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-07.jpg",
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-08.jpg",
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-09.jpg",
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-10.jpg",
+            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-11.jpg"
+          ]
         },
         {
           "id": "c2",
@@ -4572,7 +4584,19 @@
         "outputs": "",
         "requiredApps": "",
         "sourceLink": "",
-        "practiceImages": []
+        "practiceImages": [
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-01.jpg",
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-02.jpg",
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-03.jpg",
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-04.jpg",
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-05.jpg",
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-06.jpg",
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-07.jpg",
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-08.jpg",
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-09.jpg",
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-10.jpg",
+          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-11.jpg"
+        ]
       },
       {
         "id": "c2",
