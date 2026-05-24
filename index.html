@@ -2147,7 +2147,8 @@ function renderPracticeImagesByDay(practiceImages){
   // تحويل البنية القديمة لجديدة على الطاير (كل الصور في يوم واحد)
   let dayGroups;
   if(isNewStructure){
-    dayGroups = practiceImages.filter(d => Array.isArray(d.images) && d.images.length > 0);
+    // نأخذ كل الأيام (حتى الفاضية) عشان نعرض "قيد التحضير"
+    dayGroups = practiceImages;
   } else {
     // بنية قديمة - نعرضها كلها في كتلة واحدة بدون فواصل أيام
     const urls = practiceImages.filter(u => typeof u === 'string' && u.trim());
@@ -2165,25 +2166,31 @@ function renderPracticeImagesByDay(practiceImages){
   // بناء HTML لكل يوم
   const daysHTML = dayGroups.map(dayObj => {
     const dayNum = dayObj.day || '?';
-    const imagesHTML = dayObj.images
-      .filter(u => typeof u === 'string' && u.trim())
-      .map(url => renderSingleImage(url))
-      .join('');
+    const validImages = (dayObj.images || []).filter(u => typeof u === 'string' && u.trim());
+    const hasImages = validImages.length > 0;
     
-    if(!imagesHTML) return '';
+    // شارة اليوم: ملونة لو فيه صور، باهتة لو قيد التحضير
+    const badgeStyle = hasImages
+      ? 'background:var(--PD);color:#fff'
+      : 'background:var(--GL);color:var(--TX3)';
+    
+    // المحتوى: شبكة صور أو رسالة قيد التحضير
+    const contentHTML = hasImages
+      ? `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px">
+          ${validImages.map(url => renderSingleImage(url)).join('')}
+        </div>`
+      : `<div style="background:var(--PL);border:1.5px dashed var(--GL);border-radius:10px;padding:24px 16px;text-align:center;color:var(--PM);font-size:13px;font-weight:700;letter-spacing:0.2px">قيد التحضير</div>`;
     
     return `
       <div style="margin-top:14px">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-          <div style="background:var(--PD);color:#fff;font-size:12px;font-weight:800;padding:5px 12px;border-radius:20px;letter-spacing:0.3px">Day ${dayNum}</div>
+          <div style="${badgeStyle};font-size:12px;font-weight:800;padding:5px 12px;border-radius:20px;letter-spacing:0.3px">Day ${dayNum}</div>
           <div style="flex:1;height:1px;background:linear-gradient(to left,var(--GL),transparent)"></div>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px">
-          ${imagesHTML}
-        </div>
+        ${contentHTML}
       </div>
     `;
-  }).filter(h => h).join('');
+  }).join('');
   
   if(!daysHTML) return '';
   
