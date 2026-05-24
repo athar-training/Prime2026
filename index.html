@@ -1995,21 +1995,7 @@ function showCardDetails(card){
       </div>`;
     }
     if(Array.isArray(courseData.practiceImages) && courseData.practiceImages.length > 0){
-      const imagesHTML = courseData.practiceImages.map(url => {
-        const directUrl = convertImageLink(url);
-        return `
-          <a href="${url}" target="_blank" style="display:block;border:1.5px solid var(--GL);border-radius:10px;overflow:hidden;text-decoration:none">
-            <img src="${directUrl}" alt="تطبيق" style="width:100%;height:140px;object-fit:cover;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-            <div style="display:none;padding:30px 10px;text-align:center;background:var(--PL);color:var(--PM);font-size:11px;font-weight:700">🔗 افتح الرابط</div>
-          </a>
-        `;
-      }).join('');
-      html += `<div class="details-modal-section">
-        <div class="details-modal-label">📸 التطبيقات المنفذة أثناء الشرح</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:8px">
-          ${imagesHTML}
-        </div>
-      </div>`;
+      html += renderPracticeImagesByDay(courseData.practiceImages);
     }
   }
   
@@ -2045,21 +2031,7 @@ function showCardDetails(card){
       </div>`;
     }
     if(Array.isArray(workshopData.practiceImages) && workshopData.practiceImages.length > 0){
-      const imagesHTML = workshopData.practiceImages.map(url => {
-        const directUrl = convertImageLink(url);
-        return `
-          <a href="${url}" target="_blank" style="display:block;border:1.5px solid var(--GL);border-radius:10px;overflow:hidden;text-decoration:none">
-            <img src="${directUrl}" alt="تطبيق" style="width:100%;height:140px;object-fit:cover;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-            <div style="display:none;padding:30px 10px;text-align:center;background:var(--PL);color:var(--PM);font-size:11px;font-weight:700">🔗 افتح الرابط</div>
-          </a>
-        `;
-      }).join('');
-      html += `<div class="details-modal-section">
-        <div class="details-modal-label">📸 التطبيقات المنفذة أثناء الشرح</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:8px">
-          ${imagesHTML}
-        </div>
-      </div>`;
+      html += renderPracticeImagesByDay(workshopData.practiceImages);
     }
   }
   
@@ -2161,6 +2133,74 @@ function convertImageLink(url){
     return url.replace('?dl=0', '?raw=1');
   }
   return url;
+}
+
+function renderPracticeImagesByDay(practiceImages){
+  if(!Array.isArray(practiceImages) || practiceImages.length === 0) return '';
+  
+  // كشف نوع البنية: قديمة (array من strings) أم جديدة (array من objects بأيام)
+  const isNewStructure = practiceImages.length > 0 && 
+    typeof practiceImages[0] === 'object' && 
+    practiceImages[0] !== null &&
+    'day' in practiceImages[0];
+  
+  // تحويل البنية القديمة لجديدة على الطاير (كل الصور في يوم واحد)
+  let dayGroups;
+  if(isNewStructure){
+    dayGroups = practiceImages.filter(d => Array.isArray(d.images) && d.images.length > 0);
+  } else {
+    // بنية قديمة - نعرضها كلها في كتلة واحدة بدون فواصل أيام
+    const urls = practiceImages.filter(u => typeof u === 'string' && u.trim());
+    if(urls.length === 0) return '';
+    return `<div class="details-modal-section">
+      <div class="details-modal-label">التطبيقات المنفذة أثناء الشرح</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:8px">
+        ${urls.map(url => renderSingleImage(url)).join('')}
+      </div>
+    </div>`;
+  }
+  
+  if(dayGroups.length === 0) return '';
+  
+  // بناء HTML لكل يوم
+  const daysHTML = dayGroups.map(dayObj => {
+    const dayNum = dayObj.day || '?';
+    const imagesHTML = dayObj.images
+      .filter(u => typeof u === 'string' && u.trim())
+      .map(url => renderSingleImage(url))
+      .join('');
+    
+    if(!imagesHTML) return '';
+    
+    return `
+      <div style="margin-top:14px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <div style="background:var(--PD);color:#fff;font-size:12px;font-weight:800;padding:5px 12px;border-radius:20px;letter-spacing:0.3px">Day ${dayNum}</div>
+          <div style="flex:1;height:1px;background:linear-gradient(to left,var(--GL),transparent)"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px">
+          ${imagesHTML}
+        </div>
+      </div>
+    `;
+  }).filter(h => h).join('');
+  
+  if(!daysHTML) return '';
+  
+  return `<div class="details-modal-section">
+    <div class="details-modal-label">التطبيقات المنفذة أثناء الشرح</div>
+    ${daysHTML}
+  </div>`;
+}
+
+function renderSingleImage(url){
+  const directUrl = convertImageLink(url);
+  return `
+    <a href="${url}" target="_blank" style="display:block;border:1.5px solid var(--GL);border-radius:10px;overflow:hidden;text-decoration:none">
+      <img src="${directUrl}" alt="تطبيق" style="width:100%;height:140px;object-fit:cover;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div style="display:none;padding:30px 10px;text-align:center;background:var(--PL);color:var(--PM);font-size:11px;font-weight:700">افتح الرابط</div>
+    </a>
+  `;
 }
 
 function buildWhatsAppLink(phone){
