@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "published": "2026-05-24T01:47:21.000Z",
+  "published": "2026-05-24T02:02:10.000Z",
   "brand": "مركز أثر المطور للتدريب",
   "project": "معسكر المصمم المحترف Prime 2026",
   "data": {
@@ -674,17 +674,37 @@
           "requiredApps": "- Adobe Photoshop 2024 (أحدث إصدار)\n- اشتراك Adobe Creative Cloud لتفعيل ميزات الذكاء الاصطناعي\n- حساب Adobe Firefly",
           "sourceLink": "",
           "practiceImages": [
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-01.jpg",
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-02.jpg",
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-03.jpg",
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-04.jpg",
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-05.jpg",
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-06.jpg",
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-07.jpg",
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-08.jpg",
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-09.jpg",
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-10.jpg",
-            "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-11.jpg"
+            {
+              "day": 1,
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-03.jpg"
+              ]
+            },
+            {
+              "day": 2,
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-04.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-05.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-06.jpg"
+              ]
+            },
+            {
+              "day": 3,
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-07.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-08.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-09.jpg"
+              ]
+            },
+            {
+              "day": 4,
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-10.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-11.jpg"
+              ]
+            }
           ]
         },
         {
@@ -695,7 +715,24 @@
           "outputs": "- إتقان رسم وتصميم الفكتور بشكل عملي\n- تصميم شعار احترافي بالكامل (Logo)\n- تصميم مجموعة أيقونات (4 أيقونات بستايل موحد)\n- تصميم رسمة توضيحية (Illustration) باستخدام الذكاء الاصطناعي\n- إنتاج مينيو متكامل لمطعم تطبيقياً",
           "requiredApps": "- Adobe Illustrator 2024 (أحدث إصدار)\n- اشتراك Adobe Creative Cloud\n- حساب Adobe Firefly",
           "sourceLink": "",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            },
+            {
+              "day": 3,
+              "images": []
+            },
+            {
+              "day": 4,
+              "images": []
+            }
+          ]
         },
         {
           "id": "c3",
@@ -705,7 +742,20 @@
           "outputs": "- إتقان إعداد المطبوعات متعددة الصفحات\n- تصميم تقرير سنوي احترافي (12 صفحة على الأقل)\n- تصميم بروشور مطوي (3 طيات)\n- تصميم نموذج كتاب إلكتروني (E-Book) كامل\n- ملف PDF تفاعلي مع روابط داخلية",
           "requiredApps": "- Adobe InDesign 2024\n- اشتراك Adobe Creative Cloud\n- خطوط عربية وإنجليزية احترافية",
           "sourceLink": "",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            },
+            {
+              "day": 3,
+              "images": []
+            }
+          ]
         },
         {
           "id": "c4",
@@ -715,7 +765,40 @@
           "outputs": "- مونتاج فيديو احترافي لإعلان مدته 30 ثانية\n- إنتاج Intro متحرك لقناة يوتيوب\n- تصميم Lower Thirds احترافية للفيديوهات\n- إنتاج إعلان موشن جرافيك لمنتج (15 ثانية)\n- مونتاج فيديو ريلز كامل مع موشن للسوشال ميديا",
           "requiredApps": "- Adobe Premiere Pro 2024\n- Adobe After Effects 2024\n- اشتراك Adobe Creative Cloud\n- مكتبة موسيقى من Adobe Stock أو Epidemic Sound",
           "sourceLink": "",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            },
+            {
+              "day": 3,
+              "images": []
+            },
+            {
+              "day": 4,
+              "images": []
+            },
+            {
+              "day": 5,
+              "images": []
+            },
+            {
+              "day": 6,
+              "images": []
+            },
+            {
+              "day": 7,
+              "images": []
+            },
+            {
+              "day": 8,
+              "images": []
+            }
+          ]
         },
         {
           "id": "c5",
@@ -725,7 +808,20 @@
           "outputs": "- إتقان تصميم بوست احترافي بالجوال خلال 5 دقائق\n- تصميم مجموعة 5 قصص إنستقرام بهوية موحدة\n- تصميم تيمبليت ريلز قابل لإعادة الاستخدام\n- تصميم بوست متحرك (Animated Post) للسوشال ميديا\n- بناء مكتبة قوالب شخصية على Adobe Express",
           "requiredApps": "- Adobe Express (تطبيق الجوال)\n- Canva Pro (تطبيق الجوال)\n- جوال بنظام iOS أو Android حديث",
           "sourceLink": "",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            },
+            {
+              "day": 3,
+              "images": []
+            }
+          ]
         },
         {
           "id": "c6",
@@ -735,7 +831,20 @@
           "outputs": "- تصوير ومونتاج ريل احترافي (15 ثانية) للسوشال ميديا\n- إنتاج فيديو تيك توك (Tutorial) قصير\n- تصميم فيديو ترويجي لمنتج (30 ثانية)\n- إنتاج فيديو بأسلوب الـ Vlogging قصير\n- بناء بروفايل احترافي على CapCut للحفظ",
           "requiredApps": "- CapCut (تطبيق الجوال)\n- InShot أو VN Editor\n- جوال حديث بكاميرا جيدة",
           "sourceLink": "",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            },
+            {
+              "day": 3,
+              "images": []
+            }
+          ]
         },
         {
           "id": "c7",
@@ -745,7 +854,56 @@
           "outputs": "- إتقان Figma من الصفر للاحتراف\n- تصميم Design System متكامل\n- تصميم تطبيق جوال كامل (5 شاشات على الأقل) — مشروع 1\n- تصميم موقع ويب كامل (Landing Page + Dashboard) — مشروع 2\n- إنتاج Prototype تفاعلي قابل للعرض\n- بناء Portfolio يحتوي على المشروعين بأسلوب احترافي",
           "requiredApps": "- Figma (الإصدار المجاني يكفي)\n- حساب على Behance أو Dribbble للنشر\n- ChatGPT (الإصدار المجاني يكفي)",
           "sourceLink": "",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            },
+            {
+              "day": 3,
+              "images": []
+            },
+            {
+              "day": 4,
+              "images": []
+            },
+            {
+              "day": 5,
+              "images": []
+            },
+            {
+              "day": 6,
+              "images": []
+            },
+            {
+              "day": 7,
+              "images": []
+            },
+            {
+              "day": 8,
+              "images": []
+            },
+            {
+              "day": 9,
+              "images": []
+            },
+            {
+              "day": 10,
+              "images": []
+            },
+            {
+              "day": 11,
+              "images": []
+            },
+            {
+              "day": 12,
+              "images": []
+            }
+          ]
         },
         {
           "id": "c8",
@@ -755,7 +913,16 @@
           "outputs": "- إتقان كتابة Prompts احترافية بصيغة 11 عنصر (Framework متكامل)\n- توليد 5 صور Premium-grade لاستخدام تجاري\n- توليد فيديو إعلاني قصير بالـ AI\n- توليد هوية بصرية كاملة بمساعدة الـ AI\n- بناء قائمة شخصية بأفضل 10 أدوات AI للمصمم",
           "requiredApps": "- حساب Midjourney\n- حساب Adobe Firefly\n- حساب ChatGPT (الإصدار الأحدث)\n- حساب Runway (الإصدار المجاني يكفي)",
           "sourceLink": "",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
         },
         {
           "id": "c9",
@@ -765,7 +932,16 @@
           "outputs": "- كتابة 10 كابشن احترافية لمنصات مختلفة\n- كتابة إعلان تسويقي كامل (Ad Copy) مع 3 خيارات\n- كتابة سكربت ريل لمدة 30 ثانية\n- بناء Brand Voice Guide لعلامة تجارية وهمية\n- كتابة مقال تدويني (Blog Post) بمساعدة الـ AI",
           "requiredApps": "- حساب ChatGPT\n- Notion أو Google Docs للكتابة\n- أداة Grammarly (اختياري)",
           "sourceLink": "",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
         },
         {
           "id": "c10",
@@ -775,7 +951,20 @@
           "outputs": "- بناء استراتيجية محتوى متكاملة لعلامة تجارية\n- إعداد Content Calendar شهري (30 يوم)\n- إطلاق حملة إعلانية ممولة بسيطة (محاكاة)\n- بناء Personal Brand Profile كامل\n- تحليل أداء حساب على إنستقرام ورفع تقرير",
           "requiredApps": "- حساب Meta Business Suite\n- حساب TikTok Business\n- ChatGPT\n- Canva أو Adobe Express لإنشاء المحتوى",
           "sourceLink": "",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            },
+            {
+              "day": 3,
+              "images": []
+            }
+          ]
         }
       ]
     },
@@ -4429,7 +4618,16 @@
           "requiredApps": "- Adobe Photoshop + Illustrator\n- Adobe Firefly",
           "sourceLink": "",
           "assistant_trainer": "عبير آل واكد",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
         },
         {
           "id": "w2",
@@ -4442,7 +4640,16 @@
           "requiredApps": "- Adobe Illustrator + InDesign\n- Adobe Firefly + Midjourney",
           "sourceLink": "",
           "assistant_trainer": "في العوفي",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
         },
         {
           "id": "w3",
@@ -4455,7 +4662,16 @@
           "requiredApps": "- Adobe Illustrator + Photoshop + Dimension\n- Adobe Firefly",
           "sourceLink": "",
           "assistant_trainer": "عبير آل واكد",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
         },
         {
           "id": "w4",
@@ -4468,7 +4684,16 @@
           "requiredApps": "- Adobe InDesign + Illustrator\n- ChatGPT لتلخيص المحتوى",
           "sourceLink": "",
           "assistant_trainer": "في العوفي",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
         },
         {
           "id": "w5",
@@ -4481,7 +4706,16 @@
           "requiredApps": "- Adobe Express أو Canva\n- Buffer أو Meta Business Suite\n- ChatGPT",
           "sourceLink": "",
           "assistant_trainer": "عبير آل واكد",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
         },
         {
           "id": "w6",
@@ -4494,7 +4728,16 @@
           "requiredApps": "- Adobe Portfolio أو Behance\n- Adobe InDesign لتصميم PDF Portfolio\n- ChatGPT",
           "sourceLink": "",
           "assistant_trainer": "في العوفي",
-          "practiceImages": []
+          "practiceImages": [
+            {
+              "day": 1,
+              "images": []
+            },
+            {
+              "day": 2,
+              "images": []
+            }
+          ]
         }
       ]
     }
@@ -4585,17 +4828,37 @@
         "requiredApps": "",
         "sourceLink": "",
         "practiceImages": [
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-01.jpg",
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-02.jpg",
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-03.jpg",
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-04.jpg",
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-05.jpg",
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-06.jpg",
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-07.jpg",
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-08.jpg",
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-09.jpg",
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-10.jpg",
-          "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-11.jpg"
+          {
+            "day": 1,
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-02.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-03.jpg"
+            ]
+          },
+          {
+            "day": 2,
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-04.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-05.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-06.jpg"
+            ]
+          },
+          {
+            "day": 3,
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-07.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-08.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-09.jpg"
+            ]
+          },
+          {
+            "day": 4,
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-10.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/photoshop/ps-11.jpg"
+            ]
+          }
         ]
       },
       {
@@ -4606,7 +4869,24 @@
         "outputs": "",
         "requiredApps": "",
         "sourceLink": "",
-        "practiceImages": []
+        "practiceImages": [
+          {
+            "day": 1,
+            "images": []
+          },
+          {
+            "day": 2,
+            "images": []
+          },
+          {
+            "day": 3,
+            "images": []
+          },
+          {
+            "day": 4,
+            "images": []
+          }
+        ]
       },
       {
         "id": "c3",
@@ -4616,7 +4896,20 @@
         "outputs": "",
         "requiredApps": "",
         "sourceLink": "",
-        "practiceImages": []
+        "practiceImages": [
+          {
+            "day": 1,
+            "images": []
+          },
+          {
+            "day": 2,
+            "images": []
+          },
+          {
+            "day": 3,
+            "images": []
+          }
+        ]
       },
       {
         "id": "c4",
@@ -4626,7 +4919,40 @@
         "outputs": "",
         "requiredApps": "",
         "sourceLink": "",
-        "practiceImages": []
+        "practiceImages": [
+          {
+            "day": 1,
+            "images": []
+          },
+          {
+            "day": 2,
+            "images": []
+          },
+          {
+            "day": 3,
+            "images": []
+          },
+          {
+            "day": 4,
+            "images": []
+          },
+          {
+            "day": 5,
+            "images": []
+          },
+          {
+            "day": 6,
+            "images": []
+          },
+          {
+            "day": 7,
+            "images": []
+          },
+          {
+            "day": 8,
+            "images": []
+          }
+        ]
       },
       {
         "id": "c5",
@@ -4636,7 +4962,20 @@
         "outputs": "",
         "requiredApps": "",
         "sourceLink": "",
-        "practiceImages": []
+        "practiceImages": [
+          {
+            "day": 1,
+            "images": []
+          },
+          {
+            "day": 2,
+            "images": []
+          },
+          {
+            "day": 3,
+            "images": []
+          }
+        ]
       },
       {
         "id": "c6",
@@ -4646,7 +4985,20 @@
         "outputs": "",
         "requiredApps": "",
         "sourceLink": "",
-        "practiceImages": []
+        "practiceImages": [
+          {
+            "day": 1,
+            "images": []
+          },
+          {
+            "day": 2,
+            "images": []
+          },
+          {
+            "day": 3,
+            "images": []
+          }
+        ]
       },
       {
         "id": "c7",
@@ -4656,7 +5008,56 @@
         "outputs": "",
         "requiredApps": "",
         "sourceLink": "",
-        "practiceImages": []
+        "practiceImages": [
+          {
+            "day": 1,
+            "images": []
+          },
+          {
+            "day": 2,
+            "images": []
+          },
+          {
+            "day": 3,
+            "images": []
+          },
+          {
+            "day": 4,
+            "images": []
+          },
+          {
+            "day": 5,
+            "images": []
+          },
+          {
+            "day": 6,
+            "images": []
+          },
+          {
+            "day": 7,
+            "images": []
+          },
+          {
+            "day": 8,
+            "images": []
+          },
+          {
+            "day": 9,
+            "images": []
+          },
+          {
+            "day": 10,
+            "images": []
+          },
+          {
+            "day": 11,
+            "images": []
+          },
+          {
+            "day": 12,
+            "images": []
+          }
+        ]
       },
       {
         "id": "c8",
@@ -4666,7 +5067,16 @@
         "outputs": "",
         "requiredApps": "",
         "sourceLink": "",
-        "practiceImages": []
+        "practiceImages": [
+          {
+            "day": 1,
+            "images": []
+          },
+          {
+            "day": 2,
+            "images": []
+          }
+        ]
       },
       {
         "id": "c9",
@@ -4676,7 +5086,16 @@
         "outputs": "",
         "requiredApps": "",
         "sourceLink": "",
-        "practiceImages": []
+        "practiceImages": [
+          {
+            "day": 1,
+            "images": []
+          },
+          {
+            "day": 2,
+            "images": []
+          }
+        ]
       },
       {
         "id": "c10",
@@ -4686,7 +5105,20 @@
         "outputs": "",
         "requiredApps": "",
         "sourceLink": "",
-        "practiceImages": []
+        "practiceImages": [
+          {
+            "day": 1,
+            "images": []
+          },
+          {
+            "day": 2,
+            "images": []
+          },
+          {
+            "day": 3,
+            "images": []
+          }
+        ]
       }
     ]
   },
