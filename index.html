@@ -403,6 +403,39 @@ td button,
   animation:blink 2s infinite;
 }
 
+
+/* ===== مكتبة المحتوى - Responsive ===== */
+.lib-layout{display:grid;grid-template-columns:240px 1fr;gap:20px;align-items:start}
+.lib-sidebar{background:#fff;border-radius:16px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);position:sticky;top:20px}
+.lib-tab-btn{width:100%;display:flex;align-items:center;gap:12px;padding:14px 14px;background:transparent;color:var(--TX2);border:none;border-radius:12px;margin-bottom:4px;cursor:pointer;font-size:13px;font-weight:700;text-align:right;transition:all 0.2s;font-family:inherit}
+.lib-tab-btn.active{background:linear-gradient(135deg,var(--PD),var(--PM));color:#fff}
+.lib-tab-btn .lib-tab-icon{width:24px;height:24px;flex-shrink:0;color:var(--PM)}
+.lib-tab-btn.active .lib-tab-icon{color:#fff}
+.lib-tab-btn .lib-tab-label{flex:1;text-align:right}
+.lib-tab-btn .lib-tab-count{background:var(--PL);color:var(--PD);padding:2px 10px;border-radius:10px;font-size:11px;font-weight:800;min-width:24px;text-align:center}
+.lib-tab-btn.active .lib-tab-count{background:rgba(255,255,255,0.25);color:#fff}
+.lib-content{min-width:0}
+
+.lib-cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.lib-section-card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+@media (max-width:600px){
+  .lib-cards-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .lib-section-card{padding:16px;border-radius:12px}
+  .lib-section-card .lib-card-title{font-size:17px !important}
+}
+@media (max-width:400px){
+  .lib-cards-grid{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .lib-layout{grid-template-columns:1fr;gap:14px}
+  .lib-sidebar{position:static;padding:8px;display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .lib-sidebar::-webkit-scrollbar{display:none}
+  .lib-tab-btn{flex-direction:column;padding:10px 12px;min-width:90px;flex-shrink:0;gap:6px;margin-bottom:0;text-align:center;font-size:11px}
+  .lib-tab-btn .lib-tab-icon{width:20px;height:20px}
+  .lib-tab-btn .lib-tab-label{font-size:11px;line-height:1.3;text-align:center}
+  .lib-tab-btn .lib-tab-count{font-size:10px;padding:1px 8px;min-width:20px}
+}
+
 </style>
 </head>
 <body>
@@ -5751,24 +5784,14 @@ function renderLibrary(){
       </div>
     </div>
     
-    <div style="display:grid;grid-template-columns:240px 1fr;gap:20px;align-items:start">
+    <div class="lib-layout">
       <!-- Sidebar -->
-      <div style="background:#fff;border-radius:16px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);position:sticky;top:20px">
+      <div class="lib-sidebar">
         ${tabs.map(t => `
-          <button onclick="switchLibraryTab('${t.key}')" style="
-            width:100%;display:flex;align-items:center;gap:12px;padding:14px 14px;
-            background:${activeTab===t.key?'linear-gradient(135deg,var(--PD),var(--PM))':'transparent'};
-            color:${activeTab===t.key?'#fff':'var(--TX2)'};
-            border:none;border-radius:12px;margin-bottom:4px;cursor:pointer;
-            font-size:13px;font-weight:700;text-align:right;
-            transition:all 0.2s;font-family:inherit">
-            <div style="width:24px;height:24px;flex-shrink:0;color:${activeTab===t.key?'#fff':'var(--PM)'}">${t.icon}</div>
-            <div style="flex:1;text-align:right">${t.name}</div>
-            <div style="background:${activeTab===t.key?'rgba(255,255,255,0.25)':'var(--PL)'};
-                 color:${activeTab===t.key?'#fff':'var(--PD)'};
-                 padding:2px 10px;border-radius:10px;font-size:11px;font-weight:800;min-width:24px;text-align:center">
-              ${t.count}
-            </div>
+          <button onclick="switchLibraryTab('${t.key}')" class="lib-tab-btn ${activeTab===t.key?'active':''}">
+            <div class="lib-tab-icon">${t.icon}</div>
+            <div class="lib-tab-label">${t.name}</div>
+            <div class="lib-tab-count">${t.count}</div>
           </button>
         `).join('')}
       </div>
@@ -5814,7 +5837,7 @@ function renderPracticeImagesSection(practiceImages){
         </div>
       </div>
       
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
+      <div class="lib-cards-grid">
   `;
   
   const allItems = [
