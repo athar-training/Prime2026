@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "published": "2026-05-24T02:02:10.000Z",
+  "published": "2026-05-24T02:39:45.000Z",
   "brand": "مركز أثر المطور للتدريب",
   "project": "معسكر المصمم المحترف Prime 2026",
   "data": {
@@ -718,15 +718,27 @@
           "practiceImages": [
             {
               "day": 1,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-03.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-04.jpg"
+              ]
             },
             {
               "day": 2,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-02.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-03.jpg"
+              ]
             },
             {
               "day": 3,
-              "images": []
+              "images": [
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-01.jpg",
+                "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-02.jpg"
+              ]
             },
             {
               "day": 4,
@@ -4872,15 +4884,27 @@
         "practiceImages": [
           {
             "day": 1,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-02.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-03.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d1-04.jpg"
+            ]
           },
           {
             "day": 2,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-02.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d2-03.jpg"
+            ]
           },
           {
             "day": 3,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/illustrator/ai-d3-02.jpg"
+            ]
           },
           {
             "day": 4,
