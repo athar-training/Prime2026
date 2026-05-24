@@ -1,1 +1,0 @@
-Motion Graphics course images
