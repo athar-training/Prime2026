@@ -737,9 +737,9 @@ td button,
       <div class="stat-cell-sub" id="statLaunchDate">لم يُحدد</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-cell-value" id="statTrainers">0/3</div>
-      <div class="stat-cell-label">مدرب مؤكد</div>
-      <div class="stat-cell-sub">قائد + مساعدين</div>
+      <div class="stat-cell-value" id="statTrainers">0/16</div>
+      <div class="stat-cell-label">دورة/ورشة بمدرب</div>
+      <div class="stat-cell-sub">10 دورات + 6 ورش</div>
     </div>
     <div class="stat-cell">
       <div class="stat-cell-value" id="statCourses">0/10</div>
@@ -747,7 +747,7 @@ td button,
       <div class="stat-cell-sub">منهج مكتمل</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-cell-value" id="statTeam">0/9</div>
+      <div class="stat-cell-value" id="statTeam">0/13</div>
       <div class="stat-cell-label">عضو فريق</div>
       <div class="stat-cell-sub">بمهام واضحة</div>
     </div>
@@ -1017,16 +1017,16 @@ const DEFAULT_DATA = {
   // 5. المدربون
   trainers: {
     list: [
-      {id:'c1', course:'فوتوشوب', days:4, hours:20, trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
-      {id:'c2', course:'إليستريتور', days:4, hours:20, trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
-      {id:'c3', course:'إنديزاين', days:3, hours:15, trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
-      {id:'c4', course:'موشن جرافيك (Premiere + After Effects)', days:8, hours:40, trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
-      {id:'c5', course:'التصميم بالجوال', days:3, hours:15, trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
-      {id:'c6', course:'تصميم الفيديو بالجوال', days:3, hours:15, trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
-      {id:'c7', course:'واجهات المواقع والتطبيقات (UI/UX)', days:12, hours:60, trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
-      {id:'c8', course:'الذكاء الاصطناعي للمصممين', days:2, hours:10, trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
-      {id:'c9', course:'كتابة المحتوى الإبداعي', days:2, hours:10, trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
-      {id:'c10', course:'التسويق الإلكتروني وصناعة المحتوى', days:3, hours:15, trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''}
+      {id:'c1', course:'فوتوشوب', days:4, hours:20, trainer:'', assistant_trainer:'', backup_trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
+      {id:'c2', course:'إليستريتور', days:4, hours:20, trainer:'', assistant_trainer:'', backup_trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
+      {id:'c3', course:'إنديزاين', days:3, hours:15, trainer:'', assistant_trainer:'', backup_trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
+      {id:'c4', course:'موشن جرافيك (Premiere + After Effects)', days:8, hours:40, trainer:'', assistant_trainer:'', backup_trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
+      {id:'c5', course:'التصميم بالجوال', days:3, hours:15, trainer:'', assistant_trainer:'', backup_trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
+      {id:'c6', course:'تصميم الفيديو بالجوال', days:3, hours:15, trainer:'', assistant_trainer:'', backup_trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
+      {id:'c7', course:'واجهات المواقع والتطبيقات (UI/UX)', days:12, hours:60, trainer:'', assistant_trainer:'', backup_trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
+      {id:'c8', course:'الذكاء الاصطناعي للمصممين', days:2, hours:10, trainer:'', assistant_trainer:'', backup_trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
+      {id:'c9', course:'كتابة المحتوى الإبداعي', days:2, hours:10, trainer:'', assistant_trainer:'', backup_trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''},
+      {id:'c10', course:'التسويق الإلكتروني وصناعة المحتوى', days:3, hours:15, trainer:'', assistant_trainer:'', backup_trainer:'', contacted:false, contractSigned:false, cvReady:false, photoReady:false, briefingDone:false, notes:''}
     ]
   },
 
@@ -1069,7 +1069,7 @@ const DEFAULT_DATA = {
       {id:'w2', name:'تصميم الهويات البصرية', days:2, trainer:'', assistant_trainer:'', ready:false, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
       {id:'w3', name:'المطبوعات والتغليف', days:2, trainer:'', assistant_trainer:'', ready:false, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
       {id:'w4', name:'إعداد التقارير الاحترافية', days:2, trainer:'', assistant_trainer:'', ready:false, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
-      {id:'w5', name:'إدارة حسابات السوشال ميديا', days:2, trainer:'', assistant_trainer:'', ready:false, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
+      {id:'w5', name:'إدارة حسابات السوشل ميديا', days:2, trainer:'', assistant_trainer:'', ready:false, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]},
       {id:'w6', name:'تطوير ملف الأعمال', days:2, trainer:'', assistant_trainer:'', ready:false, axes:'', outputs:'', requiredApps:'', sourceLink:'', practiceImages:[]}
     ]
   },
@@ -1571,14 +1571,24 @@ function calcDaysToLaunch(){
 
 // عدد المدربين المؤكدين (3 مدربين أساسيين فقط)
 function calcConfirmedTrainers(){
-  // نأخذ الأسماء الفريدة من الدورات (3 مدربين يدرسون 10 دورات)
-  const trainerNames = new Set();
+  // نحسب الدورات والورش اللي عندها مدرب موقع عقد
+  let count = 0;
   STATE.trainers.list.forEach(t => {
-    if(t.trainer && t.contractSigned){
-      trainerNames.add(t.trainer.trim());
-    }
+    if(t.trainer && t.contractSigned) count++;
   });
-  return trainerNames.size;
+  if(STATE.shiftcore && Array.isArray(STATE.shiftcore.workshops)){
+    STATE.shiftcore.workshops.forEach(w => {
+      if(w.trainer && w.contractSigned) count++;
+    });
+  }
+  return count;
+}
+
+// إجمالي عدد الدورات والورش (للمقام)
+function calcTotalTrainingSlots(){
+  const courses = (STATE.trainers && STATE.trainers.list) ? STATE.trainers.list.length : 10;
+  const workshops = (STATE.shiftcore && STATE.shiftcore.workshops) ? STATE.shiftcore.workshops.length : 6;
+  return courses + workshops;
 }
 
 // عدد الدورات الجاهزة
@@ -1725,9 +1735,10 @@ function updateTopStats(){
   const launchDate = launchEvt ? (launchEvt.approved || launchEvt.proposed) : '';
   document.getElementById('statLaunchDate').textContent = launchDate ? formatDate(launchDate) : 'لم يُحدد';
   
-  // المدربين (3 مدربين أساسيين: قائد + 2 مساعدين)
+  // المدربين (10 دورات + 6 ورش = 16)
   const trainers = calcConfirmedTrainers();
-  document.getElementById('statTrainers').textContent = trainers + '/3';
+  const totalSlots = calcTotalTrainingSlots();
+  document.getElementById('statTrainers').textContent = trainers + '/' + totalSlots;
   
   // الدورات
   const courses = calcReadyCourses();
@@ -1735,7 +1746,7 @@ function updateTopStats(){
   
   // الفريق
   const team = calcTeamReady();
-  document.getElementById('statTeam').textContent = team + '/' + Math.max(STATE.team.members.length, 9);
+  document.getElementById('statTeam').textContent = team + '/' + (STATE.team.members.length || 13);
 }
 
 function formatDate(dateStr){
@@ -3813,24 +3824,32 @@ async function deleteTeamMember(id){
 
 function renderTrainers(){
   const list = STATE.trainers.list;
+  const workshops = (STATE.shiftcore && STATE.shiftcore.workshops) || [];
   const progress = calcSectionProgress('trainers');
   const totalDays = list.reduce((s,t) => s + t.days, 0);
   const totalHours = list.reduce((s,t) => s + t.hours, 0);
+  const wsHours = workshops.reduce((s,w) => s + (w.hours || 10), 0);
+  const wsDays = workshops.reduce((s,w) => s + (w.days || 2), 0);
   
-  // عد المدربين الفريدين (3 مدربين يدرّسون 10 دورات)
+  // عد المدربين الفريدين عبر الدورات والورش
   const uniqueTrainers = new Set();
   list.forEach(t => { if(t.trainer) uniqueTrainers.add(t.trainer.trim()); });
+  workshops.forEach(w => { if(w.trainer) uniqueTrainers.add(w.trainer.trim()); });
+  
+  const totalSlots = list.length + workshops.length;
+  const confirmedSlots = list.filter(t => t.trainer && t.contacted && t.contractSigned).length 
+    + workshops.filter(w => w.trainer && w.contacted && w.contractSigned).length;
   
   let html = `
     <div class="sec-header">
       <div class="sec-eyebrow">القسم 05</div>
       <div class="sec-title">المدربون</div>
-      <div class="sec-desc">10 دورات تدريبية بإجمالي ${totalDays} يوم و ${totalHours} ساعة تدريبية. الفريق التدريبي مكوّن من 3 مدربين (قائد التدريب + 2 مساعدين) يتولّون كل الدورات.</div>
+      <div class="sec-desc">10 دورات تدريبية + 6 ورش SHIFT Core بإجمالي ${totalDays + wsDays} يوم و ${totalHours + wsHours} ساعة. لكل دورة/ورشة: مدرب رئيسي + مساعد + احتياط.</div>
     </div>
     
     <div class="progress-card">
       <div class="progress-info">
-        <div class="progress-label">${calcConfirmedTrainers()} من 3 مدرب مؤكد</div>
+        <div class="progress-label">${confirmedSlots} من ${totalSlots} دورة/ورشة بمدرب مؤكد</div>
         <div class="progress-bar-wrap"><div class="progress-bar" style="width:${progress}%"></div></div>
       </div>
       <div class="progress-value">${progress}%</div>
@@ -3838,30 +3857,30 @@ function renderTrainers(){
     
     <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px">
       <div class="kpi">
-        <div class="kpi-label">المدربون</div>
-        <div class="kpi-value">${uniqueTrainers.size}/3</div>
-        <div class="kpi-target">قائد + 2 مساعدين</div>
+        <div class="kpi-label">الدورات + الورش</div>
+        <div class="kpi-value">${list.length + workshops.length}</div>
+        <div class="kpi-target">${list.length} دورة + ${workshops.length} ورشة</div>
       </div>
       <div class="kpi">
-        <div class="kpi-label">الدورات</div>
-        <div class="kpi-value">10</div>
-        <div class="kpi-target">دورة تدريبية</div>
+        <div class="kpi-label">المدربون الفريدون</div>
+        <div class="kpi-value">${uniqueTrainers.size}</div>
+        <div class="kpi-target">مدرب مختلف</div>
       </div>
       <div class="kpi">
         <div class="kpi-label">إجمالي الأيام</div>
-        <div class="kpi-value">${totalDays}</div>
+        <div class="kpi-value">${totalDays + wsDays}</div>
         <div class="kpi-target">يوم تدريبي</div>
       </div>
       <div class="kpi">
         <div class="kpi-label">إجمالي الساعات</div>
-        <div class="kpi-value">${totalHours}</div>
+        <div class="kpi-value">${totalHours + wsHours}</div>
         <div class="kpi-target">ساعة معتمدة</div>
       </div>
     </div>
     
     <div class="table-wrap">
       <div class="table-head">
-        <div class="table-title">الدورات والمدربين</div>
+        <div class="table-title">الدورات الأساسية (${list.length})</div>
       </div>
       <div class="table-scroll">
         <table>
@@ -3869,32 +3888,74 @@ function renderTrainers(){
             <tr>
               <th>الدورة</th>
               <th>الأيام</th>
-              <th>المدرب</th>
+              <th>المدرب الرئيسي</th>
               <th>مساعد المدرب</th>
+              <th>المدرب الاحتياطي</th>
               <th>التواصل</th>
               <th>العقد</th>
               <th>تعريف</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
   `;
   
+  const checkIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
+  const checkDone = '<span style="color:var(--SU)">' + checkIcon + '</span>';
+  const checkPending = '<span style="color:var(--TX3)">—</span>';
+  
   list.forEach(t => {
-    const checkIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
-    const checkDone = '<span style="color:var(--SU)">' + checkIcon + '</span>';
-    const checkPending = '<span style="color:var(--TX3)">—</span>';
-    
     html += `
       <tr>
         <td style="font-weight:700;color:var(--PD)">${t.course}</td>
         <td>${t.days} أيام<br><span style="font-size:10px;color:var(--TX3)">${t.hours} ساعة</span></td>
         <td>${t.trainer ? '<strong>'+t.trainer+'</strong>' : '<span style="color:var(--TX3)">لم يُحدد</span>'}</td>
         <td>${t.assistant_trainer ? '<strong>'+t.assistant_trainer+'</strong>' : '<span style="color:var(--TX3)">لم يُحدد</span>'}</td>
+        <td>${t.backup_trainer ? '<span style="color:var(--PM)">'+t.backup_trainer+'</span>' : '<span style="color:var(--TX3)">لم يُحدد</span>'}</td>
         <td style="text-align:center">${t.contacted ? checkDone : checkPending}</td>
         <td style="text-align:center">${t.contractSigned ? checkDone : checkPending}</td>
         <td style="text-align:center">${t.briefingDone ? checkDone : checkPending}</td>
-        <td><button class="t-action" onclick="editTrainer('${t.id}')">تعديل</button></td>
+      </tr>
+    `;
+  });
+  
+  html += `
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="table-wrap" style="margin-top:20px">
+      <div class="table-head">
+        <div class="table-title">ورش SHIFT Core (${workshops.length})</div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>الورشة</th>
+              <th>الأيام</th>
+              <th>المدرب الرئيسي</th>
+              <th>مساعد المدرب</th>
+              <th>المدرب الاحتياطي</th>
+              <th>التواصل</th>
+              <th>العقد</th>
+              <th>تعريف</th>
+            </tr>
+          </thead>
+          <tbody>
+  `;
+  
+  workshops.forEach(w => {
+    html += `
+      <tr>
+        <td style="font-weight:700;color:var(--PD)">${w.name}</td>
+        <td>${w.days || 2} أيام<br><span style="font-size:10px;color:var(--TX3)">${w.hours || 10} ساعة</span></td>
+        <td>${w.trainer ? '<strong>'+w.trainer+'</strong>' : '<span style="color:var(--TX3)">لم يُحدد</span>'}</td>
+        <td>${w.assistant_trainer ? '<strong>'+w.assistant_trainer+'</strong>' : '<span style="color:var(--TX3)">لم يُحدد</span>'}</td>
+        <td>${w.backup_trainer ? '<span style="color:var(--PM)">'+w.backup_trainer+'</span>' : '<span style="color:var(--TX3)">لم يُحدد</span>'}</td>
+        <td style="text-align:center">${w.contacted ? checkDone : checkPending}</td>
+        <td style="text-align:center">${w.contractSigned ? checkDone : checkPending}</td>
+        <td style="text-align:center">${w.briefingDone ? checkDone : checkPending}</td>
       </tr>
     `;
   });
@@ -4150,6 +4211,25 @@ function ensurePlatformStructView(p, key){
   return p[key];
 }
 
+// دالة نسخ مع toast
+function copyToClipboard(text, event){
+  if(event) event.stopPropagation();
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(() => {
+      if(typeof showToast === 'function') showToast('تم نسخ الرابط', 'success');
+    }).catch(() => {
+      if(typeof showToast === 'function') showToast('فشل النسخ', 'error');
+    });
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); if(typeof showToast === 'function') showToast('تم نسخ الرابط', 'success'); } catch(e){}
+    document.body.removeChild(ta);
+  }
+}
+
 function renderPlatform(){
   const p = STATE.platform;
   
@@ -4165,6 +4245,58 @@ function renderPlatform(){
     const platform = p[key];
     const typeLabel = PLATFORM_TYPE_LABELS_VIEW[key][platform.type] || (platform.type ? platform.type : '');
     const displayName = platform.displayName || typeLabel || '<span style="color:var(--TX3)">غير محدد</span>';
+    
+    // تسميات أزرار الفتح
+    const openLabels = {
+      zoom: 'افتح في زوم', teams: 'افتح في Teams', google_meet: 'افتح Google Meet',
+      webex: 'افتح Webex', whatsapp: 'افتح واتساب', telegram: 'افتح تيليجرام',
+      discord: 'افتح Discord', slack: 'افتح Slack', drive: 'افتح Google Drive',
+      behance: 'افتح Behance', custom_form: 'افتح النموذج', lms: 'افتح المنصة',
+      qr: 'عرض رمز QR', manual: 'فتح النموذج', zoom_report: 'فتح تقرير الحضور',
+      university: 'افتح منصة الجامعة', other: 'افتح الرابط'
+    };
+    const openLabel = openLabels[platform.type] || 'افتح الرابط';
+    
+    // معلومات إضافية
+    let extraInfo = '';
+    if(platform.accessCode){
+      extraInfo += `<div style="font-size:11px;color:var(--TX2);margin-top:6px;direction:ltr;text-align:right">
+        <span style="color:var(--TX3)">ID: </span><strong style="color:var(--PD);font-family:monospace">${platform.accessCode}</strong>
+      </div>`;
+    }
+    if(platform.password){
+      extraInfo += `<div style="font-size:11px;color:var(--TX2);margin-top:4px">
+        <span style="color:var(--TX3)">كلمة المرور: </span><strong style="color:var(--PD);font-family:monospace">${platform.password}</strong>
+      </div>`;
+    }
+    if(platform.notes){
+      extraInfo += `<div style="font-size:11px;color:var(--TX2);margin-top:4px;line-height:1.6">${platform.notes}</div>`;
+    }
+    
+    // أزرار فعلية
+    let actionButtons = '';
+    if(platform.directLink){
+      actionButtons = `
+        <div style="display:flex;gap:6px;margin-top:10px" onclick="event.stopPropagation()">
+          <a href="${platform.directLink}" target="_blank" rel="noopener noreferrer" 
+             style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 10px;background:var(--TC);color:#fff;border-radius:8px;text-decoration:none;font-size:12px;font-weight:700;transition:all .2s"
+             onmouseover="this.style.background='var(--PD)'" onmouseout="this.style.background='var(--TC)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            ${openLabel}
+          </a>
+          <button onclick="copyToClipboard('${platform.directLink.replace(/'/g, "\\'")}', event)" 
+                  style="padding:9px 12px;background:var(--PL);color:var(--PD);border:1px solid var(--PM);border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:4px"
+                  title="نسخ الرابط">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+          </button>
+        </div>
+      `;
+    }
+    
     return `
       <div class="card" style="cursor:pointer" onclick="viewPlatformDetails('${key}', '${title.replace(/'/g, "\\'")}')">
         <div class="card-top ${color}"></div>
@@ -4174,8 +4306,10 @@ function renderPlatform(){
           <div style="margin-top:10px;padding:10px;background:var(--PL);border-radius:8px">
             <div style="font-size:11px;color:var(--PM);font-weight:700;margin-bottom:4px">المنصة المستخدمة</div>
             <div style="font-size:14px;color:var(--PD);font-weight:700">${displayName}</div>
+            ${extraInfo}
           </div>
-          <div style="font-size:10px;color:var(--TX3);margin-top:8px;text-align:center">اضغطي للتفاصيل</div>
+          ${actionButtons}
+          <div style="font-size:10px;color:var(--TX3);margin-top:8px;text-align:center">اضغطي على البطاقة للتفاصيل</div>
         </div>
       </div>
     `;
@@ -4354,15 +4488,19 @@ function renderShiftCore(){
     const filled = ['axes','outputs','requiredApps','trainer'].filter(k => w[k] && String(w[k]).trim()).length;
     const readiness = w.ready ? 100 : Math.round((filled/4)*100);
     const color = w.ready ? 'green' : (readiness >= 60 ? 'orange' : 'purple');
-    const assistantText = w.assistant_trainer ? `<br><span style="font-size:11px;color:var(--TX3)">مساعد المدرب: ${w.assistant_trainer}</span>` : '';
+    const assistantText = w.assistant_trainer ? `<div style="font-size:11px;color:var(--TX2);margin-top:3px">مساعد: <strong>${w.assistant_trainer}</strong></div>` : '';
+    const backupText = w.backup_trainer ? `<div style="font-size:11px;color:var(--PM);margin-top:3px">احتياط: <strong>${w.backup_trainer}</strong></div>` : '';
+    const hoursText = w.hours ? `${w.hours} ساعة` : '10 ساعة';
     
     html += `
       <div class="card">
         <div class="card-top ${color}"></div>
         <div class="card-body">
-          <div class="card-num">${w.days || 2} أيام</div>
+          <div class="card-num">${w.days || 2} أيام · ${hoursText}</div>
           <div class="card-title">${w.name}</div>
-          <div class="card-desc">المدرب: ${w.trainer || '<span style="color:var(--TX3)">لم يُحدد</span>'}${assistantText}</div>
+          <div class="card-desc">المدرب: ${w.trainer || '<span style="color:var(--TX3)">لم يُحدد</span>'}</div>
+          ${assistantText}
+          ${backupText}
           <div class="progress-bar-wrap" style="margin:10px 0 8px">
             <div class="progress-bar" style="width:${(filled/4)*100}%"></div>
           </div>
@@ -5280,6 +5418,18 @@ function renderPrerequisites(){
       <div class="sec-eyebrow">القسم 14</div>
       <div class="sec-title">متطلبات المتدربين</div>
       <div class="sec-desc">14 متطلب يجب على كل متدرب تجهيزه قبل بدء المعسكر. كل متطلب له فيديو شرح أو لينك تنزيل. هذي القائمة تُرسل للمقبولين مباشرة بعد إعلان النتائج.</div>
+    </div>
+    
+    <div class="alert" style="background:var(--TL);border:1.5px solid var(--TC);display:flex;gap:14px;padding:16px 18px;border-radius:14px;margin-bottom:18px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,180,170,0.08)">
+      <div style="flex-shrink:0;width:34px;height:34px;background:var(--TC);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,180,170,0.25)">
+        <svg style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <div style="font-size:13px;line-height:1.9;flex:1">
+        <strong style="display:block;margin-bottom:6px;font-size:14.5px;color:var(--PD);font-weight:800">مركز أثر المطوّر يوفّر تراخيص أدوبي للمتدربين</strong>
+        <span style="color:var(--TX2)">حرصاً منا على تمكين متدربينا، يتكفّل مركز أثر المطوّر للتدريب بتوفير تراخيص حزمة Adobe Creative Cloud لجميع المتدربين المقبولين طوال مدة المعسكر. دور المتدرب: توفير جهاز بمواصفات مناسبة وتثبيت البرامج المطلوبة. روابط الشرح والتنزيل متاحة في القائمة أدناه.</span>
+      </div>
     </div>
     
     <div class="progress-card">
