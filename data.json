@@ -1446,13 +1446,13 @@
             "day": 1,
             "appName": "Premiere Pro",
             "images": [],
-            "videoUrl": ""
+            "videoUrl": "https://drive.google.com/file/d/11WhWqYXGNotK7gqWiIQxs1FsDQ4YDfft/preview"
           },
           {
             "day": 2,
             "appName": "After Effects",
             "images": [],
-            "videoUrl": ""
+            "videoUrl": "https://drive.google.com/file/d/1myIWnZa0n1mkBlYyVSWmc9zXC7bbv3U3/preview"
           }
         ],
         "c5": [
@@ -1484,53 +1484,75 @@
             "day": 1,
             "appName": "CapCut",
             "images": [],
-            "videoUrl": ""
+            "videoUrl": "https://drive.google.com/file/d/1v_jR-bT9k2Va8iosg_q0JtqBvlNuXeZc/preview"
           }
         ],
         "c7": [
           {
             "day": 1,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-1/ux-d1-01.jpg"
+            ]
           },
           {
             "day": 2,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-2/ux-d2-01.jpg"
+            ]
           },
           {
             "day": 3,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-3/ux-d3-01.jpg"
+            ]
           },
           {
             "day": 4,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-4/ux-d4-01.jpg"
+            ]
           },
           {
             "day": 5,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-5/ux-d5-01.jpg"
+            ]
           },
           {
             "day": 6,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-6/ux-d6-01.jpg"
+            ]
           },
           {
             "day": 7,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-7/ux-d7-01.jpg"
+            ]
           },
           {
             "day": 8,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-8/ux-d8-01.jpg"
+            ]
           },
           {
             "day": 9,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-9/ux-d9-01.jpg"
+            ]
           },
           {
             "day": 10,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-10/ux-d10-01.jpg"
+            ]
           },
           {
             "day": 11,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c7-uiux/day-11/ux-d11-01.jpg"
+            ]
           },
           {
             "day": 12,
@@ -1540,11 +1562,21 @@
         "c8": [
           {
             "day": 1,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c8-ai/day-1/aix-d1-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c8-ai/day-1/aix-d1-02.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c8-ai/day-1/aix-d1-03.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c8-ai/day-1/aix-d1-04.jpg"
+            ]
           },
           {
             "day": 2,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c8-ai/day-2/aix-d2-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c8-ai/day-2/aix-d2-02.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c8-ai/day-2/aix-d2-03.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c8-ai/day-2/aix-d2-04.jpg"
+            ]
           }
         ],
         "c9": [
@@ -1561,18 +1593,31 @@
           {
             "day": 1,
             "appName": "تقارير الحملات التسويقية",
-            "images": [],
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-02.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-03.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-04.jpg"
+            ],
             "videoUrl": ""
           }
         ],
         "w1": [
           {
             "day": 1,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w1-rebuild/day-1/rb-d1-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w1-rebuild/day-1/rb-d1-02.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w1-rebuild/day-1/rb-d1-03.jpg"
+            ]
           },
           {
             "day": 2,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w1-rebuild/day-2/rb-d2-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w1-rebuild/day-2/rb-d2-02.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w1-rebuild/day-2/rb-d2-03.jpg"
+            ]
           }
         ],
         "w2": [
@@ -1581,22 +1626,33 @@
             "images": [
               "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w2-branding/day-1/br-d1-01.jpg",
               "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w2-branding/day-1/br-d1-02.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w2-branding/day-1/br-d1-03.jpg"
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w2-branding/day-1/br-d1-03.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w2-branding/day-1/br-d1-10.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w2-branding/day-1/br-d1-11.jpg"
             ]
           },
           {
             "day": 2,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w2-branding/day-2/br-d2-01.jpg"
+            ]
           }
         ],
         "w3": [
           {
             "day": 1,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w3-print-packaging/day-1/pk-d1-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w3-print-packaging/day-1/pk-d1-02.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w3-print-packaging/day-1/pk-d1-03.jpg"
+            ]
           },
           {
             "day": 2,
-            "images": []
+            "images": [
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w3-print-packaging/day-2/pk-d2-01.jpg",
+              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/workshops/w3-print-packaging/day-2/pk-d2-02.jpg"
+            ]
           }
         ],
         "w4": [

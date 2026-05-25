@@ -5997,7 +5997,12 @@ function viewPracticeImages(itemId, itemName, type){
     // تحويل رابط الفيديو إلى embed
     let videoEmbedUrl = '';
     if(videoUrl){
-      if(videoUrl.includes('youtube.com/watch')){
+      if(videoUrl.includes('drive.google.com')){
+        // Google Drive: /file/d/{ID}/view أو /file/d/{ID}/preview
+        const m = videoUrl.match(/\/file\/d\/([^\/\?]+)/);
+        if(m && m[1]) videoEmbedUrl = `https://drive.google.com/file/d/${m[1]}/preview`;
+        else videoEmbedUrl = videoUrl;
+      } else if(videoUrl.includes('youtube.com/watch')){
         const vid = (videoUrl.match(/v=([^&]+)/) || [])[1];
         if(vid) videoEmbedUrl = `https://www.youtube.com/embed/${vid}`;
       } else if(videoUrl.includes('youtu.be/')){
