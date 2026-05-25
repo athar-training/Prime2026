@@ -1443,16 +1443,16 @@
         ],
         "c4": [
           {
-            "day": 1,
-            "appName": "Premiere Pro",
-            "images": [],
-            "videoUrl": "https://drive.google.com/file/d/11WhWqYXGNotK7gqWiIQxs1FsDQ4YDfft/preview"
+            "type": "video",
+            "videoUrl": "https://drive.google.com/file/d/1myIWnZa0n1mkBlYyVSWmc9zXC7bbv3U3/view?usp=sharing",
+            "thumbnailUrl": "https://drive.google.com/thumbnail?id=1myIWnZa0n1mkBlYyVSWmc9zXC7bbv3U3&sz=w800",
+            "title": "في عالم التصميم (2D)"
           },
           {
-            "day": 2,
-            "appName": "After Effects",
-            "images": [],
-            "videoUrl": "https://drive.google.com/file/d/1myIWnZa0n1mkBlYyVSWmc9zXC7bbv3U3/preview"
+            "type": "video",
+            "videoUrl": "https://drive.google.com/file/d/11WhWqYXGNotK7gqWiIQxs1FsDQ4YDfft/view?usp=sharing",
+            "thumbnailUrl": "https://drive.google.com/thumbnail?id=11WhWqYXGNotK7gqWiIQxs1FsDQ4YDfft&sz=w800",
+            "title": "كولاج"
           }
         ],
         "c5": [
@@ -1481,10 +1481,10 @@
         ],
         "c6": [
           {
-            "day": 1,
-            "appName": "CapCut",
-            "images": [],
-            "videoUrl": "https://drive.google.com/file/d/1v_jR-bT9k2Va8iosg_q0JtqBvlNuXeZc/preview"
+            "type": "video",
+            "videoUrl": "https://drive.google.com/file/d/1v_jR-bT9k2Va8iosg_q0JtqBvlNuXeZc/view?usp=sharing",
+            "thumbnailUrl": "https://drive.google.com/thumbnail?id=1v_jR-bT9k2Va8iosg_q0JtqBvlNuXeZc&sz=w800",
+            "title": "تطبيق فيديو"
           }
         ],
         "c7": [
@@ -1591,15 +1591,20 @@
         ],
         "c10": [
           {
-            "day": 1,
-            "appName": "تقارير الحملات التسويقية",
-            "images": [
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-01.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-02.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-03.jpg",
-              "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-04.jpg"
-            ],
-            "videoUrl": ""
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-01.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-02.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-03.jpg"
+          },
+          {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/athar-training/Prime2026/main/images/courses/c10-marketing/day-1/mk-d1-04.jpg"
           }
         ],
         "w1": [

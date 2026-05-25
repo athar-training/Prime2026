@@ -1514,14 +1514,18 @@ function calcSectionProgress(sectionKey){
       return calcProgress(STATE.prerequisites.items, i => i.ready);
     
     case 'library': {
-      // حساب جاهزية بناء على وجود محتوى في الأقسام الأربعة
       const lib = STATE.library || {};
-      const piCount = lib.practiceImages ? Object.values(lib.practiceImages).reduce((s,arr) => s + (Array.isArray(arr) ? arr.length : 0), 0) : 0;
+      const piCount = lib.practiceImages ? Object.values(lib.practiceImages).reduce((s, arr) => {
+        if(!Array.isArray(arr) || arr.length === 0) return s;
+        const first = arr[0];
+        if(first && typeof first === 'object' && 'day' in first){
+          return s + arr.reduce((ss, day) => ss + (Array.isArray(day.images) ? day.images.length : 0), 0);
+        }
+        return s + arr.length;
+      }, 0) : 0;
       const swCount = (lib.studentWorks || []).length;
       const rsCount = (lib.resources || []).length;
       const mcCount = (lib.mediaContent || []).length;
-      const total = piCount + swCount + rsCount + mcCount;
-      // كل قسم له هدف تقريبي يساوي مرحلة جاهزية
       let pct = 0;
       if(piCount > 0) pct += 25;
       if(swCount > 0) pct += 25;
@@ -5807,7 +5811,16 @@ function renderLibrary(){
   const activeTab = window._libraryTab || 'practiceImages';
   
   // عدّ المحتوى
-  const piCount = Object.values(lib.practiceImages || {}).reduce((s,arr) => s + (Array.isArray(arr) ? arr.length : 0), 0);
+  const piCount = Object.values(lib.practiceImages || {}).reduce((s, arr) => {
+    if(!Array.isArray(arr) || arr.length === 0) return s;
+    const first = arr[0];
+    if(first && typeof first === 'object' && 'day' in first){
+      // بنية الأيام
+      return s + arr.reduce((ss, day) => ss + (Array.isArray(day.images) ? day.images.length : 0), 0);
+    }
+    // بنية مباشرة
+    return s + arr.length;
+  }, 0);
   const swCount = (lib.studentWorks || []).length;
   const rsCount = (lib.resources || []).length;
   const mcCount = (lib.mediaContent || []).length;
@@ -5894,11 +5907,17 @@ function renderPracticeImagesSection(practiceImages){
   const courses = STATE.curriculum.courses || [];
   const workshops = (STATE.shiftcore && STATE.shiftcore.workshops) || [];
   
-  // دالة مساعدة: عدّ الصور في بنية الأيام
+  // دالة مساعدة: عدّ الصور (تدعم بنية الأيام + بنية المصفوفة المباشرة)
   const countImages = (id) => {
     const data = practiceImages[id];
-    if(!Array.isArray(data)) return 0;
-    return data.reduce((sum, day) => sum + (Array.isArray(day.images) ? day.images.length : 0), 0);
+    if(!Array.isArray(data) || data.length === 0) return 0;
+    const first = data[0];
+    if(first && typeof first === 'object' && 'day' in first){
+      // بنية الأيام
+      return data.reduce((sum, day) => sum + (Array.isArray(day.images) ? day.images.length : 0), 0);
+    }
+    // بنية مباشرة (كائنات تطبيق)
+    return data.length;
   };
   
   let html = `
@@ -5966,97 +5985,131 @@ function renderPracticeImagesSection(practiceImages){
 function viewPracticeImages(itemId, itemName, type){
   const data = (STATE.library.practiceImages && STATE.library.practiceImages[itemId]) || [];
   
-  // عدّ إجمالي الصور
-  const totalImages = Array.isArray(data) ? data.reduce((s, day) => s + (Array.isArray(day.images) ? day.images.length : 0), 0) : 0;
-  
-  if(totalImages === 0){
+  if(!Array.isArray(data) || data.length === 0){
     showToast('لا توجد صور لهذه الدورة/الورشة بعد', 'info');
     return;
   }
   
-  // إذا كانت البنية القديمة (مصفوفة روابط مباشرة) نتعامل معها كيوم واحد
-  let dayGroups = [];
-  if(Array.isArray(data) && data.length > 0 && typeof data[0] === 'object' && 'day' in data[0]){
-    dayGroups = data;
-  } else if(Array.isArray(data) && data.length > 0 && typeof data[0] === 'string'){
-    dayGroups = [{day: 1, images: data}];
-  }
+  const accent = type === 'course' ? 'var(--PD)' : 'var(--PM)';
   
-  const accent = type === 'course' ? 'var(--PD)' : 'var(--TC)';
+  // دالة تحويل رابط الفيديو إلى embed
+  const toEmbed = (videoUrl) => {
+    if(!videoUrl) return '';
+    if(videoUrl.includes('drive.google.com')){
+      const m = videoUrl.match(/\/file\/d\/([^\/\?]+)/);
+      if(m && m[1]) return `https://drive.google.com/file/d/${m[1]}/preview`;
+    } else if(videoUrl.includes('youtube.com/watch')){
+      const vid = (videoUrl.match(/v=([^&]+)/) || [])[1];
+      if(vid) return `https://www.youtube.com/embed/${vid}`;
+    } else if(videoUrl.includes('youtu.be/')){
+      const vid = videoUrl.split('youtu.be/')[1].split(/[?&]/)[0];
+      if(vid) return `https://www.youtube.com/embed/${vid}`;
+    } else if(videoUrl.includes('vimeo.com/')){
+      const vid = videoUrl.split('vimeo.com/')[1].split(/[?&]/)[0];
+      if(vid) return `https://player.vimeo.com/video/${vid}`;
+    }
+    return videoUrl;
+  };
+  
+  // كشف نوع البنية
+  const firstItem = data[0];
+  const isNewStructure = firstItem && typeof firstItem === 'object' && 
+    ('type' in firstItem || 'url' in firstItem || 'videoUrl' in firstItem) && 
+    !('day' in firstItem);
+  const isDayStructure = firstItem && typeof firstItem === 'object' && 'day' in firstItem;
   
   let body = '';
   
-  dayGroups.forEach(dayObj => {
-    const images = (dayObj.images || []).filter(u => typeof u === 'string' && u.trim());
-    const videoUrl = (dayObj.videoUrl || '').trim();
-    if(images.length === 0 && !videoUrl) return;  // نتجاهل اليوم الفاضي
-    
-    // اسم القسم: إذا في appName (تطبيق) نستخدمه، وإلا "اليوم X"
-    const sectionLabel = dayObj.appName ? dayObj.appName : `اليوم ${dayObj.day}`;
-    
-    // تحويل رابط الفيديو إلى embed
-    let videoEmbedUrl = '';
-    if(videoUrl){
-      if(videoUrl.includes('drive.google.com')){
-        // Google Drive: /file/d/{ID}/view أو /file/d/{ID}/preview
-        const m = videoUrl.match(/\/file\/d\/([^\/\?]+)/);
-        if(m && m[1]) videoEmbedUrl = `https://drive.google.com/file/d/${m[1]}/preview`;
-        else videoEmbedUrl = videoUrl;
-      } else if(videoUrl.includes('youtube.com/watch')){
-        const vid = (videoUrl.match(/v=([^&]+)/) || [])[1];
-        if(vid) videoEmbedUrl = `https://www.youtube.com/embed/${vid}`;
-      } else if(videoUrl.includes('youtu.be/')){
-        const vid = videoUrl.split('youtu.be/')[1].split(/[?&]/)[0];
-        if(vid) videoEmbedUrl = `https://www.youtube.com/embed/${vid}`;
-      } else if(videoUrl.includes('vimeo.com/')){
-        const vid = videoUrl.split('vimeo.com/')[1].split(/[?&]/)[0];
-        if(vid) videoEmbedUrl = `https://player.vimeo.com/video/${vid}`;
-      } else {
-        videoEmbedUrl = videoUrl;
-      }
-    }
-    
+  if(isNewStructure){
+    // ===== البنية الجديدة: مصفوفة تطبيقات مباشرة بدون أيام =====
     body += `
-      <div style="margin-bottom:24px">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-          <div style="background:${accent};color:#fff;font-size:12px;font-weight:800;padding:6px 14px;border-radius:20px;letter-spacing:0.3px">
-            ${sectionLabel}
-          </div>
-          <div style="flex:1;height:1px;background:linear-gradient(to left,var(--GL),transparent)"></div>
-          <div style="font-size:11px;color:var(--TX3)">${images.length} صورة${videoEmbedUrl ? ' + فيديو' : ''}</div>
-        </div>
-        
-        ${videoEmbedUrl ? `
-          <div style="margin-bottom:14px;border:1px solid var(--GL);border-radius:12px;overflow:hidden;background:#000;position:relative">
-            <div style="position:relative;padding-bottom:56.25%;height:0">
-              <iframe src="${videoEmbedUrl}" 
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                allowfullscreen></iframe>
-            </div>
-            <div style="background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);padding:14px 16px 10px;color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;gap:6px">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
-              اضغط لمشاهدة الفيديو بشاشة كاملة
-            </div>
-          </div>
-        ` : ''}
-        
-        ${images.length > 0 ? `
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px">
-          ${images.map((url, idx) => `
-            <a href="${url}" target="_blank" rel="noopener noreferrer" 
-               style="display:block;border:1px solid var(--GL);border-radius:10px;overflow:hidden;text-decoration:none;background:#fafafa;position:relative;aspect-ratio:1/1">
-              <img src="${url}" alt="تطبيق ${idx+1}" 
-                   style="width:100%;height:100%;object-fit:contain;display:block;padding:6px;box-sizing:border-box"
-                   onerror="this.closest('a').style.display='none'">
-              <div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.7);color:#fff;font-size:9px;padding:2px 6px;border-radius:6px;font-weight:700">${idx+1}</div>
-            </a>
-          `).join('')}
-        </div>
-        ` : ''}
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
+        ${data.map((item, idx) => {
+          const num = idx + 1;
+          
+          if(item.type === 'video' || item.videoUrl){
+            const videoUrl = item.videoUrl || '';
+            const thumbUrl = item.thumbnailUrl || '';
+            const embedUrl = toEmbed(videoUrl);
+            const title = item.title || `تطبيق ${num}`;
+            
+            return `
+              <a href="${videoUrl}" target="_blank" rel="noopener noreferrer" 
+                 style="display:block;border:1px solid var(--GL);border-radius:12px;overflow:hidden;text-decoration:none;background:#000;position:relative;aspect-ratio:16/10">
+                ${thumbUrl ? `
+                  <img src="${thumbUrl}" alt="${title}" 
+                       style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.85"
+                       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                ` : ''}
+                <div style="display:${thumbUrl?'none':'flex'};width:100%;height:100%;background:linear-gradient(135deg,${accent},#000);align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#fff">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <div style="font-size:11px;font-weight:700">${title}</div>
+                </div>
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+                  <div style="background:rgba(0,0,0,0.6);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                </div>
+                <div style="position:absolute;top:8px;right:8px;background:#FF0000;color:#fff;font-size:9px;font-weight:800;padding:3px 8px;border-radius:8px;letter-spacing:0.5px">فيديو</div>
+                <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);padding:14px 12px 10px;color:#fff">
+                  <div style="font-size:12px;font-weight:700">تطبيق ${num}</div>
+                  ${item.title ? `<div style="font-size:10px;opacity:0.85;margin-top:2px">${item.title}</div>` : ''}
+                </div>
+              </a>
+            `;
+          } else {
+            // عنصر صورة
+            const url = item.url || (typeof item === 'string' ? item : '');
+            if(!url) return '';
+            return `
+              <a href="${url}" target="_blank" rel="noopener noreferrer" 
+                 style="display:block;border:1px solid var(--GL);border-radius:12px;overflow:hidden;text-decoration:none;background:#fafafa;position:relative;aspect-ratio:1/1">
+                <img src="${url}" alt="تطبيق ${num}" 
+                     style="width:100%;height:100%;object-fit:contain;display:block;padding:6px;box-sizing:border-box"
+                     onerror="this.closest('a').style.display='none'">
+                <div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.7);color:#fff;font-size:9px;padding:2px 6px;border-radius:6px;font-weight:700">تطبيق ${num}</div>
+              </a>
+            `;
+          }
+        }).join('')}
       </div>
     `;
-  });
+  } else if(isDayStructure){
+    // ===== البنية القديمة: مصفوفة أيام =====
+    let dayGroups = data;
+    
+    dayGroups.forEach(dayObj => {
+      const images = (dayObj.images || []).filter(u => typeof u === 'string' && u.trim());
+      if(images.length === 0) return;
+      
+      body += `
+        <div style="margin-bottom:24px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <div style="background:${accent};color:#fff;font-size:12px;font-weight:800;padding:6px 14px;border-radius:20px;letter-spacing:0.3px">
+              اليوم ${dayObj.day}
+            </div>
+            <div style="flex:1;height:1px;background:linear-gradient(to left,var(--GL),transparent)"></div>
+            <div style="font-size:11px;color:var(--TX3)">${images.length} صورة</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px">
+            ${images.map((url, idx) => `
+              <a href="${url}" target="_blank" rel="noopener noreferrer" 
+                 style="display:block;border:1px solid var(--GL);border-radius:10px;overflow:hidden;text-decoration:none;background:#fafafa;position:relative;aspect-ratio:1/1">
+                <img src="${url}" alt="تطبيق ${idx+1}" 
+                     style="width:100%;height:100%;object-fit:contain;display:block;padding:6px;box-sizing:border-box"
+                     onerror="this.closest('a').style.display='none'">
+                <div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.7);color:#fff;font-size:9px;padding:2px 6px;border-radius:6px;font-weight:700">${idx+1}</div>
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    });
+  }
+  
+  if(!body) {
+    body = '<div style="text-align:center;padding:40px;color:var(--TX3)">لا يوجد محتوى للعرض</div>';
+  }
   
   openModal(`${type==='course'?'دورة':'ورشة'}: ${itemName}`, body);
 }
