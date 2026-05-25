@@ -70,6 +70,178 @@ body{font-family:"Cairo",sans-serif;background:var(--BG);min-height:100vh;color:
 .hero-title span{color:var(--TC)}
 .hero-desc{font-size:13px;color:var(--TX2);max-width:560px;margin:0 auto;line-height:1.9;position:relative;z-index:1}
 
+/* ===== مقدمة فخمة (Manifesto) ===== */
+.manifesto{
+  background:#fff;
+  padding:80px 32px 90px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--GL);
+}
+.manifesto::before{
+  content:"";
+  position:absolute;
+  top:60px;
+  right:8%;
+  width:180px;
+  height:180px;
+  border:1.5px solid var(--PL);
+  border-radius:50%;
+  opacity:0.7;
+  pointer-events:none;
+}
+.manifesto::after{
+  content:"";
+  position:absolute;
+  bottom:40px;
+  left:6%;
+  width:120px;
+  height:120px;
+  border:1.5px solid var(--TL);
+  border-radius:50%;
+  opacity:0.6;
+  pointer-events:none;
+}
+.manifesto-wrap{
+  max-width:840px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+.manifesto-label{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:3px;
+  color:var(--TC);
+  margin-bottom:32px;
+  text-transform:uppercase;
+}
+.manifesto-label::before,
+.manifesto-label::after{
+  content:"";
+  width:36px;
+  height:2px;
+  background:var(--TC);
+  display:inline-block;
+}
+.manifesto-headline{
+  font-size:46px;
+  font-weight:900;
+  color:var(--PD);
+  line-height:1.25;
+  margin-bottom:14px;
+  letter-spacing:-1px;
+  position:relative;
+  display:inline-block;
+}
+.manifesto-headline::after{
+  content:"";
+  position:absolute;
+  bottom:-8px;
+  right:0;
+  width:60px;
+  height:4px;
+  background:var(--TC);
+  border-radius:2px;
+}
+.manifesto-divider{
+  width:1px;
+  height:48px;
+  background:var(--PM);
+  margin:36px auto;
+  opacity:0.35;
+}
+.manifesto-body{
+  font-size:19px;
+  line-height:2.1;
+  color:var(--TX1);
+  font-weight:500;
+  max-width:720px;
+  margin:0 auto 24px;
+  position:relative;
+}
+.manifesto-body strong{
+  color:var(--PD);
+  font-weight:800;
+  background:linear-gradient(transparent 60%, var(--PL) 60%);
+  padding:0 4px;
+}
+.manifesto-body .accent{
+  color:var(--PD);
+  font-weight:800;
+  position:relative;
+  white-space:nowrap;
+}
+.manifesto-body .accent::after{
+  content:"";
+  position:absolute;
+  bottom:-2px;
+  right:0;
+  left:0;
+  height:2px;
+  background:var(--TC);
+  opacity:0.85;
+}
+.manifesto-meta{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:13px;
+  color:var(--PM);
+  font-weight:700;
+  padding:10px 22px;
+  background:var(--PL);
+  border-radius:99px;
+  margin-top:8px;
+}
+.manifesto-meta svg{
+  width:16px;
+  height:16px;
+  stroke:var(--PD);
+}
+.manifesto-footer{
+  font-size:24px;
+  font-weight:800;
+  color:var(--PD);
+  line-height:1.6;
+  max-width:680px;
+  margin:0 auto;
+  padding:32px 28px;
+  border:1.5px solid var(--PL);
+  border-radius:20px;
+  background:#fdfcff;
+  position:relative;
+}
+.manifesto-footer::before{
+  content:"";
+  position:absolute;
+  top:-1px;
+  right:24px;
+  width:48px;
+  height:3px;
+  background:var(--TC);
+  border-radius:0 0 4px 4px;
+}
+.manifesto-footer em{
+  color:var(--TC);
+  font-style:normal;
+  font-weight:900;
+}
+@media (max-width:768px){
+  .manifesto{padding:50px 20px 60px}
+  .manifesto-headline{font-size:30px;letter-spacing:-0.5px}
+  .manifesto-body{font-size:15px;line-height:1.95}
+  .manifesto-footer{font-size:17px;padding:24px 20px}
+  .manifesto-label{font-size:10px;letter-spacing:2px;margin-bottom:24px}
+  .manifesto-label::before,.manifesto-label::after{width:24px}
+  .manifesto::before{width:120px;height:120px;top:30px;right:-30px}
+  .manifesto::after{width:80px;height:80px;bottom:20px;left:-20px}
+  .manifesto-divider{height:36px;margin:24px auto}
+}
+
 /* ============ STATS ============ */
 .stats-bar{background:#fff;border-bottom:1px solid var(--GL);padding:0 32px}
 .stats-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:0}
@@ -749,12 +921,30 @@ td button,
   </div>
 </div>
 
-<!-- ============ HERO ============ -->
-<div class="hero">
-  <div class="hero-eyebrow"><div class="hero-dot"></div>نظام إدارة شامل</div>
-  <div class="hero-title">معسكر المصمم المحترف <span>Prime 2026</span></div>
-  <div class="hero-desc">برنامج تدريبي متكامل بالشراكة مع جامعة الملك خالد. 10 دورات في المرحلة الأساسية + 6 ورش عمل + هاكاثون ختامي + شهادات معتمدة من المؤسسة العامة للتدريب التقني والمهني.</div>
-</div>
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto">
+  <div class="manifesto-wrap">
+    <h2 class="manifesto-headline">هذا مو معسكر تصميم تقليدي</h2>
+    
+    <p class="manifesto-body">
+      الطلاب هنا ما يتعلمون كيف يصممون فقط، يتعلمون كيف يصممون 
+      <strong>محتوى سوشل ميديا</strong> 
+      ويبنون 
+      <strong>مواقع وواجهات وتجارب رقمية كاملة</strong> 
+      باستخدام 
+      <span class="accent">الذكاء الاصطناعي</span>
+    </p>
+    
+    <p class="manifesto-body" style="margin-bottom:36px">
+      حتى لوحة التحكم اللي قدامكم الآن تم تطويرها بالاعتماد على أدوات الذكاء الاصطناعي
+    </p>
+    
+    <div class="manifesto-footer">
+      الفكرة مو تعليم أدوات وبس، الفكرة إننا نجهز 
+      <em>مصمم يفهم مستقبل السوق فعلاً</em>
+    </div>
+  </div>
+</section>
 
 <!-- ============ STATS BAR ============ -->
 <div class="stats-bar">
