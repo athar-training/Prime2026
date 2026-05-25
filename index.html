@@ -145,7 +145,7 @@ body{font-family:"Cairo",sans-serif;background:var(--BG);min-height:100vh;color:
 .tag-p{background:var(--PL);color:var(--PM)}
 .tag-t{background:var(--TL);color:#005050}
 .tag-g{background:#D1FAE5;color:#065F46}
-.tag-o{background:#FEF3C7;color:#92400E}
+.tag-o{background:#FEF3C7;color:var(--PD)}
 .tag-r{background:#FEE2E2;color:#991B1B}
 .tag-gr{background:var(--GL);color:var(--TX2)}
 
@@ -202,7 +202,7 @@ tr:last-child td{border-bottom:none}
 tr:hover td{background:#FAFAFC}
 .t-status{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:99px}
 .t-status.done{background:#D1FAE5;color:#065F46}
-.t-status.progress{background:#FEF3C7;color:#92400E}
+.t-status.progress{background:#FEF3C7;color:var(--PD)}
 .t-status.pending{background:var(--GL);color:var(--TX2)}
 .t-status.blocked{background:#FEE2E2;color:#991B1B}
 .t-action{background:none;border:none;color:var(--PM);cursor:pointer;font-size:11px;font-weight:600;font-family:"Cairo",sans-serif;padding:4px 8px;border-radius:6px;transition:background .15s}
@@ -260,7 +260,7 @@ tr:hover td{background:#FAFAFC}
 /* ============ ALERTS ============ */
 .alert{padding:12px 16px;border-radius:10px;display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;border:1px solid}
 .alert.info{background:#EFF6FF;border-color:#BFDBFE;color:#1E40AF}
-.alert.warn{background:#FFFBEB;border-color:#FDE68A;color:#92400E}
+.alert.warn{background:var(--PL);border-color:var(--PM);color:var(--PD)}
 .alert.danger{background:#FEF2F2;border-color:#FECACA;color:#991B1B}
 .alert.success{background:#F0FDF4;border-color:#BBF7D0;color:#166534}
 .alert-icon{flex-shrink:0;width:18px;height:18px;margin-top:1px}
@@ -2447,7 +2447,7 @@ function showAcceptedStatModal(){
           <div style="font-size:18px;font-weight:800;color:#005050">${accepted}</div>
           <div style="font-size:11px;color:var(--TX3);margin-top:2px">مقبولون</div>
         </div>
-        <div style="padding:10px;background:#FFF8E1;border-radius:8px;text-align:center">
+        <div style="padding:10px;background:var(--PL);border-radius:8px;text-align:center">
           <div style="font-size:18px;font-weight:800;color:#7C5800">${seatsRemaining}</div>
           <div style="font-size:11px;color:var(--TX3);margin-top:2px">مقاعد شاغرة</div>
         </div>
@@ -2742,7 +2742,7 @@ function showCertCoordinatorStat(){
           <div style="font-size:11px;color:var(--TX3);margin-bottom:2px">آخر موعد للتقديم</div>
           <div style="font-size:13px;font-weight:800;color:${c.submissionDeadline ? '#005050' : '#991B1B'}">${c.submissionDeadline || 'لم يُحدد'}</div>
         </div>
-        <div style="padding:10px;background:${c.approvalReceived ? 'var(--TL)' : '#FFF8E1'};border-radius:8px;text-align:center">
+        <div style="padding:10px;background:${c.approvalReceived ? 'var(--TL)' : 'var(--PL)'};border-radius:8px;text-align:center">
           <div style="font-size:11px;color:var(--TX3);margin-bottom:2px">الموافقة</div>
           <div style="font-size:13px;font-weight:800;color:${c.approvalReceived ? '#005050' : '#7C5800'}">${c.approvalReceived ? 'تمت' : 'لم تتم'}</div>
         </div>
@@ -3038,7 +3038,7 @@ function showRisksStat(){
           <div style="font-size:20px;font-weight:900;color:#991B1B">${high.length}</div>
           <div style="font-size:11px;color:var(--TX3);margin-top:2px">عالي</div>
         </div>
-        <div style="padding:10px;background:#FFF8E1;border-radius:8px;text-align:center">
+        <div style="padding:10px;background:var(--PL);border-radius:8px;text-align:center">
           <div style="font-size:20px;font-weight:900;color:#7C5800">${medium.length}</div>
           <div style="font-size:11px;color:var(--TX3);margin-top:2px">متوسط</div>
         </div>
@@ -3199,8 +3199,8 @@ function renderOverview(){
   // Timeline
   html += `
     <div style="margin-bottom:14px;font-size:13px;font-weight:800;color:var(--PD);margin-top:26px">المسار الزمني للمعسكر</div>
-    <div style="background:#FFF8E1;border-right:4px solid #FFB300;border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:12px;color:#5D4037;line-height:1.7">
-      <strong style="color:#E65100">ملاحظة:</strong> التواريخ المعروضة للعرض التوضيحي فقط، وسيتم تعديلها عند اعتماد المشروع من الجامعة. التواريخ المعتمدة فعليا تظهر بعلامة خضراء، والمقترحة بعلامة برتقالية.
+    <div style="background:var(--PL);border-right:4px solid var(--PD);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:12px;color:var(--PD);line-height:1.7">
+      <strong style="color:var(--PD)">ملاحظة:</strong> التواريخ المعروضة للعرض التوضيحي فقط، وسيتم تعديلها عند اعتماد المشروع من الجامعة. التواريخ المعتمدة فعليا تظهر بحالة "معتمد"، والمقترحة بحالة "مقترح" بانتظار موافقة الجامعة.
     </div>
     <div class="table-wrap">
       <div class="timeline">
@@ -3413,8 +3413,8 @@ function renderTimeline(){
       <div class="progress-value">${progress}%</div>
     </div>
     
-    <div style="background:#FFF8E1;border-right:4px solid #FFB300;border-radius:10px;padding:14px 18px;margin-bottom:18px;font-size:13px;color:#5D4037;line-height:1.7">
-      <strong style="color:#E65100">ملاحظة:</strong> التواريخ المعروضة للعرض التوضيحي فقط، وسيتم تعديلها عند اعتماد المشروع من الجامعة. التواريخ المعتمدة فعليا تظهر بعلامة خضراء، والمقترحة بعلامة برتقالية.
+    <div style="background:var(--PL);border-right:4px solid var(--PD);border-radius:10px;padding:14px 18px;margin-bottom:18px;font-size:13px;color:var(--PD);line-height:1.7">
+      <strong style="color:var(--PD)">ملاحظة:</strong> التواريخ المعروضة للعرض التوضيحي فقط، وسيتم تعديلها عند اعتماد المشروع من الجامعة. التواريخ المعتمدة فعليا تظهر بحالة "معتمد"، والمقترحة بحالة "مقترح" بانتظار موافقة الجامعة.
     </div>
     
     <div class="table-wrap">
@@ -7104,7 +7104,7 @@ function renderArchive(){
     'marketing':'تسويقي',
     'team':'فريق'
   };
-  const impactColors = {'high':'#D32F2F','medium':'#F57C00','low':'#388E3C'};
+  const impactColors = {'high':'#D32F2F','medium':'var(--PM)','low':'#388E3C'};
   const impactNames = {'high':'تأثير عالي','medium':'تأثير متوسط','low':'تأثير منخفض'};
   const statusNames = {'implemented':'مُنفّذ','approved':'معتمد','pending':'قيد المراجعة'};
   
