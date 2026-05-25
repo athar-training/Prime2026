@@ -52,11 +52,11 @@ body{font-family:"Cairo",sans-serif;background:var(--BG);min-height:100vh;color:
 .hdr-partner-box{text-align:left}
 .hdr-lbl{font-size:9px;color:var(--TC);font-weight:700;margin-bottom:2px;letter-spacing:.5px}
 .hdr-partner{font-size:12px;font-weight:700;color:#fff}
-.hdr-bar{background:var(--PM);padding:8px 32px;display:flex;align-items:center;gap:8px}
-.hdr-bar-dot{width:6px;height:6px;border-radius:50%;background:var(--TC);animation:blink 2s infinite}
+.hdr-bar{background:transparent;padding:6px 32px;display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--GL)}
+.hdr-bar-dot{width:5px;height:5px;border-radius:50%;background:var(--TC);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.hdr-bar-txt{font-size:11px;color:#fff;font-weight:600;flex:1}
-.hdr-date{font-size:10px;color:rgba(255,255,255,.7)}
+.hdr-bar-txt{font-size:9px;color:var(--PD);font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hdr-date{display:none}
 
 /* ============ HERO ============ */
 .hero{background:#fff;padding:40px 32px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--GL)}
@@ -733,7 +733,6 @@ td button,
       </div>
       <div class="hdr-right">
         <div class="hdr-actions">
-          <div id="lastPublished" style="font-size:11px;color:rgba(255,255,255,.85);font-weight:600;background:rgba(0,0,0,.3);padding:6px 12px;border-radius:6px;backdrop-filter:blur(10px)">جاري التحميل...</div>
         </div>
         <div class="hdr-partner-box" style="display:none">
           <div class="hdr-lbl">بالشراكة مع</div>
@@ -745,7 +744,6 @@ td button,
   <div class="hdr-bar">
     <div class="hdr-bar-dot"></div>
     <div class="hdr-bar-txt">معسكر المصمم المحترف Prime 2026 — لوحة المتابعة الرسمية</div>
-    <div class="hdr-date" id="todayDate"></div>
   </div>
 </div>
 
@@ -777,6 +775,11 @@ td button,
     <div class="stat-cell">
       <div class="stat-cell-value" id="statCourses">0/10</div>
       <div class="stat-cell-label">دورة جاهزة</div>
+      <div class="stat-cell-sub">منهج مكتمل</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-value" id="statWorkshops">0/6</div>
+      <div class="stat-cell-label">ورشة جاهزة</div>
       <div class="stat-cell-sub">منهج مكتمل</div>
     </div>
     <div class="stat-cell">
@@ -984,18 +987,12 @@ const DEFAULT_DATA = {
   // 1. الهوية البصرية
   identity: {
     items: [
-      {id:'logo_main', name:'اللوقو الرئيسي (عربي + إنجليزي)', status:'pending', file:'', notes:'', updated:''},
-      {id:'logo_variants', name:'نسخ اللوقو (Primary, Secondary, Mono, Icon)', status:'pending', file:'', notes:'', updated:''},
-      {id:'colors', name:'نظام الألوان (HEX, RGB, CMYK)', status:'pending', file:'', notes:'', updated:''},
-      {id:'fonts', name:'نظام الخطوط (عنوان، فرعي، نص)', status:'pending', file:'', notes:'', updated:''},
-      {id:'icons', name:'مكتبة الأيقونات الموحدة (10 أيقونات للدورات)', status:'pending', file:'', notes:'', updated:''},
-      {id:'social_ig', name:'قوالب انستقرام (Post, Story, Reel)', status:'pending', file:'', notes:'', updated:''},
-      {id:'social_tt', name:'قوالب تيك توك', status:'pending', file:'', notes:'', updated:''},
-      {id:'social_x', name:'قوالب X/تويتر', status:'pending', file:'', notes:'', updated:''},
-      {id:'social_li', name:'قوالب لينكدان', status:'pending', file:'', notes:'', updated:''},
-      {id:'certificate', name:'تصميم الشهادة', status:'pending', file:'', notes:'', updated:''},
-      {id:'presentation', name:'قالب العروض التقديمية للمدربين', status:'pending', file:'', notes:'', updated:''},
-      {id:'mockups', name:'مكتبة Mockups (لابتوب، جوال، شاشة)', status:'pending', file:'', notes:'', updated:''}
+      {id:'logo_main', name:'اللوقو الرئيسي (عربي + إنجليزي)', status:'pending', file:'', notes:'', updated:'', previewImage:''},
+      {id:'logo_variants', name:'نسخ اللوقو (Primary, Secondary, Mono, Icon)', status:'pending', file:'', notes:'', updated:'', previewImage:''},
+      {id:'colors', name:'نظام الألوان (HEX, RGB, CMYK)', status:'pending', file:'', notes:'', updated:'', previewImage:''},
+      {id:'fonts', name:'نظام الخطوط (عنوان، فرعي، نص)', status:'pending', file:'', notes:'', updated:'', previewImage:''},
+      {id:'icons', name:'مكتبة الأيقونات الموحدة (10 أيقونات للدورات)', status:'pending', file:'', notes:'', updated:'', previewImage:''},
+      {id:'mockups', name:'مكتبة Mockups (لابتوب، جوال، شاشة)', status:'pending', file:'', notes:'', updated:'', previewImage:''}
     ]
   },
 
@@ -1435,13 +1432,13 @@ function calcSectionProgress(sectionKey){
       return calcProgress(STATE.team.members, m => m.role && m.responsibilities && m.responsibilities.length > 0);
     
     case 'trainers': {
-      // معادلة 90/10: المدرب (40%) + التواصل (25%) + اجتماع التعريف (25%) + توقيع العقد (10%)
+      // معادلة 100%: المدرب (40%) + التواصل (30%) + اجتماع التعريف (30%)
+      // عقد المدرب لم يعد ضمن المعادلة
       const calcItemReadiness = (t) => {
         let pct = 0;
         if(t.trainer && String(t.trainer).trim()) pct += 40;
-        if(t.contacted) pct += 25;
-        if(t.briefingDone) pct += 25;
-        if(t.contractSigned) pct += 10;
+        if(t.contacted) pct += 30;
+        if(t.briefingDone) pct += 30;
         return pct;
       };
       const courses = STATE.trainers.list || [];
@@ -1454,7 +1451,7 @@ function calcSectionProgress(sectionKey){
     
     case 'curriculum':
       return calcProgress(STATE.curriculum.courses, c => 
-        c.axes && c.outputs && c.requiredApps && c.sourceLink
+        c.axes && c.outputs && c.requiredApps
       );
     
     case 'platform': {
@@ -1653,19 +1650,62 @@ function calcDaysToLaunch(){
   return diff;
 }
 
-// عدد المدربين المؤكدين (3 مدربين أساسيين فقط)
+// عدد المدربين الرئيسيين الفريدين المؤكدين (المؤكد = عنده اسم + contacted + briefingDone)
 function calcConfirmedTrainers(){
-  // نحسب الدورات والورش اللي عندها مدرب موقع عقد
-  let count = 0;
+  const uniqueTrainers = new Set();
   STATE.trainers.list.forEach(t => {
-    if(t.trainer && t.contractSigned) count++;
+    if(t.trainer && String(t.trainer).trim() && t.contacted && t.briefingDone){
+      uniqueTrainers.add(String(t.trainer).trim());
+    }
   });
   if(STATE.shiftcore && Array.isArray(STATE.shiftcore.workshops)){
     STATE.shiftcore.workshops.forEach(w => {
-      if(w.trainer && w.contractSigned) count++;
+      if(w.trainer && String(w.trainer).trim() && w.contacted && w.briefingDone){
+        uniqueTrainers.add(String(w.trainer).trim());
+      }
+    });
+  }
+  return uniqueTrainers.size;
+}
+
+// إجمالي عدد المدربين الرئيسيين الفريدين (سواء مؤكدين أو لا)
+function calcTotalUniqueTrainers(){
+  const uniqueTrainers = new Set();
+  STATE.trainers.list.forEach(t => {
+    if(t.trainer && String(t.trainer).trim()){
+      uniqueTrainers.add(String(t.trainer).trim());
+    }
+  });
+  if(STATE.shiftcore && Array.isArray(STATE.shiftcore.workshops)){
+    STATE.shiftcore.workshops.forEach(w => {
+      if(w.trainer && String(w.trainer).trim()){
+        uniqueTrainers.add(String(w.trainer).trim());
+      }
+    });
+  }
+  return Math.max(uniqueTrainers.size, 1);
+}
+
+// عدد الدورات والورش اللي مدربها مؤكد (للكرت اللي يجمع الدورات+الورش)
+function calcConfirmedTrainingSlots(){
+  let count = 0;
+  STATE.trainers.list.forEach(t => {
+    if(t.trainer && String(t.trainer).trim() && t.contacted && t.briefingDone) count++;
+  });
+  if(STATE.shiftcore && Array.isArray(STATE.shiftcore.workshops)){
+    STATE.shiftcore.workshops.forEach(w => {
+      if(w.trainer && String(w.trainer).trim() && w.contacted && w.briefingDone) count++;
     });
   }
   return count;
+}
+
+// عدد الورش الجاهزة
+function calcReadyWorkshops(){
+  if(!STATE.shiftcore || !Array.isArray(STATE.shiftcore.workshops)) return 0;
+  return STATE.shiftcore.workshops.filter(w => 
+    w.axes && w.outputs && w.requiredApps
+  ).length;
 }
 
 // إجمالي عدد الدورات والورش (للمقام)
@@ -1696,20 +1736,17 @@ function calcCourseReadiness(courseId){
   
   let score = 0;
   
-  // المدرب 30%
-  if(trainer && trainer.trainer && trainer.contractSigned) score += 30;
+  // المدرب 30% (مؤكد إذا كان عنده اسم + contacted + briefingDone)
+  if(trainer && trainer.trainer && trainer.contacted && trainer.briefingDone) score += 30;
   
-  // المحاور 25%
-  if(curriculum && curriculum.axes) score += 25;
+  // المحاور 30%
+  if(curriculum && curriculum.axes) score += 30;
   
-  // المخرجات 20%
-  if(curriculum && curriculum.outputs) score += 20;
+  // المخرجات 25%
+  if(curriculum && curriculum.outputs) score += 25;
   
   // التطبيقات المطلوبة 15%
   if(curriculum && curriculum.requiredApps) score += 15;
-  
-  // رابط رفع المخرجات 10%
-  if(curriculum && curriculum.sourceLink) score += 10;
   
   return Math.min(score, 100);
 }
@@ -1778,11 +1815,13 @@ function getActiveAlerts(){
 
 // عدد المتقدمين الحالي vs الهدف
 function calcApplicantsStatus(){
+  // يحسب تلقائيا من trainees.list
+  const current = (STATE.trainees && Array.isArray(STATE.trainees.list)) ? STATE.trainees.list.length : 0;
+  const target = STATE.kpis.targets.applicants;
   return {
-    current: STATE.kpis.actuals.applicants,
-    target: STATE.kpis.targets.applicants,
-    pct: STATE.kpis.targets.applicants > 0 ? 
-      Math.round((STATE.kpis.actuals.applicants / STATE.kpis.targets.applicants) * 100) : 0
+    current: current,
+    target: target,
+    pct: target > 0 ? Math.round((current / target) * 100) : 0
   };
 }
 
@@ -1819,14 +1858,20 @@ function updateTopStats(){
   const launchDate = launchEvt ? (launchEvt.approved || launchEvt.proposed) : '';
   document.getElementById('statLaunchDate').textContent = launchDate ? formatDate(launchDate) : 'لم يُحدد';
   
-  // المدربين (10 دورات + 6 ورش = 16)
-  const trainers = calcConfirmedTrainers();
+  // المدربين (10 دورات + 6 ورش = 16) - يحسب من contacted + briefingDone
+  const trainers = calcConfirmedTrainingSlots();
   const totalSlots = calcTotalTrainingSlots();
   document.getElementById('statTrainers').textContent = trainers + '/' + totalSlots;
   
   // الدورات
   const courses = calcReadyCourses();
   document.getElementById('statCourses').textContent = courses + '/10';
+  
+  // الورش
+  const workshops = calcReadyWorkshops();
+  const totalWorkshops = (STATE.shiftcore && STATE.shiftcore.workshops) ? STATE.shiftcore.workshops.length : 6;
+  const wEl = document.getElementById('statWorkshops');
+  if(wEl) wEl.textContent = workshops + '/' + totalWorkshops;
   
   // الفريق
   const team = calcTeamReady();
@@ -2080,12 +2125,6 @@ function showCardDetails(card){
       html += `<div class="details-modal-section">
         <div class="details-modal-label">التطبيقات المطلوبة</div>
         <div class="details-modal-value">${escapeHtml(courseData.requiredApps)}</div>
-      </div>`;
-    }
-    if(courseData.sourceLink){
-      html += `<div class="details-modal-section">
-        <div class="details-modal-label">رابط السورس والمخرجات</div>
-        <div class="details-modal-value"><a href="${courseData.sourceLink}" target="_blank" style="color:var(--TC);text-decoration:none">${courseData.sourceLink}</a></div>
       </div>`;
     }
   }
@@ -2508,7 +2547,7 @@ function showCoursesStatModal(){
   
   courses.forEach(c => {
     const ready = isReady(c);
-    const filled = ['axes','outputs','requiredApps','sourceLink'].filter(k => c[k] && String(c[k]).trim()).length;
+    const filled = ['axes','outputs','requiredApps'].filter(k => c[k] && String(c[k]).trim()).length;
     const trainerInfo = STATE.trainers?.list?.find(t => t.course === c.name);
     const trainerName = trainerInfo?.trainer ? escapeHtml(trainerInfo.trainer) : '<span style="color:var(--TX3)">لم يُحدد مدرب</span>';
     
@@ -2520,9 +2559,9 @@ function showCoursesStatModal(){
         </div>
         <div style="font-size:11px;color:var(--TC);margin-bottom:4px">${c.days} أيام — المدرب: ${trainerName}</div>
         <div class="progress-bar-wrap" style="margin-top:6px">
-          <div class="progress-bar" style="width:${(filled/4)*100}%"></div>
+          <div class="progress-bar" style="width:${(filled/3)*100}%"></div>
         </div>
-        <div style="font-size:10px;color:var(--TX3);margin-top:4px">${filled} من 4 عناصر مكتملة</div>
+        <div style="font-size:10px;color:var(--TX3);margin-top:4px">${filled} من 3 عناصر مكتملة</div>
       </div>
     `;
   });
@@ -3089,13 +3128,13 @@ function renderOverview(){
     {key:'hackathon', name:'الهاكاثون', date:'—', status:'pending'},
     {key:'closing', name:'الختام', date:'—', status:'pending'}
   ];
-  // ترتيب نسبة الإنجاز لكل قسم
+  // ترتيب نسبة الإنجاز لكل قسم (تنازلي - الأعلى أولا)
   const sectionsList = SECTIONS.filter(s => 
     !['overview','daily','kpis'].includes(s.key)
   ).map(s => ({
     ...s,
     pct: calcSectionProgress(s.key)
-  })).sort((a,b) => a.pct - b.pct);
+  })).sort((a,b) => b.pct - a.pct);
   
   let html = `
     <div class="sec-header">
@@ -3146,8 +3185,8 @@ function renderOverview(){
       </div>
       <div class="kpi clickable-stat" onclick="showTrainersStatModal()" style="cursor:pointer">
         <div class="kpi-label">المدربون المؤكدون</div>
-        <div class="kpi-value">${calcConfirmedTrainers()}/3</div>
-        <div class="kpi-target">قائد + <span>2</span> مساعدين</div>
+        <div class="kpi-value">${calcConfirmedTrainers()}/${calcTotalUniqueTrainers()}</div>
+        <div class="kpi-target">مدربين + مساعدين واحتياط</div>
       </div>
       <div class="kpi clickable-stat" onclick="showCoursesStatModal()" style="cursor:pointer">
         <div class="kpi-label">الدورات الجاهزة</div>
@@ -3160,6 +3199,9 @@ function renderOverview(){
   // Timeline
   html += `
     <div style="margin-bottom:14px;font-size:13px;font-weight:800;color:var(--PD);margin-top:26px">المسار الزمني للمعسكر</div>
+    <div style="background:#FFF8E1;border-right:4px solid #FFB300;border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:12px;color:#5D4037;line-height:1.7">
+      <strong style="color:#E65100">ملاحظة:</strong> التواريخ المعروضة للعرض التوضيحي فقط، وسيتم تعديلها عند اعتماد المشروع من الجامعة. التواريخ المعتمدة فعليا تظهر بعلامة خضراء، والمقترحة بعلامة برتقالية.
+    </div>
     <div class="table-wrap">
       <div class="timeline">
         <div class="timeline-track">
@@ -3184,7 +3226,7 @@ function renderOverview(){
     <div style="margin-bottom:14px;font-size:13px;font-weight:800;color:var(--PD);margin-top:26px">نسبة الإنجاز لكل قسم</div>
     <div class="cards-grid">
   `;
-  sectionsList.slice(0, 9).forEach(s => {
+  sectionsList.forEach(s => {
     const color = s.pct >= 80 ? 'green' : s.pct >= 50 ? 'purple' : s.pct >= 20 ? 'orange' : 'red';
     const status = s.pct >= 100 ? 'done' : s.pct >= 50 ? 'progress' : s.pct > 0 ? 'progress' : 'pending';
     const statusTxt = s.pct >= 100 ? 'مكتمل' : s.pct >= 50 ? 'قيد التنفيذ' : s.pct > 0 ? 'بدأ' : 'لم يبدأ';
@@ -3256,17 +3298,17 @@ function renderIdentity(){
       'done':'done'
     }[item.status] || 'pending';
     const cardColor = item.status === 'done' ? 'green' : item.status === 'progress' ? 'orange' : 'purple';
+    const hasPreview = item.previewImage && String(item.previewImage).trim();
     
     html += `
-      <div class="card">
+      <div class="card" onclick="viewIdentityPreview('${item.id}')" style="cursor:pointer">
         <div class="card-top ${cardColor}"></div>
         <div class="card-body">
           <div class="card-title">${item.name}</div>
-          ${item.file ? `<div class="card-desc">📎 ${item.file}</div>` : ''}
           ${item.notes ? `<div class="card-desc">${item.notes}</div>` : ''}
           <div class="card-status">
             <span class="status-dot ${statusClass}">${statusTxt}</span>
-            <button class="btn sm outline" onclick="editIdentityItem('${item.id}')">تعديل</button>
+            <span style="font-size:11px;color:var(--PD);font-weight:700">${hasPreview ? 'عرض ←' : 'لا توجد صورة'}</span>
           </div>
         </div>
       </div>
@@ -3275,6 +3317,36 @@ function renderIdentity(){
   
   html += '</div>';
   return html;
+}
+
+function viewIdentityPreview(id){
+  const item = STATE.identity.items.find(i => i.id === id);
+  if(!item) return;
+  
+  const hasPreview = item.previewImage && String(item.previewImage).trim();
+  
+  let body = '';
+  if(hasPreview){
+    body = `
+      <div style="text-align:center;padding:14px">
+        <img src="${item.previewImage}" alt="${item.name}" 
+             style="max-width:100%;max-height:70vh;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);display:block;margin:0 auto"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:40px;color:var(--TX3);font-size:13px">تعذر تحميل الصورة</div>
+        ${item.notes ? `<div style="margin-top:14px;font-size:12px;color:var(--TX2);line-height:1.7">${item.notes}</div>` : ''}
+      </div>
+    `;
+  } else {
+    body = `
+      <div style="text-align:center;padding:50px 20px;color:var(--TX3)">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="margin-bottom:14px;color:var(--PM);opacity:0.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <div style="font-size:15px;font-weight:700;color:var(--TX2);margin-bottom:6px">لم ترفع صورة بعد</div>
+        <div style="font-size:12px">سترفع الصورة المعتمدة لاحقا</div>
+      </div>
+    `;
+  }
+  
+  openModal(item.name, body);
 }
 
 function editIdentityItem(id){
@@ -3341,9 +3413,8 @@ function renderTimeline(){
       <div class="progress-value">${progress}%</div>
     </div>
     
-    <div class="alert warn">
-      <div class="alert-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-      <div class="alert-content">جميع التواريخ يجب اعتمادها من إدارة التدريب بالجامعة قبل البدء بالتسويق. التاريخ المقترح يُكتب أولاً، ثم يُحدث بالتاريخ المعتمد بعد الموافقة.</div>
+    <div style="background:#FFF8E1;border-right:4px solid #FFB300;border-radius:10px;padding:14px 18px;margin-bottom:18px;font-size:13px;color:#5D4037;line-height:1.7">
+      <strong style="color:#E65100">ملاحظة:</strong> التواريخ المعروضة للعرض التوضيحي فقط، وسيتم تعديلها عند اعتماد المشروع من الجامعة. التواريخ المعتمدة فعليا تظهر بعلامة خضراء، والمقترحة بعلامة برتقالية.
     </div>
     
     <div class="table-wrap">
@@ -3626,6 +3697,8 @@ const TEAM_ROLES = [
   {value:'marketing', label:'التسويق والمحتوى'},
   {value:'technical', label:'الدعم التقني'},
   {value:'training_lead', label:'قائد فريق التدريب'},
+  {value:'assistant_trainer', label:'مساعد مدرب'},
+  {value:'admin_coordinator', label:'منسق إداري'},
   {value:'screening', label:'الفرز والتقييم'},
   {value:'communications', label:'التواصل والاستفسارات'},
   {value:'university_liaison', label:'التنسيق مع الجامعة'},
@@ -4263,12 +4336,6 @@ function viewCourseContent(courseId){
       <div style="font-size:13px;font-weight:800;color:var(--PD);margin-bottom:8px">البرامج المطلوبة</div>
       <div style="font-size:13px;line-height:1.9;color:var(--TX2);white-space:pre-line">${course.requiredApps}</div>
     </div>` : ''}
-    
-    ${course.sourceLink ? `
-    <div style="border:1.5px solid var(--TC);border-radius:12px;padding:14px;background:var(--TL)">
-      <div style="font-size:13px;font-weight:800;color:#005050;margin-bottom:8px">رابط السورس والمخرجات</div>
-      <a href="${course.sourceLink}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:8px 14px;background:var(--TC);color:#fff;border-radius:8px;text-decoration:none;font-size:12px;font-weight:700">فتح الرابط</a>
-    </div>` : ''}
   `;
   
   openModal(course.name, body);
@@ -4309,12 +4376,6 @@ function viewWorkshopContent(wId){
     <div style="border:1.5px solid var(--GL);border-radius:12px;padding:14px;margin-bottom:14px;background:var(--PL)">
       <div style="font-size:13px;font-weight:800;color:var(--PD);margin-bottom:8px">البرامج المطلوبة</div>
       <div style="font-size:13px;line-height:1.9;color:var(--TX2);white-space:pre-line">${w.requiredApps}</div>
-    </div>` : ''}
-    
-    ${w.sourceLink ? `
-    <div style="border:1.5px solid var(--TC);border-radius:12px;padding:14px;background:var(--TL)">
-      <div style="font-size:13px;font-weight:800;color:#005050;margin-bottom:8px">رابط السورس والمخرجات</div>
-      <a href="${w.sourceLink}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:8px 14px;background:var(--TC);color:#fff;border-radius:8px;text-decoration:none;font-size:12px;font-weight:700">فتح الرابط</a>
     </div>` : ''}
   `;
   
@@ -4367,24 +4428,12 @@ function editCourseDays(courseId){
         <textarea class="textarea" id="m_apps" style="min-height:90px" placeholder="مثال:&#10;• Adobe Photoshop 2024&#10;• Adobe Illustrator&#10;• حساب على Behance">${course.requiredApps || ''}</textarea>
       </div>
     </div>
-    
-    <div style="border:1.5px solid var(--GL);border-radius:12px;padding:16px;margin-bottom:14px;background:var(--TL)">
-      <div style="font-size:13px;font-weight:800;color:#005050;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--GL)">
-        رابط السورس والمخرجات
-      </div>
-      <div class="field">
-        <label class="field-label">رابط رفع المخرجات والملفات (Drive / Figma / ...)</label>
-        <input class="input" id="m_source" value="${course.sourceLink || ''}" placeholder="https://drive.google.com/...">
-        <div class="field-hint">هذا الرابط يُعطى للمتدربين كمصدر موحّد لكل ملفات الدورة وللرفع</div>
-      </div>
-    </div>
   `;
   
   openModal(`منهج ${course.name}`, body, async () => {
     course.axes = document.getElementById('m_axes').value.trim();
     course.outputs = document.getElementById('m_outputs').value.trim();
     course.requiredApps = document.getElementById('m_apps').value.trim();
-    course.sourceLink = document.getElementById('m_source').value.trim();
     
     await saveSection('curriculum');
     closeModal();
@@ -4908,12 +4957,6 @@ function editWorkshop(id){
       <textarea class="textarea" id="m_apps" style="min-height:80px" placeholder="البرامج والأدوات">${w.requiredApps}</textarea>
     </div>
     
-    <div style="border:1.5px solid var(--GL);border-radius:12px;padding:14px;margin-bottom:14px;background:var(--TL)">
-      <div style="font-size:13px;font-weight:800;color:#005050;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--GL)">🔗 رابط السورس والمخرجات</div>
-      <input class="input" id="m_source" value="${w.sourceLink}" placeholder="https://drive.google.com/...">
-      <div class="field-hint" style="margin-top:6px">للمتدربين كمصدر موحّد لكل ملفات الورشة وللرفع</div>
-    </div>
-    
     <label class="checkbox-wrap ${w.ready?'checked':''}">
       <input type="checkbox" id="m_ready" ${w.ready?'checked':''}>
       <label>الورشة جاهزة بالكامل</label>
@@ -4923,7 +4966,6 @@ function editWorkshop(id){
     w.axes = document.getElementById('m_axes').value.trim();
     w.outputs = document.getElementById('m_outputs').value.trim();
     w.requiredApps = document.getElementById('m_apps').value.trim();
-    w.sourceLink = document.getElementById('m_source').value.trim();
     w.ready = document.getElementById('m_ready').checked;
     await saveSection('hackathon');
     closeModal();
@@ -5694,11 +5736,18 @@ function renderPrerequisites(){
   `;
   
   items.forEach((item, idx) => {
+    const tutorialCell = item.tutorial && String(item.tutorial).trim()
+      ? `<a href="${item.tutorial}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:var(--TC);color:#fff;border-radius:6px;text-decoration:none;font-size:11px;font-weight:700">
+           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+           شاهد الشرح
+         </a>`
+      : '<span style="color:var(--TX3);font-size:11px">—</span>';
+    
     html += `
       <tr>
         <td><strong>${idx+1}</strong></td>
         <td>${item.name}</td>
-        <td style="font-size:11px;color:var(--TX3);max-width:280px;overflow:hidden;text-overflow:ellipsis">${item.tutorial || '<span style="color:var(--DA)">لم يُجهز</span>'}</td>
+        <td>${tutorialCell}</td>
         <td><span class="t-status ${item.ready?'done':'pending'}">${item.ready?'جاهز':'لم يجهز'}</span></td>
         <td><button class="t-action" onclick="editPrerequisite('${item.id}')">تعديل</button></td>
       </tr>
@@ -5939,32 +5988,67 @@ function viewPracticeImages(itemId, itemName, type){
   
   dayGroups.forEach(dayObj => {
     const images = (dayObj.images || []).filter(u => typeof u === 'string' && u.trim());
-    if(images.length === 0) return;  // نتجاهل اليوم الفاضي
+    const videoUrl = (dayObj.videoUrl || '').trim();
+    if(images.length === 0 && !videoUrl) return;  // نتجاهل اليوم الفاضي
+    
+    // اسم القسم: إذا في appName (تطبيق) نستخدمه، وإلا "اليوم X"
+    const sectionLabel = dayObj.appName ? dayObj.appName : `اليوم ${dayObj.day}`;
+    
+    // تحويل رابط الفيديو إلى embed
+    let videoEmbedUrl = '';
+    if(videoUrl){
+      if(videoUrl.includes('youtube.com/watch')){
+        const vid = (videoUrl.match(/v=([^&]+)/) || [])[1];
+        if(vid) videoEmbedUrl = `https://www.youtube.com/embed/${vid}`;
+      } else if(videoUrl.includes('youtu.be/')){
+        const vid = videoUrl.split('youtu.be/')[1].split(/[?&]/)[0];
+        if(vid) videoEmbedUrl = `https://www.youtube.com/embed/${vid}`;
+      } else if(videoUrl.includes('vimeo.com/')){
+        const vid = videoUrl.split('vimeo.com/')[1].split(/[?&]/)[0];
+        if(vid) videoEmbedUrl = `https://player.vimeo.com/video/${vid}`;
+      } else {
+        videoEmbedUrl = videoUrl;
+      }
+    }
     
     body += `
       <div style="margin-bottom:24px">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
           <div style="background:${accent};color:#fff;font-size:12px;font-weight:800;padding:6px 14px;border-radius:20px;letter-spacing:0.3px">
-            اليوم ${dayObj.day}
+            ${sectionLabel}
           </div>
           <div style="flex:1;height:1px;background:linear-gradient(to left,var(--GL),transparent)"></div>
-          <div style="font-size:11px;color:var(--TX3)">${images.length} صورة</div>
+          <div style="font-size:11px;color:var(--TX3)">${images.length} صورة${videoEmbedUrl ? ' + فيديو' : ''}</div>
         </div>
+        
+        ${videoEmbedUrl ? `
+          <div style="margin-bottom:14px;border:1px solid var(--GL);border-radius:12px;overflow:hidden;background:#000;position:relative">
+            <div style="position:relative;padding-bottom:56.25%;height:0">
+              <iframe src="${videoEmbedUrl}" 
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                allowfullscreen></iframe>
+            </div>
+            <div style="background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);padding:14px 16px 10px;color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;gap:6px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+              اضغط لمشاهدة الفيديو بشاشة كاملة
+            </div>
+          </div>
+        ` : ''}
+        
+        ${images.length > 0 ? `
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px">
           ${images.map((url, idx) => `
             <a href="${url}" target="_blank" rel="noopener noreferrer" 
                style="display:block;border:1px solid var(--GL);border-radius:10px;overflow:hidden;text-decoration:none;background:#fafafa;position:relative;aspect-ratio:1/1">
               <img src="${url}" alt="تطبيق ${idx+1}" 
                    style="width:100%;height:100%;object-fit:contain;display:block;padding:6px;box-sizing:border-box"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;color:var(--TX3);font-size:11px;flex-direction:column;gap:6px">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                <span>افتح الرابط</span>
-              </div>
+                   onerror="this.closest('a').style.display='none'">
               <div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.7);color:#fff;font-size:9px;padding:2px 6px;border-radius:6px;font-weight:700">${idx+1}</div>
             </a>
           `).join('')}
         </div>
+        ` : ''}
       </div>
     `;
   });
@@ -7172,10 +7256,17 @@ let MODAL_CALLBACK = null;
 function openModal(title, bodyHTML, onSave, wide){
   document.getElementById('modalTitle').textContent = title;
   document.getElementById('modalBody').innerHTML = bodyHTML;
-  document.getElementById('modalFooter').innerHTML = `
-    <button class="btn outline" onclick="closeModal()">إلغاء</button>
-    <button class="btn" onclick="executeModalSave()">حفظ</button>
-  `;
+  // لو ما في callback، يطلع زر إغلاق بس
+  if(onSave){
+    document.getElementById('modalFooter').innerHTML = `
+      <button class="btn outline" onclick="closeModal()">إلغاء</button>
+      <button class="btn" onclick="executeModalSave()">حفظ</button>
+    `;
+  } else {
+    document.getElementById('modalFooter').innerHTML = `
+      <button class="btn outline" onclick="closeModal()">إغلاق</button>
+    `;
+  }
   const modal = document.getElementById('modalContent');
   if(wide){ modal.classList.add('lg'); } else { modal.classList.remove('lg'); }
   document.getElementById('modal').classList.add('active');
@@ -7320,7 +7411,8 @@ async function init(){
     // عرض التاريخ
     const today = new Date();
     const months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
-    document.getElementById('todayDate').textContent = 
+    const todayEl = document.getElementById('todayDate');
+    if(todayEl) todayEl.textContent = 
       `${today.getDate()} ${months[today.getMonth()]} ${today.getFullYear()}`;
     
     // تحميل البيانات
