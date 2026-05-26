@@ -614,6 +614,259 @@ td button,
   .lib-tab-btn .lib-tab-count{font-size:10px;padding:1px 8px;min-width:20px}
 }
 
+/* ============================================================
+   PROFESSIONAL ANIMATIONS PACKAGE
+   ============================================================ */
+
+/* === 1) KEYFRAMES === */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes scaleIn{
+  from{opacity:0;transform:scale(0.95)}
+  to{opacity:1;transform:scale(1)}
+}
+@keyframes slideInRight{
+  from{opacity:0;transform:translateX(30px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes shimmer{
+  0%{background-position:-200% 0}
+  100%{background-position:200% 0}
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+@keyframes pulseGlow{
+  0%,100%{box-shadow:0 0 0 0 rgba(61,26,110,0.3)}
+  50%{box-shadow:0 0 0 12px rgba(61,26,110,0)}
+}
+@keyframes rotateGradient{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes progressFill{
+  from{width:0}
+}
+
+/* === 2) دخول الأقسام (Fade-in عند ظهور المحتوى) === */
+.sec-header{animation:fadeInUp .5s ease-out both}
+.sec-header .sec-eyebrow{animation:fadeIn .4s ease-out .1s both}
+.sec-header .sec-title{animation:fadeInUp .5s ease-out .15s both}
+.sec-header .sec-desc{animation:fadeInUp .5s ease-out .25s both}
+
+/* === 3) Stagger للبطاقات والكروت === */
+.cards-grid > *,
+.kpi-grid > *{
+  animation:fadeInUp .5s ease-out both
+}
+.cards-grid > *:nth-child(1),.kpi-grid > *:nth-child(1){animation-delay:.05s}
+.cards-grid > *:nth-child(2),.kpi-grid > *:nth-child(2){animation-delay:.10s}
+.cards-grid > *:nth-child(3),.kpi-grid > *:nth-child(3){animation-delay:.15s}
+.cards-grid > *:nth-child(4),.kpi-grid > *:nth-child(4){animation-delay:.20s}
+.cards-grid > *:nth-child(5){animation-delay:.25s}
+.cards-grid > *:nth-child(6){animation-delay:.30s}
+.cards-grid > *:nth-child(7){animation-delay:.35s}
+.cards-grid > *:nth-child(8){animation-delay:.40s}
+.cards-grid > *:nth-child(9){animation-delay:.45s}
+.cards-grid > *:nth-child(10){animation-delay:.50s}
+.cards-grid > *:nth-child(n+11){animation-delay:.55s}
+
+/* === 4) Hover Effects على البطاقات === */
+.card,.kpi{
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+  will-change:transform;
+  transform-style:preserve-3d
+}
+.card:hover{
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 20px 40px -12px rgba(61,26,110,0.25), 0 8px 16px -8px rgba(0,0,0,0.08)
+}
+.kpi:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 24px -8px rgba(61,26,110,0.2)
+}
+
+/* === 5) 3D Tilt للبطاقات (يفعّله JS لاحقاً) === */
+.card.tilt-active{
+  transition:transform .15s ease-out, box-shadow .35s ease
+}
+
+/* === 6) Hover على الأزرار === */
+.btn,button.btn,.hdr-btn,.t-action{
+  transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, background .25s ease;
+  position:relative;
+  overflow:hidden
+}
+.btn:hover,button.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px -4px rgba(61,26,110,0.35)
+}
+.btn:active,button.btn:active{
+  transform:translateY(0);
+  transition:transform .1s
+}
+
+/* === 7) Ripple effect على الأزرار === */
+.btn::after,button.btn::after{
+  content:'';
+  position:absolute;
+  top:50%;left:50%;
+  width:0;height:0;
+  border-radius:50%;
+  background:rgba(255,255,255,0.4);
+  transform:translate(-50%,-50%);
+  transition:width .5s ease, height .5s ease, opacity .5s ease;
+  pointer-events:none
+}
+.btn:active::after,button.btn:active::after{
+  width:300px;height:300px;opacity:0
+}
+
+/* === 8) Progress Bar Animation === */
+.progress-bar{
+  transition:width 1.2s cubic-bezier(.2,.8,.2,1);
+  background-size:200% 100%;
+  animation:rotateGradient 3s ease-in-out infinite
+}
+
+/* === 9) Modal Animations === */
+.modal-overlay{
+  animation:fadeIn .25s ease-out
+}
+.modal-content{
+  animation:scaleIn .35s cubic-bezier(.2,.8,.2,1)
+}
+
+/* === 10) Toast Animation === */
+.toast{
+  animation:slideInRight .4s cubic-bezier(.2,.8,.2,1)
+}
+
+/* === 11) Tab Switching Animation === */
+.main-content{
+  animation:fadeIn .4s ease-out
+}
+
+/* === 12) Sidebar nav hover === */
+.nav-item{
+  transition:background .25s ease, transform .25s ease, padding .25s ease;
+  position:relative
+}
+.nav-item:hover{
+  transform:translateX(-4px)
+}
+.nav-item.active::before{
+  content:'';
+  position:absolute;
+  right:0;top:0;bottom:0;
+  width:3px;
+  background:var(--TC);
+  animation:fadeIn .3s ease-out
+}
+
+/* === 13) Hero/Manifesto Banner Floating === */
+.manifesto-banner{
+  position:relative;
+  overflow:hidden
+}
+.manifesto-banner img{
+  transition:transform 1.5s cubic-bezier(.2,.8,.2,1)
+}
+.manifesto-banner:hover img{
+  transform:scale(1.02)
+}
+
+/* === 14) Pulse Glow على العناصر المهمة === */
+.progress-card{
+  position:relative
+}
+.progress-card .progress-value{
+  transition:transform .3s ease;
+  display:inline-block
+}
+.progress-card:hover .progress-value{
+  transform:scale(1.1);
+  color:var(--TC)
+}
+
+/* === 15) Table row hover === */
+table tbody tr{
+  transition:background .2s ease, transform .2s ease
+}
+table tbody tr:hover{
+  background:var(--PL);
+  transform:scale(1.005)
+}
+
+/* === 16) Status badges pulse === */
+.t-status.pending{
+  animation:pulseGlow 2s ease-in-out infinite
+}
+
+/* === 17) Smooth Scroll === */
+html{scroll-behavior:smooth}
+
+/* === 18) Loading shimmer للعناصر الفارغة === */
+.shimmer{
+  background:linear-gradient(90deg,
+    var(--GL) 0%,
+    rgba(255,255,255,0.6) 50%,
+    var(--GL) 100%);
+  background-size:200% 100%;
+  animation:shimmer 1.5s linear infinite
+}
+
+/* === 19) Tooltip/Tab buttons hover === */
+button[onclick*="switch"]{
+  transition:all .3s cubic-bezier(.2,.8,.2,1);
+  position:relative
+}
+button[onclick*="switch"]:hover{
+  transform:translateY(-2px)
+}
+
+/* === 20) Card top color bar animation === */
+.card-top{
+  position:relative;
+  overflow:hidden
+}
+.card-top::after{
+  content:'';
+  position:absolute;
+  top:0;right:-100%;
+  width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);
+  transition:right .8s ease
+}
+.card:hover .card-top::after{
+  right:100%
+}
+
+/* === 21) احترام تفضيل المستخدم للحركة الأقل === */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important
+  }
+}
+
+/* === 22) Mobile: تخفيف الحركات === */
+@media (max-width:768px){
+  .card:hover{transform:translateY(-3px) scale(1)}
+  .nav-item:hover{transform:none}
+  table tbody tr:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -1508,10 +1761,18 @@ const DEFAULT_DATA = {
   // 19. التقييم والتغذية الراجعة
   evaluation: {
     surveys:[
-      {id:'s2', name:'استبيان منتصف المعسكر', ready:false, link:''},
-      {id:'s3', name:'استبيان نهائي شامل', ready:false, link:''},
-      {id:'s4', name:'تقييم المدربين من المتدربين', ready:false, link:''},
-      {id:'s5', name:'تقييم المتدربين من المدربين', ready:false, link:''}
+      // 1) المتدربون (3 استبيانات)
+      {id:'s1', category:'trainees', name:'استبيان ما قبل المعسكر', desc:'يُوزع على المتدربين قبل بدء المعسكر لقياس التوقعات والمستوى المبدئي', ready:false, link:''},
+      {id:'s2', category:'trainees', name:'استبيان منتصف المعسكر', desc:'يُوزع في منتصف المعسكر لرصد جودة التجربة والمعالجة المبكرة', ready:false, link:''},
+      {id:'s3', category:'trainees', name:'استبيان نهائي شامل', desc:'يُوزع في ختام المعسكر لقياس الرضا الكلي والأثر التدريبي', ready:false, link:''},
+      // 2) المدربون (2 استبيانات)
+      {id:'s4', category:'trainers', name:'التقييم الذاتي للمدرب', desc:'تقييم المدرب لأدائه ومدى تحقيق أهداف الدورة', ready:false, link:''},
+      {id:'s5', category:'trainers', name:'تقييم البيئة التدريبية', desc:'تقييم المدربين للتجهيزات والدعم الفني والإداري المقدّم', ready:false, link:''},
+      // 3) فريق العمل (1 استبيان)
+      {id:'s6', category:'team', name:'تقييم التنفيذ والرضا الوظيفي', desc:'استبيان لفريق التشغيل لقياس الرضا الوظيفي وكفاءة سير العمل', ready:false, link:''},
+      // 4) التبادلي (2 استبيانات)
+      {id:'s7', category:'mutual', name:'تقييم المدربين من المتدربين', desc:'يقيّم فيه المتدربون أداء كل مدرب على حدة', ready:false, link:''},
+      {id:'s8', category:'mutual', name:'تقييم المتدربين من المدربين', desc:'يقيّم فيه المدربون التزام وأداء المتدربين', ready:false, link:''}
     ],
     results:[]
   },
@@ -7253,12 +7514,28 @@ function renderEvaluation(){
   const surveys = STATE.evaluation.surveys;
   const progress = calcSectionProgress('evaluation');
   const ready = surveys.filter(s => s.ready).length;
+  const activeTab = window._evaluationTab || 'trainees';
+  
+  // تجميع الاستبيانات حسب الفئة
+  const categories = {
+    trainees: {label:'المتدربون', icon:'👥', desc:'استبيانات يجيب عنها المتدربون في مراحل المعسكر المختلفة لقياس التوقعات والتجربة والرضا'},
+    trainers: {label:'المدربون', icon:'🎓', desc:'استبيانات يجيب عنها المدربون عن أدائهم الذاتي وعن البيئة التدريبية'},
+    team:     {label:'فريق العمل', icon:'⚙️', desc:'استبيانات تشمل فريق التشغيل والإدارة لقياس كفاءة التنفيذ والرضا الوظيفي'},
+    mutual:   {label:'التقييم التبادلي', icon:'🔄', desc:'استبيانات تقييم متبادلة بين المدربين والمتدربين'}
+  };
+  
+  // عدّ الاستبيانات والجاهز منها لكل فئة
+  const counts = {};
+  Object.keys(categories).forEach(cat => {
+    const catSurveys = surveys.filter(s => s.category === cat);
+    counts[cat] = {total: catSurveys.length, ready: catSurveys.filter(s => s.ready).length};
+  });
   
   let html = `
     <div class="sec-header">
       <div class="sec-eyebrow">القسم 19</div>
       <div class="sec-title">التقييم والتغذية الراجعة</div>
-      <div class="sec-desc">5 استبيانات أساسية لقياس جودة المعسكر. تُجهز قبل البدء وتُستخدم في مواعيد محددة. النتائج تنعكس على KPIs (متوسط الرضا).</div>
+      <div class="sec-desc">${surveys.length} استبيانات موزعة على ${Object.keys(categories).length} فئات لقياس جودة المعسكر من جميع الزوايا. النتائج تنعكس على KPIs (متوسط الرضا)</div>
     </div>
     
     <div class="progress-card">
@@ -7269,19 +7546,61 @@ function renderEvaluation(){
       <div class="progress-value">${progress}%</div>
     </div>
     
+    <div style="display:flex;gap:10px;margin-bottom:20px;border-bottom:2px solid var(--GL);padding-bottom:0;flex-wrap:wrap">
+  `;
+  
+  Object.keys(categories).forEach(cat => {
+    const c = categories[cat];
+    const isActive = activeTab === cat;
+    html += `
+      <button onclick="switchEvaluationTab('${cat}')" style="
+        padding:12px 20px;background:${isActive?'var(--PD)':'transparent'};
+        color:${isActive?'#fff':'var(--TX2)'};
+        border:none;border-bottom:3px solid ${isActive?'var(--PD)':'transparent'};
+        font-size:14px;font-weight:800;cursor:pointer;border-radius:10px 10px 0 0;
+        margin-bottom:-2px;transition:all .2s">
+        ${c.label} (${counts[cat].total})
+      </button>
+    `;
+  });
+  
+  html += `</div>`;
+  
+  // محتوى التبويب النشط
+  const active = categories[activeTab];
+  const activeSurveys = surveys.filter(s => s.category === activeTab);
+  
+  html += `
+    <div style="background:var(--PL);border-right:4px solid var(--PD);padding:16px 20px;border-radius:10px;margin-bottom:20px">
+      <div style="font-size:15px;font-weight:800;color:var(--PD);margin-bottom:6px">${active.label}</div>
+      <div style="font-size:13px;color:var(--TX2);line-height:1.7">${active.desc}</div>
+    </div>
+    
+    <div class="kpi-grid" style="grid-template-columns:repeat(2,1fr);margin-bottom:20px">
+      <div class="kpi">
+        <div class="kpi-label">عدد الاستبيانات</div>
+        <div class="kpi-value">${counts[activeTab].total}</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">الجاهز للنشر</div>
+        <div class="kpi-value">${counts[activeTab].ready}</div>
+      </div>
+    </div>
+    
     <div class="table-wrap">
-      <div class="table-head"><div class="table-title">الاستبيانات</div></div>
+      <div class="table-head"><div class="table-title">${active.label} — الاستبيانات</div></div>
       <div class="table-scroll">
         <table>
-          <thead><tr><th>الاستبيان</th><th>الرابط</th><th>الحالة</th><th></th></tr></thead>
+          <thead><tr><th>الاستبيان</th><th>الوصف</th><th>الرابط</th><th>الحالة</th><th></th></tr></thead>
           <tbody>
   `;
   
-  surveys.forEach(s => {
+  activeSurveys.forEach(s => {
     html += `
       <tr>
         <td><strong>${s.name}</strong></td>
-        <td style="font-size:11px;color:var(--TC);max-width:240px;overflow:hidden;text-overflow:ellipsis">${s.link || '—'}</td>
+        <td style="font-size:12px;color:var(--TX2);max-width:280px;line-height:1.6">${s.desc || '—'}</td>
+        <td style="font-size:11px;color:var(--TC);max-width:200px;overflow:hidden;text-overflow:ellipsis">${s.link || '—'}</td>
         <td><span class="t-status ${s.ready?'done':'pending'}">${s.ready?'جاهز':'لم يجهز'}</span></td>
         <td><button class="t-action" onclick="editSurvey('${s.id}')">تعديل</button></td>
       </tr>
@@ -7290,6 +7609,11 @@ function renderEvaluation(){
   
   html += '</tbody></table></div></div>';
   return html;
+}
+
+function switchEvaluationTab(tab){
+  window._evaluationTab = tab;
+  renderMainContent();
 }
 
 function editSurvey(id){
@@ -7663,6 +7987,167 @@ async function init(){
 }
 
 window.addEventListener('DOMContentLoaded', init);
+
+// ============================================================
+// PROFESSIONAL ANIMATIONS - INTERACTIVE EFFECTS
+// ============================================================
+
+// 1) 3D Tilt Effect على البطاقات
+function setup3DTilt(){
+  // فحص تفضيل المستخدم للحركة الأقل
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // فحص الجوال - لا نفعّل التيلت على اللمس
+  if(window.matchMedia('(hover: none)').matches) return;
+  
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    card.classList.add('tilt-active');
+    
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -4;
+      const rotateY = ((x - centerX) / centerX) * 4;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.01)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+// 2) Counter Animation للأرقام في KPIs
+function animateCounters(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  
+  const counters = document.querySelectorAll('.kpi-value');
+  counters.forEach(counter => {
+    const text = counter.textContent.trim();
+    // نتحقق إنه رقم خالص (مع احتمال %, +, -)
+    const match = text.match(/^(\d+)(.*)$/);
+    if(!match) return;
+    
+    const target = parseInt(match[1]);
+    const suffix = match[2] || '';
+    if(target === 0 || isNaN(target)) return;
+    
+    // ما نعدّ لأرقام كبيرة جداً
+    if(target > 9999) return;
+    
+    const duration = 1200;
+    const steps = 30;
+    const stepDuration = duration / steps;
+    let current = 0;
+    const increment = target / steps;
+    
+    counter.textContent = '0' + suffix;
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if(current >= target){
+        counter.textContent = target + suffix;
+        clearInterval(timer);
+      } else {
+        counter.textContent = Math.floor(current) + suffix;
+      }
+    }, stepDuration);
+  });
+}
+
+// 3) Parallax خفيف للهيدر والبانر
+function setupParallax(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(window.matchMedia('(hover: none)').matches) return;
+  
+  const banner = document.querySelector('.manifesto-banner img');
+  const hdrBanner = document.querySelector('.hdr-banner img');
+  
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    
+    if(banner && scrolled < 1500){
+      banner.style.transform = `translateY(${scrolled * 0.15}px) scale(1.02)`;
+    }
+    if(hdrBanner && scrolled < 800){
+      hdrBanner.style.transform = `translateY(${scrolled * 0.2}px)`;
+    }
+  }, {passive: true});
+}
+
+// 4) Intersection Observer لتفعيل الأنميشن عند الظهور
+function setupScrollAnimations(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  // نطبق على عناصر إضافية ما عليها أنميشن تلقائي
+  const elements = document.querySelectorAll('.table-wrap, .progress-card, .timeline-item');
+  elements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1)';
+    observer.observe(el);
+  });
+}
+
+// 5) Smooth scroll للروابط الداخلية
+function setupSmoothScroll(){
+  document.addEventListener('click', e => {
+    const target = e.target.closest('a[href^="#"]');
+    if(!target) return;
+    const id = target.getAttribute('href');
+    if(id === '#' || !id) return;
+    const el = document.querySelector(id);
+    if(el){
+      e.preventDefault();
+      el.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+  });
+}
+
+// تشغيل كل الـ effects بعد تحميل المحتوى
+function initAnimations(){
+  setTimeout(() => {
+    setup3DTilt();
+    animateCounters();
+    setupParallax();
+    setupScrollAnimations();
+    setupSmoothScroll();
+  }, 100);
+}
+
+// إعادة تطبيق الـ tilt و counters عند تغيير القسم
+const originalRenderMainContent = window.renderMainContent;
+if(typeof renderMainContent === 'function'){
+  window.renderMainContent = function(){
+    const result = originalRenderMainContent ? originalRenderMainContent.apply(this, arguments) : null;
+    setTimeout(() => {
+      setup3DTilt();
+      animateCounters();
+      setupScrollAnimations();
+    }, 50);
+    return result;
+  };
+}
+
+window.addEventListener('DOMContentLoaded', initAnimations);
+window.addEventListener('load', initAnimations);
 
 </script>
 </body>
