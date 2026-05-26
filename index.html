@@ -1092,14 +1092,7 @@ button[onclick*="switch"][style*="var(--PD)"]{
   pointer-events:none;
   z-index:1;
   user-select:none;
-  -webkit-user-drag:none;
-  opacity:0;
-  animation:decoFadeIn 1.2s cubic-bezier(.2,.8,.2,1) .4s forwards
-}
-
-@keyframes decoFadeIn{
-  from{opacity:0;transform:translateY(20px) scale(.95)}
-  to{opacity:1;transform:translateY(0) scale(1)}
+  -webkit-user-drag:none
 }
 
 .deco-3d img{
@@ -1108,13 +1101,18 @@ button[onclick*="switch"][style*="var(--PD)"]{
   display:block
 }
 
+@keyframes decoFloat{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-15px) rotate(3deg)}
+}
+
 /* الزاوية العلوية اليسرى الكبيرة */
 .deco-3d-tl-large{
   top:20px;
   left:10px;
   width:160px;
   opacity:.85;
-  animation:decoFadeIn 1.2s cubic-bezier(.2,.8,.2,1) .4s forwards, decoFloat 8s ease-in-out infinite 1.5s
+  animation:decoFloat 8s ease-in-out infinite
 }
 
 /* الزاوية العلوية اليمنى متوسطة */
@@ -1123,7 +1121,7 @@ button[onclick*="switch"][style*="var(--PD)"]{
   right:10px;
   width:130px;
   opacity:.75;
-  animation:decoFadeIn 1.2s cubic-bezier(.2,.8,.2,1) .6s forwards, decoFloat 10s ease-in-out infinite 2s
+  animation:decoFloat 10s ease-in-out infinite 2s
 }
 
 /* الزاوية السفلى اليسرى صغيرة */
@@ -1132,7 +1130,7 @@ button[onclick*="switch"][style*="var(--PD)"]{
   left:30px;
   width:100px;
   opacity:.6;
-  animation:decoFadeIn 1.2s cubic-bezier(.2,.8,.2,1) .8s forwards, decoFloat 12s ease-in-out infinite reverse
+  animation:decoFloat 12s ease-in-out infinite reverse
 }
 
 /* الجانب الأيسر متوسطة (للأقسام الطويلة) */
@@ -1141,7 +1139,7 @@ button[onclick*="switch"][style*="var(--PD)"]{
   left:20px;
   width:110px;
   opacity:.5;
-  animation:decoFadeIn 1.2s cubic-bezier(.2,.8,.2,1) 1s forwards, decoFloat 14s ease-in-out infinite
+  animation:decoFloat 14s ease-in-out infinite
 }
 
 @keyframes decoFloat{
@@ -1157,19 +1155,19 @@ button[onclick*="switch"][style*="var(--PD)"]{
 
 /* على الجوال - إخفاء أو تصغير */
 @media (max-width:768px){
-  .deco-3d-tl-large{width:100px;top:-20px;left:-20px;opacity:.5}
-  .deco-3d-tr-medium{width:80px;opacity:.4}
-  .deco-3d-bl-small{display:none}
+  .deco-3d-tl-large{width:90px;top:10px;left:10px;opacity:.6}
+  .deco-3d-tr-medium{width:80px;top:10px;right:10px;opacity:.5}
+  .deco-3d-bl-small{width:70px;bottom:20px;left:15px;opacity:.5}
   .deco-3d-left-mid{display:none}
 }
 
-@media (max-width:480px){
+@media (max-width:360px){
   .deco-3d{display:none}
 }
 
 /* احترام تفضيل الحركة الأقل */
 @media (prefers-reduced-motion: reduce){
-  .deco-3d{animation:decoFadeIn .3s ease forwards !important}
+  .deco-3d{animation:none !important}
 }
 
 /* احترام التفضيلات على الطبقات الجديدة */
