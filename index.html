@@ -867,9 +867,322 @@ button[onclick*="switch"]:hover{
   table tbody tr:hover{transform:none}
 }
 
+/* ============================================================
+   PREMIUM LAYERS — الطبقات الاحترافية
+   ============================================================ */
+
+/* === LAYER 1: خلفية حية (Mesh Gradient + Floating Blobs) === */
+
+/* الخلفية الأساسية المتحركة */
+.premium-bg{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100vh;
+  z-index:-1;
+  overflow:hidden;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at top right, rgba(237,231,246,0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(224,247,245,0.4) 0%, transparent 50%),
+    #ffffff
+}
+
+/* Blobs عائمة */
+.premium-blob{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.35;
+  animation:blobFloat 20s ease-in-out infinite
+}
+.premium-blob-1{
+  width:500px;height:500px;
+  background:radial-gradient(circle, #6B3FA0 0%, transparent 70%);
+  top:-10%;right:-10%;
+  animation-duration:25s
+}
+.premium-blob-2{
+  width:400px;height:400px;
+  background:radial-gradient(circle, #00B4AA 0%, transparent 70%);
+  bottom:-10%;left:-10%;
+  animation-duration:30s;
+  animation-delay:-5s
+}
+.premium-blob-3{
+  width:300px;height:300px;
+  background:radial-gradient(circle, #3D1A6E 0%, transparent 70%);
+  top:50%;left:50%;
+  opacity:.2;
+  animation-duration:35s;
+  animation-delay:-10s
+}
+
+@keyframes blobFloat{
+  0%,100%{
+    transform:translate(0,0) scale(1) rotate(0deg)
+  }
+  25%{
+    transform:translate(80px,-50px) scale(1.1) rotate(90deg)
+  }
+  50%{
+    transform:translate(-60px,40px) scale(0.95) rotate(180deg)
+  }
+  75%{
+    transform:translate(50px,60px) scale(1.05) rotate(270deg)
+  }
+}
+
+/* === LAYER 2: Magnetic & Cursor === */
+
+/* Custom Cursor */
+.premium-cursor{
+  position:fixed;
+  width:32px;height:32px;
+  border:2px solid var(--PD);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:width .25s ease, height .25s ease, background .25s ease, border-color .25s ease, opacity .25s ease;
+  mix-blend-mode:difference;
+  opacity:0;
+  will-change:transform
+}
+.premium-cursor.active{opacity:1}
+.premium-cursor.hover-link{
+  width:48px;height:48px;
+  background:var(--TC);
+  border-color:var(--TC)
+}
+.premium-cursor.hover-card{
+  width:60px;height:60px;
+  background:rgba(107,63,160,0.2);
+  border-color:var(--PM)
+}
+
+.premium-cursor-dot{
+  position:fixed;
+  width:6px;height:6px;
+  background:var(--PD);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+  opacity:0;
+  transition:opacity .2s ease;
+  mix-blend-mode:difference
+}
+.premium-cursor-dot.active{opacity:1}
+
+/* إخفاء الـ custom cursor على الجوال */
+@media (hover:none){
+  .premium-cursor,.premium-cursor-dot{display:none}
+}
+
+/* Magnetic Buttons - تحضير */
+.btn,button.btn,.hdr-btn{
+  will-change:transform
+}
+
+/* === LAYER 3: Scroll Reveal Effects === */
+
+.reveal-text{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1)
+}
+.reveal-text.visible{
+  opacity:1;
+  transform:translateY(0)
+}
+
+.reveal-scale{
+  opacity:0;
+  transform:scale(.9);
+  transition:opacity .6s cubic-bezier(.2,.8,.2,1), transform .6s cubic-bezier(.2,.8,.2,1)
+}
+.reveal-scale.visible{
+  opacity:1;
+  transform:scale(1)
+}
+
+/* === LAYER 4: Premium Details === */
+
+/* Text Gradient الديناميكي على العناوين */
+.sec-title{
+  background:linear-gradient(135deg, var(--PD) 0%, var(--PM) 50%, var(--TC) 100%);
+  background-size:200% 200%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:textGradient 6s ease infinite
+}
+
+@keyframes textGradient{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+
+/* Glass effect على الكروت */
+.kpi,.progress-card{
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.5)
+}
+
+/* Spotlight Effect على البطاقات */
+.card{
+  position:relative;
+  overflow:hidden
+}
+.card::before{
+  content:'';
+  position:absolute;
+  top:var(--mouse-y, 50%);
+  left:var(--mouse-x, 50%);
+  width:300px;height:300px;
+  background:radial-gradient(circle, rgba(107,63,160,0.15) 0%, transparent 70%);
+  transform:translate(-50%,-50%);
+  opacity:0;
+  transition:opacity .4s ease;
+  pointer-events:none;
+  z-index:1
+}
+.card:hover::before{opacity:1}
+.card > *{position:relative;z-index:2}
+
+/* Animated Border للبطاقات المهمة */
+.progress-card{
+  position:relative;
+  z-index:1
+}
+.progress-card::before{
+  content:'';
+  position:absolute;
+  inset:-2px;
+  background:linear-gradient(135deg, var(--PD), var(--TC), var(--PM), var(--PD));
+  background-size:300% 300%;
+  border-radius:inherit;
+  z-index:-1;
+  opacity:0;
+  animation:rotateGradient 4s linear infinite;
+  transition:opacity .4s ease
+}
+.progress-card:hover::before{opacity:.6}
+
+/* Floating animation للأيقونات في nav */
+.nav-item.active .nav-icon{
+  animation:float 3s ease-in-out infinite
+}
+
+/* Number tick animation */
+.kpi-value{
+  display:inline-block;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1)
+}
+.kpi:hover .kpi-value{
+  transform:translateY(-4px) scale(1.05);
+  color:var(--TC)
+}
+
+/* Loading skeleton أنيق */
+.skeleton{
+  background:linear-gradient(90deg,
+    rgba(236,239,241,0.5) 0%,
+    rgba(255,255,255,0.8) 50%,
+    rgba(236,239,241,0.5) 100%);
+  background-size:200% 100%;
+  animation:shimmer 1.5s linear infinite;
+  border-radius:8px
+}
+
+/* Section divider متحرك */
+.sec-header{
+  position:relative;
+  padding-bottom:8px
+}
+.sec-header::after{
+  content:'';
+  position:absolute;
+  bottom:0;right:0;
+  width:60px;height:3px;
+  background:linear-gradient(90deg, var(--PD), var(--TC));
+  border-radius:2px;
+  animation:dividerSlide 1s cubic-bezier(.2,.8,.2,1) .3s both
+}
+
+@keyframes dividerSlide{
+  from{width:0;opacity:0}
+  to{width:60px;opacity:1}
+}
+
+/* Tab active glow */
+button[onclick*="switch"]{
+  position:relative
+}
+button[onclick*="switch"][style*="var(--PD)"]{
+  box-shadow:0 4px 20px -4px rgba(61,26,110,0.4)
+}
+
+/* Smooth color transitions everywhere */
+*{
+  transition-property:color, background-color, border-color, fill, stroke;
+  transition-duration:.2s;
+  transition-timing-function:ease
+}
+
+/* Selection styling */
+::selection{
+  background:var(--PM);
+  color:#fff
+}
+::-moz-selection{
+  background:var(--PM);
+  color:#fff
+}
+
+/* Scrollbar styling احترافي */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--GL)}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg, var(--PD), var(--PM));
+  border-radius:10px;
+  border:2px solid var(--GL)
+}
+::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg, var(--PM), var(--TC))
+}
+
+/* احترام التفضيلات على الطبقات الجديدة */
+@media (prefers-reduced-motion: reduce){
+  .premium-blob{animation:none}
+  .sec-title{animation:none;background:var(--PD);-webkit-text-fill-color:var(--PD)}
+  .progress-card::before{display:none}
+}
+
+/* Mobile: تخفيف الطبقات الثقيلة */
+@media (max-width:768px){
+  .premium-cursor,.premium-cursor-dot{display:none}
+  .premium-blob{filter:blur(60px);opacity:.2}
+  .kpi,.progress-card{backdrop-filter:none;background:#fff}
+}
+
 </style>
 </head>
 <body>
+
+<!-- LAYER 1: خلفية حية -->
+<div class="premium-bg" aria-hidden="true">
+  <div class="premium-blob premium-blob-1"></div>
+  <div class="premium-blob premium-blob-2"></div>
+  <div class="premium-blob premium-blob-3"></div>
+</div>
+
+<!-- LAYER 2: Custom Cursor -->
+<div class="premium-cursor" aria-hidden="true"></div>
+<div class="premium-cursor-dot" aria-hidden="true"></div>
 
 <!-- ============ صفحة تسجيل الدخول ============ -->
 <div id="loginOverlay" style="
@@ -8148,6 +8461,205 @@ if(typeof renderMainContent === 'function'){
 
 window.addEventListener('DOMContentLoaded', initAnimations);
 window.addEventListener('load', initAnimations);
+
+// ============================================================
+// PREMIUM LAYERS — تأثيرات احترافية متقدمة
+// ============================================================
+
+// === LAYER 2: Custom Cursor & Magnetic Effects ===
+function setupPremiumCursor(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(window.matchMedia('(hover: none)').matches) return;
+  if(window.innerWidth < 769) return;
+  
+  const cursor = document.querySelector('.premium-cursor');
+  const dot = document.querySelector('.premium-cursor-dot');
+  if(!cursor || !dot) return;
+  
+  let mouseX = 0, mouseY = 0;
+  let cursorX = 0, cursorY = 0;
+  let dotX = 0, dotY = 0;
+  
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.classList.add('active');
+    dot.classList.add('active');
+  });
+  
+  document.addEventListener('mouseleave', () => {
+    cursor.classList.remove('active');
+    dot.classList.remove('active');
+  });
+  
+  // حركة بـ easing
+  function animateCursor(){
+    // Cursor الكبير - أبطأ
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+    
+    // النقطة - أسرع
+    dotX += (mouseX - dotX) * 0.5;
+    dotY += (mouseY - dotY) * 0.5;
+    dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+    
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+  
+  // Hover states - تكبير الكورسر فوق العناصر التفاعلية
+  function attachHoverStates(){
+    const links = document.querySelectorAll('a, button, .btn, [onclick]');
+    const cards = document.querySelectorAll('.card');
+    
+    links.forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover-link'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover-link'));
+    });
+    
+    cards.forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover-card'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover-card'));
+    });
+  }
+  attachHoverStates();
+  
+  // إعادة ربط الـ hover states بعد كل render
+  window._reattachCursorStates = attachHoverStates;
+}
+
+// === Magnetic Buttons ===
+function setupMagneticElements(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(window.matchMedia('(hover: none)').matches) return;
+  if(window.innerWidth < 769) return;
+  
+  const magneticEls = document.querySelectorAll('.btn, button.btn, .hdr-btn');
+  
+  magneticEls.forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const strength = 0.3;
+      el.style.transform = `translate(${x * strength}px, ${y * strength}px) translateY(-2px)`;
+    });
+    
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = '';
+    });
+  });
+}
+
+// === Spotlight Effect على البطاقات ===
+function setupCardSpotlight(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mouse-x', x + '%');
+      card.style.setProperty('--mouse-y', y + '%');
+    });
+  });
+}
+
+// === Scroll Reveal محسّن ===
+function setupAdvancedReveal(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    // إظهار كل شي مباشرة
+    document.querySelectorAll('.reveal-text, .reveal-scale').forEach(el => {
+      el.classList.add('visible');
+    });
+    return;
+  }
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {threshold: 0.15, rootMargin: '0px 0px -80px 0px'});
+  
+  // تطبيق reveal-text على العناوين
+  document.querySelectorAll('.sec-title, .sec-desc').forEach(el => {
+    if(!el.classList.contains('reveal-text')){
+      el.classList.add('reveal-text');
+      observer.observe(el);
+    }
+  });
+  
+  // تطبيق reveal-scale على البطاقات الكبيرة
+  document.querySelectorAll('.progress-card, .table-wrap').forEach(el => {
+    if(!el.classList.contains('reveal-scale')){
+      el.classList.add('reveal-scale');
+      observer.observe(el);
+    }
+  });
+}
+
+// === Blob Parallax مع الماوس ===
+function setupBlobParallax(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(window.matchMedia('(hover: none)').matches) return;
+  if(window.innerWidth < 769) return;
+  
+  const blobs = document.querySelectorAll('.premium-blob');
+  
+  document.addEventListener('mousemove', e => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 30;
+    const y = (e.clientY / window.innerHeight - 0.5) * 30;
+    
+    blobs.forEach((blob, i) => {
+      const factor = (i + 1) * 0.5;
+      blob.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+    });
+  });
+}
+
+// === Page Load Sequence ===
+function premiumPageLoad(){
+  // Fade in الصفحة كاملة
+  document.body.style.opacity = '0';
+  document.body.style.transition = 'opacity .6s ease';
+  
+  setTimeout(() => {
+    document.body.style.opacity = '1';
+  }, 100);
+}
+
+// === تشغيل كل التأثيرات ===
+function initPremiumLayers(){
+  premiumPageLoad();
+  setTimeout(() => {
+    setupPremiumCursor();
+    setupMagneticElements();
+    setupCardSpotlight();
+    setupAdvancedReveal();
+    setupBlobParallax();
+  }, 200);
+}
+
+// إعادة ربط بعد كل تغيير قسم
+const _originalRender = window.renderMainContent;
+window.renderMainContent = function(){
+  const result = _originalRender ? _originalRender.apply(this, arguments) : null;
+  setTimeout(() => {
+    setupMagneticElements();
+    setupCardSpotlight();
+    setupAdvancedReveal();
+    if(window._reattachCursorStates) window._reattachCursorStates();
+  }, 100);
+  return result;
+};
+
+window.addEventListener('DOMContentLoaded', initPremiumLayers);
+window.addEventListener('load', initPremiumLayers);
 
 </script>
 </body>
