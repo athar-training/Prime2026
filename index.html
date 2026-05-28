@@ -216,21 +216,32 @@ em,i{font-style:normal !important}
 .stats-bar{background:var(--BG);padding:32px 36px;border-bottom:1px solid var(--GL)}
 .stats-grid{max-width:1600px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
 .stat-cell{
-  padding:22px 20px;
+  padding:0;
   text-align:right;
-  background:var(--CARD);
-  border-radius:16px;
-  box-shadow:var(--SH-SM);
+  background:transparent;
+  border-radius:0;
+  box-shadow:none;
   position:relative;
-  overflow:hidden;
-  transition:transform .2s, box-shadow .2s;
-  border:1px solid var(--GL);
+  overflow:visible;
+  transition:transform .25s;
+  aspect-ratio:1/1;
+  background-image:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20500%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%233D1A6E%3Bfill-rule%3Aevenodd%3B%7D.cls-2%7Bfill%3A%23fff%3B%7D.cls-3%7Bfill%3A%23E1D5F2%3B%7D%3C/style%3E%3Cfilter%20id%3D%22shadow%22%20x%3D%22-20%25%22%20y%3D%22-20%25%22%20width%3D%22140%25%22%20height%3D%22140%25%22%3E%3CfeDropShadow%20dx%3D%220%22%20dy%3D%224%22%20stdDeviation%3D%228%22%20flood-color%3D%22%233D1A6E%22%20flood-opacity%3D%220.08%22/%3E%3C/filter%3E%3C/defs%3E%3Cg%20filter%3D%22url(%23shadow)%22%3E%3Cpath%20class%3D%22cls-2%22%20d%3D%22M475.04%2C281.94c0%2C11.11-4.17%2C23.43-11.11%2C29.68-21.7%2C19.61-65.96-3.3-80.71%2C25.34l-38.01%2C73.6c-5.03%2C9.72-17.53%2C16.84-28.81%2C16.84l-261.93-.17c-15.62%2C0-29.51-17.18-29.51-32.63V106.1c0-19.44%2C16.84-33.5%2C35.93-33.5l378.4.17c19.44%2C0%2C35.41%2C14.58%2C35.41%2C33.67l.35%2C175.49Z%22/%3E%3C/g%3E%3Ccircle%20class%3D%22cls-3%22%20cx%3D%22428.66%22%20cy%3D%22381.01%22%20r%3D%2246.38%22/%3E%3Cpolygon%20class%3D%22cls-1%22%20points%3D%22415.71%20363.47%20415.72%20373.18%20429.78%20373.05%20411.12%20391.71%20417.95%20398.55%20436.62%20379.89%20446.19%20393.95%20446.20%20363.59%20415.71%20363.47%22/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  background-position:center;
 }
-.stat-cell::before{
-  content:"";position:absolute;top:0;right:0;width:4px;height:0;background:var(--TC);transition:height .25s;
+.stat-cell-inner{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding:18% 16% 0 16%;
+  text-align:center;
+  gap:6px;
 }
-.stat-cell:hover{transform:translateY(-3px);box-shadow:var(--SH-MD)}
-.stat-cell:hover::before{height:100%}
+.stat-cell:hover{transform:translateY(-4px)}
 .stat-cell-value{font-size:32px;font-weight:900;color:var(--PD);margin-bottom:4px;font-variant-numeric:tabular-nums;line-height:1}
 .stat-cell-value.success,.stat-cell-value.warning,.stat-cell-value.danger{color:var(--TC)}
 .stat-cell-label{font-size:12px;color:var(--TX2);font-weight:700}
@@ -1311,34 +1322,46 @@ tr:hover .t-status{transform:scale(1.06)}
 <div class="stats-bar">
   <div class="stats-grid">
     <div class="stat-cell">
-      <div class="stat-cell-value" id="statTotalProgress">0%</div>
-      <div class="stat-cell-label">التحضير الكلي</div>
-      <div class="stat-cell-sub" id="statTasksDone">0 من 0 مهمة</div>
+      <div class="stat-cell-inner">
+        <div class="stat-cell-value" id="statTotalProgress">0%</div>
+        <div class="stat-cell-label">التحضير الكلي</div>
+        <div class="stat-cell-sub" id="statTasksDone">0 من 0 مهمة</div>
+      </div>
     </div>
     <div class="stat-cell">
-      <div class="stat-cell-value" id="statDaysLeft">—</div>
-      <div class="stat-cell-label">يوم للإطلاق</div>
-      <div class="stat-cell-sub" id="statLaunchDate">لم يُحدد</div>
+      <div class="stat-cell-inner">
+        <div class="stat-cell-value" id="statDaysLeft">—</div>
+        <div class="stat-cell-label">يوم للإطلاق</div>
+        <div class="stat-cell-sub" id="statLaunchDate">لم يُحدد</div>
+      </div>
     </div>
     <div class="stat-cell">
-      <div class="stat-cell-value" id="statTrainers">0/16</div>
-      <div class="stat-cell-label">دورة/ورشة بمدرب</div>
-      <div class="stat-cell-sub">10 دورات + 6 ورش</div>
+      <div class="stat-cell-inner">
+        <div class="stat-cell-value" id="statTrainers">0/16</div>
+        <div class="stat-cell-label">دورة/ورشة بمدرب</div>
+        <div class="stat-cell-sub">10 دورات + 6 ورش</div>
+      </div>
     </div>
     <div class="stat-cell">
-      <div class="stat-cell-value" id="statCourses">0/10</div>
-      <div class="stat-cell-label">دورة جاهزة</div>
-      <div class="stat-cell-sub">منهج مكتمل</div>
+      <div class="stat-cell-inner">
+        <div class="stat-cell-value" id="statCourses">0/10</div>
+        <div class="stat-cell-label">دورة جاهزة</div>
+        <div class="stat-cell-sub">منهج مكتمل</div>
+      </div>
     </div>
     <div class="stat-cell">
-      <div class="stat-cell-value" id="statWorkshops">0/6</div>
-      <div class="stat-cell-label">ورشة جاهزة</div>
-      <div class="stat-cell-sub">منهج مكتمل</div>
+      <div class="stat-cell-inner">
+        <div class="stat-cell-value" id="statWorkshops">0/6</div>
+        <div class="stat-cell-label">ورشة جاهزة</div>
+        <div class="stat-cell-sub">منهج مكتمل</div>
+      </div>
     </div>
     <div class="stat-cell">
-      <div class="stat-cell-value" id="statTeam">0/13</div>
-      <div class="stat-cell-label">عضو فريق</div>
-      <div class="stat-cell-sub">بمهام واضحة</div>
+      <div class="stat-cell-inner">
+        <div class="stat-cell-value" id="statTeam">0/13</div>
+        <div class="stat-cell-label">عضو فريق</div>
+        <div class="stat-cell-sub">بمهام واضحة</div>
+      </div>
     </div>
   </div>
 </div>
