@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ATHAR BUILD: 1780009709 - STAT NUMBERS PURPLE -->
+<!-- ATHAR BUILD: 1780010059 - NO PASSWORD + BANNER LAPTOP -->
 <html lang="ar" dir="rtl">
 <head>
 <!-- build: 1779707235 -->
@@ -201,13 +201,13 @@ em,i{font-style:normal !important}
 /* ════════ البانر كصورة (يستبدل المنفستو النصي) ════════ */
 .manifesto-image{padding:0 !important;background:var(--WH);border-bottom:1px solid var(--GL)}
 .manifesto-image::before,.manifesto-image::after{display:none !important}
-.manifesto-image .manifesto-wrap{max-width:1600px;margin:0 auto;padding:0}
+.manifesto-image .manifesto-wrap{max-width:900px;margin:0 auto;padding:24px 0}
 .manifesto-banner-img{
   display:block;width:100%;height:auto;border-radius:18px;
   animation:a-fade-up 1s var(--ease-out-expo) both;
 }
 @media(max-width:768px){
-  .manifesto-image .manifesto-wrap{padding:0}
+  .manifesto-image .manifesto-wrap{padding:0;max-width:100%}
   .manifesto-banner-img{border-radius:12px;display:block;width:100%;height:auto;margin:0 auto}
 }
 
@@ -1006,8 +1006,8 @@ tr:hover .t-status{transform:scale(1.06)}
 </head>
 <body>
 
-<!-- ============ صفحة تسجيل الدخول ============ -->
-<div id="loginOverlay" style="
+<!-- ============ صفحة تسجيل الدخول (معطّلة مؤقتاً) ============ -->
+<div id="loginOverlay" style="display:none;
   position:fixed;
   inset:0;
   z-index:99999;
@@ -1249,19 +1249,19 @@ tr:hover .t-status{transform:scale(1.06)}
     }
   };
   
-  // منع التمرير لما الصفحة مقفلة
-  document.body.style.overflow = 'hidden';
+  // منع التمرير لما الصفحة مقفلة (معطّل)
+  // document.body.style.overflow = 'hidden';
   
-  // فحص الجلسة عند تحميل الصفحة
-  if (checkExistingSession()) {
-    // المستخدم مسجل دخول مسبقاً
-  } else {
-    // ركز على حقل الإدخال
-    setTimeout(() => {
-      const input = document.getElementById('loginPasswordInput');
-      if (input) input.focus();
-    }, 300);
-  }
+  // فحص الجلسة عند تحميل الصفحة (معطّل - الباسورد مرفوع مؤقتاً)
+  // if (checkExistingSession()) {
+  //   // المستخدم مسجل دخول مسبقاً
+  // } else {
+  //   // ركز على حقل الإدخال
+  //   setTimeout(() => {
+  //     const input = document.getElementById('loginPasswordInput');
+  //     if (input) input.focus();
+  //   }, 300);
+  // }
   
   // خاصية تسجيل خروج (للاستخدام من console عند الحاجة)
   window.athLogout = function() {
