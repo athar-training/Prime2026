@@ -634,6 +634,41 @@ button[onclick="publishToWeb()"],button.t-action,td button,
   .stats-grid{grid-template-columns:1fr 1fr}
 }
 
+/* ════════════════════════════════════════════════════════════
+   ✦ إصلاح شامل لتوازن النصوص والأرقام والجداول على الجوال
+   يعالج: تكسّر الأرقام/التواريخ، تكسّر العناوين، تجاوز الجداول
+   ════════════════════════════════════════════════════════════ */
+@media(max-width:768px){
+  /* 1) الأرقام والتواريخ والنسب لا تتكسّر أبداً */
+  .kpi-value,.stat-cell-value,.progress-value,
+  .t-status,.status-badge,.badge,
+  .timeline-date,.date-cell,.num-cell{
+    white-space:nowrap;
+  }
+  /* أي خلية جدول تحمل تاريخاً أو رقماً: تبقى بسطر واحد */
+  td[data-type="date"],td[data-type="num"],
+  .nowrap{white-space:nowrap}
+
+  /* 2) الجداول العريضة: تمرير أفقي داخل الإطار بدل كسر النص */
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .table-wrap::-webkit-scrollbar{height:5px}
+  .table-wrap::-webkit-scrollbar-thumb{background:var(--GL);border-radius:3px}
+  table{min-width:520px}
+  th,td{padding:11px 12px;font-size:12.5px}
+  /* خلية العنوان (أول عمود) تبقى مقروءة بدون كسر مفرط */
+  td:first-child,th:first-child{min-width:120px;word-break:normal;overflow-wrap:break-word;hyphens:none}
+
+  /* 3) العناوين والنصوص تتكسّر بكلمات كاملة لا أحرف */
+  .card-title,.sec-title,.kpi-label,.stat-cell-label,
+  .progress-label,.timeline-label,h1,h2,h3,h4{
+    word-break:normal;overflow-wrap:break-word;hyphens:none;
+  }
+
+  /* 4) منع أي تجاوز أفقي عام */
+  .main *{max-width:100%}
+  .main .table-wrap table{max-width:none}
+}
+
 
 
 /* ════════════════════════════════════════════════════════════
@@ -5760,7 +5795,7 @@ function renderMarketing(){
         html += `
           <div style="background:var(--BG);border-radius:10px;padding:12px;text-align:center">
             <div style="font-size:10px;color:var(--TX3);font-weight:600;margin-bottom:4px">${pl.name}</div>
-            <div style="font-size:18px;font-weight:900;color:${plColor}">${pl.done}/${pl.planned}</div>
+            <div style="font-size:18px;font-weight:900;color:${plColor};white-space:nowrap">${pl.done}/${pl.planned}</div>
             <div style="height:4px;background:#fff;border-radius:99px;margin-top:6px;overflow:hidden">
               <div style="height:100%;background:${plColor};width:${Math.min(plPct,100)}%"></div>
             </div>
