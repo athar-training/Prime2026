@@ -514,8 +514,11 @@ button[onclick^="toggle"],button[onclick^="update"],button[onclick^="promote"],
 button[onclick="exportData()"],button[onclick="importData()"],
 button[onclick="publishToWeb()"],button.t-action,td button,
 .input,.select,.textarea,.checkbox-wrap input,.field-hint{display:none !important}
-.checkbox-wrap{cursor:default !important;pointer-events:none;background:var(--TL) !important;border-color:var(--TC) !important}
-.checkbox-wrap label{cursor:default !important}
+/* وضع العرض: المفعّل تركواز، غير المفعّل محايد، النص متمركز نظيف */
+.checkbox-wrap{cursor:default !important;pointer-events:none;justify-content:center;text-align:center;background:var(--BG) !important;border-color:var(--GL) !important}
+.checkbox-wrap.checked{background:var(--TL) !important;border-color:var(--TC) !important}
+.checkbox-wrap label{cursor:default !important;flex:0 1 auto;text-align:center;line-height:1.5;word-break:normal;overflow-wrap:break-word;hyphens:none}
+.checkbox-wrap.checked label{color:var(--PD)}
 #importFile{display:none !important}
 .hdr-actions{display:flex !important;align-items:center}
 .empty .btn{display:none !important}
@@ -834,6 +837,17 @@ tr:hover .t-status{transform:scale(1.06)}
 
 /* ════════ 17) LIBRARY tabs ════════ */
 .lib-tab-btn{transition:all .25s var(--ease-out-back)}
+
+/* ════════ STATUS CARD — كرت حالة نظيف متوسّط (تفعيل/إعدادات) ════════ */
+.status-card{text-align:center}
+.status-card-body{padding:22px 14px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:120px}
+.status-card-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--PL);color:var(--PM);flex-shrink:0;transition:all .3s var(--ease-out-back)}
+.status-card-icon svg{width:22px;height:22px}
+.status-card.is-on .status-card-icon{background:var(--TL);color:var(--TC)}
+.status-card-label{font-size:13px;font-weight:800;color:var(--PD);line-height:1.5;word-break:normal;overflow-wrap:break-word;hyphens:none}
+.status-card-state{font-size:11px;font-weight:700;color:var(--TX3)}
+.status-card.is-on .status-card-state{color:var(--TC)}
+.status-card:hover .status-card-icon{transform:scale(1.12)}
 .lib-tab-btn:hover{transform:translateX(-4px)}
 .lib-section-card{transition:transform .3s var(--ease-out-expo),box-shadow .3s}
 .lib-section-card:hover{transform:translateY(-5px);box-shadow:var(--SH-LG)}
@@ -4106,38 +4120,25 @@ function renderRegistration(){
     </div>
     
     <div class="cards-grid" style="grid-template-columns:repeat(4,1fr);margin-top:20px">
-      <div class="card">
-        <div class="card-body" style="padding:14px">
-          <label class="checkbox-wrap ${r.settings.tested?'checked':''}">
-            <input type="checkbox" ${r.settings.tested?'checked':''} onchange="toggleRegSetting('tested')">
-            <label>تم اختبار الاستمارة</label>
-          </label>
+      ${[
+        {k:'tested', label:'تم اختبار الاستمارة', on:r.settings.tested},
+        {k:'analyticsLinked', label:'التحليلات مفعّلة', on:r.settings.analyticsLinked},
+        {k:'autoEmailEnabled', label:'الإيميل التلقائي', on:r.settings.autoEmailEnabled},
+        {k:'thankYouPage', label:'صفحة الشكر', on:r.settings.thankYouPage}
+      ].map(item => `
+        <div class="card status-card ${item.on?'is-on':''}">
+          <div class="card-top ${item.on?'green':'purple'}"></div>
+          <div class="status-card-body">
+            <div class="status-card-icon">
+              ${item.on
+                ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+                : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg>'}
+            </div>
+            <div class="status-card-label">${item.label}</div>
+            <div class="status-card-state">${item.on?'مفعّل':'غير مفعّل'}</div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-body" style="padding:14px">
-          <label class="checkbox-wrap ${r.settings.analyticsLinked?'checked':''}">
-            <input type="checkbox" ${r.settings.analyticsLinked?'checked':''} onchange="toggleRegSetting('analyticsLinked')">
-            <label>التحليلات مفعّلة</label>
-          </label>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body" style="padding:14px">
-          <label class="checkbox-wrap ${r.settings.autoEmailEnabled?'checked':''}">
-            <input type="checkbox" ${r.settings.autoEmailEnabled?'checked':''} onchange="toggleRegSetting('autoEmailEnabled')">
-            <label>الإيميل التلقائي</label>
-          </label>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body" style="padding:14px">
-          <label class="checkbox-wrap ${r.settings.thankYouPage?'checked':''}">
-            <input type="checkbox" ${r.settings.thankYouPage?'checked':''} onchange="toggleRegSetting('thankYouPage')">
-            <label>صفحة الشكر</label>
-          </label>
-        </div>
-      </div>
+      `).join('')}
     </div>
   `;
   
@@ -5369,13 +5370,18 @@ function renderHackathon(){
   `;
   ['photographer','videographer','mediaInvited','livestream'].forEach(key => {
     const labels = {photographer:'مصور فوتوغرافي', videographer:'مصور فيديو', mediaInvited:'دعوة إعلامية', livestream:'بث مباشر'};
+    const on = !!h.coverage[key];
     html += `
-      <div class="card">
-        <div class="card-body" style="padding:12px">
-          <label class="checkbox-wrap ${h.coverage[key]?'checked':''}">
-            <input type="checkbox" ${h.coverage[key]?'checked':''} onchange="toggleCoverage('${key}')">
-            <label>${labels[key]}</label>
-          </label>
+      <div class="card status-card ${on?'is-on':''}">
+        <div class="card-top ${on?'green':'purple'}"></div>
+        <div class="status-card-body">
+          <div class="status-card-icon">
+            ${on
+              ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+              : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg>'}
+          </div>
+          <div class="status-card-label">${labels[key]}</div>
+          <div class="status-card-state">${on?'مفعّل':'غير مفعّل'}</div>
         </div>
       </div>
     `;
