@@ -15,7 +15,7 @@
   --PM:#6B3FA0;   /* بنفسجي متوسط */
   --TC:#00B4AA;   /* تركواز */
   --PL:#EDE7F6;   /* بنفسجي فاتح */
-  --TL:#E0F7F5;   /* تركواز فاتح */
+  --TL:#F5F2FB;   /* تركواز فاتح */
   --GL:#E8E8EE;   /* حدود */
   --WH:#FFFFFF;
 
@@ -760,7 +760,7 @@ button[onclick="publishToWeb()"],button.t-action,td button,
 /* حركات لا نهائية (ambient) */
 @keyframes a-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
 @keyframes a-float-rev{0%,100%{transform:translateY(0)}50%{transform:translateY(18px)}}
-@keyframes a-pulse-ring{0%{box-shadow:0 0 0 0 rgba(0,180,170,.5)}70%{box-shadow:0 0 0 12px rgba(0,180,170,0)}100%{box-shadow:0 0 0 0 rgba(0,180,170,0)}}
+@keyframes a-pulse-ring{0%{box-shadow:0 0 0 0 rgba(107,63,160,.5)}70%{box-shadow:0 0 0 12px rgba(107,63,160,0)}100%{box-shadow:0 0 0 0 rgba(107,63,160,0)}}
 @keyframes a-pulse-ring-p{0%{box-shadow:0 0 0 0 rgba(107,63,160,.45)}70%{box-shadow:0 0 0 10px rgba(107,63,160,0)}100%{box-shadow:0 0 0 0 rgba(107,63,160,0)}}
 @keyframes a-spin-slow{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 @keyframes a-shimmer{0%{transform:translateX(-120%)}100%{transform:translateX(220%)}}
@@ -1018,9 +1018,9 @@ tr:hover .t-status{transform:scale(1.06)}
   font-family:'Cairo',sans-serif;
 ">
   <!-- زخارف خلفية -->
-  <div style="position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(0,180,170,0.06);pointer-events:none"></div>
+  <div style="position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(107,63,160,0.06);pointer-events:none"></div>
   <div style="position:absolute;bottom:-150px;left:-150px;width:500px;height:500px;border-radius:50%;background:rgba(107,63,160,0.06);pointer-events:none"></div>
-  <div style="position:absolute;top:50%;left:30%;width:200px;height:200px;border-radius:50%;background:rgba(0,180,170,0.1);pointer-events:none;filter:blur(40px)"></div>
+  <div style="position:absolute;top:50%;left:30%;width:200px;height:200px;border-radius:50%;background:rgba(107,63,160,0.1);pointer-events:none;filter:blur(40px)"></div>
 
   <!-- صندوق الدخول -->
   <div style="
@@ -5182,7 +5182,7 @@ function renderPlatform(){
     ` : ''}
     
     ${p.testingDone ? `
-    <div class="card" style="margin-top:14px;background:var(--TL);border-color:rgba(0,180,170,.3);cursor:pointer" onclick="showTestingConfirmation()">
+    <div class="card" style="margin-top:14px;background:var(--TL);border-color:rgba(107,63,160,.3);cursor:pointer" onclick="showTestingConfirmation()">
       <div class="card-body" style="text-align:center;padding:18px">
         <div style="font-size:28px;margin-bottom:6px">✓</div>
         <div style="font-size:14px;font-weight:800;color:#005050;margin-bottom:4px">تم اختبار كل المنصات قبل بدء المعسكر</div>
@@ -5219,7 +5219,7 @@ function viewPlatformDetails(key, title){
     </div>
     
     ${platform.directLink ? `
-    <a href="${platform.directLink}" target="_blank" style="display:block;text-decoration:none;background:var(--TL);border:1.5px solid rgba(0,180,170,.3);border-radius:12px;padding:14px;margin-bottom:14px">
+    <a href="${platform.directLink}" target="_blank" style="display:block;text-decoration:none;background:var(--TL);border:1.5px solid rgba(107,63,160,.3);border-radius:12px;padding:14px;margin-bottom:14px">
       <div style="font-size:11px;color:#005050;font-weight:800;margin-bottom:6px">🔗 الرابط المباشر</div>
       <div style="font-size:13px;color:var(--TC);direction:ltr;text-align:right;word-break:break-all">${platform.directLink}</div>
       <div style="font-size:10px;color:var(--TX3);margin-top:6px">اضغطي لفتح الرابط في صفحة جديدة</div>
@@ -6252,8 +6252,8 @@ function renderPrerequisites(){
       <div class="sec-desc">14 متطلب يجب على كل متدرب تجهيزه قبل بدء المعسكر. كل متطلب له فيديو شرح أو لينك تنزيل. هذي القائمة تُرسل للمقبولين مباشرة بعد إعلان النتائج.</div>
     </div>
     
-    <div class="alert" style="background:var(--TL);border:1.5px solid var(--TC);display:flex;gap:14px;padding:16px 18px;border-radius:14px;margin-bottom:18px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,180,170,0.08)">
-      <div style="flex-shrink:0;width:34px;height:34px;background:var(--TC);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,180,170,0.25)">
+    <div class="alert" style="background:var(--TL);border:1.5px solid var(--TC);display:flex;gap:14px;padding:16px 18px;border-radius:14px;margin-bottom:18px;align-items:flex-start;box-shadow:0 2px 8px rgba(107,63,160,0.08)">
+      <div style="flex-shrink:0;width:34px;height:34px;background:var(--TC);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(107,63,160,0.25)">
         <svg style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
