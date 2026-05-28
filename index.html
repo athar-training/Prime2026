@@ -221,7 +221,7 @@ em,i{font-style:normal !important}
 .stat-cell-value{font-size:32px;font-weight:900;color:var(--PD);margin-bottom:4px;font-variant-numeric:tabular-nums;line-height:1}
 .stat-cell-value.success,.stat-cell-value.warning,.stat-cell-value.danger{color:var(--TC)}
 .stat-cell-label{font-size:12px;color:var(--TX2);font-weight:700}
-.stat-cell-sub{font-size:10px;color:var(--TC);margin-top:5px;font-weight:700}
+.stat-cell-sub{font-size:10px;color:var(--PM);margin-top:5px;font-weight:700}
 
 /* ============================================================
    LAYOUT — شريط جانبي + محتوى
@@ -275,7 +275,7 @@ em,i{font-style:normal !important}
 .progress-info{flex:1}
 .progress-label{font-size:12px;color:var(--TX2);font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
 .progress-bar-wrap{height:10px;background:var(--PL);border-radius:99px;overflow:hidden}
-.progress-bar{height:100%;background:var(--TC);border-radius:99px;transition:width .5s cubic-bezier(0.4,0,0.2,1);width:0%}
+.progress-bar{height:100%;background:var(--PM);border-radius:99px;transition:width .5s cubic-bezier(0.4,0,0.2,1);width:0%}
 .progress-value{font-size:40px;font-weight:900;color:var(--PD);font-variant-numeric:tabular-nums;min-width:96px;text-align:center;line-height:1}
 
 /* ============================================================
@@ -297,14 +297,15 @@ em,i{font-style:normal !important}
 .card.clickable:hover::after{opacity:1;transform:translateX(0)}
 
 /* الشريط العلوي الملوّن */
-.card-top{height:4px;background:var(--TC)}
+.card-top{height:3px;background:var(--PM)}
 .card-top.purple{background:var(--PM)}
 .card-top.green{background:var(--TC)}
-.card-top.orange{background:var(--PM)}
+.card-top.teal{background:var(--TC)}
+.card-top.orange{background:var(--PL)}
 .card-top.red{background:var(--PD)}
 
 .card-body{padding:22px}
-.card-num{font-size:10px;font-weight:800;color:var(--TC);margin-bottom:6px;letter-spacing:1px;text-transform:uppercase}
+.card-num{font-size:10px;font-weight:800;color:var(--PM);margin-bottom:6px;letter-spacing:1px;text-transform:uppercase}
 .card-title{font-size:16px;font-weight:800;color:var(--PD);margin-bottom:8px;line-height:1.4}
 .card-desc{font-size:12px;color:var(--TX2);line-height:1.8;margin-bottom:14px;font-weight:500}
 .card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
@@ -562,12 +563,44 @@ button[onclick="publishToWeb()"],button.t-action,td button,
   .manifesto-body{font-size:18px}
 }
 @media(max-width:768px){
+  /* منع أي تمرير أفقي للصفحة كاملة */
+  html,body{overflow-x:hidden;max-width:100%}
+  .layout,.main,.stats-bar,.manifesto,.hdr,.hero,.footer{max-width:100%;overflow-x:hidden}
   .hdr-top{flex-direction:column;gap:14px;text-align:center;padding:16px 20px}
   .hdr-right{flex-direction:column;gap:12px}
   .hdr-partner-box{border-left:none;padding-left:0;border-top:1px solid var(--GL);padding-top:10px}
   .layout{flex-direction:column}
-  .sidebar{width:100%;height:auto;position:relative;top:0;min-height:auto;border-left:none;border-bottom:1px solid var(--GL);padding:16px}
-  .sidebar-title{padding:8px 12px}
+
+  /* ===== القائمة الجانبية → شريط تبويبات أفقي أنيق ===== */
+  .sidebar{
+    width:100%;height:auto;position:sticky;top:0;z-index:50;
+    min-height:auto;border-left:none;border-bottom:1px solid var(--GL);
+    padding:12px 0;background:var(--WH);
+    display:flex;flex-direction:column;gap:8px;
+    box-shadow:var(--SH-SM);
+  }
+  .sidebar-title{padding:0 16px;flex-shrink:0}
+  /* الحاوية الأفقية القابلة للتمرير */
+  #navContainer{
+    display:flex;gap:8px;overflow-x:auto;padding:2px 16px 6px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  #navContainer::-webkit-scrollbar{display:none}
+  .nav-item{
+    flex-direction:row-reverse;align-items:center;gap:8px;
+    padding:9px 14px;min-width:max-content;flex-shrink:0;
+    margin-bottom:0;border-radius:99px;
+    background:var(--BG);white-space:nowrap;
+    animation:none !important;opacity:1 !important;transform:none !important;
+  }
+  .nav-item-txt{flex:0 0 auto;text-align:center;font-size:12.5px}
+  .nav-item-num{width:22px;height:22px;border-radius:50%}
+  .nav-item-pct{display:none}
+  /* التبويب النشط على الجوال: بنفسجي داكن + الرقم تركوازي (تمييز قوي) */
+  .nav-item.active{background:var(--PD);color:var(--WH);box-shadow:0 4px 14px rgba(61,26,110,.28)}
+  .nav-item.active .nav-item-num{background:var(--TC);color:var(--WH)}
+  .nav-item:hover{transform:none}
+
   .main{padding:24px 18px}
   .stats-bar{padding:24px 18px}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:12px}
@@ -619,6 +652,7 @@ button[onclick="publishToWeb()"],button.t-action,td button,
 
 /* ════════ 1) KEYFRAMES الأساسية ════════ */
 @keyframes a-fade-up{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:translateY(0)}}
+@keyframes a-nav-in{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
 @keyframes a-fade-down{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes a-fade-in{from{opacity:0}to{opacity:1}}
 @keyframes a-scale-in{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
@@ -689,22 +723,22 @@ button[onclick="publishToWeb()"],button.t-action,td button,
 /* ════════ 6) SIDEBAR — انزلاق + stagger للعناصر ════════ */
 .sidebar{animation:a-slide-right .8s var(--ease-out-expo) .2s both}
 .sidebar-title{animation:a-fade-in .6s ease .5s both}
-.nav-item{animation:a-fade-up .5s var(--ease-out-expo) both;opacity:0}
-.nav-item:nth-child(2){animation-delay:.45s}
-.nav-item:nth-child(3){animation-delay:.49s}
-.nav-item:nth-child(4){animation-delay:.53s}
-.nav-item:nth-child(5){animation-delay:.57s}
-.nav-item:nth-child(6){animation-delay:.61s}
-.nav-item:nth-child(7){animation-delay:.65s}
-.nav-item:nth-child(8){animation-delay:.69s}
-.nav-item:nth-child(9){animation-delay:.73s}
-.nav-item:nth-child(10){animation-delay:.77s}
-.nav-item:nth-child(n+11){animation-delay:.81s}
+/* التبويبات: انيميشن دخول آمن — لا يترك العنصر مخفياً أبداً (لا opacity:0 دائم) */
+.nav-item{animation:a-nav-in .5s var(--ease-out-expo) both}
+.nav-item:nth-child(2){animation-delay:.42s}
+.nav-item:nth-child(3){animation-delay:.46s}
+.nav-item:nth-child(4){animation-delay:.50s}
+.nav-item:nth-child(5){animation-delay:.54s}
+.nav-item:nth-child(6){animation-delay:.58s}
+.nav-item:nth-child(7){animation-delay:.62s}
+.nav-item:nth-child(8){animation-delay:.66s}
+.nav-item:nth-child(9){animation-delay:.70s}
+.nav-item:nth-child(10){animation-delay:.74s}
+.nav-item:nth-child(n+11){animation-delay:.78s}
 .nav-item{transition:background .2s, color .2s, transform .25s var(--ease-out-back), padding .2s}
 .nav-item:hover{transform:translateX(-6px)}
 .nav-item-num{transition:all .25s var(--ease-out-back)}
-.nav-item:hover .nav-item-num{transform:scale(1.15) rotate(-8deg)}
-.nav-item.active{animation:none}
+.nav-item:hover .nav-item-num{transform:scale(1.12) rotate(-6deg)}
 .nav-item.active .nav-item-num{animation:a-badge-glow 2.5s ease-in-out infinite}
 
 /* ════════ 7) MAIN — كشف القسم + stagger للكروت ════════ */
@@ -803,6 +837,62 @@ tr:hover .t-status{transform:scale(1.06)}
 .lib-tab-btn:hover{transform:translateX(-4px)}
 .lib-section-card{transition:transform .3s var(--ease-out-expo),box-shadow .3s}
 .lib-section-card:hover{transform:translateY(-5px);box-shadow:var(--SH-LG)}
+
+/* ════════════════════════════════════════════════════════════
+   ✦ CAROUSEL — كاروسيل تفاعلي بتأثير العمق (المنهج التفصيلي)
+   الكروت تتمرر أفقياً، واللي بالنص يرتفع ويكبّر تلقائياً
+   ════════════════════════════════════════════════════════════ */
+.cards-carousel{
+  display:flex !important;
+  grid-template-columns:none !important;
+  gap:20px;
+  overflow-x:auto;
+  overflow-y:visible;
+  padding:48px 0 36px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  /* مسافة جانبية تسمح للكرت الأول والأخير يوصلون للمنتصف */
+  scroll-padding:0 50%;
+}
+.cards-carousel::-webkit-scrollbar{display:none}
+.cards-carousel > .card{
+  flex:0 0 300px;
+  scroll-snap-align:center;
+  /* الحركة الأساسية: تكبير/رفع حسب القرب من المنتصف (يتحكم فيها JS عبر --p) */
+  transform:scale(calc(0.86 + 0.14 * var(--p,0))) translateY(calc(-28px * var(--p,0)));
+  opacity:calc(0.55 + 0.45 * var(--p,0));
+  transition:transform .35s var(--ease-out-expo), opacity .35s var(--ease-out-expo), box-shadow .35s var(--ease-out-expo);
+  box-shadow:0 calc(6px + 22px * var(--p,0)) calc(16px + 40px * var(--p,0)) rgba(61,26,110,calc(0.06 + 0.12 * var(--p,0)));
+  will-change:transform,opacity;
+  cursor:grab;
+}
+.cards-carousel.dragging{scroll-snap-type:none;cursor:grabbing}
+.cards-carousel.dragging > .card{transition:none}
+/* منع تعارض hover العام مع حركة العمق */
+.cards-carousel > .card:hover{transform:scale(calc(0.86 + 0.14 * var(--p,0))) translateY(calc(-28px * var(--p,0)))}
+/* الكرت النشط (بالنص) — لمسة تركواز خفيفة على الشريط العلوي */
+.cards-carousel > .card.is-center .card-top{height:5px;background:var(--TC)}
+
+/* تلميح للمستخدم: مؤشرات + نص */
+.carousel-hint{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-size:11px;font-weight:700;color:var(--TX3);margin:-8px 0 4px;
+}
+.carousel-hint svg{width:14px;height:14px;stroke:var(--PM);fill:none;stroke-width:2;animation:a-hint-swipe 2s ease-in-out infinite}
+@keyframes a-hint-swipe{0%,100%{transform:translateX(0)}50%{transform:translateX(-6px)}}
+.carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+.carousel-dot{width:7px;height:7px;border-radius:50%;background:var(--GL);transition:all .25s var(--ease-out-back);cursor:pointer}
+.carousel-dot.active{background:var(--PD);width:22px;border-radius:99px}
+
+/* على الديسكتوب: نخلي ارتفاع الحاوية يتسع للكرت المرفوع */
+.cards-carousel{min-height:380px;align-items:center}
+
+@media(max-width:768px){
+  .cards-carousel{scroll-padding:0 50%;padding:40px 0 28px}
+  .cards-carousel > .card{flex:0 0 78vw;max-width:300px}
+}
+
 
 </style>
 </head>
@@ -4586,7 +4676,7 @@ function renderCurriculum(){
           <div class="kpi-value">${totalCourseHours}</div>
         </div>
       </div>
-      <div class="cards-grid">
+      <div class="cards-grid cards-carousel" id="curriculumCarousel">
     `;
     
     courses.forEach(c => {
@@ -7920,9 +8010,9 @@ window.addEventListener('DOMContentLoaded', init);
   /* ---------- 2) Stagger reveal للكروت داخل المحتوى ---------- */
   function staggerReveal(scope){
     scope = scope || document.getElementById('mainContent') || document;
-    // العناصر التي نريد كشفها متتابعة
+    // العناصر التي نريد كشفها متتابعة (نستثني الكاروسيل لأن له حركته الخاصة)
     var groups = [
-      scope.querySelectorAll('.cards-grid > .card'),
+      scope.querySelectorAll('.cards-grid:not(.cards-carousel) > .card'),
       scope.querySelectorAll('.kpi-grid > .kpi'),
       scope.querySelectorAll('.lib-cards-grid > *')
     ];
@@ -8023,8 +8113,107 @@ window.addEventListener('DOMContentLoaded', init);
       revealInViewportNow(scope);
       // FALLBACK أمان: أي عنصر بقي مخفياً بعد 2.2s نكشفه تلقائياً
       scheduleSafety(scope);
+      // تفعيل الكاروسيل إن وُجد
+      initCarousel(scope);
     });
   };
+
+  /* ---------- الكاروسيل التفاعلي بتأثير العمق ---------- */
+  function initCarousel(scope){
+    scope = scope || document;
+    var car = scope.querySelector('.cards-carousel');
+    if(!car || car.dataset.carInit === '1') return;
+    car.dataset.carInit = '1';
+    var cards = Array.prototype.slice.call(car.querySelectorAll('.card'));
+    if(!cards.length) return;
+
+    // حساب قرب كل كرت من منتصف الحاوية وتحديث --p
+    function update(){
+      var rect = car.getBoundingClientRect();
+      var center = rect.left + rect.width/2;
+      var maxDist = rect.width/2 + 160; // نطاق التأثير
+      var bestIdx = 0, bestDist = Infinity;
+      cards.forEach(function(card, i){
+        var cr = card.getBoundingClientRect();
+        var cc = cr.left + cr.width/2;
+        var dist = Math.abs(cc - center);
+        // p: 1 بالنص، 0 عند الحافة
+        var p = Math.max(0, 1 - dist/maxDist);
+        // منحنى ناعم (easeOut) ليكون الفرق أوضح بالنص
+        p = p*p*(3 - 2*p);
+        card.style.setProperty('--p', p.toFixed(3));
+        if(dist < bestDist){ bestDist = dist; bestIdx = i; }
+      });
+      // علّم الكرت النشط + النقاط
+      cards.forEach(function(c,i){ c.classList.toggle('is-center', i === bestIdx); });
+      updateDots(bestIdx);
+    }
+
+    // نقاط المؤشرات
+    var dotsWrap = document.createElement('div');
+    dotsWrap.className = 'carousel-dots';
+    cards.forEach(function(_, i){
+      var d = document.createElement('div');
+      d.className = 'carousel-dot';
+      d.addEventListener('click', function(){ scrollToCard(i); });
+      dotsWrap.appendChild(d);
+    });
+    if(car.parentNode) car.parentNode.insertBefore(dotsWrap, car.nextSibling);
+    function updateDots(idx){
+      var ds = dotsWrap.children;
+      for(var i=0;i<ds.length;i++){ ds[i].classList.toggle('active', i===idx); }
+    }
+    function scrollToCard(i){
+      var card = cards[i];
+      var target = card.offsetLeft - (car.clientWidth - card.clientWidth)/2;
+      car.scrollTo({left:target, behavior:'smooth'});
+    }
+
+    // تلميح "اسحب" فوق الكاروسيل
+    var hint = document.createElement('div');
+    hint.className = 'carousel-hint';
+    hint.innerHTML = '<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> اسحب لاستعراض الدورات';
+    if(car.parentNode) car.parentNode.insertBefore(hint, car);
+
+    // تحديث عند التمرير
+    var ticking = false;
+    car.addEventListener('scroll', function(){
+      if(!ticking){ requestAnimationFrame(function(){ update(); ticking=false; }); ticking=true; }
+    }, {passive:true});
+
+    // سحب بالماوس (للديسكتوب)
+    var isDown=false, startX=0, startScroll=0, moved=false;
+    car.addEventListener('mousedown', function(e){
+      isDown=true; moved=false; car.classList.add('dragging');
+      startX=e.pageX; startScroll=car.scrollLeft;
+    });
+    window.addEventListener('mousemove', function(e){
+      if(!isDown) return;
+      var dx = e.pageX - startX;
+      if(Math.abs(dx)>4) moved=true;
+      car.scrollLeft = startScroll - dx;
+      update();
+    });
+    window.addEventListener('mouseup', function(){
+      if(!isDown) return;
+      isDown=false; car.classList.remove('dragging');
+    });
+    // منع فتح المودال لو كان يسحب
+    cards.forEach(function(card){
+      card.addEventListener('click', function(e){
+        if(moved){ e.stopPropagation(); e.preventDefault(); }
+      }, true);
+    });
+
+    // أول تحديث + توسيط الكرت الأوسط (أو "قيد التنفيذ")
+    requestAnimationFrame(function(){
+      update();
+      var startIdx = Math.floor(cards.length/2);
+      scrollToCard(startIdx);
+      setTimeout(update, 350);
+    });
+    window.addEventListener('resize', update);
+  }
 
   /* كشف فوري للعناصر الظاهرة أصلاً في الشاشة */
   function revealInViewportNow(scope){
