@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ATHAR BUILD: 1780010346 - PASSWORD HIDDEN FIX -->
+<!-- ATHAR BUILD: 1780011484 - WORKSHOPS CAROUSEL -->
 <html lang="ar" dir="rtl">
 <head>
 <!-- build: 1779707235 -->
@@ -4818,7 +4818,7 @@ function renderCurriculum(){
           <div class="kpi-value">${totalWsHours}</div>
         </div>
       </div>
-      <div class="cards-grid">
+      <div class="cards-grid cards-carousel" id="workshopsCarousel">
     `;
     
     workshops.forEach(w => {
@@ -5315,7 +5315,7 @@ function renderShiftCore(){
       </div>
     </div>
     
-    <div class="cards-grid">
+    <div class="cards-grid cards-carousel" id="shiftCoreCarousel">
   `;
   
   workshops.forEach(w => {
@@ -8301,11 +8301,10 @@ window.addEventListener('DOMContentLoaded', init);
       }, true);
     });
 
-    // أول تحديث + توسيط الكرت الأوسط (أو "قيد التنفيذ")
+    // أول تحديث + يبدأ من أول كرت
     requestAnimationFrame(function(){
       update();
-      var startIdx = Math.floor(cards.length/2);
-      scrollToCard(startIdx);
+      scrollToCard(0);
       setTimeout(update, 350);
     });
     window.addEventListener('resize', update);
