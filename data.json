@@ -1191,9 +1191,9 @@
         "socialReach": 100000
       },
       "actuals": {
-        "applicants": 49,
+        "applicants": 78,
         "accepted": 49,
-        "reserve": 0,
+        "reserve": 15,
         "completionRate": 0,
         "satisfactionScore": 0,
         "portfolioProjects": 0,
