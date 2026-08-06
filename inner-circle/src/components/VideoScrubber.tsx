@@ -44,6 +44,43 @@ export default function VideoScrubber({ scrollProgress }: VideoScrubberProps) {
     return () => cancelAnimationFrame(raf);
   }, []);
 
+  // Kickstart: force the browser to fetch + decode the first frame.
+  // A scrub-only <video> is never play()'d, so many browsers (Chrome,
+  // Safari/iOS) won't fire loadeddata or paint a frame until it plays once.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    let settled = false;
+    const markLoaded = () => {
+      if (!settled) {
+        settled = true;
+        setIsLoaded(true);
+      }
+    };
+    video.addEventListener("loadeddata", markLoaded);
+    video.addEventListener("canplay", markLoaded);
+
+    const kick = () => {
+      const p = video.play();
+      if (p && typeof p.then === "function") {
+        p.then(() => video.pause()).catch(() => {
+          // Autoplay blocked or interrupted — the frame still buffers.
+        });
+      }
+    };
+    video.load();
+    kick();
+
+    // Safety net: never trap the loader forever.
+    const fallback = window.setTimeout(markLoaded, 12000);
+
+    return () => {
+      video.removeEventListener("loadeddata", markLoaded);
+      video.removeEventListener("canplay", markLoaded);
+      window.clearTimeout(fallback);
+    };
+  }, []);
+
   // GSAP mouse parallax
   useEffect(() => {
     const container = containerRef.current;
