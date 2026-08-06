@@ -7,92 +7,271 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; overflow: hidden; }
+
+    /* ── Section: 100vw x 100vh, overflow hidden ── */
+    .stage {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh; /* fill exactly on mobile browsers with dynamic UI */
+      overflow: hidden;
+      /* dark fallback behind the always-on background video */
+      background: linear-gradient(135deg, #1a1636 0%, #0b0a1f 100%);
+    }
+    .stage.is-desktop { cursor: none; }
+
+    /* ── Videos: absolute cover ── */
+    .video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video--two { opacity: 0; transition: opacity 600ms ease; }
+
+    /* ── Custom cursor (desktop only) ── */
+    .cursor {
+      position: fixed;
+      z-index: 50;
+      pointer-events: none;
+      width: 90px;
+      height: 90px;
+      left: -200px;
+      top: -200px;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      will-change: left, top;
+    }
+    .cursor__label {
+      color: #ffffff;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.025em;
+      user-select: none;
+    }
+
+    /* ── Content wrapper ── */
+    .content {
+      position: relative;
+      z-index: 10;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.25rem; /* p-5 */
+    }
+
+    .row-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+    .row-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
+
+    /* ── Top-left column ── */
+    .left-col { display: flex; flex-direction: column; gap: 0.5rem; max-width: 65%; }
+
+    .brand {
+      margin: 0;
+      font-size: 1.5rem;      /* text-2xl */
+      line-height: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      background: linear-gradient(135deg, #ffffff 0%, #c084fc 50%, #a855f7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      width: fit-content;
+    }
+
+    .icon-settings { width: 1.5rem; height: 1.5rem; color: rgba(255, 255, 255, 0.7); }
+
+    .tagline {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;        /* text-base */
+      line-height: 1.375;     /* leading-snug */
+      letter-spacing: -0.025em;
+    }
+    .tagline .b { font-weight: 600; }
+
+    .circle {
+      flex-shrink: 0;
+      font-size: 1.25rem;     /* text-xl */
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: #36306E;
+    }
+
+    /* ── Bottom-left ── */
+    .bottom-left { display: flex; flex-direction: column; gap: 0.25rem; }
+
+    .big-number {
+      font-size: 3rem;        /* text-5xl */
+      line-height: 0.85;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 40%, #a855f7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      width: fit-content;
+    }
+
+    .caption {
+      margin-top: 0.25rem;
+      font-size: 0.75rem;     /* text-xs */
+      line-height: 1rem;
+      letter-spacing: 0.1em;  /* tracking-widest */
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ffffff 0%, #c084fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      width: fit-content;
+    }
+
+    /* ── Bottom-right ── */
+    .bottom-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      border: 1px solid rgba(54, 48, 110, 0.3);
+      border-radius: 1rem;    /* rounded-2xl */
+      padding: 0.75rem 1rem;  /* py-3 px-4 */
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .card__top { font-size: 0.75rem; letter-spacing: 0.025em; color: rgba(255, 255, 255, 0.9); }
+    .card__row { display: flex; align-items: center; gap: 0.5rem; }
+    .card__num { font-size: 1.875rem; font-weight: 700; color: #ffffff; }   /* text-3xl */
+    .icon-heart { width: 1.5rem; height: 1.5rem; color: #ffffff; }
+    .card__bottom { font-size: 0.75rem; letter-spacing: 0.025em; color: rgba(255, 255, 255, 0.7); }
+
+    .stat {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.025em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ═══════════ Responsive (Tailwind breakpoints) ═══════════ */
+    @media (min-width: 640px) {   /* sm */
+      .content { padding: 2rem; }
+      .left-col { gap: 0.75rem; max-width: 24rem; }
+      .brand { font-size: 1.875rem; line-height: 2.25rem; }
+      .icon-settings { width: 2rem; height: 2rem; }
+      .tagline { font-size: 1.125rem; }
+      .circle { font-size: 1.875rem; }
+      .big-number { font-size: 4.5rem; }
+      .caption { font-size: 0.875rem; }
+      .card { padding: 1rem 1.5rem; }
+      .card__top { font-size: 0.875rem; color: #36306E; }
+      .card__num { font-size: 2.25rem; color: #36306E; }
+      .icon-heart { width: 2rem; height: 2rem; color: #36306E; }
+      .card__bottom { font-size: 0.875rem; color: rgba(54, 48, 110, 0.7); }
+      .stat { font-size: 0.875rem; color: rgba(54, 48, 110, 0.6); }
+    }
+    @media (min-width: 768px) {   /* md */
+      .content { padding: 3rem; }
+      .brand { font-size: 2.25rem; line-height: 2.5rem; }
+      .tagline { font-size: 1.25rem; }
+      .circle { font-size: 2.25rem; }
+      .big-number { font-size: 6rem; }
+      .caption { font-size: 1rem; }
+      .card__num { font-size: 3rem; }
+      .icon-heart { width: 2.5rem; height: 2.5rem; }
+    }
+    @media (min-width: 1024px) {  /* lg */
+      .content { padding: 4rem; }
+      .brand { font-size: 3rem; line-height: 1; }
+      .tagline { font-size: 1.5rem; }
+      .circle { font-size: 3rem; }
+      .big-number { font-size: 10rem; }
+      .card__num { font-size: 3.75rem; }
+    }
   </style>
 </head>
 <body>
-  <section id="stage" class="relative w-full h-screen overflow-hidden"
-    style="background:linear-gradient(135deg,#1a1636 0%,#0b0a1f 100%);">
+  <section id="stage" class="stage">
     <!-- Custom cursor (desktop only) -->
-    <div id="cursor"
-      class="fixed z-50 pointer-events-none -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center"
-      style="width:90px;height:90px;left:-200px;top:-200px;opacity:0;backdrop-filter:blur(8px);background-color:rgba(0,0,0,0.45);will-change:left,top;">
-      <span id="cursor-label" class="text-white text-sm font-medium tracking-wide select-none">open</span>
+    <div id="cursor" class="cursor">
+      <span id="cursor-label" class="cursor__label">open</span>
     </div>
 
-    <!-- Video 1: background loop -->
-    <video id="video1" class="absolute inset-0 w-full h-full object-cover"
+    <!-- Video 1: background loop (always visible) -->
+    <video id="video1" class="video"
       src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260730_181344_3a592329-bd0b-4dc6-9ac6-cfb250e5ecdd.mp4"
-      autoplay loop muted playsinline preload="auto" style="opacity:1;"></video>
+      autoplay loop muted playsinline preload="auto"></video>
 
-    <!-- Video 2: overlay reveal -->
-    <video id="video2" class="absolute inset-0 w-full h-full object-cover"
+    <!-- Video 2: overlay reveal (starts hidden) -->
+    <video id="video2" class="video video--two"
       src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260730_214302_820066a8-f3de-43f3-ab1d-96bd8b2716e6.mp4"
-      muted playsinline preload="auto" style="opacity:0;transition:opacity 600ms ease;"></video>
+      muted playsinline preload="auto"></video>
 
-    <div class="relative z-10 h-full flex flex-col justify-between p-5 sm:p-8 md:p-12 lg:p-16">
+    <div class="content">
       <!-- TOP ROW -->
-      <div class="flex items-start justify-between gap-4">
-        <div class="flex flex-col gap-2 sm:gap-3 max-w-[65%] sm:max-w-sm">
-          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
-            style="background:linear-gradient(135deg,#ffffff 0%,#c084fc 50%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
-            Nexus/
-          </h1>
+      <div class="row-top">
+        <div class="left-col">
+          <h1 class="brand">Nexus/</h1>
 
           <!-- Settings icon (lucide) -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 text-white/70" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="icon-settings" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
             <circle cx="12" cy="12" r="3"/>
           </svg>
 
-          <p class="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-snug tracking-tight">
-            A guild and space <span class="font-semibold">for</span>
+          <p class="tagline">
+            A guild and space <span class="b">for</span>
             <br />
-            <span class="font-semibold">forward-looking creation</span>
+            <span class="b">forward-looking creation</span>
           </p>
         </div>
 
-        <div class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight shrink-0"
-          style="color:#36306E;">
-          /Circle
-        </div>
+        <div class="circle">/Circle</div>
       </div>
 
       <!-- BOTTOM ROW -->
-      <div class="flex items-end justify-between gap-4">
-        <div class="flex flex-col gap-1">
-          <div class="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-bold leading-[0.85] tracking-tighter"
-            style="background:linear-gradient(135deg,#ffffff 0%,#d8b4fe 40%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
-            150+
-          </div>
-          <div class="text-xs sm:text-sm md:text-base tracking-widest uppercase mt-1"
-            style="background:linear-gradient(90deg,#ffffff 0%,#c084fc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
-            curious minds on board
-          </div>
+      <div class="row-bottom">
+        <div class="bottom-left">
+          <div class="big-number">150+</div>
+          <div class="caption">curious minds on board</div>
         </div>
 
-        <div class="flex flex-col items-end gap-2">
-          <div class="border rounded-2xl px-4 py-3 sm:px-6 sm:py-4 backdrop-blur-sm bg-white/5 flex flex-col items-center gap-1"
-            style="border-color:rgba(54,48,110,0.3);">
-            <div class="text-xs sm:text-sm tracking-wide text-white/90 sm:text-[#36306E]">Secured to</div>
-
-            <div class="flex items-center gap-2">
-              <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white sm:text-[#36306E]">200</span>
+        <div class="bottom-right">
+          <div class="card">
+            <div class="card__top">Secured to</div>
+            <div class="card__row">
+              <span class="card__num">200</span>
               <!-- Heart icon (lucide) -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white sm:text-[#36306E]"
-                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+              <svg class="icon-heart" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/>
               </svg>
             </div>
-
-            <div class="text-xs sm:text-sm tracking-wide text-white/70 sm:text-[rgba(54,48,110,0.7)]">patrons</div>
+            <div class="card__bottom">patrons</div>
           </div>
 
-          <div class="text-xs sm:text-sm font-medium tracking-wide text-white/60 sm:text-[rgba(54,48,110,0.6)]">12.4K</div>
+          <div class="stat">12.4K</div>
         </div>
       </div>
     </div>
@@ -114,7 +293,7 @@
         stage.style.cursor = 'auto';
         cursor.style.display = 'none';
       } else {
-        stage.style.cursor = 'none';
+        stage.classList.add('is-desktop');
         window.addEventListener('mousemove', function (e) {
           cursor.style.left = e.clientX + 'px';
           cursor.style.top = e.clientY + 'px';
