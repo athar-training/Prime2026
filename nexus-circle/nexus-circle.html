@@ -13,23 +13,24 @@
   </style>
 </head>
 <body>
-  <section id="stage" class="relative w-full h-screen overflow-hidden">
+  <section id="stage" class="relative w-full h-screen overflow-hidden"
+    style="background:linear-gradient(135deg,#1a1636 0%,#0b0a1f 100%);">
     <!-- Custom cursor (desktop only) -->
     <div id="cursor"
       class="fixed z-50 pointer-events-none -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center"
-      style="width:90px;height:90px;backdrop-filter:blur(8px);background-color:rgba(0,0,0,0.45);will-change:left,top;">
+      style="width:90px;height:90px;left:-200px;top:-200px;opacity:0;backdrop-filter:blur(8px);background-color:rgba(0,0,0,0.45);will-change:left,top;">
       <span id="cursor-label" class="text-white text-sm font-medium tracking-wide select-none">open</span>
     </div>
 
     <!-- Video 1: background loop -->
     <video id="video1" class="absolute inset-0 w-full h-full object-cover"
       src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260730_181344_3a592329-bd0b-4dc6-9ac6-cfb250e5ecdd.mp4"
-      autoplay loop muted playsinline style="opacity:1;"></video>
+      autoplay loop muted playsinline preload="auto" style="opacity:1;"></video>
 
     <!-- Video 2: overlay reveal -->
     <video id="video2" class="absolute inset-0 w-full h-full object-cover"
       src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260730_214302_820066a8-f3de-43f3-ab1d-96bd8b2716e6.mp4"
-      muted playsinline style="opacity:0;transition:opacity 600ms ease;"></video>
+      muted playsinline preload="auto" style="opacity:0;transition:opacity 600ms ease;"></video>
 
     <div class="relative z-10 h-full flex flex-col justify-between p-5 sm:p-8 md:p-12 lg:p-16">
       <!-- TOP ROW -->
@@ -117,6 +118,7 @@
         window.addEventListener('mousemove', function (e) {
           cursor.style.left = e.clientX + 'px';
           cursor.style.top = e.clientY + 'px';
+          cursor.style.opacity = '1';
         });
       }
 
