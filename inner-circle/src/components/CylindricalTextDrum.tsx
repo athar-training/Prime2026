@@ -76,10 +76,14 @@ export default function CylindricalTextDrum({
           const translateZ = Math.cos(angleRad) * R - R;
           const baseScale = 0.78 + Math.cos(angleRad) * 0.22;
           const opacity = Math.max(0, (Math.cos(angleRad) - 0.2) / 0.8);
+          // Cap the per-line blur (many simultaneous blur() filters are the
+          // drum's main paint cost) and drop it entirely once a line is nearly
+          // invisible.
           const depthBlur = Math.min(
-            8,
-            Math.max(0, (Math.abs(indexDiff) - 1.5) * 0.75)
+            4,
+            Math.max(0, (Math.abs(indexDiff) - 1.5) * 0.6)
           );
+          const nearlyHidden = opacity <= 0.02;
 
           const transform = `translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${
             -angleDeg * 0.8
@@ -96,8 +100,13 @@ export default function CylindricalTextDrum({
                 transformOrigin: "left center",
                 opacity: isEmpty ? opacity * 0.3 : opacity,
                 letterSpacing: "-0.035em",
-                filter: depthBlur > 0.1 ? `blur(${depthBlur}px)` : "none",
-                willChange: "transform, opacity, filter",
+                // Skip painting entirely for off-screen lines.
+                visibility: nearlyHidden ? "hidden" : "visible",
+                filter:
+                  depthBlur > 0.1 && !nearlyHidden
+                    ? `blur(${depthBlur}px)`
+                    : "none",
+                willChange: "transform, opacity",
               }}
             >
               {isEmpty ? (

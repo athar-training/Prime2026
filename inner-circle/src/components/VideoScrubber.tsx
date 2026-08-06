@@ -8,34 +8,38 @@ const FALLBACK_DURATION = 4.2;
 
 interface VideoScrubberProps {
   scrollProgress: number;
+  active?: boolean;
 }
 
-export default function VideoScrubber({ scrollProgress }: VideoScrubberProps) {
+export default function VideoScrubber({
+  scrollProgress,
+  active = true,
+}: VideoScrubberProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const currentTimeRef = useRef(0);
   const scrollRef = useRef(scrollProgress);
+  const activeRef = useRef(active);
   const [isLoaded, setIsLoaded] = useState(false);
 
   scrollRef.current = scrollProgress;
+  activeRef.current = active;
 
-  // rAF scrub loop
+  // rAF scrub loop — single seek "in flight", always chasing the latest
+  // (already-smoothed) scroll target. Issuing a new currentTime every frame
+  // floods the decoder with queued seeks and freezes the page, so we only
+  // seek when the previous seek has settled and the frame is actually visible.
   useEffect(() => {
     let raf = 0;
     const tick = () => {
       const video = videoRef.current;
-      if (video) {
+      if (video && activeRef.current && video.readyState >= 1) {
         const duration = video.duration || FALLBACK_DURATION;
         const target = Math.min(
           Math.max(scrollRef.current * duration, 0),
           duration
         );
-        currentTimeRef.current += (target - currentTimeRef.current) * 0.15;
-        if (
-          !video.seeking &&
-          Math.abs(video.currentTime - currentTimeRef.current) > 0.01
-        ) {
-          video.currentTime = currentTimeRef.current;
+        if (!video.seeking && Math.abs(video.currentTime - target) > 0.05) {
+          video.currentTime = target;
         }
       }
       raf = requestAnimationFrame(tick);

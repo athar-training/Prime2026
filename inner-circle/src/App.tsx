@@ -140,7 +140,9 @@ export default function App() {
   // Derived values
   const secondScreenProgress = clamp01((lerpedScrollProgress - 1.15) / 0.5);
   const easedRisingProgress = 1 - Math.pow(1 - secondScreenProgress, 3);
-  const smoothBlurAmount = Math.sin((secondScreenProgress * Math.PI) / 2) * 64;
+  // A full-screen blur() over a decoding <video> is very GPU-heavy; cap it so
+  // the rise stays smooth instead of stuttering.
+  const smoothBlurAmount = Math.sin((secondScreenProgress * Math.PI) / 2) * 24;
 
   return (
     <main className="relative w-screen h-screen overflow-hidden bg-[#FF005E] text-white">
@@ -153,7 +155,10 @@ export default function App() {
               secondScreenProgress > 0 ? `blur(${smoothBlurAmount}px)` : "none",
           }}
         >
-          <VideoScrubber scrollProgress={Math.min(1, lerpedScrollProgress)} />
+          <VideoScrubber
+            scrollProgress={Math.min(1, lerpedScrollProgress)}
+            active={secondScreenProgress < 0.98}
+          />
 
           {/* Hero title strip pinned to bottom */}
           <div className="absolute bottom-[40px] left-[1%] right-[1%] w-[98%] pointer-events-none z-20 select-none flex justify-center items-center">
@@ -184,7 +189,10 @@ export default function App() {
           }}
         >
           <div className="absolute top-5 left-1/2 -translate-x-1/2 w-16 h-[5px] bg-white rounded-full z-50 pointer-events-none" />
-          <SecondVideoScrubber scrollProgress={lerpedScrollProgress} />
+          <SecondVideoScrubber
+            scrollProgress={lerpedScrollProgress}
+            active={secondScreenProgress > 0}
+          />
           <CylindricalTextDrum scrollProgress={lerpedScrollProgress} />
 
           <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 left-0 w-full sm:w-[65%] md:w-[60%] pl-6 sm:pl-12 md:pl-20 pr-6 sm:pr-12 md:pr-16 z-50 pointer-events-auto">
