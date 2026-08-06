@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus/Circle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; }
+  </style>
+</head>
+<body>
+  <section id="stage" class="relative w-full h-screen overflow-hidden">
+    <!-- Custom cursor (desktop only) -->
+    <div id="cursor"
+      class="fixed z-50 pointer-events-none -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center"
+      style="width:90px;height:90px;backdrop-filter:blur(8px);background-color:rgba(0,0,0,0.45);will-change:left,top;">
+      <span id="cursor-label" class="text-white text-sm font-medium tracking-wide select-none">open</span>
+    </div>
+
+    <!-- Video 1: background loop -->
+    <video id="video1" class="absolute inset-0 w-full h-full object-cover"
+      src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260730_181344_3a592329-bd0b-4dc6-9ac6-cfb250e5ecdd.mp4"
+      autoplay loop muted playsinline style="opacity:1;"></video>
+
+    <!-- Video 2: overlay reveal -->
+    <video id="video2" class="absolute inset-0 w-full h-full object-cover"
+      src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260730_214302_820066a8-f3de-43f3-ab1d-96bd8b2716e6.mp4"
+      muted playsinline style="opacity:0;transition:opacity 600ms ease;"></video>
+
+    <div class="relative z-10 h-full flex flex-col justify-between p-5 sm:p-8 md:p-12 lg:p-16">
+      <!-- TOP ROW -->
+      <div class="flex items-start justify-between gap-4">
+        <div class="flex flex-col gap-2 sm:gap-3 max-w-[65%] sm:max-w-sm">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
+            style="background:linear-gradient(135deg,#ffffff 0%,#c084fc 50%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+            Nexus/
+          </h1>
+
+          <!-- Settings icon (lucide) -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 text-white/70" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+
+          <p class="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-snug tracking-tight">
+            A guild and space <span class="font-semibold">for</span>
+            <br />
+            <span class="font-semibold">forward-looking creation</span>
+          </p>
+        </div>
+
+        <div class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight shrink-0"
+          style="color:#36306E;">
+          /Circle
+        </div>
+      </div>
+
+      <!-- BOTTOM ROW -->
+      <div class="flex items-end justify-between gap-4">
+        <div class="flex flex-col gap-1">
+          <div class="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-bold leading-[0.85] tracking-tighter"
+            style="background:linear-gradient(135deg,#ffffff 0%,#d8b4fe 40%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+            150+
+          </div>
+          <div class="text-xs sm:text-sm md:text-base tracking-widest uppercase mt-1"
+            style="background:linear-gradient(90deg,#ffffff 0%,#c084fc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+            curious minds on board
+          </div>
+        </div>
+
+        <div class="flex flex-col items-end gap-2">
+          <div class="border rounded-2xl px-4 py-3 sm:px-6 sm:py-4 backdrop-blur-sm bg-white/5 flex flex-col items-center gap-1"
+            style="border-color:rgba(54,48,110,0.3);">
+            <div class="text-xs sm:text-sm tracking-wide text-white/90 sm:text-[#36306E]">Secured to</div>
+
+            <div class="flex items-center gap-2">
+              <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white sm:text-[#36306E]">200</span>
+              <!-- Heart icon (lucide) -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white sm:text-[#36306E]"
+                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/>
+              </svg>
+            </div>
+
+            <div class="text-xs sm:text-sm tracking-wide text-white/70 sm:text-[rgba(54,48,110,0.7)]">patrons</div>
+          </div>
+
+          <div class="text-xs sm:text-sm font-medium tracking-wide text-white/60 sm:text-[rgba(54,48,110,0.6)]">12.4K</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var stage = document.getElementById('stage');
+      var cursor = document.getElementById('cursor');
+      var cursorLabel = document.getElementById('cursor-label');
+      var video2 = document.getElementById('video2');
+
+      var showSecond = false;
+      var fading = false;
+
+      var isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+
+      if (isTouch) {
+        stage.style.cursor = 'auto';
+        cursor.style.display = 'none';
+      } else {
+        stage.style.cursor = 'none';
+        window.addEventListener('mousemove', function (e) {
+          cursor.style.left = e.clientX + 'px';
+          cursor.style.top = e.clientY + 'px';
+        });
+      }
+
+      function updateLabel() {
+        cursorLabel.textContent = showSecond ? 'close' : 'open';
+      }
+
+      function closeSecond() {
+        if (fading || !showSecond) return;
+        fading = true;
+        showSecond = false;
+        video2.style.opacity = '0';
+        updateLabel();
+        setTimeout(function () {
+          fading = false;
+          video2.pause();
+        }, 600);
+      }
+
+      function toggle() {
+        if (fading) return;
+        if (!showSecond) {
+          video2.currentTime = 1;
+          var p = video2.play();
+          if (p && typeof p.catch === 'function') p.catch(function () {});
+          showSecond = true;
+          video2.style.opacity = '1';
+          updateLabel();
+        } else {
+          closeSecond();
+        }
+      }
+
+      stage.addEventListener('click', toggle);
+      video2.addEventListener('ended', closeSecond);
+    })();
+  </script>
+</body>
+</html>
